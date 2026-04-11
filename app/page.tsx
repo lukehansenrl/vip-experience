@@ -897,9 +897,11 @@ export default function VIPPage() {
 
           {/* HEADLINER: SpookyLuke */}
           <div className="mb-10 rounded-2xl border-2 border-[var(--accent)]/40 bg-[var(--accent)]/5 p-8 flex flex-col items-center text-center sm:flex-row sm:items-center sm:gap-8 sm:text-left">
-            <div className="h-32 w-32 rounded-full border-4 border-[var(--accent)]/40 bg-[var(--accent)]/10 flex items-center justify-center text-4xl font-black text-[var(--accent)] flex-shrink-0 mb-4 sm:mb-0">
-              SL
-            </div>
+            <img
+              src="https://i0.wp.com/spookyluke.com/wp-content/uploads/2025/09/cutout-sept.webp?fit=592%2C713&ssl=1"
+              alt="SpookyLuke"
+              className="h-32 w-32 rounded-full object-cover object-top border-4 border-[var(--accent)]/40 flex-shrink-0 mb-4 sm:mb-0"
+            />
             <div>
               <div className="font-extrabold text-3xl">SpookyLuke</div>
               <div className="text-sm text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
@@ -936,9 +938,11 @@ export default function VIPPage() {
           <div className="grid gap-4 sm:grid-cols-3">
             {/* Torment */}
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
-              <div className="mx-auto h-20 w-20 rounded-full bg-white/10 border-2 border-white/10 flex items-center justify-center text-2xl font-black text-white/40 mb-4">
-                T
-              </div>
+              <img
+                src="https://liquipedia.net/commons/images/thumb/9/91/FIFAe_World_Cup_torment.jpg/600px-FIFAe_World_Cup_torment.jpg"
+                alt="Torment"
+                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
+              />
               <div className="font-extrabold text-xl">Torment</div>
               <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
                 World Champion S7
@@ -952,9 +956,11 @@ export default function VIPPage() {
 
             {/* Freakii */}
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
-              <div className="mx-auto h-20 w-20 rounded-full bg-white/10 border-2 border-white/10 flex items-center justify-center text-2xl font-black text-white/40 mb-4">
-                F
-              </div>
+              <img
+                src="https://liquipedia.net/commons/images/thumb/d/d8/RLCS_2026_Boston_Major_FreaKii_Michal_Konkol.jpg/600px-RLCS_2026_Boston_Major_FreaKii_Michal_Konkol.jpg"
+                alt="Freakii"
+                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
+              />
               <div className="font-extrabold text-xl">Freakii</div>
               <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
                 Former EU Pro &middot; Head Coach at PWR
@@ -968,9 +974,11 @@ export default function VIPPage() {
 
             {/* Shock */}
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
-              <div className="mx-auto h-20 w-20 rounded-full bg-white/10 border-2 border-white/10 flex items-center justify-center text-2xl font-black text-white/40 mb-4">
-                S
-              </div>
+              <img
+                src="https://liquipedia.net/commons/images/thumb/9/9d/RL_Shock.jpg/600px-RL_Shock.jpg"
+                alt="Shock"
+                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
+              />
               <div className="font-extrabold text-xl">Shock</div>
               <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
                 Former NA Pro &middot; RLCS S9 MVP
