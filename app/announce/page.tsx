@@ -362,8 +362,8 @@ export default function AnnouncePage() {
             </ul>
 
             <p className="mt-6 text-sm text-white/40">
-              This is founders-price logic: reward early adopters, raise for new
-              people once the experience is better.
+              You got in early and believed in this before anyone else. That
+              loyalty means something to us.
             </p>
           </div>
         </div>
