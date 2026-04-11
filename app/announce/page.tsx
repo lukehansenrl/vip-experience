@@ -293,6 +293,9 @@ export default function AnnouncePage() {
               />
               <div className="font-extrabold">Torment</div>
               <div className="text-xs text-[var(--accent)] font-bold mt-0.5">World Champion S7</div>
+              <div className="text-xs text-white/40 mt-2 leading-relaxed">
+                RLCS Season 7 World Champion. Specializes in rotations, positioning, and high-level decision-making.
+              </div>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center">
               <img
@@ -302,6 +305,9 @@ export default function AnnouncePage() {
               />
               <div className="font-extrabold">Freakii</div>
               <div className="text-xs text-[var(--accent)] font-bold mt-0.5">Former EU Pro &middot; PWR</div>
+              <div className="text-xs text-white/40 mt-2 leading-relaxed">
+                Former Renault Vitality pro. Head coach at PWR. Brings an EU perspective on mechanics, speed, and technical consistency.
+              </div>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center">
               <img
@@ -311,6 +317,9 @@ export default function AnnouncePage() {
               />
               <div className="font-extrabold">Shock</div>
               <div className="text-xs text-[var(--accent)] font-bold mt-0.5">Former NA Pro &middot; S9 MVP</div>
+              <div className="text-xs text-white/40 mt-2 leading-relaxed">
+                Former Soniqs and Ghost Gaming pro. Known for controlled aggression, disruption, and high IQ plays.
+              </div>
             </div>
           </div>
         </div>
@@ -365,7 +374,7 @@ export default function AnnouncePage() {
             New
           </p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-4xl">
-            The Rank-Up Promise
+            The VIP Promise
           </h2>
           <p className="mt-4 text-white/50">
             We can&apos;t play the game for you, but we can stand behind the

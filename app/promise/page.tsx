@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Rank-Up Promise — RL Clubhouse VIP",
+  title: "The VIP Promise — RL Clubhouse VIP",
   description:
-    "Full terms and conditions for the RL Clubhouse Rank-Up Promise. Rank up, hold it, get a free controller.",
+    "Full terms and conditions for the RL Clubhouse VIP Promise. Rank up, hold it, get a free controller.",
 };
 
 export default function PromisePage() {
@@ -35,7 +35,7 @@ export default function PromisePage() {
           Terms &amp; Conditions
         </p>
         <h1 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
-          The Rank-Up Promise
+          The VIP Promise
         </h1>
         <p className="mt-4 text-white/50">
           Last updated: April 11, 2026
@@ -45,7 +45,7 @@ export default function PromisePage() {
           {/* 1. Overview */}
           <Section title="1. Overview">
             <p>
-              The Rank-Up Promise (&ldquo;the Promise&rdquo;) is an
+              The VIP Promise (&ldquo;the Promise&rdquo;) is an
               improvement reward program offered by RL Clubhouse
               (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) to
               active VIP Experience members (&ldquo;you,&rdquo;
@@ -58,7 +58,7 @@ export default function PromisePage() {
 
           {/* 2. Eligibility */}
           <Section title="2. Eligibility">
-            <p>To be eligible for the Rank-Up Promise, you must:</p>
+            <p>To be eligible for the VIP Promise, you must:</p>
             <ul className="mt-3 ml-5 list-disc space-y-2">
               <li>
                 Be an active, paid VIP Experience member in good standing at the
@@ -270,7 +270,7 @@ export default function PromisePage() {
           <Section title="9. Limitations &amp; Disclaimers">
             <ul className="ml-5 list-disc space-y-2">
               <li>
-                The Rank-Up Promise is a reward program, not a guarantee of
+                The VIP Promise is a reward program, not a guarantee of
                 results. Individual improvement depends on factors including
                 practice time, consistency, coachability, and baseline skill
                 level.
@@ -320,7 +320,7 @@ export default function PromisePage() {
           {/* 11. Contact */}
           <Section title="11. Questions">
             <p>
-              If you have questions about the Rank-Up Promise, reach out to us
+              If you have questions about the VIP Promise, reach out to us
               on Discord or email us at the address listed in your VIP welcome
               materials.
             </p>
