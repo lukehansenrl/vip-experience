@@ -817,48 +817,7 @@ export default function VIPPage() {
             One Membership. Everything You Need To Improve.
           </h2>
 
-          <div className="mt-10 rounded-2xl border border-[var(--accent)]/30 bg-white/[0.03] p-8 md:p-10">
-            <p className="text-lg font-bold text-white/30 line-through">
-              $329 / month
-            </p>
-            <p className="mt-2 text-6xl font-black md:text-7xl">
-              <span className="text-[var(--accent)]">$279</span>
-              <span className="text-lg font-semibold text-white/50">
-                {" "}
-                / month
-              </span>
-            </p>
-            <p className="mt-2 inline-block rounded-full bg-[var(--green)]/10 px-4 py-1 text-sm font-bold text-[var(--green)]">
-              Save $50 / month
-            </p>
-            <p className="mt-4 text-white/50">
-              Cancel anytime. No contracts. No hidden fees.
-            </p>
-
-            {/* 30-day guarantee */}
-            <div className="mx-auto mt-6 max-w-md rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-5 py-3">
-              <p className="text-sm font-semibold text-[var(--green)]">
-                30-Day Money-Back Guarantee
-              </p>
-              <p className="mt-1 text-xs text-white/50">
-                If VIP doesn't deliver everything we promised in your first 30
-                days, we'll give you your money back. No questions asked.
-              </p>
-            </div>
-
-            <button
-              type="button"
-              onClick={openBooking}
-              className="mt-8 rounded-full bg-[var(--accent)] px-12 py-5 text-xl font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
-            >
-              Book Your VIP Onboarding Call →
-            </button>
-
-            <p className="mt-6 text-sm text-white/30">
-              Quick call to walk through VIP, answer your questions, and get you
-              started.
-            </p>
-          </div>
+          <PricingCard openBooking={openBooking} />
 
         </div>
       </section>
@@ -1294,6 +1253,77 @@ const CAROUSEL_SLIDES = [
       "The Clubhouse is active around the clock. Find someone to queue with, review a replay together, or just hang out.",
   },
 ];
+
+function PricingCard({ openBooking }: { openBooking: () => void }) {
+  return (
+    <div className="mt-10 rounded-2xl border border-[var(--accent)]/30 bg-white/[0.03] p-8 md:p-10">
+      <p className="text-lg font-bold text-white/30 line-through">
+        $329 / month
+      </p>
+      <p className="mt-2 text-6xl font-black md:text-7xl">
+        <span className="text-[var(--accent)]">$279</span>
+        <span className="text-lg font-semibold text-white/50"> / month</span>
+      </p>
+      <p className="mt-2 inline-block rounded-full bg-[var(--green)]/10 px-4 py-1 text-sm font-bold text-[var(--green)]">
+        Save $50 / month
+      </p>
+      <p className="mt-3 text-sm font-semibold text-white/60">
+        2x 1:1 coaching sessions per month
+      </p>
+      <p className="mt-4 text-white/50">
+        Cancel anytime. No contracts. No hidden fees.
+      </p>
+
+      {/* What's included */}
+      <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left">
+        <li className="flex items-start gap-2 text-sm text-white/60">
+          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+          Two 1:1, 60-min coaching sessions with a pro
+        </li>
+        <li className="flex items-start gap-2 text-sm text-white/60">
+          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+          30-min replay review from SpookyLuke
+        </li>
+        <li className="flex items-start gap-2 text-sm text-white/60">
+          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+          Personalized 30-day training routine
+        </li>
+        <li className="flex items-start gap-2 text-sm text-white/60">
+          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+          Accountability check-ins
+        </li>
+        <li className="flex items-start gap-2 text-sm text-white/60">
+          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+          Full RL Clubhouse membership
+        </li>
+      </ul>
+
+      {/* 30-day guarantee */}
+      <div className="mx-auto mt-6 max-w-md rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-5 py-3">
+        <p className="text-sm font-semibold text-[var(--green)]">
+          30-Day Money-Back Guarantee
+        </p>
+        <p className="mt-1 text-xs text-white/50">
+          If VIP doesn&apos;t deliver everything we promised in your first 30
+          days, we&apos;ll give you your money back. No questions asked.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        onClick={openBooking}
+        className="mt-8 rounded-full bg-[var(--accent)] px-12 py-5 text-xl font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+      >
+        Book Your VIP Onboarding Call &rarr;
+      </button>
+
+      <p className="mt-6 text-sm text-white/30">
+        Quick call to walk through VIP, answer your questions, and get you
+        started.
+      </p>
+    </div>
+  );
+}
 
 function FeatureCarousel() {
   const [current, setCurrent] = useState(0);
