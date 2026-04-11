@@ -149,7 +149,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What if I don't improve or it's not what I expected?",
-    a: "We have 95+ five-star reviews for a reason. But if you feel like it's not the right fit after giving it a real shot, reach out and we'll work with you. We want serious, improvement-minded players who are committed to getting better.",
+    a: "We have 95+ five-star reviews for a reason. But if it's not the right fit after giving it a real shot, reach out and we'll work with you. VIP is built for players who want to put in the work.",
   },
   {
     q: "How do I get started?",
@@ -176,7 +176,7 @@ const VALUE_STACK = [
   {
     item: "Accountability Check-ins",
     value: "$50 – $100",
-    note: "Ongoing calls to keep you consistent and adjust your plan",
+    note: "Regular calls to keep you on track and adjust your training",
   },
   {
     item: "Full RL Clubhouse Membership",
@@ -563,7 +563,7 @@ export default function VIPPage() {
             <IncludeCard
               icon={<Gamepad2 className="h-5 w-5 text-[var(--accent)]" />}
               title="1:1, 60-Minute Coaching Session with a Pro"
-              description="Deep dive on your mechanics, positioning, decision-making, and habits so you know exactly what's holding your improvement back."
+              description="Your coach breaks down your mechanics, positioning, decision-making, and habits so you know exactly what's holding you back."
             />
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
@@ -573,7 +573,7 @@ export default function VIPPage() {
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
               title="Personalized 30-Day Training Routine"
-              description="A routine built around your schedule and goals so you always know what to practice for faster skill growth."
+              description="A routine built around your schedule and goals so you always know what to practice and actually see results."
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
@@ -583,7 +583,7 @@ export default function VIPPage() {
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
               title="Full RL Clubhouse Membership"
-              description="15+ live events monthly, weekly classes with pros, replay reviews, recordings, and a positive, improvement-first community."
+              description="15+ live events monthly, weekly classes with pros, replay reviews, recordings, and a community of players who actually want to get better."
             />
           </div>
         </div>
@@ -684,7 +684,7 @@ export default function VIPPage() {
       <section id="reviews" className="border-t border-white/10 px-6 py-20 md:py-28">
         <div className="mx-auto max-w-5xl">
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Customer Reviews
+            Player Reviews
           </p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
             95+ Five-Star Reviews
@@ -780,7 +780,7 @@ export default function VIPPage() {
             ))}
             <div className="flex items-center justify-between bg-white/[0.03] px-6 py-4 border-t border-white/10">
               <span className="font-bold text-white/70">
-                Total if purchased separately
+                What this would cost on its own
               </span>
               <span className="text-lg font-black text-white/40 line-through">
                 $282 – $377 / mo
@@ -956,7 +956,7 @@ export default function VIPPage() {
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-white/50">
             Join VIP. Put in the work. Rank up. We'll send you a brand new
-            controller. Our way of supporting your gaming grind.
+            controller. Because if you put in the work, you deserve it.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
@@ -1022,7 +1022,7 @@ export default function VIPPage() {
 
         {/* Bottom tagline + terms link */}
         <p className="mx-auto mt-12 max-w-md text-center text-sm text-white/30">
-          Supporting real improvement by rewarding effort, not just a moment.
+          We reward the grind, not just one good session.
         </p>
         <p className="mt-3 text-center">
           <a
@@ -1207,7 +1207,7 @@ const CAROUSEL_SLIDES = [
     src: "/graphics/phone-discord.png",
     title: "Active Discord Community",
     description:
-      "Find teammates, ask questions, share clips, and stay motivated with a community of serious, improvement-minded players.",
+      "Find teammates, ask questions, share clips, and stay motivated with a community of players who take their game seriously.",
   },
   {
     src: "/graphics/spin-wheel.png",

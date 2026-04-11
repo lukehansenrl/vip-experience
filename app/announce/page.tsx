@@ -277,8 +277,8 @@ export default function AnnouncePage() {
             We&apos;re nearly at{" "}
             <strong className="text-white">50 members</strong>, sessions run
             every week, and time is the one thing we can&apos;t scale. To keep
-            giving every student the attention they deserve, we need to be
-            intentional about growth.
+            giving every player the attention they deserve, we can&apos;t just
+            let unlimited people in.
           </p>
 
           <p className="mt-4 leading-relaxed text-white/60">
@@ -300,8 +300,8 @@ export default function AnnouncePage() {
           </h2>
 
           <p className="mt-6 mb-6 text-white/60">
-            We're raising price only after increasing value, not the other way
-            around. Here's where the investment goes:
+            We added more before asking for more. Here is what we are putting
+            the money toward:
           </p>
 
           <div className="space-y-4">
@@ -311,7 +311,7 @@ export default function AnnouncePage() {
             />
             <InvestCard
               title="Tighter experience"
-              description="Focusing on serious, improvement-minded players who get the most out of the coaching."
+              description="Keeping the group full of players who actually use the coaching and want to get better."
             />
             <InvestCard
               title="Better events, curriculum, and support"
@@ -362,8 +362,7 @@ export default function AnnouncePage() {
             </ul>
 
             <p className="mt-6 text-sm text-white/40">
-              You got in early and believed in this before anyone else. That
-              loyalty means something to us.
+              You got in early. We don&apos;t forget that.
             </p>
           </div>
         </div>
