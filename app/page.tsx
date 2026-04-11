@@ -938,9 +938,11 @@ export default function VIPPage() {
           <div className="grid gap-4 sm:grid-cols-3">
             {/* Torment */}
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
-              <div className="mx-auto h-20 w-20 rounded-full bg-white/10 border-2 border-white/10 flex items-center justify-center text-2xl font-black text-white/40 mb-4">
-                T
-              </div>
+              <img
+                src="/graphics/torment.jpg"
+                alt="Torment"
+                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
+              />
               <div className="font-extrabold text-xl">Torment</div>
               <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
                 World Champion S7
@@ -955,7 +957,7 @@ export default function VIPPage() {
             {/* Freakii */}
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
               <img
-                src="/graphics/freakii.jpg"
+                src="/graphics/freakii-lp.jpg"
                 alt="Freakii"
                 className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
               />
@@ -973,7 +975,7 @@ export default function VIPPage() {
             {/* Shock */}
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
               <img
-                src="/graphics/shock.jpg"
+                src="/graphics/shock-lp.jpg"
                 alt="Shock"
                 className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
               />
