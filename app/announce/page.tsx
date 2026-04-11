@@ -400,11 +400,16 @@ export default function AnnouncePage() {
       <section className="px-6 py-16 text-center md:py-24">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-extrabold tracking-tight md:text-4xl">
-            If You've Been Thinking About Going Deeper
+            You Still Have Time
           </h2>
           <p className="mx-auto mt-4 max-w-md text-white/50">
-            The VIP Experience was built for players who want real coaching, real
-            feedback, and real improvement. If that's you, let's talk.
+            The new pricing takes effect at the end of the month. If you have
+            been thinking about joining VIP, you still have 14 days to lock in
+            at the current rate.
+          </p>
+          <p className="mx-auto mt-2 max-w-md text-white/50">
+            Book a quick onboarding call and we will walk you through
+            everything.
           </p>
           <button
             type="button"
@@ -413,8 +418,25 @@ export default function AnnouncePage() {
           >
             Book Your VIP Onboarding Call →
           </button>
+          <p className="mt-4">
+            <a
+              href="/"
+              className="text-sm font-semibold text-[var(--accent)] hover:underline transition"
+            >
+              See everything included in the VIP Experience →
+            </a>
+          </p>
           <p className="mt-6 text-sm text-white/30">
-            Questions? Drop them in #pricing-questions or DM me.
+            Questions?{" "}
+            <a
+              href="https://discord.com/channels/1217265351658573895/1222927647126851604"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-white/50 hover:text-white transition"
+            >
+              Open a support ticket
+            </a>{" "}
+            in the Clubhouse.
           </p>
         </div>
       </section>
