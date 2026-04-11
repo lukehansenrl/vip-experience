@@ -357,6 +357,10 @@ export default function AnnouncePage() {
             </div>
           </div>
 
+          <p className="mt-8 text-right text-sm italic text-white/40">
+            — Luke
+          </p>
+
           <a
             href="/promise"
             className="mt-6 inline-block text-xs text-white/30 underline hover:text-white/50 transition"

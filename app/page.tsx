@@ -1024,6 +1024,9 @@ export default function VIPPage() {
         <p className="mx-auto mt-12 max-w-md text-center text-sm text-white/30">
           We reward the grind, not just one good session.
         </p>
+        <p className="mt-4 text-center text-sm italic text-white/40">
+          — Luke
+        </p>
         <p className="mt-3 text-center">
           <a
             href="/promise"
