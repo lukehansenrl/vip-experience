@@ -883,67 +883,113 @@ export default function VIPPage() {
       {/* ── MEET THE TEAM ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-28">
         <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+          <p className="mb-2 text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             Meet The Team
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
             The People Behind Your Improvement
           </h2>
+          <p className="mb-14 text-center text-white/50 max-w-xl mx-auto">
+            Your coaching comes from RLCS-level pros and the #1 Rocket League
+            teacher on YouTube. Each coach has their own style. You get matched
+            to whoever fits your goals.
+          </p>
 
-          {/* SpookyLuke - image left, text right */}
-          <div className="mt-12 flex flex-col gap-8 md:flex-row md:items-center">
-            <div className="md:w-1/2 overflow-hidden rounded-2xl border border-white/10">
-              <img
-                src="/graphics/spookyluke-stats.png"
-                alt="SpookyLuke: 486K Subs, 216M Views, 60K Discord Members, GC3 Peak Rank"
-                className="w-full"
-              />
+          {/* HEADLINER: SpookyLuke */}
+          <div className="mb-10 rounded-2xl border-2 border-[var(--accent)]/40 bg-[var(--accent)]/5 p-8 flex flex-col items-center text-center sm:flex-row sm:items-center sm:gap-8 sm:text-left">
+            <div className="h-32 w-32 rounded-full border-4 border-[var(--accent)]/40 bg-[var(--accent)]/10 flex items-center justify-center text-4xl font-black text-[var(--accent)] flex-shrink-0 mb-4 sm:mb-0">
+              SL
             </div>
-            <div className="md:w-1/2">
-              <h3 className="text-2xl font-extrabold">SpookyLuke</h3>
-              <p className="mt-1 text-sm font-semibold text-[var(--accent)]">
+            <div>
+              <div className="font-extrabold text-3xl">SpookyLuke</div>
+              <div className="text-sm text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
                 Founder &middot; Head Coach &middot; Content Creator
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-white/60">
-                The #1 Rocket League teacher on YouTube with 486K+ subscribers
-                and 216M+ views. GC3 peak rank. Your replay review comes
-                directly from SpookyLuke every month. His Metafy rate for a
-                30-minute session is $125. As a VIP member, it is included.
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-white/60">
-                Every coaching VOD gets published to the SpookyLuke Coaching
-                channel for permanent access so you can rewatch your session
-                anytime.
-              </p>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2 justify-center sm:justify-start">
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
+                  486K+ YouTube Subs
+                </span>
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
+                  216M+ Views
+                </span>
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
+                  GC3 Peak
+                </span>
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
+                  60K Discord
+                </span>
+              </div>
+              <div className="text-sm text-white/60 mt-4 leading-relaxed">
+                The #1 Rocket League teacher on YouTube. Your replay review
+                comes directly from SpookyLuke every month. His Metafy rate for
+                a 30-minute session is $125. As a VIP member, it is included.
+                Every session gets published to the coaching channel for
+                permanent access.
+              </div>
             </div>
           </div>
 
-          {/* Coaches - text left, image right */}
-          <div className="mt-16 flex flex-col-reverse gap-8 md:flex-row md:items-center">
-            <div className="md:w-1/2">
-              <h3 className="text-2xl font-extrabold">The Coaching Staff</h3>
-              <p className="mt-1 text-sm font-semibold text-[var(--accent)]">
-                Freakii &middot; Shock &middot; Torment
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-white/60">
-                Your 1:1 coaching sessions are with RLCS-level pros. Torment is
-                a Season 7 World Champion. Freakii is a former Renault Vitality
-                pro and current head coach at PWR. Shock is a former Soniqs and
-                Ghost Gaming pro and one of the most decorated NA players of his
-                era.
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-white/60">
-                Each coach has their own style. You get matched to the coach
-                who fits your goals, rank, and the areas you need to improve.
-              </p>
+          {/* COACHES GRID */}
+          <p className="mb-4 text-center text-xs font-bold uppercase tracking-widest text-white/40">
+            Your Pro Coaches
+          </p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {/* Torment */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
+              <div className="mx-auto h-20 w-20 rounded-full bg-white/10 border-2 border-white/10 flex items-center justify-center text-2xl font-black text-white/40 mb-4">
+                T
+              </div>
+              <div className="font-extrabold text-xl">Torment</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
+                World Champion S7
+              </div>
+              <div className="text-xs text-white/50 mt-3 leading-relaxed">
+                RLCS Season 7 World Champion. One of the most accomplished
+                players in NA history. Specializes in rotations, positioning,
+                and high-level decision-making.
+              </div>
             </div>
-            <div className="md:w-1/2 overflow-hidden rounded-2xl border border-white/10">
-              <img
-                src="/graphics/coaches-banner.png"
-                alt="Our Coaches: Freakii, SpookLuke, Shock, Torment"
-                className="w-full"
-              />
+
+            {/* Freakii */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
+              <div className="mx-auto h-20 w-20 rounded-full bg-white/10 border-2 border-white/10 flex items-center justify-center text-2xl font-black text-white/40 mb-4">
+                F
+              </div>
+              <div className="font-extrabold text-xl">Freakii</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
+                Former EU Pro &middot; Head Coach at PWR
+              </div>
+              <div className="text-xs text-white/50 mt-3 leading-relaxed">
+                Former Renault Vitality pro. Now head coach at PWR. Brings an EU
+                perspective on mechanics, speed, and technical consistency that
+                NA players rarely get access to.
+              </div>
             </div>
+
+            {/* Shock */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
+              <div className="mx-auto h-20 w-20 rounded-full bg-white/10 border-2 border-white/10 flex items-center justify-center text-2xl font-black text-white/40 mb-4">
+                S
+              </div>
+              <div className="font-extrabold text-xl">Shock</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
+                Former NA Pro &middot; RLCS S9 MVP
+              </div>
+              <div className="text-xs text-white/50 mt-3 leading-relaxed">
+                Former Soniqs and Ghost Gaming pro. RLCS Season 9 NA Regular
+                Season MVP. One of the most decorated NA players of his era.
+                Known for controlled aggression and smart reads.
+              </div>
+            </div>
+          </div>
+
+          {/* Coaches banner image */}
+          <div className="mt-10 overflow-hidden rounded-2xl border border-white/10">
+            <img
+              src="/graphics/coaches-banner.png"
+              alt="Our Coaches: Freakii, SpookLuke, Shock, Torment"
+              className="w-full"
+            />
           </div>
         </div>
       </section>
