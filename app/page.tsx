@@ -160,7 +160,7 @@ const FAQ_ITEMS = [
 const VALUE_STACK = [
   {
     item: "2x 1:1 Pro Coaching Sessions (60 min each)",
-    value: "$60 – $100",
+    value: "$100 – $150",
     note: "Market rate for two sessions with a pro coach",
   },
   {
@@ -783,7 +783,7 @@ export default function VIPPage() {
                 What this would cost on its own
               </span>
               <span className="text-lg font-black text-white/40 line-through">
-                $312 – $427 / mo
+                $352 – $477 / mo
               </span>
             </div>
             <div className="flex items-center justify-between bg-[var(--accent)]/10 px-6 py-5">
