@@ -255,14 +255,64 @@ export default function AnnouncePage() {
         </div>
       </section>
 
-      {/* ── COACHES IMAGE ── */}
-      <section className="px-6 py-10">
-        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/10">
-          <img
-            src="/graphics/coaches-banner.png"
-            alt="Our Coaches: Freakii, SpookLuke, Shock, Torment"
-            className="w-full"
-          />
+      {/* ── MEET THE TEAM ── */}
+      <section className="border-t border-white/10 px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-3xl">
+          <p className="mb-2 text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Meet The Team
+          </p>
+          <h2 className="mb-4 text-center text-2xl font-extrabold tracking-tight md:text-3xl">
+            The People Behind Your Improvement
+          </h2>
+
+          {/* SpookyLuke */}
+          <div className="mt-8 rounded-2xl border-2 border-[var(--accent)]/40 bg-[var(--accent)]/5 p-6 flex flex-col items-center text-center sm:flex-row sm:items-center sm:gap-6 sm:text-left">
+            <img
+              src="https://i0.wp.com/spookyluke.com/wp-content/uploads/2025/09/cutout-sept.webp?fit=592%2C713&ssl=1"
+              alt="SpookyLuke"
+              className="h-20 w-20 rounded-full object-cover object-top border-4 border-[var(--accent)]/40 flex-shrink-0 mb-3 sm:mb-0"
+            />
+            <div>
+              <div className="font-extrabold text-xl">SpookyLuke</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-0.5 uppercase tracking-wide">
+                Founder &middot; Head Coach &middot; 486K+ YouTube Subs
+              </div>
+              <div className="text-xs text-white/50 mt-2 leading-relaxed">
+                The #1 Rocket League teacher on YouTube. Your replay review comes directly from SpookyLuke every month.
+              </div>
+            </div>
+          </div>
+
+          {/* Coaches grid */}
+          <div className="mt-4 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center">
+              <img
+                src="/graphics/torment.jpg"
+                alt="Torment"
+                className="mx-auto h-16 w-16 rounded-full object-cover object-top border-2 border-white/10 mb-3"
+              />
+              <div className="font-extrabold">Torment</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-0.5">World Champion S7</div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center">
+              <img
+                src="/graphics/freakii-lp.jpg"
+                alt="Freakii"
+                className="mx-auto h-16 w-16 rounded-full object-cover object-top border-2 border-white/10 mb-3"
+              />
+              <div className="font-extrabold">Freakii</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-0.5">Former EU Pro &middot; PWR</div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center">
+              <img
+                src="/graphics/shock-lp.jpg"
+                alt="Shock"
+                className="mx-auto h-16 w-16 rounded-full object-cover object-top border-2 border-white/10 mb-3"
+              />
+              <div className="font-extrabold">Shock</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-0.5">Former NA Pro &middot; S9 MVP</div>
+            </div>
+          </div>
         </div>
       </section>
 
