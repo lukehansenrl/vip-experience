@@ -1,81 +1,11 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect } from "react";
 import { Star, ChevronRight } from "lucide-react";
-
-const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
-
-/* ── Calendly Modal (same as main page) ── */
-
-function CalendlyModal({
-  open,
-  onClose,
-}: {
-  open: boolean;
-  onClose: () => void;
-}) {
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [open, onClose]);
-
-  if (!open) return null;
-
-  return (
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
-      onClick={onClose}
-    >
-      <div
-        className="relative w-full max-w-3xl max-h-[92vh] overflow-hidden rounded-2xl border border-[var(--accent)]/30 bg-[#0b0e17] shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-              VIP Onboarding Call
-            </p>
-            <p className="text-sm text-white/50">
-              Walk through the VIP Experience and get your questions answered
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="h-9 w-9 rounded-full border border-white/15 text-white/70 hover:bg-white/10 hover:text-white transition text-lg leading-none"
-            aria-label="Close"
-          >
-            &times;
-          </button>
-        </div>
-        <div className="h-[80vh] max-h-[720px] overflow-hidden bg-white">
-          <iframe
-            src={CALENDLY_URL}
-            width="100%"
-            height="100%"
-            frameBorder="0"
-            title="Book a VIP onboarding call"
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 /* ── ANNOUNCE PAGE ── */
 
 export default function AnnouncePage() {
-  const [calendlyOpen, setCalendlyOpen] = useState(false);
-  const openBooking = useCallback(() => setCalendlyOpen(true), []);
-
   // Scroll-reveal animation
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -131,24 +61,18 @@ export default function AnnouncePage() {
         backgroundAttachment: "fixed",
       }}
     >
-      <CalendlyModal
-        open={calendlyOpen}
-        onClose={() => setCalendlyOpen(false)}
-      />
-
       {/* ── NAV ── */}
       <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <div className="text-lg font-extrabold tracking-tight">
             RL <span className="text-[var(--accent)]">Clubhouse</span>
           </div>
-          <button
-            type="button"
-            onClick={openBooking}
+          <a
+            href="/"
             className="rounded-lg bg-[var(--accent)] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[var(--accent-hover)]"
           >
-            Book VIP Onboarding
-          </button>
+            Learn More About VIP
+          </a>
         </div>
       </nav>
 
@@ -162,17 +86,27 @@ export default function AnnouncePage() {
             Good news: the VIP price is going up&hellip; but not yet.
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg text-white/60">
-            On <strong className="text-white">April 25</strong>, the VIP
+            On <strong className="text-white">Wednesday, April 22</strong>, the VIP
             Experience price for new members increases. Until then, you can lock
             in the current rate.
           </p>
-          <button
-            type="button"
-            onClick={openBooking}
-            className="mt-8 rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+          <a
+            href="/"
+            className="mt-8 inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
           >
-            Lock In Your VIP Spot →
-          </button>
+            Learn More About VIP →
+          </a>
+        </div>
+      </section>
+
+      {/* ── HERO BANNER ── */}
+      <section className="px-6 pb-8">
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/10">
+          <img
+            src="/graphics/hero-banner.png"
+            alt="The RL Clubhouse VIP Experience"
+            className="w-full"
+          />
         </div>
       </section>
 
@@ -230,7 +164,7 @@ export default function AnnouncePage() {
             </div>
             <div className="flex-1 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 text-center">
               <p className="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">
-                New Price (April 25)
+                New Price (Wednesday, April 22)
               </p>
               <p className="mt-2 text-3xl font-black text-[var(--accent)]">
                 $249
@@ -241,7 +175,7 @@ export default function AnnouncePage() {
 
           <div className="mt-6 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4">
             <p className="text-sm text-white/60">
-              <strong className="text-white">Until April 25:</strong> Current
+              <strong className="text-white">Until Wednesday, April 22:</strong> Current
               VIPs keep their price as long as they stay active. New members who
               join before the deadline lock in the current rate.
             </p>
@@ -321,6 +255,17 @@ export default function AnnouncePage() {
         </div>
       </section>
 
+      {/* ── COACHES IMAGE ── */}
+      <section className="px-6 py-10">
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/10">
+          <img
+            src="/graphics/coaches-banner.png"
+            alt="Our Coaches: Freakii, SpookLuke, Shock, Torment"
+            className="w-full"
+          />
+        </div>
+      </section>
+
       {/* ── EARLY ADOPTER REWARD ── */}
       <section className="border-t border-white/10 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-2xl">
@@ -350,7 +295,7 @@ export default function AnnouncePage() {
                 <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
                 <span>
                   <strong className="text-white">Been on the fence?</strong> You
-                  have until <strong className="text-white">April 25</strong> to
+                  have until <strong className="text-white">Wednesday, April 22</strong> to
                   join at the current rate and keep it as long as you stay.
                 </span>
               </li>
@@ -421,6 +366,45 @@ export default function AnnouncePage() {
         </div>
       </section>
 
+      {/* ── STUDENT REVIEWS ── */}
+      <section className="border-t border-white/10 px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            From Real VIP Members
+          </p>
+          <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
+            What Players Are Saying
+          </h2>
+
+          <div className="mt-8 space-y-4">
+            <ReviewCard
+              name="Xeneson"
+              initials="XE"
+              text="Went from averaging 1020mmr to 1136 in 2 weeks. The 1on1 sessions helped really well with that."
+            />
+            <ReviewCard
+              name="Crayons"
+              initials="CR"
+              text="Coaching helped so much went from low D1 to high D2 in just 2 days. The fastest I've ever ranked up."
+            />
+            <ReviewCard
+              name="Dami"
+              initials="DR"
+              text="After a month of being a member I am now GC2 div 3. The different coaches each have their own way of coaching and finding the right one for you is gonna make you progress really fast."
+            />
+            <ReviewCard
+              name="Snizz._"
+              initials="SN"
+              text="Started at C3. With the help of 1:1 with Torment and joining one of Luke's events I gained super valuable knowledge. I am now GC. The 1:1 with a pro player is literally worth the entire price."
+            />
+          </div>
+
+          <p className="mt-6 text-center text-sm text-white/30">
+            95+ five-star reviews on Whop
+          </p>
+        </div>
+      </section>
+
       {/* ── FINAL CTA ── */}
       <section className="px-6 py-16 text-center md:py-24">
         <div className="mx-auto max-w-2xl">
@@ -429,25 +413,16 @@ export default function AnnouncePage() {
           </h2>
           <p className="mx-auto mt-4 max-w-md text-white/50">
             The new pricing takes effect{" "}
-            <strong className="text-white">April 25</strong>. If you want to
+            <strong className="text-white">Wednesday, April 22</strong>. If you want to
             lock in the current rate, book a call before then and we will get
             you set up.
           </p>
-          <button
-            type="button"
-            onClick={openBooking}
-            className="mt-8 rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+          <a
+            href="/"
+            className="mt-8 inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
           >
-            Lock In Your VIP Spot →
-          </button>
-          <p className="mt-4">
-            <a
-              href="/"
-              className="text-sm font-semibold text-[var(--accent)] hover:underline transition"
-            >
-              See everything included in the VIP Experience →
-            </a>
-          </p>
+            Learn More About VIP →
+          </a>
           <p className="mt-6 text-sm text-white/30">
             Questions?{" "}
             <a
@@ -524,6 +499,39 @@ function PollResult({
           style={{ width: `${percent}%` }}
         />
       </div>
+    </div>
+  );
+}
+
+function ReviewCard({
+  name,
+  initials,
+  text,
+}: {
+  name: string;
+  initials: string;
+  text: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+      <div className="flex items-center gap-3 mb-3">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs font-bold">
+          {initials}
+        </div>
+        <div>
+          <p className="text-sm font-bold">{name}</p>
+          <div className="flex gap-0.5 mt-0.5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <svg key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+        </div>
+      </div>
+      <p className="text-sm leading-relaxed text-white/60">
+        &ldquo;{text}&rdquo;
+      </p>
     </div>
   );
 }
