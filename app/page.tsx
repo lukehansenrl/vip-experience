@@ -450,26 +450,97 @@ export default function VIPPage() {
             Built Around What You Actually Want
           </h2>
           <p className="mt-4 max-w-2xl text-white/50">
-            We asked the community why they joined. Here is what you told us,
-            and how VIP delivers on every one.
+            We asked the community their #1 reason for being here. The answer
+            was clear:
           </p>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <BenefitCard
-              icon={<Target className="h-6 w-6 text-[var(--accent)]" />}
-              title="Get Better at Mechanics"
-              description="Aerials, dribbling, shooting, recoveries. Your coach breaks down exactly where your mechanics fall apart and gives you drills that fix it, not generic training pack lists."
-            />
-            <BenefitCard
-              icon={<Brain className="h-6 w-6 text-[var(--accent)]" />}
-              title="Improve Game Sense & Positioning"
-              description="Replay reviews show you exactly where you were on the field, where you should have been, and why. With timestamps and specific corrections you can apply immediately."
-            />
-            <BenefitCard
-              icon={<TrendingUp className="h-6 w-6 text-[var(--accent)]" />}
-              title="Rank Up and Gain MMR"
-              description="Rank is the side effect of real improvement. When your mechanics, positioning, and decision-making all level up, MMR follows naturally and stays."
-            />
+          {/* Top goal */}
+          <div className="mt-10 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 md:p-8 text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+              #1 Goal &middot; 46 Votes
+            </p>
+            <p className="mt-2 text-2xl font-extrabold md:text-3xl">
+              &ldquo;Improve my overall Rocket League skill.&rdquo;
+            </p>
+          </div>
+
+          {/* Arrow down */}
+          <div className="flex justify-center py-6">
+            <div className="flex flex-col items-center gap-1">
+              <div className="h-8 w-px bg-[var(--accent)]/40" />
+              <p className="text-xs font-bold uppercase tracking-widest text-white/30">
+                How VIP gets you there
+              </p>
+              <div className="h-8 w-px bg-[var(--accent)]/40" />
+              <svg
+                width="12"
+                height="8"
+                viewBox="0 0 12 8"
+                className="text-[var(--accent)]"
+              >
+                <path
+                  d="M1 1L6 6L11 1"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          {/* Three pillars */}
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-[var(--accent)]/40">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent)]/10">
+                <Target className="h-6 w-6 text-[var(--accent)]" />
+              </div>
+              <h3 className="text-lg font-bold">Better Mechanics</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/55">
+                Aerials, dribbling, shooting, recoveries. Your coach breaks
+                down exactly where your mechanics fall apart and gives you
+                drills that fix it.
+              </p>
+              <p className="mt-3 flex items-center gap-2 text-xs font-semibold text-[var(--accent)]">
+                <span className="h-px flex-1 bg-[var(--accent)]/20" />
+                Feeds overall skill
+                <span className="h-px flex-1 bg-[var(--accent)]/20" />
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-[var(--accent)]/40">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent)]/10">
+                <Brain className="h-6 w-6 text-[var(--accent)]" />
+              </div>
+              <h3 className="text-lg font-bold">Sharper Game Sense</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/55">
+                Replay reviews show you exactly where you were on the field,
+                where you should have been, and why. With timestamps and
+                corrections you can apply immediately.
+              </p>
+              <p className="mt-3 flex items-center gap-2 text-xs font-semibold text-[var(--accent)]">
+                <span className="h-px flex-1 bg-[var(--accent)]/20" />
+                Feeds overall skill
+                <span className="h-px flex-1 bg-[var(--accent)]/20" />
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-[var(--accent)]/40">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent)]/10">
+                <TrendingUp className="h-6 w-6 text-[var(--accent)]" />
+              </div>
+              <h3 className="text-lg font-bold">Higher Rank</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/55">
+                Rank is the side effect. When your mechanics, positioning, and
+                decision-making all level up together, MMR follows naturally
+                and stays.
+              </p>
+              <p className="mt-3 flex items-center gap-2 text-xs font-semibold text-[var(--accent)]">
+                <span className="h-px flex-1 bg-[var(--accent)]/20" />
+                The result
+                <span className="h-px flex-1 bg-[var(--accent)]/20" />
+              </p>
+            </div>
           </div>
         </div>
       </section>
