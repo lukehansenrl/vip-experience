@@ -133,7 +133,7 @@ const TEXT_REVIEWS = [
 const FAQ_ITEMS = [
   {
     q: "What exactly do I get as a VIP member?",
-    a: "Every month: a 1:1 60-minute coaching session with a pro, a 30-minute replay review from SpookyLuke, a personalized 30-day training routine, accountability check-ins, and full RL Clubhouse membership with 15+ live events monthly.",
+    a: "Every month: two 1:1 60-minute coaching sessions with a pro, a 30-minute replay review from SpookyLuke, a personalized 30-day training routine, accountability check-ins, and full RL Clubhouse membership with 15+ live events monthly.",
   },
   {
     q: "What rank do I need to be?",
@@ -159,9 +159,9 @@ const FAQ_ITEMS = [
 
 const VALUE_STACK = [
   {
-    item: "1:1 Pro Coaching Session (60 min)",
-    value: "$30 – $50",
-    note: "Market rate for a single session with a pro coach",
+    item: "2x 1:1 Pro Coaching Sessions (60 min each)",
+    value: "$60 – $100",
+    note: "Market rate for two sessions with a pro coach",
   },
   {
     item: "Replay Review from SpookyLuke (30 min)",
@@ -562,8 +562,8 @@ export default function VIPPage() {
           <div className="mt-12 flex flex-col gap-5">
             <IncludeCard
               icon={<Gamepad2 className="h-5 w-5 text-[var(--accent)]" />}
-              title="1:1, 60-Minute Coaching Session with a Pro"
-              description="Your coach breaks down your mechanics, positioning, decision-making, and habits so you know exactly what's holding you back."
+              title="Two 1:1, 60-Minute Coaching Sessions with a Pro"
+              description="Two sessions per month. Your coach breaks down your mechanics, positioning, decision-making, and habits so you know exactly what's holding you back."
             />
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
@@ -783,7 +783,7 @@ export default function VIPPage() {
                 What this would cost on its own
               </span>
               <span className="text-lg font-black text-white/40 line-through">
-                $282 – $377 / mo
+                $312 – $427 / mo
               </span>
             </div>
             <div className="flex items-center justify-between bg-[var(--accent)]/10 px-6 py-5">

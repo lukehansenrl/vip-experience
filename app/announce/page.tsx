@@ -201,7 +201,7 @@ export default function AnnouncePage() {
           <ul className="mt-4 space-y-3">
             <li className="flex items-start gap-3 text-sm text-white/60">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-              A 1:1, 60-minute session with a pro coach
+              Two 1:1, 60-minute sessions with a pro coach every month
             </li>
             <li className="flex items-start gap-3 text-sm text-white/60">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
