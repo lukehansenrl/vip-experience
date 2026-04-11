@@ -146,7 +146,7 @@ export default function AnnouncePage() {
             What&apos;s Changing
           </p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            VIP Is Moving To $249 / Month For New Members
+            VIP Is Moving To $279 / Month For New Members
           </h2>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -167,7 +167,7 @@ export default function AnnouncePage() {
                 New Price (Wednesday, April 22)
               </p>
               <p className="mt-2 text-3xl font-black text-[var(--accent)]">
-                $249
+                $279
               </p>
               <p className="mt-1 text-xs text-white/50">/ month</p>
             </div>

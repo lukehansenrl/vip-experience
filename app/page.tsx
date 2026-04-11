@@ -790,10 +790,10 @@ export default function VIPPage() {
               <span className="font-bold">VIP Experience Price</span>
               <span className="flex items-center gap-3">
                 <span className="text-sm font-bold text-white/30 line-through">
-                  $289
+                  $329
                 </span>
                 <span className="text-2xl font-black text-[var(--accent)]">
-                  $249 / mo
+                  $279 / mo
                 </span>
               </span>
             </div>
@@ -816,17 +816,17 @@ export default function VIPPage() {
 
           <div className="mt-10 rounded-2xl border border-[var(--accent)]/30 bg-white/[0.03] p-8 md:p-10">
             <p className="text-lg font-bold text-white/30 line-through">
-              $289 / month
+              $329 / month
             </p>
             <p className="mt-2 text-6xl font-black md:text-7xl">
-              <span className="text-[var(--accent)]">$249</span>
+              <span className="text-[var(--accent)]">$279</span>
               <span className="text-lg font-semibold text-white/50">
                 {" "}
                 / month
               </span>
             </p>
             <p className="mt-2 inline-block rounded-full bg-[var(--green)]/10 px-4 py-1 text-sm font-bold text-[var(--green)]">
-              Save $40 / month
+              Save $50 / month
             </p>
             <p className="mt-4 text-white/50">
               Cancel anytime. No contracts. No hidden fees.
