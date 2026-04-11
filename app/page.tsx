@@ -1267,36 +1267,9 @@ function PricingCard({ openBooking }: { openBooking: () => void }) {
       <p className="mt-2 inline-block rounded-full bg-[var(--green)]/10 px-4 py-1 text-sm font-bold text-[var(--green)]">
         Save $50 / month
       </p>
-      <p className="mt-3 text-sm font-semibold text-white/60">
-        2x 1:1 coaching sessions per month
-      </p>
       <p className="mt-4 text-white/50">
         Cancel anytime. No contracts. No hidden fees.
       </p>
-
-      {/* What's included */}
-      <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left">
-        <li className="flex items-start gap-2 text-sm text-white/60">
-          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-          Two 1:1, 60-min coaching sessions with a pro
-        </li>
-        <li className="flex items-start gap-2 text-sm text-white/60">
-          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-          30-min replay review from SpookyLuke (every 12 weeks, starting month 2)
-        </li>
-        <li className="flex items-start gap-2 text-sm text-white/60">
-          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-          Personalized 30-day training routine
-        </li>
-        <li className="flex items-start gap-2 text-sm text-white/60">
-          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-          Accountability check-ins
-        </li>
-        <li className="flex items-start gap-2 text-sm text-white/60">
-          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-          Full RL Clubhouse membership
-        </li>
-      </ul>
 
       {/* 30-day guarantee */}
       <div className="mx-auto mt-6 max-w-md rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-5 py-3">
