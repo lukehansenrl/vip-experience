@@ -156,14 +156,23 @@ export default function AnnouncePage() {
       <section className="px-6 pb-16 pt-20 text-center md:pt-28">
         <div className="mx-auto max-w-2xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Important Update
+            VIP Update
           </p>
           <h1 className="text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
-            An Update To The VIP Experience
+            Good news: the VIP price is going up&hellip; but not yet.
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg text-white/60">
-            Here's what's changing, why it's changing, and what it means for you.
+            On <strong className="text-white">April 25</strong>, the VIP
+            Experience price for new members increases. Until then, you can lock
+            in the current rate.
           </p>
+          <button
+            type="button"
+            onClick={openBooking}
+            className="mt-8 rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+          >
+            Lock In Your VIP Spot →
+          </button>
         </div>
       </section>
 
@@ -174,11 +183,11 @@ export default function AnnouncePage() {
             Your Words
           </p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            You Told Us Why You're Here
+            You Told Us Why You&apos;re Here
           </h2>
           <p className="mt-4 text-white/50">
-            We ran a poll asking the community their single biggest reason for
-            being part of the Clubhouse. Here's what you said:
+            When we asked the community your single biggest reason for being in
+            the Clubhouse, you said:
           </p>
 
           <div className="mt-8 space-y-3">
@@ -189,8 +198,9 @@ export default function AnnouncePage() {
           </div>
 
           <p className="mt-6 text-sm text-white/40">
-            The VIP Experience was built for exactly this: real coaching,
-            feedback, and routines so you actually get better every month.
+            The VIP Experience exists for exactly this: real coaching, feedback,
+            and routines so you actually get better every month, not just queue
+            ranked and hope.
           </p>
         </div>
       </section>
@@ -199,16 +209,16 @@ export default function AnnouncePage() {
       <section className="border-t border-white/10 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            The Change
+            What&apos;s Changing
           </p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            VIP Is Now $249 / Month For New Members
+            VIP Is Moving To $249 / Month For New Members
           </h2>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <div className="flex-1 rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
               <p className="text-xs font-bold uppercase tracking-wider text-white/40">
-                Previous Price
+                Current Price
               </p>
               <p className="mt-2 text-3xl font-black text-white/30 line-through">
                 $179
@@ -220,13 +230,21 @@ export default function AnnouncePage() {
             </div>
             <div className="flex-1 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 text-center">
               <p className="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">
-                New Price
+                New Price (April 25)
               </p>
               <p className="mt-2 text-3xl font-black text-[var(--accent)]">
                 $249
               </p>
               <p className="mt-1 text-xs text-white/50">/ month</p>
             </div>
+          </div>
+
+          <div className="mt-6 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4">
+            <p className="text-sm text-white/60">
+              <strong className="text-white">Until April 25:</strong> Current
+              VIPs keep their price as long as they stay active. New members who
+              join before the deadline lock in the current rate.
+            </p>
           </div>
         </div>
       </section>
@@ -238,90 +256,72 @@ export default function AnnouncePage() {
             Why
           </p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            Why The Price Went Up
+            Why The Price Is Going Up
           </h2>
 
           <p className="mt-6 leading-relaxed text-white/60">
-            Just do the math on what you actually get every month:
+            VIP is not a role in Discord. It&apos;s real people blocking real
+            hours to help you improve:
           </p>
 
-          {/* Mini value stack */}
-          <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">
-              <span className="text-sm text-white/60">SpookyLuke replay review (30 min)</span>
-              <span className="text-sm font-bold">$125</span>
-            </div>
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">
-              <span className="text-sm text-white/60">1:1 coaching session with a pro (60 min)</span>
-              <span className="text-sm font-bold">$30 - $50</span>
-            </div>
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">
-              <span className="text-sm text-white/60">Training routine + accountability + membership</span>
-              <span className="text-sm font-bold">$100+</span>
-            </div>
-            <div className="flex items-center justify-between px-5 py-4 bg-white/[0.03]">
-              <span className="font-bold text-white/70">Total value per month</span>
-              <span className="font-black">$255 - $275+</span>
-            </div>
-          </div>
+          <ul className="mt-4 space-y-3">
+            <li className="flex items-start gap-3 text-sm text-white/60">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+              A 1:1, 60-minute session with a pro coach
+            </li>
+            <li className="flex items-start gap-3 text-sm text-white/60">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+              A 30-minute replay review from SpookyLuke (his Metafy rate is $125 for this alone)
+            </li>
+            <li className="flex items-start gap-3 text-sm text-white/60">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+              Your coach recording, reviewing, and writing up a custom training plan
+            </li>
+            <li className="flex items-start gap-3 text-sm text-white/60">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+              An accountability guide spending time checking in with you
+            </li>
+            <li className="flex items-start gap-3 text-sm text-white/60">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+              Full Clubhouse membership with 15+ live events monthly
+            </li>
+          </ul>
 
           <p className="mt-6 leading-relaxed text-white/60">
-            At <strong className="text-white">$179</strong>, we were literally
-            losing money on every VIP member. SpookyLuke&apos;s Metafy rate
-            alone for a 30-minute session is $125. Add a full hour with a pro
-            coach on top of that, plus everything else, and the math
-            doesn&apos;t work at $179.
+            As VIP grew, we hit the hard limit:{" "}
+            <strong className="text-white">time.</strong> At the current price,
+            we were stretching those hours thinner and thinner.
+            That&apos;s the opposite of what you joined for.
           </p>
 
           <p className="mt-4 leading-relaxed text-white/60">
-            We&apos;re nearly at{" "}
-            <strong className="text-white">50 members</strong>, sessions run
-            every week, and time is the one thing we can&apos;t scale. To keep
-            giving every player the attention they deserve, we can&apos;t just
-            let unlimited people in.
+            Raising the price for new members lets us:
           </p>
 
-          <p className="mt-4 leading-relaxed text-white/60">
-            At <strong className="text-white">$249</strong>, VIP is still
-            priced below what the individual pieces cost. The difference is now
-            we can actually sustain it.
+          <ul className="mt-4 space-y-3">
+            <li className="flex items-start gap-3 text-sm text-white/60">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
+              Keep sessions thorough instead of rushed
+            </li>
+            <li className="flex items-start gap-3 text-sm text-white/60">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
+              Protect coach time so you&apos;re not waiting weeks for your 1:1
+            </li>
+            <li className="flex items-start gap-3 text-sm text-white/60">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
+              Keep hiring and training great coaches instead of burning them out
+            </li>
+          </ul>
+
+          <p className="mt-6 leading-relaxed text-white/60">
+            The VIP is not the cheapest coaching experience. It&apos;s the most
+            hands-on. The price reflects that so you don&apos;t have to worry
+            about anything but improving.
           </p>
         </div>
       </section>
 
-      {/* ── WHAT WE'RE INVESTING IN ── */}
-      <section className="border-t border-white/10 px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Where It Goes
-          </p>
-          <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            What We're Investing In
-          </h2>
-
-          <p className="mt-6 mb-6 text-white/60">
-            We added more before asking for more. Here is what we are putting
-            the money toward:
-          </p>
-
-          <div className="space-y-4">
-            <InvestCard
-              title="More coaching capacity"
-              description="So sessions and reviews don't bottleneck. You should never have to wait weeks for your 1:1."
-            />
-            <InvestCard
-              title="Tighter experience"
-              description="Keeping the group full of players who actually use the coaching and want to get better."
-            />
-            <InvestCard
-              title="Better events, curriculum, and support"
-              description="More live sessions, better training resources, and a stronger support system for every member."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ── GRANDFATHER CARD ── */}
+      {/* ── EARLY ADOPTER REWARD ── */}
       <section className="border-t border-white/10 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-2xl">
           <div
@@ -336,27 +336,22 @@ export default function AnnouncePage() {
               <Star className="h-5 w-5 fill-[var(--gold)] text-[var(--gold)]" />
               Early Adopter Reward
             </h3>
-            <p className="mt-4 text-white/60">
-              You believed in this early. That matters. Here's how we're
-              honoring it:
-            </p>
 
             <ul className="mt-6 space-y-4">
               <li className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
                 <span>
-                  <strong className="text-white">Current VIPs:</strong> Keep your
-                  existing price as long as you stay active. Nothing changes for
-                  you.
+                  <strong className="text-white">Already VIP?</strong> Your
+                  price stays the same as long as you stay active. Nothing
+                  changes for you.
                 </span>
               </li>
               <li className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
                 <span>
-                  <strong className="text-white">
-                    If you cancel and return later:
-                  </strong>{" "}
-                  You'll rejoin at the current public price ($249 / mo).
+                  <strong className="text-white">Been on the fence?</strong> You
+                  have until <strong className="text-white">April 25</strong> to
+                  join at the current rate and keep it as long as you stay.
                 </span>
               </li>
             </ul>
@@ -368,54 +363,82 @@ export default function AnnouncePage() {
         </div>
       </section>
 
-      {/* ── RANK-UP PROMISE TEASER ── */}
-      <section className="border-t border-white/10 px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-2xl">
-          <div className="rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 md:p-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-              New
-            </p>
-            <h3 className="mt-2 text-xl font-extrabold">
-              Introducing: The Rank-Up Promise
-            </h3>
-            <p className="mt-3 text-sm text-white/60">
-              Achieve a full rank up within 90 days, hold it for a full season
-              across back-to-back seasons, and we'll send you a brand new
-              controller. Our way of backing your improvement and keeping you
-              going.
-            </p>
-            <a
-              href="/"
-              className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--accent)] hover:underline"
-            >
-              See the full details on the VIP page
-              <ChevronRight className="h-4 w-4" />
-            </a>
+      {/* ── THE RANK-UP PROMISE ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            New
+          </p>
+          <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-4xl">
+            The Rank-Up Promise
+          </h2>
+          <p className="mt-4 text-white/50">
+            We can&apos;t play the game for you, but we can stand behind the
+            work we do together.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3 text-left">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--accent)] text-sm font-black text-[var(--accent)]">
+                1
+              </div>
+              <h3 className="mt-4 font-bold">Rank Up</h3>
+              <p className="mt-2 text-sm text-white/50">
+                Achieve a full rank up within 90 days. Plat to Diamond, Diamond
+                to Champ, Champ to GC. A full tier, not just a division.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--accent)] text-sm font-black text-[var(--accent)]">
+                2
+              </div>
+              <h3 className="mt-4 font-bold">Hold It</h3>
+              <p className="mt-2 text-sm text-white/50">
+                Maintain your new rank across two consecutive seasons. Send us
+                proof. No boosting, no shortcuts.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--green)] text-sm font-black text-[var(--green)]">
+                ✓
+              </div>
+              <h3 className="mt-4 font-bold text-[var(--green)]">
+                Get a New Controller
+              </h3>
+              <p className="mt-2 text-sm text-white/50">
+                We verify your rank and ship you a brand new Xbox or PS
+                controller. Because if you put in the work, you deserve it.
+              </p>
+            </div>
           </div>
+
+          <a
+            href="/promise"
+            className="mt-6 inline-block text-xs text-white/30 underline hover:text-white/50 transition"
+          >
+            Full terms and conditions
+          </a>
         </div>
       </section>
 
-      {/* ── WHAT'S NEXT / CTA ── */}
+      {/* ── FINAL CTA ── */}
       <section className="px-6 py-16 text-center md:py-24">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-extrabold tracking-tight md:text-4xl">
             You Still Have Time
           </h2>
           <p className="mx-auto mt-4 max-w-md text-white/50">
-            The new pricing takes effect at the end of the month. If you have
-            been thinking about joining VIP, you still have 14 days to lock in
-            at the current rate.
-          </p>
-          <p className="mx-auto mt-2 max-w-md text-white/50">
-            Book a quick onboarding call and we will walk you through
-            everything.
+            The new pricing takes effect{" "}
+            <strong className="text-white">April 25</strong>. If you want to
+            lock in the current rate, book a call before then and we will get
+            you set up.
           </p>
           <button
             type="button"
             onClick={openBooking}
             className="mt-8 rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
           >
-            Book Your VIP Onboarding Call →
+            Lock In Your VIP Spot →
           </button>
           <p className="mt-4">
             <a
@@ -505,26 +528,3 @@ function PollResult({
   );
 }
 
-function ProofItem({ text }: { text: string }) {
-  return (
-    <li className="flex items-start gap-3 text-sm text-white/60">
-      <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--green)]" />
-      {text}
-    </li>
-  );
-}
-
-function InvestCard({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-      <p className="font-bold">{title}</p>
-      <p className="mt-1 text-sm text-white/50">{description}</p>
-    </div>
-  );
-}
