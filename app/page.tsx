@@ -136,7 +136,7 @@ const TEXT_REVIEWS = [
 const FAQ_ITEMS = [
   {
     q: "What exactly do I get as a VIP member?",
-    a: "Every month: two 1:1 60-minute coaching sessions with a pro, a 30-minute replay review from SpookyLuke, a personalized 30-day training routine, accountability check-ins, and full RL Clubhouse membership with 15+ live events monthly.",
+    a: "Every month: two 1:1 60-minute coaching sessions with a pro, a personalized 30-day training routine, accountability check-ins, and full RL Clubhouse membership with 15+ live events monthly. Starting in month 2, you also get a 30-minute replay review from SpookyLuke every 12 weeks.",
   },
   {
     q: "What rank do I need to be?",
@@ -169,7 +169,7 @@ const VALUE_STACK = [
   {
     item: "Replay Review from SpookyLuke (30 min)",
     value: "$125",
-    note: "SpookyLuke's Metafy rate for a 30-min session is $125",
+    note: "SpookyLuke's Metafy rate is $125. Starts month 2, every 12 weeks",
   },
   {
     item: "Personalized 30-Day Training Routine",
@@ -570,8 +570,8 @@ export default function VIPPage() {
             />
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
-              title="30-Minute Replay Review from SpookyLuke"
-              description={`Get specific timestamps, "do this instead" feedback, and clear corrections you can apply in your next session.`}
+              title="30-Minute Replay Review from SpookyLuke (Every 12 Weeks)"
+              description={`Starting in month 2, you get a personal replay review from SpookyLuke every 12 weeks. Specific timestamps, "do this instead" feedback, and clear corrections you can apply immediately.`}
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
@@ -881,11 +881,11 @@ export default function VIPPage() {
                 </span>
               </div>
               <div className="text-sm text-white/60 mt-4 leading-relaxed">
-                The #1 Rocket League teacher on YouTube. Your replay review
-                comes directly from SpookyLuke every month. His Metafy rate for
-                a 30-minute session is $125. As a VIP member, it is included.
-                Every session gets published to the coaching channel for
-                permanent access.
+                The #1 Rocket League teacher on YouTube. Starting in month 2,
+                you get a personal replay review from SpookyLuke every 12 weeks.
+                His Metafy rate for a 30-minute session is $125. As a VIP
+                member, it is included. Every session gets published to the
+                coaching channel for permanent access.
               </div>
             </div>
           </div>
@@ -1282,7 +1282,7 @@ function PricingCard({ openBooking }: { openBooking: () => void }) {
         </li>
         <li className="flex items-start gap-2 text-sm text-white/60">
           <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-          30-min replay review from SpookyLuke
+          30-min replay review from SpookyLuke (every 12 weeks, starting month 2)
         </li>
         <li className="flex items-start gap-2 text-sm text-white/60">
           <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />

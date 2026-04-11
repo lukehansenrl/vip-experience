@@ -205,7 +205,7 @@ export default function AnnouncePage() {
             </li>
             <li className="flex items-start gap-3 text-sm text-white/60">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-              A 30-minute replay review from SpookyLuke (his Metafy rate is $125 for this alone)
+              A 30-minute replay review from SpookyLuke every 12 weeks starting month 2 (his Metafy rate is $125 for this alone)
             </li>
             <li className="flex items-start gap-3 text-sm text-white/60">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
@@ -278,7 +278,7 @@ export default function AnnouncePage() {
                 Founder &middot; Head Coach &middot; 486K+ YouTube Subs
               </div>
               <div className="text-xs text-white/50 mt-2 leading-relaxed">
-                The #1 Rocket League teacher on YouTube. Your replay review comes directly from SpookyLuke every month.
+                The #1 Rocket League teacher on YouTube. Your replay review comes directly from SpookyLuke every 12 weeks, starting month 2.
               </div>
             </div>
           </div>
