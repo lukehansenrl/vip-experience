@@ -1271,17 +1271,6 @@ function PricingCard({ openBooking }: { openBooking: () => void }) {
         Cancel anytime. No contracts. No hidden fees.
       </p>
 
-      {/* 30-day guarantee */}
-      <div className="mx-auto mt-6 max-w-md rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-5 py-3">
-        <p className="text-sm font-semibold text-[var(--green)]">
-          30-Day Money-Back Guarantee
-        </p>
-        <p className="mt-1 text-xs text-white/50">
-          If VIP doesn&apos;t deliver everything we promised in your first 30
-          days, we&apos;ll give you your money back. No questions asked.
-        </p>
-      </div>
-
       <button
         type="button"
         onClick={openBooking}
@@ -1294,6 +1283,17 @@ function PricingCard({ openBooking }: { openBooking: () => void }) {
         Quick call to walk through VIP, answer your questions, and get you
         started.
       </p>
+
+      {/* 30-day guarantee */}
+      <div className="mx-auto mt-6 max-w-md rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-5 py-3">
+        <p className="text-sm font-semibold text-[var(--green)]">
+          30-Day Money-Back Guarantee
+        </p>
+        <p className="mt-1 text-xs text-white/50">
+          If VIP doesn&apos;t deliver everything we promised in your first 30
+          days, we&apos;ll give you your money back. No questions asked.
+        </p>
+      </div>
     </div>
   );
 }
