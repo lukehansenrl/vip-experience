@@ -518,47 +518,6 @@ export default function VIPPage() {
         </div>
       </section>
 
-      {/* ── GREEN BANNER ── */}
-      <section className="px-6 py-10">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-white/10">
-          <img
-            src="/graphics/hero-banner-green.png"
-            alt="RL Clubhouse community events and coaching"
-            className="w-full"
-          />
-        </div>
-      </section>
-
-      {/* ── COACHES ── */}
-      <section className="border-t border-white/10 px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-5xl">
-          <div className="overflow-hidden rounded-2xl border border-white/10">
-            <img
-              src="/graphics/coaches-banner.png"
-              alt="Our Coaches: Freakii, SpookLuke, Shock, Torment"
-              className="w-full"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ── SPOOKYLUKE STATS ── */}
-      <section className="border-t border-white/10 px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-5xl">
-          <div className="overflow-hidden rounded-2xl border border-white/10">
-            <img
-              src="/graphics/spookyluke-stats.png"
-              alt="SpookyLuke: 486K Subs, 216M Views, 60K Discord Members, GC3 Peak Rank"
-              className="w-full"
-            />
-          </div>
-          <p className="mt-4 text-center text-sm text-white/40">
-            Your replay review comes directly from SpookyLuke. His Metafy rate
-            for a 30-minute session is $125. As a VIP member, it is included
-            every month.
-          </p>
-        </div>
-      </section>
 
       {/* ── FEATURE CAROUSEL ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-28">
@@ -844,6 +803,74 @@ export default function VIPPage() {
             <WhoItem text="18+ Rocket League players who want a clear, efficient practice plan" />
             <WhoItem text="Platinum to Grand Champ players who are coachable and want better mechanics, game sense, and consistency" />
           </ul>
+        </div>
+      </section>
+
+      {/* ── MEET THE TEAM ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Meet The Team
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            The People Behind Your Improvement
+          </h2>
+
+          {/* SpookyLuke - image left, text right */}
+          <div className="mt-12 flex flex-col gap-8 md:flex-row md:items-center">
+            <div className="md:w-1/2 overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src="/graphics/spookyluke-stats.png"
+                alt="SpookyLuke: 486K Subs, 216M Views, 60K Discord Members, GC3 Peak Rank"
+                className="w-full"
+              />
+            </div>
+            <div className="md:w-1/2">
+              <h3 className="text-2xl font-extrabold">SpookyLuke</h3>
+              <p className="mt-1 text-sm font-semibold text-[var(--accent)]">
+                Founder &middot; Head Coach &middot; Content Creator
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-white/60">
+                The #1 Rocket League teacher on YouTube with 486K+ subscribers
+                and 216M+ views. GC3 peak rank. Your replay review comes
+                directly from SpookyLuke every month. His Metafy rate for a
+                30-minute session is $125. As a VIP member, it is included.
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-white/60">
+                Every coaching VOD gets published to the SpookyLuke Coaching
+                channel for permanent access so you can rewatch your session
+                anytime.
+              </p>
+            </div>
+          </div>
+
+          {/* Coaches - text left, image right */}
+          <div className="mt-16 flex flex-col-reverse gap-8 md:flex-row md:items-center">
+            <div className="md:w-1/2">
+              <h3 className="text-2xl font-extrabold">The Coaching Staff</h3>
+              <p className="mt-1 text-sm font-semibold text-[var(--accent)]">
+                Freakii &middot; Shock &middot; Torment
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-white/60">
+                Your 1:1 coaching sessions are with RLCS-level pros. Torment is
+                a Season 7 World Champion. Freakii is a former Renault Vitality
+                pro and current head coach at PWR. Shock is a former Soniqs and
+                Ghost Gaming pro and one of the most decorated NA players of his
+                era.
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-white/60">
+                Each coach has their own style. You get matched to the coach
+                who fits your goals, rank, and the areas you need to improve.
+              </p>
+            </div>
+            <div className="md:w-1/2 overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src="/graphics/coaches-banner.png"
+                alt="Our Coaches: Freakii, SpookLuke, Shock, Torment"
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
