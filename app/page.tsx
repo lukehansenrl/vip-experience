@@ -28,7 +28,7 @@ const VIDEO_TESTIMONIALS = [
     quote:
       "Went from averaging 1020mmr to 1136 in 2 weeks. The 1on1 sessions helped really well with that. Mods and the community are super friendly and helpful.",
     vodTitle: "1:1 Coaching Session with Torment",
-    vodUrl: "https://youtu.be/oILaveed-9g",
+    vodUrl: "https://youtu.be/S-4A0eBTnLY",
     coachNotes: "Air dribbles, flip resets, 2nd man positioning",
     initials: "XE",
     color: "bg-orange-500",
@@ -65,6 +65,17 @@ const VIDEO_TESTIMONIALS = [
     coachNotes: "50/50 control, 2nd man patience, decision-making",
     initials: "DR",
     color: "bg-red-500",
+  },
+  {
+    name: "deadshot8885",
+    rank: "Champ 1 → Champ 3 div 3",
+    quote:
+      "I joined when I was C1. From the reviews from SpookyLuke and the training packs from Torment, I managed to improve a lot. I have reached C3 div 3, almost GC. Really worth all the time and money.",
+    vodTitle: "SpookyLuke Coaching Champ 1",
+    vodUrl: "https://youtu.be/W_9V9k_k4Cc",
+    coachNotes: "Replay reviews, training packs, consistency",
+    initials: "DS",
+    color: "bg-amber-500",
   },
   {
     name: "Crayons",
@@ -111,14 +122,6 @@ const TEXT_REVIEWS = [
     text: "Absolutely amazing. I have improved so much in a month span. I truly recommend this to all who need the help.",
     daysAfter: "13 days after purchase",
     initials: "RO",
-  },
-  {
-    name: "deadshot8885",
-    handle: "@deadshot8885",
-    stars: 5,
-    text: "I joined when I was C1. From the reviews from SpookyLuke and the training packs from Torment, I managed to improve a lot. I have reached C3 div 3, almost GC. Really worth all the time and money.",
-    daysAfter: "1 month after purchase",
-    initials: "DS",
   },
   {
     name: "Swiftdriver010",
