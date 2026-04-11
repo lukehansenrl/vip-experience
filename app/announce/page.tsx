@@ -242,26 +242,49 @@ export default function AnnouncePage() {
           </h2>
 
           <p className="mt-6 leading-relaxed text-white/60">
-            When we launched VIP at{" "}
-            <strong className="text-white">$179 / month</strong>, we
-            intentionally underpriced it. We wanted proof that it actually helped
-            you <strong className="text-white">get better at Rocket League</strong>,
-            not just look good on a sales page.
+            Just do the math on what you actually get every month:
           </p>
 
-          <p className="mt-5 mb-4 font-semibold">That proof is here:</p>
-          <ul className="space-y-3">
-            <ProofItem text="Hundreds of players reporting better mechanics, decision-making, and confidence" />
-            <ProofItem text="Calendars filling with 1:1 sessions and replay reviews" />
-            <ProofItem text="Routines that people actually follow week after week" />
-          </ul>
+          {/* Mini value stack */}
+          <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+            <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">
+              <span className="text-sm text-white/60">SpookyLuke replay review (30 min)</span>
+              <span className="text-sm font-bold">$125</span>
+            </div>
+            <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">
+              <span className="text-sm text-white/60">1:1 coaching session with a pro (60 min)</span>
+              <span className="text-sm font-bold">$30 - $50</span>
+            </div>
+            <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">
+              <span className="text-sm text-white/60">Training routine + accountability + membership</span>
+              <span className="text-sm font-bold">$100+</span>
+            </div>
+            <div className="flex items-center justify-between px-5 py-4 bg-white/[0.03]">
+              <span className="font-bold text-white/70">Total value per month</span>
+              <span className="font-black">$255 - $275+</span>
+            </div>
+          </div>
 
-          <p className="mt-8 leading-relaxed text-white/60">
-            We're nearly at{" "}
-            <strong className="text-white">50 members</strong>, sessions are
-            running every week, and time is the one thing we can't scale. To
-            keep giving every student the attention they deserve, we need to be
+          <p className="mt-6 leading-relaxed text-white/60">
+            At <strong className="text-white">$179</strong>, we were literally
+            losing money on every VIP member. SpookyLuke&apos;s Metafy rate
+            alone for a 30-minute session is $125. Add a full hour with a pro
+            coach on top of that, plus everything else, and the math
+            doesn&apos;t work at $179.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-white/60">
+            We&apos;re nearly at{" "}
+            <strong className="text-white">50 members</strong>, sessions run
+            every week, and time is the one thing we can&apos;t scale. To keep
+            giving every student the attention they deserve, we need to be
             intentional about growth.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-white/60">
+            At <strong className="text-white">$249</strong>, VIP is still
+            priced below what the individual pieces cost. The difference is now
+            we can actually sustain it.
           </p>
         </div>
       </section>
