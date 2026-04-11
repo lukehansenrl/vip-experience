@@ -83,7 +83,7 @@ export default function AnnouncePage() {
             VIP Update
           </p>
           <h1 className="text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
-            Good news: the VIP price is going up&hellip; but not yet.
+            The VIP Price Is Going Up (But Not Yet)
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg text-white/60">
             On <strong className="text-white">Wednesday, April 22</strong>, the VIP
