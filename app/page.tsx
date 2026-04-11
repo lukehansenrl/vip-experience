@@ -986,7 +986,7 @@ export default function VIPPage() {
               <div className="text-xs text-white/50 mt-3 leading-relaxed">
                 Former Soniqs and Ghost Gaming pro. RLCS Season 9 NA Regular
                 Season MVP. One of the most decorated NA players of his era.
-                Known for controlled aggression and smart reads.
+                Known for controlled aggression, disruption, and high IQ plays.
               </div>
             </div>
           </div>
