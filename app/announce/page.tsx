@@ -223,7 +223,7 @@ export default function AnnouncePage() {
 
           <p className="mt-6 leading-relaxed text-white/60">
             As VIP grew, we hit the hard limit:{" "}
-            <strong className="text-white">time.</strong> At the current price,
+            <strong className="text-white">time.</strong>{" "}At the current price,
             we were stretching those hours thinner and thinner.
             That&apos;s the opposite of what you joined for.
           </p>
