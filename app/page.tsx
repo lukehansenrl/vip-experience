@@ -410,7 +410,7 @@ export default function VIPPage() {
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/60 md:text-xl">
             Through 1:1 pro coaching, custom training routines, and real
             accountability so you actually get better every month, not just
-            queue more ranked games and hope.
+            queue more ranked games and hope. 😅
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
