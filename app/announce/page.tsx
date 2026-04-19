@@ -105,12 +105,22 @@ export default function AnnouncePage() {
             </p>
           </div>
 
-          <a
-            href="/"
-            className="mt-8 inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
-          >
-            Learn More About VIP →
-          </a>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="https://calendly.com/rlclubhouse/vip-onboarding"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+            >
+              Book a Call →
+            </a>
+            <a
+              href="/"
+              className="inline-block rounded-full border border-white/20 bg-transparent px-10 py-4 text-lg font-bold text-white/80 transition hover:border-white/40 hover:text-white"
+            >
+              Learn More About VIP →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -490,12 +500,22 @@ export default function AnnouncePage() {
             New pricing takes effect{" "}
             <strong className="text-white">Sunday, April 26</strong>. If you want to lock in $179/month while it&apos;s still available, book a call before then and we&apos;ll get you set up.
           </p>
-          <a
-            href="/"
-            className="mt-8 inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
-          >
-            Learn More About VIP →
-          </a>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="https://calendly.com/rlclubhouse/vip-onboarding"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+            >
+              Book a Call →
+            </a>
+            <a
+              href="/"
+              className="inline-block rounded-full border border-white/20 bg-transparent px-10 py-4 text-lg font-bold text-white/80 transition hover:border-white/40 hover:text-white"
+            >
+              Learn More About VIP →
+            </a>
+          </div>
           <p className="mt-6 text-sm text-white/30">
             Questions?{" "}
             <a
