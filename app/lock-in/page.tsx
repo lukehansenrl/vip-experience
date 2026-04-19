@@ -115,7 +115,7 @@ export default function LockInPage() {
               <p className="text-xs font-bold uppercase tracking-wider text-white/40">
                 6 Months
               </p>
-              <p className="mt-4 text-5xl font-black">$895</p>
+              <p className="mt-4 text-5xl font-black">$960</p>
               <p className="mt-1 text-xs text-white/40">one-time payment</p>
               <ul className="mt-6 space-y-3">
                 <li className="flex items-start gap-2 text-sm text-white/70">
@@ -124,7 +124,7 @@ export default function LockInPage() {
                 </li>
                 <li className="flex items-start gap-2 text-sm text-white/70">
                   <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  Save $179 — that&apos;s one month free
+                  Save $114 vs paying monthly
                 </li>
                 <li className="flex items-start gap-2 text-sm text-white/70">
                   <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
@@ -132,7 +132,9 @@ export default function LockInPage() {
                 </li>
               </ul>
               <a
-                href="https://buy.stripe.com/REPLACE_6MO_LINK"
+                href="https://whop.com/c/rlc-pro-vip-membership/6-month"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 block w-full rounded-full border border-[var(--accent)]/40 bg-transparent px-6 py-3 text-center text-sm font-bold text-[var(--accent)] transition hover:bg-[var(--accent)]/10"
               >
                 Prepay 6 Months →
@@ -164,7 +166,9 @@ export default function LockInPage() {
                 </li>
               </ul>
               <a
-                href="https://buy.stripe.com/REPLACE_12MO_LINK"
+                href="https://whop.com/c/rlc-pro-vip-membership/12-month"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 block w-full rounded-full bg-[var(--accent)] px-6 py-3 text-center text-sm font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
               >
                 Prepay 12 Months →

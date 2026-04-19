@@ -1,11 +1,81 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Star, ChevronRight } from "lucide-react";
+
+const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
+
+/* ── CALENDLY MODAL ── */
+
+function CalendlyModal({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [open, onClose]);
+
+  if (!open) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-3xl max-h-[92vh] overflow-hidden rounded-2xl border border-[var(--accent)]/30 bg-[#0b0e17] shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+              VIP Onboarding Call
+            </p>
+            <p className="text-sm text-white/50">
+              Walk through the VIP Experience and get your questions answered
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="h-9 w-9 rounded-full border border-white/15 text-white/70 hover:bg-white/10 hover:text-white transition text-lg leading-none"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </div>
+        <div className="h-[80vh] max-h-[720px] overflow-hidden bg-white">
+          <iframe
+            src={CALENDLY_URL}
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            title="Book a VIP onboarding call"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /* ── ANNOUNCE PAGE ── */
 
 export default function AnnouncePage() {
+  const [calendlyOpen, setCalendlyOpen] = useState(false);
+  const openBooking = useCallback(() => setCalendlyOpen(true), []);
+
   // Scroll-reveal animation
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -92,28 +162,27 @@ export default function AnnouncePage() {
           <div className="mx-auto mt-8 max-w-xs">
             <div className="mb-2 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
               <span className="text-white/60">Spots Filled</span>
-              <span className="text-[var(--accent)]">49 / 60</span>
+              <span className="text-[var(--accent)]">48 / 60</span>
             </div>
             <div className="h-2 overflow-hidden rounded-full bg-white/10">
               <div
                 className="h-full rounded-full bg-[var(--accent)]"
-                style={{ width: "81.67%" }}
+                style={{ width: "80%" }}
               />
             </div>
             <p className="mt-2 text-xs text-white/40">
-              11 spots left at the current rate
+              12 spots left at the current rate
             </p>
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href="https://calendly.com/rlclubhouse/vip-onboarding"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={openBooking}
               className="inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
             >
               Book a Call →
-            </a>
+            </button>
             <a
               href="/"
               className="inline-block rounded-full border border-white/20 bg-transparent px-10 py-4 text-lg font-bold text-white/80 transition hover:border-white/40 hover:text-white"
@@ -203,7 +272,7 @@ export default function AnnouncePage() {
               <strong className="text-white">Current VIPs:</strong> Your $179 rate is locked for as long as your membership stays active and continuous. Nothing changes for you — this is your grandfather rate.
             </p>
             <p className="text-sm text-white/60">
-              <strong className="text-white">Not a VIP yet?</strong> Join before Sunday, April 26 to lock in $179/month for as long as your membership stays active and continuous. Only 11 spots left at this rate.
+              <strong className="text-white">Not a VIP yet?</strong> Join before Sunday, April 26 to lock in $179/month for as long as your membership stays active and continuous. Only 12 spots left at this rate.
             </p>
           </div>
         </div>
@@ -227,7 +296,7 @@ export default function AnnouncePage() {
           <ul className="mt-4 space-y-3">
             <li className="flex items-start gap-3 text-sm text-white/60">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-              Two 1:1, 60-minute sessions with a pro coach every month
+              A 1:1, 60-minute session with a pro coach every month
             </li>
             <li className="flex items-start gap-3 text-sm text-white/60">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
@@ -377,7 +446,7 @@ export default function AnnouncePage() {
               <li className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
                 <span>
-                  <strong className="text-white">Been on the fence?</strong> With 11 spots left at the current rate, you have until <strong className="text-white">Sunday, April 26</strong> to join at $179/month and keep it for as long as your membership stays active and continuous.
+                  <strong className="text-white">Been on the fence?</strong> With 12 spots left at the current rate, you have until <strong className="text-white">Sunday, April 26</strong> to join at $179/month and keep it for as long as your membership stays active and continuous.
                 </span>
               </li>
             </ul>
@@ -494,21 +563,20 @@ export default function AnnouncePage() {
       <section className="px-6 py-16 text-center md:py-24">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-extrabold tracking-tight md:text-4xl">
-            11 Spots Left At The Current Rate
+            12 Spots Left At The Current Rate
           </h2>
           <p className="mx-auto mt-4 max-w-md text-white/50">
             New pricing takes effect{" "}
             <strong className="text-white">Sunday, April 26</strong>. If you want to lock in $179/month while it&apos;s still available, book a call before then and we&apos;ll get you set up.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href="https://calendly.com/rlclubhouse/vip-onboarding"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={openBooking}
               className="inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
             >
               Book a Call →
-            </a>
+            </button>
             <a
               href="/"
               className="inline-block rounded-full border border-white/20 bg-transparent px-10 py-4 text-lg font-bold text-white/80 transition hover:border-white/40 hover:text-white"
@@ -535,6 +603,12 @@ export default function AnnouncePage() {
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/30">
         &copy; {new Date().getFullYear()} RL Clubhouse. All rights reserved.
       </footer>
+
+      {/* ── CALENDLY MODAL ── */}
+      <CalendlyModal
+        open={calendlyOpen}
+        onClose={() => setCalendlyOpen(false)}
+      />
     </div>
   );
 }
