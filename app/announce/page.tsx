@@ -146,20 +146,36 @@ export default function AnnouncePage() {
         </div>
       </nav>
 
-      {/* ── HERO (centered, text + CTA + video as hero visual) ── */}
-      <section className="px-6 pb-16 pt-16 text-center md:pt-24">
+      {/* ── HERO (centered, tight - video slotted above fold) ── */}
+      <section className="px-6 pb-12 pt-10 text-center md:pt-14">
         <div className="mx-auto max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             VIP Update
           </p>
-          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
+          <h1 className="mt-3 text-2xl font-extrabold leading-tight tracking-tight md:text-4xl">
             VIP Is Nearly Sold Out. Price Goes Up In 7 Days.
           </h1>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-white/60">
+          <p className="mx-auto mt-4 max-w-lg text-base text-white/60 md:text-lg">
             12 spots open at the current <strong className="text-white">$179</strong> rate until <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong>. After that it&apos;s $279/month.
           </p>
 
-          <div className="mx-auto mt-8 max-w-xs">
+          {/* Video - in the hero, visible in the fold */}
+          <div className="mx-auto mt-6 flex max-w-[240px] justify-center">
+            <div className="w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
+              <video
+                className="block w-full"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                preload="metadata"
+                src="/video/luke-vip-intro.mp4"
+              />
+            </div>
+          </div>
+
+          <div className="mx-auto mt-6 max-w-xs">
             <div className="mb-2 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
               <span className="text-white/60">Spots Filled</span>
               <span className="text-[var(--accent)]">48 / 60</span>
@@ -175,7 +191,7 @@ export default function AnnouncePage() {
             </p>
           </div>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <button
               type="button"
               onClick={openBooking}
@@ -189,22 +205,6 @@ export default function AnnouncePage() {
             >
               Learn More About VIP →
             </a>
-          </div>
-        </div>
-
-        {/* Hero video — centered below like a classic hero image */}
-        <div className="mx-auto mt-12 flex max-w-[360px] justify-center md:mt-16">
-          <div className="w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
-            <video
-              className="block w-full"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              preload="metadata"
-              src="/video/luke-vip-intro.mp4"
-            />
           </div>
         </div>
       </section>
