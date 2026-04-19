@@ -401,56 +401,51 @@ export default function VIPPage() {
         onClose={() => setCalendlyOpen(false)}
       />
 
-      {/* ── HERO (side-by-side: text + video) ── */}
-      <section className="relative px-6 pb-20 pt-20 md:pb-28 md:pt-32">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-14">
-            {/* Video (mobile: top; desktop: right) */}
-            <div className="order-1 w-full max-w-[240px] flex-shrink-0 md:order-2 md:max-w-[340px]">
-              <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
-                <video
-                  className="block w-full"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls
-                  preload="metadata"
-                  src="/video/luke-vip-intro.mp4"
-                />
-              </div>
-            </div>
+      {/* ── HERO (centered with video as hero visual below) ── */}
+      <section className="relative px-6 pb-20 pt-20 text-center md:pb-28 md:pt-28">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            The RL Clubhouse VIP Experience
+          </p>
+          <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
+            Improve Your Overall Rocket League Skill Faster.
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-lg text-white/60 md:text-xl">
+            Through 1:1 pro coaching, custom training routines, and real
+            accountability so you actually get better every month, not just
+            queue more ranked games and hope. 😅
+          </p>
 
-            {/* Text + CTA (mobile: bottom; desktop: left) */}
-            <div className="order-2 w-full text-center md:order-1 md:flex-1 md:max-w-[620px] md:text-left">
-              <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-                The RL Clubhouse VIP Experience
-              </p>
-              <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
-                Improve Your Overall Rocket League Skill Faster.
-              </h1>
-              <p className="mt-6 text-lg text-white/60 md:text-xl">
-                Through 1:1 pro coaching, custom training routines, and real
-                accountability so you actually get better every month, not just
-                queue more ranked games and hope. 😅
-              </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <button
+              type="button"
+              onClick={openBooking}
+              className="rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+            >
+              Book a Call <ChevronRight className="ml-1 inline h-5 w-5" />
+            </button>
+            <a
+              href="#includes"
+              className="rounded-full border border-white/20 px-8 py-4 text-lg font-semibold text-white/70 transition hover:border-white/40 hover:text-white"
+            >
+              See What You Get ↓
+            </a>
+          </div>
+        </div>
 
-              <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
-                <button
-                  type="button"
-                  onClick={openBooking}
-                  className="rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
-                >
-                  Book a Call <ChevronRight className="ml-1 inline h-5 w-5" />
-                </button>
-                <a
-                  href="#includes"
-                  className="rounded-full border border-white/20 px-8 py-4 text-lg font-semibold text-white/70 transition hover:border-white/40 hover:text-white"
-                >
-                  See What You Get ↓
-                </a>
-              </div>
-            </div>
+        {/* Hero video — centered below as the hero visual */}
+        <div className="mx-auto mt-14 flex max-w-[380px] justify-center md:mt-16">
+          <div className="w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
+            <video
+              className="block w-full"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              preload="metadata"
+              src="/video/luke-vip-intro.mp4"
+            />
           </div>
         </div>
       </section>

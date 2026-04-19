@@ -70,40 +70,35 @@ export default function LockInPage() {
         </div>
       </nav>
 
-      {/* ── HERO (side-by-side: text + video) ── */}
-      <section className="px-6 pb-12 pt-16 md:pt-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-12">
-            {/* Video (mobile: top; desktop: right) */}
-            <div className="order-1 w-full max-w-[240px] flex-shrink-0 md:order-2 md:max-w-[320px]">
-              <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
-                <video
-                  className="block w-full"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls
-                  preload="metadata"
-                  src="/video/luke-lockin-intro.mp4"
-                />
-              </div>
-            </div>
+      {/* ── HERO (centered with video below as hero visual) ── */}
+      <section className="px-6 pb-12 pt-16 text-center md:pt-24">
+        <div className="mx-auto max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+            Just For Current VIPs
+          </p>
+          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
+            Your Rate Is Locked.
+            <br />
+            Here&apos;s Something Extra.
+          </h1>
+          <p className="mx-auto mt-5 max-w-lg text-lg text-white/60">
+            Your $179 rate is safe no matter what. This page is about something I haven&apos;t offered coaching students in 5 years.
+          </p>
+        </div>
 
-            {/* Text (mobile: bottom; desktop: left) */}
-            <div className="order-2 w-full text-center md:order-1 md:flex-1 md:max-w-[560px] md:text-left">
-              <p className="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
-                Just For Current VIPs
-              </p>
-              <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
-                Your Rate Is Locked.
-                <br />
-                Here&apos;s Something Extra.
-              </h1>
-              <p className="mt-5 text-lg text-white/60">
-                Your $179 rate is safe no matter what. This page is about something I haven&apos;t offered coaching students in 5 years.
-              </p>
-            </div>
+        {/* Hero video */}
+        <div className="mx-auto mt-10 flex max-w-[360px] justify-center md:mt-14">
+          <div className="w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
+            <video
+              className="block w-full"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              preload="metadata"
+              src="/video/luke-lockin-intro.mp4"
+            />
           </div>
         </div>
       </section>
