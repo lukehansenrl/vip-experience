@@ -1,0 +1,154 @@
+[Script Info]
+Title: Auto captions
+ScriptType: v4.00+
+PlayResX: 720
+PlayResY: 1280
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial Black,72,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,5,2,2,40,40,300,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.74,Default,,0,0,0,,QUICK ONE. EVERYONE
+Dialogue: 0,0:00:01.74,0:00:02.92,Default,,0,0,0,,WHO HASN'T SEEN
+Dialogue: 0,0:00:02.92,0:00:03.56,Default,,0,0,0,,JUST DROPPED AN
+Dialogue: 0,0:00:03.56,0:00:04.90,Default,,0,0,0,,ANNOUNCEMENT. THE PRICE
+Dialogue: 0,0:00:04.90,0:00:05.46,Default,,0,0,0,,OF THE VIP
+Dialogue: 0,0:00:05.46,0:00:07.08,Default,,0,0,0,,EXPERIENCE IS GOING
+Dialogue: 0,0:00:07.08,0:00:08.98,Default,,0,0,0,,UP NEXT SUNDAY.
+Dialogue: 0,0:00:09.34,0:00:09.76,Default,,0,0,0,,FOR THOSE YOU
+Dialogue: 0,0:00:09.76,0:00:11.18,Default,,0,0,0,,DIDN'T SEE, THE
+Dialogue: 0,0:00:11.18,0:00:12.04,Default,,0,0,0,,VIPS NEARLY SOLD
+Dialogue: 0,0:00:12.04,0:00:12.90,Default,,0,0,0,,OUT. WE'RE AT
+Dialogue: 0,0:00:12.90,0:00:14.14,Default,,0,0,0,,ALMOST 50 OUT
+Dialogue: 0,0:00:14.14,0:00:14.92,Default,,0,0,0,,OF 60 MEMBERS.
+Dialogue: 0,0:00:15.56,0:00:16.18,Default,,0,0,0,,AND SO NEXT
+Dialogue: 0,0:00:16.18,0:00:16.92,Default,,0,0,0,,SUNDAY, NOT THIS
+Dialogue: 0,0:00:16.92,0:00:18.14,Default,,0,0,0,,ONE, THE PRICE
+Dialogue: 0,0:00:18.14,0:00:18.56,Default,,0,0,0,,IS GOING TO
+Dialogue: 0,0:00:18.56,0:00:20.38,Default,,0,0,0,,BE INCREASING. AND
+Dialogue: 0,0:00:20.38,0:00:21.42,Default,,0,0,0,,DON'T WORRY, LIKE
+Dialogue: 0,0:00:21.42,0:00:22.22,Default,,0,0,0,,IF YOU'RE CURRENTLY
+Dialogue: 0,0:00:22.22,0:00:23.12,Default,,0,0,0,,A VIP, YOUR
+Dialogue: 0,0:00:23.12,0:00:23.96,Default,,0,0,0,,GRANDFATHER, DAN, AT
+Dialogue: 0,0:00:23.96,0:00:24.44,Default,,0,0,0,,THE PRICE YOU'RE
+Dialogue: 0,0:00:24.44,0:00:25.56,Default,,0,0,0,,AT, LIKE WE'RE
+Dialogue: 0,0:00:25.56,0:00:26.04,Default,,0,0,0,,NOT, YOU KNOW,
+Dialogue: 0,0:00:26.04,0:00:26.88,Default,,0,0,0,,CHANGING THE PRICE
+Dialogue: 0,0:00:26.88,0:00:27.42,Default,,0,0,0,,FOR ANYBODY WHO'S
+Dialogue: 0,0:00:27.42,0:00:27.98,Default,,0,0,0,,THE CURRENT MEMBER,
+Dialogue: 0,0:00:27.98,0:00:28.44,Default,,0,0,0,,BUT IT'S GOING
+Dialogue: 0,0:00:28.44,0:00:29.18,Default,,0,0,0,,UP FOR NEW
+Dialogue: 0,0:00:29.18,0:00:30.76,Default,,0,0,0,,STUDENTS. AND I
+Dialogue: 0,0:00:30.76,0:00:31.20,Default,,0,0,0,,WANTED TO GIVE
+Dialogue: 0,0:00:31.20,0:00:31.54,Default,,0,0,0,,YOU GUYS THE
+Dialogue: 0,0:00:31.54,0:00:32.62,Default,,0,0,0,,OPPORTUNITY BEFORE THAT
+Dialogue: 0,0:00:32.62,0:00:33.24,Default,,0,0,0,,PRICE CHANGE AND
+Dialogue: 0,0:00:33.24,0:00:33.82,Default,,0,0,0,,BEFORE WE SELL
+Dialogue: 0,0:00:33.82,0:00:35.58,Default,,0,0,0,,OUT, OBVIOUSLY TO
+Dialogue: 0,0:00:35.58,0:00:36.52,Default,,0,0,0,,GET IN FOR
+Dialogue: 0,0:00:36.52,0:00:37.00,Default,,0,0,0,,THE NEXT SEVEN
+Dialogue: 0,0:00:37.00,0:00:37.54,Default,,0,0,0,,DAYS IF YOU'RE
+Dialogue: 0,0:00:37.54,0:00:38.36,Default,,0,0,0,,INTERESTED AT THE
+Dialogue: 0,0:00:38.36,0:00:39.50,Default,,0,0,0,,CURRENT PRICE. REGARDLESS,
+Dialogue: 0,0:00:39.78,0:00:40.24,Default,,0,0,0,,IF YOU'RE CURRENTLY
+Dialogue: 0,0:00:40.24,0:00:41.18,Default,,0,0,0,,ON VIP, YOUR
+Dialogue: 0,0:00:41.18,0:00:41.68,Default,,0,0,0,,PRICE IS GOING
+Dialogue: 0,0:00:41.68,0:00:42.04,Default,,0,0,0,,TO STAY THE
+Dialogue: 0,0:00:42.04,0:00:42.74,Default,,0,0,0,,SAME. YOU'RE LOCKED
+Dialogue: 0,0:00:42.74,0:00:43.22,Default,,0,0,0,,IN AS LONG
+Dialogue: 0,0:00:43.22,0:00:43.60,Default,,0,0,0,,AS YOU CONTINUE
+Dialogue: 0,0:00:43.60,0:00:44.38,Default,,0,0,0,,TO STAY ACTIVE
+Dialogue: 0,0:00:44.38,0:00:45.38,Default,,0,0,0,,AND CONTINUOUS WITH
+Dialogue: 0,0:00:45.38,0:00:47.12,Default,,0,0,0,,YOUR MEMBERSHIP. BUT
+Dialogue: 0,0:00:47.12,0:00:47.38,Default,,0,0,0,,I JUST WANT
+Dialogue: 0,0:00:47.38,0:00:47.68,Default,,0,0,0,,TO MAKE THIS
+Dialogue: 0,0:00:47.68,0:00:48.44,Default,,0,0,0,,QUICK LIKE ANNOUNCEMENT
+Dialogue: 0,0:00:48.44,0:00:48.96,Default,,0,0,0,,IN CASE YOU
+Dialogue: 0,0:00:48.96,0:00:49.42,Default,,0,0,0,,ALL, YOU KNOW,
+Dialogue: 0,0:00:49.48,0:00:50.00,Default,,0,0,0,,DIDN'T SEE TO
+Dialogue: 0,0:00:50.00,0:00:50.30,Default,,0,0,0,,HAVE ON THE
+Dialogue: 0,0:00:50.30,0:00:51.22,Default,,0,0,0,,PAGE. IF YOU
+Dialogue: 0,0:00:51.22,0:00:51.84,Default,,0,0,0,,WANT MORE DETAILS,
+Dialogue: 0,0:00:52.08,0:00:52.76,Default,,0,0,0,,WE'LL EXPLAIN, YOU
+Dialogue: 0,0:00:52.76,0:00:53.30,Default,,0,0,0,,KNOW, WHY THE
+Dialogue: 0,0:00:53.30,0:00:53.82,Default,,0,0,0,,PRICE IS GOING
+Dialogue: 0,0:00:53.82,0:00:54.68,Default,,0,0,0,,UP AND WHEN
+Dialogue: 0,0:00:54.68,0:00:55.32,Default,,0,0,0,,EXACTLY IT'S GOING
+Dialogue: 0,0:00:55.32,0:00:56.26,Default,,0,0,0,,UP BELOW AND
+Dialogue: 0,0:00:56.26,0:00:56.72,Default,,0,0,0,,ALL THE REASONS
+Dialogue: 0,0:00:56.72,0:00:58.36,Default,,0,0,0,,FOR IT. THERE'S
+Dialogue: 0,0:00:58.36,0:00:59.02,Default,,0,0,0,,SOME DETAILS IN
+Dialogue: 0,0:00:59.02,0:00:59.56,Default,,0,0,0,,THERE ABOUT MY
+Dialogue: 0,0:00:59.56,0:01:00.42,Default,,0,0,0,,COACHING, WHY WE'RE
+Dialogue: 0,0:01:00.42,0:01:01.70,Default,,0,0,0,,DOING THIS, WHAT
+Dialogue: 0,0:01:01.70,0:01:02.52,Default,,0,0,0,,THIS CHANGES FOR
+Dialogue: 0,0:01:02.52,0:01:03.56,Default,,0,0,0,,THE FUTURE. IT'S
+Dialogue: 0,0:01:03.56,0:01:05.06,Default,,0,0,0,,REALLY EXCITING THAT
+Dialogue: 0,0:01:05.06,0:01:05.70,Default,,0,0,0,,WE ARE SOLD
+Dialogue: 0,0:01:05.70,0:01:06.10,Default,,0,0,0,,OUT, THAT WE
+Dialogue: 0,0:01:06.10,0:01:06.42,Default,,0,0,0,,HAVE SO MANY
+Dialogue: 0,0:01:06.42,0:01:06.88,Default,,0,0,0,,PEOPLE ON THIS
+Dialogue: 0,0:01:06.88,0:01:08.12,Default,,0,0,0,,VIP, BUT OBVIOUSLY
+Dialogue: 0,0:01:08.12,0:01:09.24,Default,,0,0,0,,TO DO IT,
+Dialogue: 0,0:01:09.40,0:01:10.02,Default,,0,0,0,,IT TAKES NOT
+Dialogue: 0,0:01:10.02,0:01:10.74,Default,,0,0,0,,JUST MY TIME,
+Dialogue: 0,0:01:10.82,0:01:11.46,Default,,0,0,0,,BUT THE COACH'S
+Dialogue: 0,0:01:11.46,0:01:12.32,Default,,0,0,0,,TIME. SO EVERY
+Dialogue: 0,0:01:12.32,0:01:13.22,Default,,0,0,0,,VIP STUDENT ISN'T
+Dialogue: 0,0:01:13.22,0:01:13.84,Default,,0,0,0,,JUST LIKE, YOU
+Dialogue: 0,0:01:13.84,0:01:14.52,Default,,0,0,0,,KNOW, SHINY ROLL
+Dialogue: 0,0:01:14.52,0:01:14.96,Default,,0,0,0,,IN THE SERVER,
+Dialogue: 0,0:01:15.08,0:01:16.28,Default,,0,0,0,,BUT IT'S ACTUALLY
+Dialogue: 0,0:01:16.28,0:01:16.54,Default,,0,0,0,,A LOT OF
+Dialogue: 0,0:01:16.54,0:01:17.16,Default,,0,0,0,,TIME THAT WE
+Dialogue: 0,0:01:17.16,0:01:18.72,Default,,0,0,0,,POUR INTO. AND
+Dialogue: 0,0:01:18.72,0:01:19.64,Default,,0,0,0,,SO I APPRECIATE
+Dialogue: 0,0:01:19.64,0:01:20.40,Default,,0,0,0,,YOU GUYS, LIKE,
+Dialogue: 0,0:01:20.78,0:01:21.42,Default,,0,0,0,,BLOWING UP THE
+Dialogue: 0,0:01:21.42,0:01:22.14,Default,,0,0,0,,VIP EXPERIENCE. IT'S
+Dialogue: 0,0:01:22.14,0:01:22.82,Default,,0,0,0,,SO COOL THAT
+Dialogue: 0,0:01:22.82,0:01:23.24,Default,,0,0,0,,IT'S DOING WELL.
+Dialogue: 0,0:01:23.54,0:01:23.98,Default,,0,0,0,,SO MANY OF
+Dialogue: 0,0:01:23.98,0:01:24.52,Default,,0,0,0,,YOU ARE OBVIOUSLY
+Dialogue: 0,0:01:24.52,0:01:25.28,Default,,0,0,0,,BENEFITING FROM IT.
+Dialogue: 0,0:01:25.70,0:01:26.34,Default,,0,0,0,,AND I JUST
+Dialogue: 0,0:01:26.34,0:01:26.62,Default,,0,0,0,,WANT TO MAKE
+Dialogue: 0,0:01:26.62,0:01:27.46,Default,,0,0,0,,THIS POST TO
+Dialogue: 0,0:01:27.46,0:01:28.42,Default,,0,0,0,,BASICALLY GIVE YOU
+Dialogue: 0,0:01:28.42,0:01:29.22,Default,,0,0,0,,NOTICE, RIGHT, TO
+Dialogue: 0,0:01:29.22,0:01:29.70,Default,,0,0,0,,JUST BE TRANSPARENT
+Dialogue: 0,0:01:29.70,0:01:30.26,Default,,0,0,0,,ABOUT WHAT WE'RE
+Dialogue: 0,0:01:30.26,0:01:30.80,Default,,0,0,0,,CHANGING AND WHY
+Dialogue: 0,0:01:30.80,0:01:31.38,Default,,0,0,0,,WE'RE CHANGING IT.
+Dialogue: 0,0:01:31.48,0:01:31.94,Default,,0,0,0,,AND I MADE
+Dialogue: 0,0:01:31.94,0:01:32.42,Default,,0,0,0,,THIS LITTLE WEB
+Dialogue: 0,0:01:32.42,0:01:33.10,Default,,0,0,0,,PAGE FOR YOU
+Dialogue: 0,0:01:33.10,0:01:34.18,Default,,0,0,0,,TOO, WITH CLAUDE
+Dialogue: 0,0:01:34.18,0:01:36.34,Default,,0,0,0,,CODE TO HOPEFULLY
+Dialogue: 0,0:01:36.34,0:01:37.22,Default,,0,0,0,,EXPLAIN ALL OF
+Dialogue: 0,0:01:37.22,0:01:37.60,Default,,0,0,0,,IT. SO YEAH,
+Dialogue: 0,0:01:37.64,0:01:37.84,Default,,0,0,0,,IF YOU HAVE
+Dialogue: 0,0:01:37.84,0:01:38.50,Default,,0,0,0,,ANY QUESTIONS, READ
+Dialogue: 0,0:01:38.50,0:01:39.30,Default,,0,0,0,,BELOW. I JUST
+Dialogue: 0,0:01:39.30,0:01:39.94,Default,,0,0,0,,WANTED TO EXPLAIN
+Dialogue: 0,0:01:39.94,0:01:40.50,Default,,0,0,0,,THIS, YOU KNOW,
+Dialogue: 0,0:01:40.52,0:01:41.16,Default,,0,0,0,,QUICK VIDEO, SHOOT
+Dialogue: 0,0:01:41.16,0:01:41.72,Default,,0,0,0,,THIS QUICK VIDEO
+Dialogue: 0,0:01:42.62,0:01:43.20,Default,,0,0,0,,SO THAT ALL
+Dialogue: 0,0:01:43.20,0:01:43.60,Default,,0,0,0,,OF YOU SAW
+Dialogue: 0,0:01:43.60,0:01:44.40,Default,,0,0,0,,AND JUST HAD
+Dialogue: 0,0:01:44.40,0:01:45.06,Default,,0,0,0,,VISIBILITY ON THAT.
+Dialogue: 0,0:01:45.32,0:01:45.96,Default,,0,0,0,,APPRECIATE YOU GUYS.
+Dialogue: 0,0:01:47.04,0:01:47.58,Default,,0,0,0,,ALL RIGHT, I'LL
+Dialogue: 0,0:01:47.58,0:01:47.96,Default,,0,0,0,,SEE YOU BACK
+Dialogue: 0,0:01:47.96,0:01:48.94,Default,,0,0,0,,WHEN I'M BACK
+Dialogue: 0,0:01:48.94,0:01:49.60,Default,,0,0,0,,IN CHICAGO, MY
+Dialogue: 0,0:01:49.60,0:01:50.78,Default,,0,0,0,,NEXT EVENT. AND
+Dialogue: 0,0:01:50.78,0:01:51.48,Default,,0,0,0,,THANKS FREAKY FOR
+Dialogue: 0,0:01:51.48,0:01:52.10,Default,,0,0,0,,SOMETHING FOR MY
+Dialogue: 0,0:01:52.10,0:01:53.04,Default,,0,0,0,,MONTHLY COACHING. PEACE,
+Dialogue: 0,0:01:53.12,0:01:53.20,Default,,0,0,0,,GUYS.
