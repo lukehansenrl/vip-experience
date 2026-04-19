@@ -133,7 +133,7 @@ export default function AnnouncePage() {
     >
       {/* ── NAV ── */}
       <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div className="text-lg font-extrabold tracking-tight">
             RL <span className="text-[var(--accent)]">Clubhouse</span>
           </div>
