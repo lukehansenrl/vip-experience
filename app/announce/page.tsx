@@ -146,61 +146,71 @@ export default function AnnouncePage() {
         </div>
       </nav>
 
-      {/* ── HERO ── */}
-      <section className="px-6 pb-16 pt-20 text-center md:pt-28">
-        <div className="mx-auto max-w-2xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            VIP Update
-          </p>
-          <h1 className="text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
-            The VIP Experience Is Filling Up
-          </h1>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-white/60">
-            On <strong className="text-white">Sunday, April 26</strong>, the price moves from $179 to $279/month. You can still join at the current rate until then.
-          </p>
-
-          <div className="mx-auto mt-8 max-w-xs">
-            <div className="mb-2 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
-              <span className="text-white/60">Spots Filled</span>
-              <span className="text-[var(--accent)]">48 / 60</span>
+      {/* ── HERO (side-by-side: text + video) ── */}
+      <section className="px-6 pb-16 pt-16 md:pt-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-12">
+            {/* Video (mobile: top; desktop: right) */}
+            <div className="order-1 w-full max-w-[240px] flex-shrink-0 md:order-2 md:max-w-[320px]">
+              <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
+                <video
+                  className="block w-full"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                  src="/video/luke-vip-intro.mp4"
+                />
+              </div>
             </div>
-            <div className="h-2 overflow-hidden rounded-full bg-white/10">
-              <div
-                className="h-full rounded-full bg-[var(--accent)]"
-                style={{ width: "80%" }}
-              />
+
+            {/* Text + CTA (mobile: bottom; desktop: left) */}
+            <div className="order-2 w-full text-center md:order-1 md:flex-1 md:max-w-[560px] md:text-left">
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+                VIP Update
+              </p>
+              <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
+                The VIP Experience Is Filling Up
+              </h1>
+              <p className="mt-5 text-lg text-white/60">
+                On <strong className="text-white">Sunday, April 26</strong>, the price moves from $179 to $279/month. You can still join at the current rate until then.
+              </p>
+
+              <div className="mx-auto mt-8 max-w-xs md:mx-0">
+                <div className="mb-2 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
+                  <span className="text-white/60">Spots Filled</span>
+                  <span className="text-[var(--accent)]">48 / 60</span>
+                </div>
+                <div className="h-2 overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-[var(--accent)]"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+                <p className="mt-2 text-xs text-white/40">
+                  12 spots left at the current rate
+                </p>
+              </div>
+
+              <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
+                <button
+                  type="button"
+                  onClick={openBooking}
+                  className="inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+                >
+                  Book a Call →
+                </button>
+                <a
+                  href="/"
+                  className="inline-block rounded-full border border-white/20 bg-transparent px-10 py-4 text-lg font-bold text-white/80 transition hover:border-white/40 hover:text-white"
+                >
+                  Learn More About VIP →
+                </a>
+              </div>
             </div>
-            <p className="mt-2 text-xs text-white/40">
-              12 spots left at the current rate
-            </p>
           </div>
-
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={openBooking}
-              className="inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
-            >
-              Book a Call →
-            </button>
-            <a
-              href="/"
-              className="inline-block rounded-full border border-white/20 bg-transparent px-10 py-4 text-lg font-bold text-white/80 transition hover:border-white/40 hover:text-white"
-            >
-              Learn More About VIP →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── HERO BANNER ── */}
-      <section className="px-6 pb-8">
-        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/10">
-          <img
-            src="/graphics/hero-banner.png"
-            alt="The RL Clubhouse VIP Experience"
-            className="w-full"
-          />
         </div>
       </section>
 

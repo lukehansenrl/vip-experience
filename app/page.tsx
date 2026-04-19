@@ -401,50 +401,55 @@ export default function VIPPage() {
         onClose={() => setCalendlyOpen(false)}
       />
 
-      {/* ── HERO ── */}
-      <section className="relative px-6 pb-20 pt-28 text-center md:pb-28 md:pt-36">
-        <div className="mx-auto max-w-3xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            The RL Clubhouse VIP Experience
-          </p>
-          <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
-            Improve Your Overall Rocket League Skill Faster.
-          </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-white/60 md:text-xl">
-            Through 1:1 pro coaching, custom training routines, and real
-            accountability so you actually get better every month, not just
-            queue more ranked games and hope. 😅
-          </p>
+      {/* ── HERO (side-by-side: text + video) ── */}
+      <section className="relative px-6 pb-20 pt-20 md:pb-28 md:pt-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-14">
+            {/* Video (mobile: top; desktop: right) */}
+            <div className="order-1 w-full max-w-[240px] flex-shrink-0 md:order-2 md:max-w-[340px]">
+              <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
+                <video
+                  className="block w-full"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                  src="/video/luke-vip-intro.mp4"
+                />
+              </div>
+            </div>
 
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <button
-              type="button"
-              onClick={openBooking}
-              className="rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
-            >
-              Book a Call <ChevronRight className="ml-1 inline h-5 w-5" />
-            </button>
-            <a
-              href="#includes"
-              className="rounded-full border border-white/20 px-8 py-4 text-lg font-semibold text-white/70 transition hover:border-white/40 hover:text-white"
-            >
-              See What You Get ↓
-            </a>
-          </div>
+            {/* Text + CTA (mobile: bottom; desktop: left) */}
+            <div className="order-2 w-full text-center md:order-1 md:flex-1 md:max-w-[620px] md:text-left">
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+                The RL Clubhouse VIP Experience
+              </p>
+              <h1 className="mt-4 text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+                Improve Your Overall Rocket League Skill Faster.
+              </h1>
+              <p className="mt-6 text-lg text-white/60 md:text-xl">
+                Through 1:1 pro coaching, custom training routines, and real
+                accountability so you actually get better every month, not just
+                queue more ranked games and hope. 😅
+              </p>
 
-          {/* Hero video (Luke intro) */}
-          <div className="mt-16 flex justify-center">
-            <div className="max-w-[320px] overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
-              <video
-                className="block w-full"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-                preload="metadata"
-                src="/video/luke-vip-intro.mp4"
-              />
+              <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
+                <button
+                  type="button"
+                  onClick={openBooking}
+                  className="rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+                >
+                  Book a Call <ChevronRight className="ml-1 inline h-5 w-5" />
+                </button>
+                <a
+                  href="#includes"
+                  className="rounded-full border border-white/20 px-8 py-4 text-lg font-semibold text-white/70 transition hover:border-white/40 hover:text-white"
+                >
+                  See What You Get ↓
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -808,6 +813,72 @@ export default function VIPPage() {
               </span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── DM BONUS (rare offering for serious VIPs) ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+            One More Thing
+          </p>
+          <h2 className="mt-3 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
+            Something I Haven&apos;t Done In 5 Years
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-center text-white/60 md:text-lg">
+            For the first 5 to 10 VIPs who prepay, I&apos;m throwing in direct DM access to me personally. Add me on Discord, text anytime, send clips, ask questions. I haven&apos;t offered this publicly to coaching students in 5 years. My DMs are busy, so this is for a small group.
+          </p>
+
+          <div
+            className="mt-10 rounded-2xl border p-6 md:p-10"
+            style={{
+              borderColor: "rgba(245, 197, 66, 0.3)",
+              background:
+                "linear-gradient(135deg, var(--gold-glow), transparent)",
+            }}
+          >
+            <div className="grid gap-8 md:grid-cols-[1.3fr_1fr] md:items-center">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-wider text-[var(--gold)]">
+                  What You Get
+                </p>
+                <ul className="mt-4 space-y-3 text-sm text-white/70">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+                    Send clips and ask why you lost a play
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+                    My real take on training packs, tournaments, pros, mental game stuff
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+                    Ask what to grind this week based on where you&apos;re stuck
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+                    Me in your pocket for Rocket League stuff
+                  </li>
+                </ul>
+              </div>
+              <div className="text-center md:border-l md:border-white/10 md:pl-8 md:text-left">
+                <p className="text-xs font-bold uppercase tracking-wider text-[var(--gold)]">
+                  Why It&apos;s Worth It
+                </p>
+                <p className="mt-3 text-4xl font-black text-white">$200/hr</p>
+                <p className="mt-1 text-xs text-white/50">
+                  My standard coaching rate
+                </p>
+                <p className="mt-5 text-sm leading-relaxed text-white/60">
+                  Even a few DMs a month over 6 or 12 months adds up fast. Most prepay members get more out of this single bonus than the entire prepay costs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-8 text-center text-sm text-white/50">
+            Automatic for anyone who prepays 6 or 12 months on their call.
+          </p>
         </div>
       </section>
 
