@@ -172,10 +172,10 @@ export default function AnnouncePage() {
                 VIP Update
               </p>
               <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
-                The VIP Experience Is Filling Up
+                VIP Is Nearly Sold Out. Price Goes Up In 7 Days.
               </h1>
               <p className="mt-5 text-lg text-white/60">
-                On <strong className="text-white">Sunday, April 26</strong>, the price moves from $179 to $279/month. You can still join at the current rate until then.
+                12 spots open at the current <strong className="text-white">$179</strong> rate until <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong>. After that it&apos;s $279/month.
               </p>
 
               <div className="mx-auto mt-8 max-w-xs md:mx-0">
@@ -282,7 +282,7 @@ export default function AnnouncePage() {
               <strong className="text-white">Current VIPs:</strong> Your $179 rate is locked for as long as your membership stays active and continuous. Nothing changes for you — this is your grandfather rate.
             </p>
             <p className="text-sm text-white/60">
-              <strong className="text-white">Not a VIP yet?</strong> Join before Sunday, April 26 to lock in $179/month for as long as your membership stays active and continuous. Only 12 spots left at this rate.
+              <strong className="text-white">Not a VIP yet?</strong> Join by <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong> to lock in $179/month for as long as your membership stays active and continuous. Only 12 spots left at this rate.
             </p>
           </div>
         </div>
@@ -456,7 +456,7 @@ export default function AnnouncePage() {
               <li className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
                 <span>
-                  <strong className="text-white">Been on the fence?</strong> With 12 spots left at the current rate, you have until <strong className="text-white">Sunday, April 26</strong> to join at $179/month and keep it for as long as your membership stays active and continuous.
+                  <strong className="text-white">Been on the fence?</strong> With 12 spots left at the current rate, you have until <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong> to join at $179/month and keep it for as long as your membership stays active and continuous.
                 </span>
               </li>
             </ul>
@@ -576,8 +576,8 @@ export default function AnnouncePage() {
             12 Spots Left At The Current Rate
           </h2>
           <p className="mx-auto mt-4 max-w-md text-white/50">
-            New pricing takes effect{" "}
-            <strong className="text-white">Sunday, April 26</strong>. If you want to lock in $179/month while it&apos;s still available, book a call before then and we&apos;ll get you set up.
+            New pricing kicks in at 12:00am CT on{" "}
+            <strong className="text-white">Sunday, April 26</strong>. If you want to lock in $179/month while it&apos;s still available, book a call before <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong> and we&apos;ll get you set up.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <button

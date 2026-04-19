@@ -297,7 +297,7 @@ export default function LockInPage() {
           <div className="mt-6 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 text-center">
             <p className="text-sm text-white/60">
               <strong className="text-white">
-                Window closes Friday, April 24 at 11:59pm ET.
+                Window closes Friday, April 24 at 11:59pm CT.
               </strong>{" "}
               Your monthly rate stays locked either way.
             </p>
