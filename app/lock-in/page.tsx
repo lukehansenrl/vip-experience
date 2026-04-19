@@ -309,10 +309,10 @@ export default function LockInPage() {
       <section className="border-t border-white/10 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-3xl">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Why I&apos;m Doing This
+            The Reason
           </p>
           <h2 className="mt-3 text-center text-2xl font-extrabold tracking-tight md:text-3xl">
-            Honest Version
+            Why I Can Offer A Deal Like This
           </h2>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
