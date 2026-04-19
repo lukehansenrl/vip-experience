@@ -87,6 +87,22 @@ export default function LockInPage() {
         </div>
       </section>
 
+      {/* ── LUKE VIDEO ── */}
+      <section className="px-6 pb-4">
+        <div className="mx-auto max-w-[320px] overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
+          <video
+            className="block w-full"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            preload="metadata"
+            src="/video/luke-lockin-intro.mp4"
+          />
+        </div>
+      </section>
+
       {/* ── MONTHLY vs PREPAY COMPARISON ── */}
       <section className="border-t border-white/10 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-3xl">
