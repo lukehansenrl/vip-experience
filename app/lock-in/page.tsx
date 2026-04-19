@@ -92,7 +92,7 @@ export default function LockInPage() {
             Why I&apos;m Offering This
           </p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            Lock In My Coaching. Plus Some DM Time.
+            Lock In My Replay Reviews. Plus DM Access.
           </h2>
 
           <p className="mt-5 leading-relaxed text-white/60">
@@ -100,23 +100,23 @@ export default function LockInPage() {
           </p>
 
           <p className="mt-4 leading-relaxed text-white/60">
-            Here&apos;s what I wanted to be straight with you about though. At some point in the next 6 to 12 months, I&apos;m going to be pulling myself out of replay reviews. I don&apos;t have a firm date yet. When it happens, those reviews will shift to my other coaches instead of me personally.
+            Here&apos;s what I wanted to be straight with you about though. At some point in the next 6 to 12 months, I&apos;m going to be pulling myself out of replay reviews. I don&apos;t have a firm date on it yet. When it happens, for anyone still on monthly, those replay reviews will shift to one of my other coaches instead of coming from me personally. That includes current VIPs.
           </p>
 
           <p className="mt-4 leading-relaxed text-white/60">
-            If you prepay right now, I&apos;ll honor my own replay reviews for the full 6 or 12 months you lock in. Even if I step back for new members during that window, your reviews still come from me. So if getting MY eyes on your gameplay is the thing you want, prepaying is the way to guarantee it.
+            The only way to guarantee my own replay reviews going forward is to prepay. If you lock in 6 or 12 months right now, I&apos;ll honor MY reviews for the full window no matter what happens with the rest of the program. Monthly members don&apos;t get that guarantee.
           </p>
 
           <p className="mt-4 leading-relaxed text-white/60">
-            And as a thank you for prepaying, I&apos;m throwing in a bonus. Direct DM access to me. If you want to send over a clip, ask me a question, or get my take on something in between your coaching sessions, just DM me. I&apos;ll answer. This isn&apos;t something I&apos;m offering to monthly members. Only people who prepay.
+            And as a thank you for prepaying, I&apos;m throwing in a bonus. Direct DM access to me. If you want to send over a clip, ask me a question, or get my take on something between your coaching sessions, just DM me. I&apos;ll answer. This isn&apos;t something I&apos;m offering to monthly members. Only people who prepay.
           </p>
 
           <p className="mt-4 leading-relaxed text-white/60">
-            If you&apos;d rather just keep paying monthly, that&apos;s completely fine. Do nothing. Your billing continues. Your rate stays locked.
+            If you&apos;d rather just keep paying monthly, that&apos;s completely fine. Do nothing. Your billing continues. Your rate stays locked. Just know that at some point in the future, your replay reviews may be coming from one of my other coaches instead of me.
           </p>
 
           <p className="mt-4 leading-relaxed text-white/60">
-            If you want to lock in my coaching for the next 6 or 12 months and get the DM bonus, here are the two options.
+            If you want to lock in my personal replays for the next 6 or 12 months and get the DM bonus, here are the two options.
           </p>
         </div>
       </section>
@@ -143,7 +143,7 @@ export default function LockInPage() {
                 </li>
                 <li className="flex items-start gap-2 text-sm text-white/70">
                   <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  My replay reviews honored for the full 6 months
+                  My personal replay reviews guaranteed for 6 months
                 </li>
                 <li className="flex items-start gap-2 text-sm text-white/70">
                   <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--gold)]" />
@@ -183,7 +183,7 @@ export default function LockInPage() {
                 </li>
                 <li className="flex items-start gap-2 text-sm text-white/70">
                   <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  My replay reviews honored for the full 12 months
+                  My personal replay reviews guaranteed for 12 months
                 </li>
                 <li className="flex items-start gap-2 text-sm text-white/70">
                   <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--gold)]" />
@@ -240,7 +240,7 @@ export default function LockInPage() {
                 What if I want to just keep paying monthly?
               </p>
               <p className="mt-2 text-sm leading-relaxed text-white/60">
-                Perfect. Do nothing. You&apos;re already grandfathered and your billing continues as normal.
+                Totally fine. Do nothing, your billing continues, your rate stays locked. One thing to know though: when I eventually step back from replay reviews, monthly members will get those reviews from one of my other coaches instead of me. Only prepay members are guaranteed my personal reviews going forward.
               </p>
             </div>
             <div>
