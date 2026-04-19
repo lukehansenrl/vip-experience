@@ -370,7 +370,7 @@ export default function AnnouncePage() {
             <div>
               <div className="font-extrabold text-xl">SpookyLuke</div>
               <div className="text-xs text-[var(--accent)] font-bold mt-0.5 uppercase tracking-wide">
-                Founder &middot; Head Coach &middot; 486K+ YouTube Subs
+                Founder &middot; Head Coach &middot; 528K+ YouTube Subs
               </div>
               <div className="text-xs text-white/50 mt-2 leading-relaxed">
                 The #1 Rocket League teacher on YouTube. Your replay review comes directly from SpookyLuke every 12 weeks, starting month 2.

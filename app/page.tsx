@@ -868,7 +868,7 @@ export default function VIPPage() {
               </div>
               <div className="mt-3 flex flex-wrap gap-2 justify-center sm:justify-start">
                 <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
-                  486K+ YouTube Subs
+                  528K+ YouTube Subs
                 </span>
                 <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
                   216M+ Views
