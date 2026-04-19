@@ -432,13 +432,20 @@ export default function VIPPage() {
             </a>
           </div>
 
-          {/* Hero banner graphic */}
-          <div className="mt-16 overflow-hidden rounded-2xl border border-white/10">
-            <img
-              src="/graphics/hero-banner.png"
-              alt="The RL Clubhouse VIP Experience"
-              className="w-full"
-            />
+          {/* Hero video (Luke intro) */}
+          <div className="mt-16 flex justify-center">
+            <div className="max-w-[320px] overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/50">
+              <video
+                className="block w-full"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                preload="metadata"
+                src="/video/luke-vip-intro.mp4"
+              />
+            </div>
           </div>
         </div>
       </section>

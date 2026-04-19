@@ -314,12 +314,12 @@ export default function LockInPage() {
             <WhyCard
               icon={<Users className="h-5 w-5 text-[var(--accent)]" />}
               title="Reward serious students"
-              body="If you prepay 6 or 12 months, you're not a hobbyist. I want a small group I can actually go deep with."
+              body="If you prepay 6 or 12 months, you're not a hobbyist. I want to focus on a small group of students who are actually serious."
             />
             <WhyCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
               title="Content keeps flowing"
-              body="I make my YouTube content out of my coaching sessions. Even when I stop doing replays publicly, I want a few students to stay deep with me. That's my content pipeline."
+              body="I make my YouTube content out of my coaching sessions. Even when I stop doing replays publicly, I want to keep coaching a few students long-term. That's my content pipeline."
             />
             <WhyCard
               icon={<Lightbulb className="h-5 w-5 text-[var(--accent)]" />}
@@ -329,7 +329,7 @@ export default function LockInPage() {
           </div>
 
           <p className="mx-auto mt-10 max-w-xl text-center text-sm leading-relaxed text-white/70">
-            Bottom line. I&apos;d rather have 10 serious students I go deep with than 50 monthly ones who aren&apos;t putting in the work. If that&apos;s you, this is for you.
+            Bottom line. I&apos;d rather focus on 10 serious students than stretch thin across 50 who aren&apos;t putting in the work. If that&apos;s you, this is for you.
           </p>
         </div>
       </section>
@@ -365,7 +365,7 @@ export default function LockInPage() {
       <section className="border-t border-white/10 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-2xl text-center">
           <p className="leading-relaxed text-white/60">
-            However you want to do this, you&apos;re set. No pressure. No tricks. I just wanted to give you the option before the window closes.
+            However you want to do this, you&apos;re set. No pressure. I just wanted to give you the option before the window closes.
           </p>
           <p className="mt-6 text-lg italic text-white/50">- Luke</p>
         </div>
