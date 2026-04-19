@@ -71,7 +71,7 @@ export default function AnnouncePage() {
             href="/"
             className="rounded-lg bg-[var(--accent)] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[var(--accent-hover)]"
           >
-            Join Waitlist
+            Learn More About VIP
           </a>
         </div>
       </nav>
@@ -83,16 +83,33 @@ export default function AnnouncePage() {
             VIP Update
           </p>
           <h1 className="text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
-            VIP Is Currently Sold Out
+            The VIP Experience Is Filling Up
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg text-white/60">
-            When spots reopen on <strong className="text-white">Sunday, April 26</strong>, the VIP Experience price moves to $279/month. Current VIPs keep their rate for as long as their membership stays active and continuous.
+            On <strong className="text-white">Sunday, April 26</strong>, the price moves from $179 to $279/month. You can still join at the current rate until then.
           </p>
+
+          <div className="mx-auto mt-8 max-w-xs">
+            <div className="mb-2 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
+              <span className="text-white/60">Spots Filled</span>
+              <span className="text-[var(--accent)]">49 / 60</span>
+            </div>
+            <div className="h-2 overflow-hidden rounded-full bg-white/10">
+              <div
+                className="h-full rounded-full bg-[var(--accent)]"
+                style={{ width: "81.67%" }}
+              />
+            </div>
+            <p className="mt-2 text-xs text-white/40">
+              11 spots left at the current rate
+            </p>
+          </div>
+
           <a
             href="/"
             className="mt-8 inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
           >
-            Join the Waitlist →
+            Learn More About VIP →
           </a>
         </div>
       </section>
@@ -144,7 +161,7 @@ export default function AnnouncePage() {
             What&apos;s Changing
           </p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            VIP Reopens At $279 / Month
+            VIP Is Moving To $279 / Month For New Members
           </h2>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -171,9 +188,12 @@ export default function AnnouncePage() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4">
+          <div className="mt-6 space-y-3 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4">
             <p className="text-sm text-white/60">
               <strong className="text-white">Current VIPs:</strong> Your $179 rate is locked for as long as your membership stays active and continuous. Nothing changes for you — this is your grandfather rate.
+            </p>
+            <p className="text-sm text-white/60">
+              <strong className="text-white">Not a VIP yet?</strong> Join before Sunday, April 26 to lock in $179/month for as long as your membership stays active and continuous. Only 11 spots left at this rate.
             </p>
           </div>
         </div>
@@ -347,7 +367,7 @@ export default function AnnouncePage() {
               <li className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
                 <span>
-                  <strong className="text-white">Not a VIP yet?</strong> VIP is currently sold out. Join the waitlist and we&apos;ll reach out when spots reopen at the new rate.
+                  <strong className="text-white">Been on the fence?</strong> With 11 spots left at the current rate, you have until <strong className="text-white">Sunday, April 26</strong> to join at $179/month and keep it for as long as your membership stays active and continuous.
                 </span>
               </li>
             </ul>
@@ -464,17 +484,17 @@ export default function AnnouncePage() {
       <section className="px-6 py-16 text-center md:py-24">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-extrabold tracking-tight md:text-4xl">
-            VIP Is Currently Sold Out
+            11 Spots Left At The Current Rate
           </h2>
           <p className="mx-auto mt-4 max-w-md text-white/50">
             New pricing takes effect{" "}
-            <strong className="text-white">Sunday, April 26</strong>. Join the waitlist and we&apos;ll reach out as soon as spots reopen.
+            <strong className="text-white">Sunday, April 26</strong>. If you want to lock in $179/month while it&apos;s still available, book a call before then and we&apos;ll get you set up.
           </p>
           <a
             href="/"
             className="mt-8 inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
           >
-            Join the Waitlist →
+            Learn More About VIP →
           </a>
           <p className="mt-6 text-sm text-white/30">
             Questions?{" "}
