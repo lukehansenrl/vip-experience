@@ -108,15 +108,92 @@ export default function LockInPage() {
           </p>
 
           <p className="mt-4 leading-relaxed text-white/60">
-            And as a thank you for prepaying, I&apos;m throwing in a bonus. Direct DM access to me. If you want to send over a clip, ask me a question, or get my take on something between your coaching sessions, just DM me. I&apos;ll answer. This isn&apos;t something I&apos;m offering to monthly members. Only people who prepay.
-          </p>
-
-          <p className="mt-4 leading-relaxed text-white/60">
             If you&apos;d rather just keep paying monthly, that&apos;s completely fine. Do nothing. Your billing continues. Your rate stays locked. Just know that at some point in the future, your replay reviews may be coming from one of my other coaches instead of me.
           </p>
 
           <p className="mt-4 leading-relaxed text-white/60">
-            If you want to lock in my personal replays for the next 6 or 12 months and get the DM bonus, here are the two options.
+            But there&apos;s one more thing I&apos;m doing for prepay members, and I want to be real about what it&apos;s worth.
+          </p>
+        </div>
+      </section>
+
+      {/* ── DM ACCESS (THE BONUS) ── */}
+      <section className="border-t border-white/10 px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+            The Bonus (Real Talk)
+          </p>
+          <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
+            Me In Your Pocket For The Whole Window
+          </h2>
+
+          <p className="mt-5 leading-relaxed text-white/60">
+            Let me be specific about what this actually means, because I think people underestimate it.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-white/60">
+            Once you prepay, you have my DMs. Things you can do:
+          </p>
+
+          <ul className="mt-4 space-y-3">
+            <li className="flex items-start gap-3 text-sm text-white/70">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+              Send me a clip and ask why you lost a play
+            </li>
+            <li className="flex items-start gap-3 text-sm text-white/70">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+              Ask what to grind this week based on what you&apos;re struggling with
+            </li>
+            <li className="flex items-start gap-3 text-sm text-white/70">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+              Get my real take on training packs, tournaments, pros to watch, mental game stuff
+            </li>
+            <li className="flex items-start gap-3 text-sm text-white/70">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+              Stuck at a rank and not sure what to focus on? Ask me. I&apos;ll tell you.
+            </li>
+          </ul>
+
+          <p className="mt-6 leading-relaxed text-white/60">
+            Basically me in your pocket for Rocket League stuff. When I have time, I&apos;ll answer.
+          </p>
+
+          <div
+            className="mt-10 rounded-2xl border p-6 md:p-8"
+            style={{
+              borderColor: "rgba(245, 197, 66, 0.3)",
+              background:
+                "linear-gradient(135deg, var(--gold-glow), transparent)",
+            }}
+          >
+            <p className="text-xs font-bold uppercase tracking-wider text-[var(--gold)]">
+              What This Is Actually Worth
+            </p>
+            <p className="mt-3 leading-relaxed text-white/80">
+              My hourly coaching rate is just under <strong className="text-white">$200</strong>. I haven&apos;t offered direct DM access like this to any of my coaching students in the last <strong className="text-white">5 years</strong>. This is genuinely a one-time thing.
+            </p>
+            <p className="mt-3 leading-relaxed text-white/80">
+              Do the math on what even a couple DMs a month is worth over 6 or 12 months. Most prepay members will get more value out of this single bonus than the entire prepay costs.
+            </p>
+          </div>
+
+          <p className="mt-10 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Why I&apos;m Doing This
+          </p>
+          <h3 className="mt-2 text-xl font-extrabold tracking-tight md:text-2xl">
+            Honest Version. Two Reasons.
+          </h3>
+
+          <p className="mt-4 leading-relaxed text-white/60">
+            <strong className="text-white">One.</strong> I want to reward the VIPs who commit to the long game. If you&apos;re prepaying 6 or 12 months, you&apos;re not a hobbyist, you&apos;re serious. I want to go deep with that group.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-white/60">
+            <strong className="text-white">Two.</strong> Selfishly, DMing with a handful of serious students keeps me plugged in to what the community is actually struggling with. That feeds my content and keeps me sharp. So yeah, there&apos;s a real reason this is useful to me too.
+          </p>
+
+          <p className="mt-6 leading-relaxed text-white/70">
+            Bottom line. I&apos;d rather have 10 serious students I can go deep with than 50 monthly ones who aren&apos;t putting in the work. If that sounds like you, this is for you.
           </p>
         </div>
       </section>
@@ -124,6 +201,12 @@ export default function LockInPage() {
       {/* ── THE OFFER ── */}
       <section className="border-t border-white/10 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-3xl">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            The Two Options
+          </p>
+          <h2 className="mt-3 mb-10 text-center text-2xl font-extrabold tracking-tight md:text-3xl">
+            Pick Your Lock-In
+          </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {/* 6-month */}
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
@@ -148,7 +231,7 @@ export default function LockInPage() {
                 <li className="flex items-start gap-2 text-sm text-white/70">
                   <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--gold)]" />
                   <span>
-                    <strong className="text-white">Bonus:</strong> Direct DM access to me
+                    <strong className="text-white">Bonus:</strong> My DMs are yours. Clips, questions, anything.
                   </span>
                 </li>
               </ul>
@@ -188,7 +271,7 @@ export default function LockInPage() {
                 <li className="flex items-start gap-2 text-sm text-white/70">
                   <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[var(--gold)]" />
                   <span>
-                    <strong className="text-white">Bonus:</strong> Direct DM access to me
+                    <strong className="text-white">Bonus:</strong> My DMs are yours. Clips, questions, anything.
                   </span>
                 </li>
                 <li className="flex items-start gap-2 text-sm text-white/70">
