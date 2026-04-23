@@ -19,6 +19,33 @@ function calculateRemaining(iso: string) {
   };
 }
 
+function StickyCountdownBanner({ deadlineIso }: { deadlineIso: string }) {
+  const [r, setR] = useState(() => calculateRemaining(deadlineIso));
+
+  useEffect(() => {
+    const id = setInterval(() => setR(calculateRemaining(deadlineIso)), 1000);
+    return () => clearInterval(id);
+  }, [deadlineIso]);
+
+  if (r.total <= 0) return null;
+
+  return (
+    <div className="sticky top-0 z-[60] border-b border-[var(--gold)]/40 bg-[var(--gold)] shadow-lg">
+      <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold text-black sm:gap-3 sm:text-base">
+        <span aria-hidden="true">⏰</span>
+        <span className="hidden sm:inline">Prepay window closes in</span>
+        <span className="sm:hidden">Closes in</span>
+        <span className="tabular-nums tracking-wider">
+          {String(r.days).padStart(2, "0")}d{" "}
+          {String(r.hours).padStart(2, "0")}h{" "}
+          {String(r.minutes).padStart(2, "0")}m{" "}
+          {String(r.seconds).padStart(2, "0")}s
+        </span>
+      </div>
+    </div>
+  );
+}
+
 function CountdownTimer({ deadlineIso }: { deadlineIso: string }) {
   const [r, setR] = useState(() => calculateRemaining(deadlineIso));
 
@@ -119,6 +146,9 @@ export default function LockInPage() {
         backgroundAttachment: "fixed",
       }}
     >
+      {/* ── STICKY COUNTDOWN BANNER ── */}
+      <StickyCountdownBanner deadlineIso={PREPAY_DEADLINE_ISO} />
+
       {/* ── MINIMAL NAV ── */}
       <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
         <div className="mx-auto max-w-6xl px-6 py-4 text-center">
@@ -346,15 +376,11 @@ export default function LockInPage() {
             </a>
           </div>
 
-          {/* deadline + countdown */}
-          <div className="mt-8 rounded-2xl border border-[var(--gold)]/30 bg-white/[0.03] px-5 py-6 text-center">
-            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
-              Window Closes In
-            </p>
-            <CountdownTimer deadlineIso={PREPAY_DEADLINE_ISO} />
-            <p className="mt-4 text-sm text-white/60">
+          {/* deadline reminder (live countdown is in sticky banner) */}
+          <div className="mt-6 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 text-center">
+            <p className="text-sm text-white/60">
               <strong className="text-white">
-                Friday, April 24 at 11:59pm CT.
+                Window closes Friday, April 24 at 11:59pm CT.
               </strong>{" "}
               Your monthly rate stays locked either way.
             </p>

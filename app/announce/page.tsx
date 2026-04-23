@@ -60,6 +60,33 @@ function TimerBox({ value, label }: { value: number; label: string }) {
   );
 }
 
+function StickyCountdownBanner({ deadlineIso }: { deadlineIso: string }) {
+  const [r, setR] = useState(() => calculateRemaining(deadlineIso));
+
+  useEffect(() => {
+    const id = setInterval(() => setR(calculateRemaining(deadlineIso)), 1000);
+    return () => clearInterval(id);
+  }, [deadlineIso]);
+
+  if (r.total <= 0) return null;
+
+  return (
+    <div className="sticky top-0 z-[60] border-b border-white/20 bg-[var(--accent)] shadow-lg shadow-[var(--accent-glow)]">
+      <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold text-white sm:gap-3 sm:text-base">
+        <span aria-hidden="true">⏰</span>
+        <span className="hidden sm:inline">$179 rate ends in</span>
+        <span className="sm:hidden">Ends in</span>
+        <span className="tabular-nums tracking-wider">
+          {String(r.days).padStart(2, "0")}d{" "}
+          {String(r.hours).padStart(2, "0")}h{" "}
+          {String(r.minutes).padStart(2, "0")}m{" "}
+          {String(r.seconds).padStart(2, "0")}s
+        </span>
+      </div>
+    </div>
+  );
+}
+
 /* ── CALENDLY MODAL ── */
 
 function CalendlyModal({
@@ -186,6 +213,9 @@ export default function AnnouncePage() {
         backgroundAttachment: "fixed",
       }}
     >
+      {/* ── STICKY COUNTDOWN BANNER ── */}
+      <StickyCountdownBanner deadlineIso={DEADLINE_ISO} />
+
       {/* ── NAV ── */}
       <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -230,15 +260,7 @@ export default function AnnouncePage() {
             </div>
           </div>
 
-          {/* Countdown to deadline */}
-          <div className="mt-8">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-              Time Left At The $179 Rate
-            </p>
-            <CountdownTimer deadlineIso={DEADLINE_ISO} />
-          </div>
-
-          <div className="mx-auto mt-6 max-w-xs">
+          <div className="mx-auto mt-8 max-w-xs">
             <div className="mb-2 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
               <span className="text-white/60">Spots Filled</span>
               <span className="text-[var(--accent)]">45 / 60</span>
