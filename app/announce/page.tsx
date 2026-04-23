@@ -5,6 +5,61 @@ import { Star, ChevronRight } from "lucide-react";
 
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
 
+// Deadline: Saturday April 25, 2026 at 11:59pm CDT (UTC-5)
+const DEADLINE_ISO = "2026-04-25T23:59:00-05:00";
+
+function calculateRemaining(iso: string) {
+  const now = Date.now();
+  const end = new Date(iso).getTime();
+  const total = Math.max(0, end - now);
+  return {
+    total,
+    days: Math.floor(total / 86_400_000),
+    hours: Math.floor((total / 3_600_000) % 24),
+    minutes: Math.floor((total / 60_000) % 60),
+    seconds: Math.floor((total / 1_000) % 60),
+  };
+}
+
+function CountdownTimer({ deadlineIso }: { deadlineIso: string }) {
+  const [r, setR] = useState(() => calculateRemaining(deadlineIso));
+
+  useEffect(() => {
+    const id = setInterval(() => setR(calculateRemaining(deadlineIso)), 1000);
+    return () => clearInterval(id);
+  }, [deadlineIso]);
+
+  if (r.total <= 0) {
+    return (
+      <div className="text-center text-sm font-bold uppercase tracking-widest text-white/40">
+        Deadline passed
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex justify-center gap-2 sm:gap-3">
+      <TimerBox value={r.days} label="Days" />
+      <TimerBox value={r.hours} label="Hours" />
+      <TimerBox value={r.minutes} label="Min" />
+      <TimerBox value={r.seconds} label="Sec" />
+    </div>
+  );
+}
+
+function TimerBox({ value, label }: { value: number; label: string }) {
+  return (
+    <div className="flex min-w-[60px] flex-col items-center rounded-xl border border-white/10 bg-white/[0.05] px-3 py-2 sm:min-w-[72px] sm:px-4 sm:py-3">
+      <span className="text-2xl font-black tabular-nums text-white sm:text-3xl">
+        {String(value).padStart(2, "0")}
+      </span>
+      <span className="mt-0.5 text-[10px] font-bold uppercase tracking-wider text-white/50 sm:text-xs">
+        {label}
+      </span>
+    </div>
+  );
+}
+
 /* ── CALENDLY MODAL ── */
 
 function CalendlyModal({
@@ -156,7 +211,7 @@ export default function AnnouncePage() {
             VIP Is Nearly Sold Out. Price Goes Up In 7 Days.
           </h1>
           <p className="mx-auto mt-4 max-w-lg text-base text-white/60 md:text-lg">
-            12 spots open at the current <strong className="text-white">$179</strong> rate until <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong>. After that it&apos;s $279/month.
+            15 spots open at the current <strong className="text-white">$179</strong> rate until <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong>. After that it&apos;s $279/month.
           </p>
 
           {/* Video - in the hero, visible in the fold */}
@@ -175,19 +230,27 @@ export default function AnnouncePage() {
             </div>
           </div>
 
+          {/* Countdown to deadline */}
+          <div className="mt-8">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+              Time Left At The $179 Rate
+            </p>
+            <CountdownTimer deadlineIso={DEADLINE_ISO} />
+          </div>
+
           <div className="mx-auto mt-6 max-w-xs">
             <div className="mb-2 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
               <span className="text-white/60">Spots Filled</span>
-              <span className="text-[var(--accent)]">48 / 60</span>
+              <span className="text-[var(--accent)]">45 / 60</span>
             </div>
             <div className="h-2 overflow-hidden rounded-full bg-white/10">
               <div
                 className="h-full rounded-full bg-[var(--accent)]"
-                style={{ width: "80%" }}
+                style={{ width: "75%" }}
               />
             </div>
             <p className="mt-2 text-xs text-white/40">
-              12 spots left at the current rate
+              15 spots left at the current rate
             </p>
           </div>
 
@@ -277,7 +340,7 @@ export default function AnnouncePage() {
               <strong className="text-white">Current VIPs:</strong> Your $179 rate is locked for as long as your membership stays active and continuous. Nothing changes for you — this is your grandfather rate.
             </p>
             <p className="text-sm text-white/60">
-              <strong className="text-white">Not a VIP yet?</strong> Join by <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong> to lock in $179/month for as long as your membership stays active and continuous. Only 12 spots left at this rate.
+              <strong className="text-white">Not a VIP yet?</strong> Join by <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong> to lock in $179/month for as long as your membership stays active and continuous. Only 15 spots left at this rate.
             </p>
           </div>
         </div>
@@ -451,7 +514,7 @@ export default function AnnouncePage() {
               <li className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
                 <span>
-                  <strong className="text-white">Been on the fence?</strong> With 12 spots left at the current rate, you have until <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong> to join at $179/month and keep it for as long as your membership stays active and continuous.
+                  <strong className="text-white">Been on the fence?</strong> With 15 spots left at the current rate, you have until <strong className="text-white">Saturday, April 25 at 11:59pm CT</strong> to join at $179/month and keep it for as long as your membership stays active and continuous.
                 </span>
               </li>
             </ul>
@@ -568,7 +631,7 @@ export default function AnnouncePage() {
       <section className="px-6 py-16 text-center md:py-24">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-extrabold tracking-tight md:text-4xl">
-            12 Spots Left At The Current Rate
+            15 Spots Left At The Current Rate
           </h2>
           <p className="mx-auto mt-4 max-w-md text-white/50">
             New pricing kicks in at 12:00am CT on{" "}

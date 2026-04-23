@@ -1,7 +1,65 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Check, X, Star, Video, Users, Lightbulb } from "lucide-react";
+
+// Prepay deadline: Friday April 24, 2026 at 11:59pm CDT (UTC-5)
+const PREPAY_DEADLINE_ISO = "2026-04-24T23:59:00-05:00";
+
+function calculateRemaining(iso: string) {
+  const now = Date.now();
+  const end = new Date(iso).getTime();
+  const total = Math.max(0, end - now);
+  return {
+    total,
+    days: Math.floor(total / 86_400_000),
+    hours: Math.floor((total / 3_600_000) % 24),
+    minutes: Math.floor((total / 60_000) % 60),
+    seconds: Math.floor((total / 1_000) % 60),
+  };
+}
+
+function CountdownTimer({ deadlineIso }: { deadlineIso: string }) {
+  const [r, setR] = useState(() => calculateRemaining(deadlineIso));
+
+  useEffect(() => {
+    const id = setInterval(() => setR(calculateRemaining(deadlineIso)), 1000);
+    return () => clearInterval(id);
+  }, [deadlineIso]);
+
+  if (r.total <= 0) {
+    return (
+      <div className="text-center text-sm font-bold uppercase tracking-widest text-white/40">
+        Window closed
+      </div>
+    );
+  }
+
+  const boxes = [
+    { value: r.days, label: "Days" },
+    { value: r.hours, label: "Hours" },
+    { value: r.minutes, label: "Min" },
+    { value: r.seconds, label: "Sec" },
+  ];
+
+  return (
+    <div className="flex justify-center gap-2 sm:gap-3">
+      {boxes.map((b) => (
+        <div
+          key={b.label}
+          className="flex min-w-[60px] flex-col items-center rounded-xl border border-[var(--gold)]/30 bg-[var(--gold)]/5 px-3 py-2 sm:min-w-[72px] sm:px-4 sm:py-3"
+        >
+          <span className="text-2xl font-black tabular-nums text-white sm:text-3xl">
+            {String(b.value).padStart(2, "0")}
+          </span>
+          <span className="mt-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--gold)] sm:text-xs">
+            {b.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 /* ── LOCK-IN PAGE (VIP-only, DM-shared) ── */
 
@@ -288,11 +346,15 @@ export default function LockInPage() {
             </a>
           </div>
 
-          {/* deadline */}
-          <div className="mt-6 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 text-center">
-            <p className="text-sm text-white/60">
+          {/* deadline + countdown */}
+          <div className="mt-8 rounded-2xl border border-[var(--gold)]/30 bg-white/[0.03] px-5 py-6 text-center">
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+              Window Closes In
+            </p>
+            <CountdownTimer deadlineIso={PREPAY_DEADLINE_ISO} />
+            <p className="mt-4 text-sm text-white/60">
               <strong className="text-white">
-                Window closes Friday, April 24 at 11:59pm CT.
+                Friday, April 24 at 11:59pm CT.
               </strong>{" "}
               Your monthly rate stays locked either way.
             </p>
