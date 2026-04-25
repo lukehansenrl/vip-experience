@@ -432,7 +432,11 @@ export default function AnnouncePage() {
           </p>
 
           <p className="mt-4 leading-relaxed text-white/70">
-            Instead of my quarterly replay review, you&apos;ll get an extra 30-minute check-in with your coach every month. Listen, more direct time with your coach is generally going to move you faster than one of my replays every 12 weeks. Your coach already knows your gameplay, your rank, your goals. Stacking another 30 minutes with them month after month is a real upgrade in consistency.
+            Instead of my quarterly replay review, you&apos;ll get an extra 30-minute check-in with your coach every month. While I&apos;m bummed to be stepping back from VIP, <strong className="text-white">this isn&apos;t a downgrade</strong>. Our coaches are pros, and each one has deeper experience than I do in more areas. Giving you more time with them is genuinely going to move you up the ranks faster.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-white/70">
+            And now VIP won&apos;t be capped or limited by my time. Which means we can actually grow this thing.
           </p>
 
           <p className="mt-6 text-sm font-bold uppercase tracking-widest text-[var(--accent)]">
@@ -442,7 +446,7 @@ export default function AnnouncePage() {
           <ul className="mt-4 space-y-3">
             <li className="flex items-start gap-3 text-sm text-white/70">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
-              VIP stays accessible at $199/month going forward
+              VIP stays accessible at $199/month going forward (a $20 bump, not $100)
             </li>
             <li className="flex items-start gap-3 text-sm text-white/70">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
@@ -450,15 +454,42 @@ export default function AnnouncePage() {
             </li>
             <li className="flex items-start gap-3 text-sm text-white/70">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
-              I&apos;ll be more present in the community in other ways: game nights, tournaments, hanging out and playing
+              As my replay load drops, I&apos;m adding more in-houses, private matches, game nights, and tournaments back into the community
             </li>
             <li className="flex items-start gap-3 text-sm text-white/70">
               <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--gold)]" />
               <span>
-                <strong className="text-white">If you join before Sunday 11:59pm CT</strong>, you keep the original package with my replay reviews locked in for life
+                <strong className="text-white">If you join before Sunday 11:59pm CT</strong>, you keep the Original Package with my replay reviews locked in for life
               </span>
             </li>
           </ul>
+        </div>
+      </section>
+
+      {/* ── SHOCK JOINING ── */}
+      <section className="border-t border-white/10 px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            New Addition
+          </p>
+          <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
+            Shock Is Joining The VIP Coaching Team
+          </h2>
+          <p className="mt-5 leading-relaxed text-white/70">
+            Super stoked to announce <strong className="text-white">former NA MVP and Ghost Gaming pro</strong>{" "}
+            <a
+              href="https://twitter.com/shockrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--accent)] hover:underline"
+            >
+              @shockrl
+            </a>{" "}
+            is trialing on the VIP coaching team starting now.
+          </p>
+          <p className="mt-4 leading-relaxed text-white/70">
+            He&apos;s starting with a limited number of spots. Only <strong className="text-white">5 to 10 students over the next month</strong>. Available by request, first-come basis. If you want him specifically as your coach, that&apos;s how to lock it in.
+          </p>
         </div>
       </section>
 
