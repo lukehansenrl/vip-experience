@@ -74,7 +74,7 @@ function StickyCountdownBanner({ deadlineIso }: { deadlineIso: string }) {
     <div className="sticky top-0 z-[60] border-b border-white/20 bg-[var(--accent)] shadow-lg shadow-[var(--accent-glow)]">
       <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold text-white sm:gap-3 sm:text-base">
         <span aria-hidden="true">⏰</span>
-        <span className="hidden sm:inline">$179 rate ends in</span>
+        <span className="hidden sm:inline">Original VIP package ends in</span>
         <span className="sm:hidden">Ends in</span>
         <span className="tabular-nums tracking-wider">
           {String(r.days).padStart(2, "0")}d{" "}
@@ -238,10 +238,10 @@ export default function AnnouncePage() {
             VIP Update
           </p>
           <h1 className="mt-3 text-2xl font-extrabold leading-tight tracking-tight md:text-4xl">
-            VIP Is Nearly Sold Out. Price Goes Up In 7 Days.
+            VIP Is Changing Sunday Night.
           </h1>
           <p className="mx-auto mt-4 max-w-lg text-base text-white/60 md:text-lg">
-            15 spots open at the current <strong className="text-white">$179</strong> rate until <strong className="text-white">Sunday, April 26 at 11:59pm CT</strong>. After that it&apos;s $279/month.
+            Join before <strong className="text-white">Sunday, April 26 at 11:59pm CT</strong> and lock in <strong className="text-white">$179/month with my replay reviews included for life</strong>. After that the package becomes $199/month with coach replays only.
           </p>
 
           {/* Video - in the hero, visible in the fold */}
@@ -330,39 +330,75 @@ export default function AnnouncePage() {
             What&apos;s Changing
           </p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            VIP Is Moving To $279 / Month For New Members
+            What&apos;s Actually Changing
           </h2>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <div className="flex-1 rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
-              <p className="text-xs font-bold uppercase tracking-wider text-white/40">
-                Current Price
-              </p>
-              <p className="mt-2 text-3xl font-black text-white/30 line-through">
-                $179
-              </p>
-              <p className="mt-1 text-xs text-white/30">/ month</p>
-            </div>
-            <div className="flex items-center justify-center text-white/20">
-              <ChevronRight className="h-6 w-6" />
-            </div>
-            <div className="flex-1 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 text-center">
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {/* Current package */}
+            <div className="rounded-2xl border-2 border-[var(--accent)]/40 bg-[var(--accent)]/5 p-6">
               <p className="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">
-                New Price (Monday, April 27)
+                Original Package · Until Sunday 11:59pm CT
               </p>
-              <p className="mt-2 text-3xl font-black text-[var(--accent)]">
-                $279
+              <p className="mt-3 text-3xl font-black text-white">
+                $179<span className="text-base font-normal text-white/50">/mo</span>
               </p>
-              <p className="mt-1 text-xs text-white/50">/ month</p>
+              <ul className="mt-4 space-y-2 text-sm text-white/70">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+                  1 × 60-min coaching session per month
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+                  <span>
+                    <strong className="text-white">My 30-min replay reviews</strong> (every 12 weeks, locked in for life)
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+                  Custom training plan + accountability check-ins
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" />
+                  Full Clubhouse + 15+ live events monthly
+                </li>
+              </ul>
+            </div>
+
+            {/* New package */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <p className="text-xs font-bold uppercase tracking-wider text-white/50">
+                Monday Package · Starting April 27
+              </p>
+              <p className="mt-3 text-3xl font-black text-white">
+                $199<span className="text-base font-normal text-white/50">/mo</span>
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-white/60">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
+                  1 × 60-min coaching session per month
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
+                  Extra 30-min coach check-in (replaces Luke replay)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
+                  Custom training plan + accountability check-ins
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
+                  Full Clubhouse + 15+ live events monthly
+                </li>
+              </ul>
             </div>
           </div>
 
           <div className="mt-6 space-y-3 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4">
             <p className="text-sm text-white/60">
-              <strong className="text-white">Current VIPs:</strong> Your $179 rate is locked for as long as your membership stays active and continuous. Nothing changes for you — this is your grandfather rate.
+              <strong className="text-white">Current VIPs:</strong> Your $179 rate is locked for as long as your membership stays active and continuous. You can keep my replay reviews or opt to swap for the extra coach check-in. Your call, no offense either way.
             </p>
             <p className="text-sm text-white/60">
-              <strong className="text-white">Not a VIP yet?</strong> Join by <strong className="text-white">Sunday, April 26 at 11:59pm CT</strong> to lock in $179/month for as long as your membership stays active and continuous. Only 15 spots left at this rate.
+              <strong className="text-white">Not a VIP yet?</strong> Join by <strong className="text-white">Sunday, April 26 at 11:59pm CT</strong> to lock in the Original Package at $179/mo with my replays included for life.
             </p>
           </div>
         </div>
@@ -372,71 +408,57 @@ export default function AnnouncePage() {
       <section className="border-t border-white/10 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Why
+            The Real Reason
           </p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            Why The Price Is Going Up
+            Why VIP Is Changing
           </h2>
 
-          <p className="mt-6 leading-relaxed text-white/60">
-            VIP is not a role in Discord. It&apos;s real people blocking real
-            hours to help you improve:
+          <p className="mt-6 leading-relaxed text-white/70">
+            When I posted last week saying VIP was moving to $279, that was the truth at the time. Here&apos;s why: we&apos;ve grown to almost <strong className="text-white">50 VIPs</strong>. I was doing 1-on-1 replay reviews with every single one of them. At some point that became unsustainable for my schedule, and the only way to keep things going was to raise the price.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-white/70">
+            But a bunch of you DM&apos;d me with the same thing: VIP is supposed to be a <em>taste</em> of coaching. The entry point. And entry-level coaching shouldn&apos;t cost $279.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-white/70">
+            I sat with that. You&apos;re right.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-white/70">
+            So we did the math again. My hourly coaching rate is{" "}
+            <strong className="text-white">$125 on Metafy</strong>. With ~50 students on the program, my replays were the heaviest cost in the package. The only way to keep VIP under $200 was to take that piece out.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-white/70">
+            Instead of my quarterly replay review, you&apos;ll get an extra 30-minute check-in with your coach every month. Listen, more direct time with your coach is generally going to move you faster than one of my replays every 12 weeks. Your coach already knows your gameplay, your rank, your goals. Stacking another 30 minutes with them month after month is a real upgrade in consistency.
+          </p>
+
+          <p className="mt-6 text-sm font-bold uppercase tracking-widest text-[var(--accent)]">
+            What That Means For You
           </p>
 
           <ul className="mt-4 space-y-3">
-            <li className="flex items-start gap-3 text-sm text-white/60">
-              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-              A 1:1, 60-minute session with a pro coach every month
+            <li className="flex items-start gap-3 text-sm text-white/70">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
+              VIP stays accessible at $199/month going forward
             </li>
-            <li className="flex items-start gap-3 text-sm text-white/60">
-              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-              A 30-minute replay review from SpookyLuke every 12 weeks starting month 2 (his Metafy rate is $125 for this alone)
+            <li className="flex items-start gap-3 text-sm text-white/70">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
+              More direct time with your coach instead of one quarterly review from me
             </li>
-            <li className="flex items-start gap-3 text-sm text-white/60">
-              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-              Your coach recording, reviewing, and writing up a custom training plan
+            <li className="flex items-start gap-3 text-sm text-white/70">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
+              I&apos;ll be more present in the community in other ways: game nights, tournaments, hanging out and playing
             </li>
-            <li className="flex items-start gap-3 text-sm text-white/60">
-              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-              An accountability guide spending time checking in with you
-            </li>
-            <li className="flex items-start gap-3 text-sm text-white/60">
-              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--accent)]" />
-              Full Clubhouse membership with 15+ live events monthly
+            <li className="flex items-start gap-3 text-sm text-white/70">
+              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--gold)]" />
+              <span>
+                <strong className="text-white">If you join before Sunday 11:59pm CT</strong>, you keep the original package with my replay reviews locked in for life
+              </span>
             </li>
           </ul>
-
-          <p className="mt-6 leading-relaxed text-white/60">
-            As VIP grew, we hit the hard limit:{" "}
-            <strong className="text-white">time.</strong>{" "}At the current price,
-            we were stretching those hours thinner and thinner.
-            That&apos;s the opposite of what you joined for.
-          </p>
-
-          <p className="mt-4 leading-relaxed text-white/60">
-            Raising the price for new members lets us:
-          </p>
-
-          <ul className="mt-4 space-y-3">
-            <li className="flex items-start gap-3 text-sm text-white/60">
-              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
-              Keep sessions thorough instead of rushed
-            </li>
-            <li className="flex items-start gap-3 text-sm text-white/60">
-              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
-              Protect coach time so you&apos;re not waiting weeks for your 1:1
-            </li>
-            <li className="flex items-start gap-3 text-sm text-white/60">
-              <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
-              Keep hiring and training great coaches instead of burning them out
-            </li>
-          </ul>
-
-          <p className="mt-6 leading-relaxed text-white/60">
-            The VIP is not the cheapest coaching experience. It&apos;s the most
-            hands-on. The price reflects that so you don&apos;t have to worry
-            about anything but improving.
-          </p>
         </div>
       </section>
 
@@ -530,13 +552,13 @@ export default function AnnouncePage() {
               <li className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
                 <span>
-                  <strong className="text-white">Already VIP?</strong> Your $179 rate is locked for as long as your membership stays active and continuous. Nothing changes for you.
+                  <strong className="text-white">Already VIP?</strong> Your $179 rate is locked. You can keep my replay reviews or opt to swap for the new monthly check-in format. Whichever you prefer.
                 </span>
               </li>
               <li className="flex items-start gap-3 text-white/70">
                 <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
                 <span>
-                  <strong className="text-white">Been on the fence?</strong> With 15 spots left at the current rate, you have until <strong className="text-white">Sunday, April 26 at 11:59pm CT</strong> to join at $179/month and keep it for as long as your membership stays active and continuous.
+                  <strong className="text-white">Been on the fence?</strong> Until <strong className="text-white">Sunday, April 26 at 11:59pm CT</strong>, you can lock in the Original Package: $179/month with my replay reviews, for as long as your membership stays active and continuous.
                 </span>
               </li>
             </ul>
@@ -653,11 +675,11 @@ export default function AnnouncePage() {
       <section className="px-6 py-16 text-center md:py-24">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-extrabold tracking-tight md:text-4xl">
-            15 Spots Left At The Current Rate
+            Last 36 Hours For The Original Package
           </h2>
           <p className="mx-auto mt-4 max-w-md text-white/50">
-            New pricing kicks in at 12:00am CT on{" "}
-            <strong className="text-white">Monday, April 27</strong>. If you want to lock in $179/month while it&apos;s still available, book a call before <strong className="text-white">Sunday, April 26 at 11:59pm CT</strong> and we&apos;ll get you set up.
+            The package changes at 12:00am CT on{" "}
+            <strong className="text-white">Monday, April 27</strong>. If you want to lock in $179/month with my replay reviews included for life, book a call before <strong className="text-white">Sunday, April 26 at 11:59pm CT</strong> and we&apos;ll get you set up.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <button

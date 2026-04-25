@@ -799,11 +799,8 @@ export default function VIPPage() {
             <div className="flex items-center justify-between bg-[var(--accent)]/10 px-6 py-5">
               <span className="font-bold">VIP Experience Price</span>
               <span className="flex items-center gap-3">
-                <span className="text-sm font-bold text-white/30 line-through">
-                  $329
-                </span>
                 <span className="text-2xl font-black text-[var(--accent)]">
-                  $279 / mo
+                  $199 / mo
                 </span>
               </span>
             </div>
@@ -811,17 +808,17 @@ export default function VIPPage() {
         </div>
       </section>
 
-      {/* ── DM BONUS (rare offering for serious VIPs) ── */}
+      {/* ── LIMITED-TIME LAUNCH WINDOW ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-28">
         <div className="mx-auto max-w-3xl">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
-            One More Thing
+            Until Sunday 11:59pm CT
           </p>
           <h2 className="mt-3 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
-            Something I Haven&apos;t Done In 5 Years
+            The Original Package Ends Sunday
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-center text-white/60 md:text-lg">
-            For the first 5 to 10 VIPs who prepay, I&apos;m throwing in direct DM access to me personally. Add me on Discord, text anytime, send clips, ask questions. I haven&apos;t offered this publicly to coaching students in 5 years. My DMs are busy, so this is for a small group.
+            Joining VIP before Sunday at 11:59pm CT locks you into the Original Package: <strong className="text-white">$179/month with my replay reviews included</strong>, for as long as you stay active.
           </p>
 
           <div
@@ -832,47 +829,64 @@ export default function VIPPage() {
                 "linear-gradient(135deg, var(--gold-glow), transparent)",
             }}
           >
-            <div className="grid gap-8 md:grid-cols-[1.3fr_1fr] md:items-center">
+            <div className="grid gap-8 md:grid-cols-2">
               <div>
                 <p className="text-xs font-bold uppercase tracking-wider text-[var(--gold)]">
-                  What You Get
+                  Original Package · Until Sunday
+                </p>
+                <p className="mt-3 text-3xl font-black text-white">
+                  $179<span className="text-base font-normal text-white/50">/mo</span>
                 </p>
                 <ul className="mt-4 space-y-3 text-sm text-white/70">
                   <li className="flex items-start gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
-                    Send clips and ask why you lost a play
+                    1 × 60-min coaching session per month
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
-                    My real take on training packs, tournaments, pros, mental game stuff
+                    <strong className="text-white">My 30-min replay reviews</strong> (locked in for life)
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
-                    Ask what to grind this week based on where you&apos;re stuck
+                    Custom training plan + accountability check-ins
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
-                    Me in your pocket for Rocket League stuff
+                    Full Clubhouse + 15+ live events monthly
                   </li>
                 </ul>
               </div>
-              <div className="text-center md:border-l md:border-white/10 md:pl-8 md:text-left">
-                <p className="text-xs font-bold uppercase tracking-wider text-[var(--gold)]">
-                  Why It&apos;s Worth It
+              <div className="md:border-l md:border-white/10 md:pl-8">
+                <p className="text-xs font-bold uppercase tracking-wider text-white/50">
+                  Monday Package · Starting Apr 27
                 </p>
-                <p className="mt-3 text-4xl font-black text-white">$200/hr</p>
-                <p className="mt-1 text-xs text-white/50">
-                  My standard coaching rate
+                <p className="mt-3 text-3xl font-black text-white/70">
+                  $199<span className="text-base font-normal text-white/40">/mo</span>
                 </p>
-                <p className="mt-5 text-sm leading-relaxed text-white/60">
-                  Even a few DMs a month over 6 or 12 months adds up fast. Most prepay members get more out of this single bonus than the entire prepay costs.
-                </p>
+                <ul className="mt-4 space-y-3 text-sm text-white/60">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
+                    1 × 60-min coaching session per month
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
+                    Extra 30-min coach check-in (no Luke replays)
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
+                    Custom training plan + accountability check-ins
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
+                    Full Clubhouse + 15+ live events monthly
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
 
           <p className="mt-8 text-center text-sm text-white/50">
-            Automatic for anyone who prepays 6 or 12 months on their call.
+            Book a call before Sunday 11:59pm CT to lock in the Original Package.
           </p>
         </div>
       </section>
@@ -1330,15 +1344,12 @@ const CAROUSEL_SLIDES = [
 function PricingCard({ openBooking }: { openBooking: () => void }) {
   return (
     <div className="mt-10 rounded-2xl border border-[var(--accent)]/30 bg-white/[0.03] p-8 md:p-10">
-      <p className="text-lg font-bold text-white/30 line-through">
-        $329 / month
-      </p>
-      <p className="mt-2 text-6xl font-black md:text-7xl">
-        <span className="text-[var(--accent)]">$279</span>
+      <p className="text-6xl font-black md:text-7xl">
+        <span className="text-[var(--accent)]">$199</span>
         <span className="text-lg font-semibold text-white/50"> / month</span>
       </p>
-      <p className="mt-2 inline-block rounded-full bg-[var(--green)]/10 px-4 py-1 text-sm font-bold text-[var(--green)]">
-        Save $50 / month
+      <p className="mt-2 inline-block rounded-full bg-[var(--gold)]/10 px-4 py-1 text-sm font-bold text-[var(--gold)]">
+        Until Sunday: $179/mo with my replays included for life
       </p>
       <p className="mt-4 text-white/50">
         Cancel anytime. No contracts. No hidden fees.
