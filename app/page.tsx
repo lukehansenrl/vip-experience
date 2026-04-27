@@ -808,85 +808,17 @@ export default function VIPPage() {
         </div>
       </section>
 
-      {/* ── LIMITED-TIME LAUNCH WINDOW ── */}
+      {/* ── NEW ADDITION: SHOCK ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
-            Until Sunday 11:59pm CT
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            New Addition To The Coaching Team
           </p>
-          <h2 className="mt-3 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
-            The Original Package Ends Sunday
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            Shock Is Trialing On VIP
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-center text-white/60 md:text-lg">
-            Joining VIP before Sunday at 11:59pm CT locks you into the Original Package: <strong className="text-white">$179/month with my replay reviews included</strong>, for as long as you stay active.
-          </p>
-
-          <div
-            className="mt-10 rounded-2xl border p-6 md:p-10"
-            style={{
-              borderColor: "rgba(245, 197, 66, 0.3)",
-              background:
-                "linear-gradient(135deg, var(--gold-glow), transparent)",
-            }}
-          >
-            <div className="grid gap-8 md:grid-cols-2">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-[var(--gold)]">
-                  Original Package · Until Sunday
-                </p>
-                <p className="mt-3 text-3xl font-black text-white">
-                  $179<span className="text-base font-normal text-white/50">/mo</span>
-                </p>
-                <ul className="mt-4 space-y-3 text-sm text-white/70">
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
-                    1 × 60-min coaching session per month
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
-                    <strong className="text-white">My 30-min replay reviews</strong> (locked in for life)
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
-                    Custom training plan + accountability check-ins
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--gold)]" />
-                    Full Clubhouse + 15+ live events monthly
-                  </li>
-                </ul>
-              </div>
-              <div className="md:border-l md:border-white/10 md:pl-8">
-                <p className="text-xs font-bold uppercase tracking-wider text-white/50">
-                  Monday Package · Starting Apr 27
-                </p>
-                <p className="mt-3 text-3xl font-black text-white/70">
-                  $199<span className="text-base font-normal text-white/40">/mo</span>
-                </p>
-                <ul className="mt-4 space-y-3 text-sm text-white/60">
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
-                    1 × 60-min coaching session per month
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
-                    Extra 30-min coach check-in (no Luke replays)
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
-                    Custom training plan + accountability check-ins
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/30" />
-                    Full Clubhouse + 15+ live events monthly
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <p className="mt-8 text-center text-sm text-white/50">
-            Book a call before Sunday 11:59pm CT to lock in the Original Package.
+          <p className="mt-5 leading-relaxed text-white/70 md:text-lg">
+            Former NA MVP and Ghost Gaming pro. He&apos;s starting with a limited number of student spots over the next month. Available by request, first-come basis. If you want him as your coach, that&apos;s how to lock it in.
           </p>
         </div>
       </section>
@@ -1347,9 +1279,6 @@ function PricingCard({ openBooking }: { openBooking: () => void }) {
       <p className="text-6xl font-black md:text-7xl">
         <span className="text-[var(--accent)]">$199</span>
         <span className="text-lg font-semibold text-white/50"> / month</span>
-      </p>
-      <p className="mt-2 inline-block rounded-full bg-[var(--gold)]/10 px-4 py-1 text-sm font-bold text-[var(--gold)]">
-        Until Sunday: $179/mo with my replays included for life
       </p>
       <p className="mt-4 text-white/50">
         Cancel anytime. No contracts. No hidden fees.
