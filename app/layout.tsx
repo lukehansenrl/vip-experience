@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Plus_Jakarta_Sans, Big_Shoulders } from "next/font/google";
 import "./globals.css";
 
+// Kept for backwards-compatible references on /announce, /promise, etc.
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+// Body font, matching spookyluke.com.
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+// Display font for hero/h1/h2/h3, matching spookyluke.com.
+// Google Fonts renamed "Big Shoulders Display" to just "Big Shoulders".
+const bigShoulders = Big_Shoulders({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +41,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${jakarta.variable} ${bigShoulders.variable} antialiased`}
+    >
       <body>{children}</body>
     </html>
   );

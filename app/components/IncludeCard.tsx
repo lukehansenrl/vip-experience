@@ -11,8 +11,8 @@ export function IncludeCard({ icon, title, description }: Props) {
         {icon}
       </div>
       <div>
-        <h3 className="font-bold">{title}</h3>
-        <p className="mt-1 text-sm leading-relaxed text-white/55">
+        <h3 className="text-lg font-bold md:text-xl">{title}</h3>
+        <p className="mt-2 text-base leading-relaxed text-white/70 md:text-lg">
           {description}
         </p>
       </div>

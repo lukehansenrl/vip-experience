@@ -10,8 +10,10 @@ export function BenefitCard({ icon, title, description }: Props) {
       <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent)]/10">
         {icon}
       </div>
-      <h3 className="text-lg font-bold">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-white/55">{description}</p>
+      <h3 className="text-xl font-bold md:text-2xl">{title}</h3>
+      <p className="mt-3 text-base leading-relaxed text-white/75 md:text-lg">
+        {description}
+      </p>
     </div>
   );
 }

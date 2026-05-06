@@ -110,9 +110,17 @@ export function CallPageClient({ spotsFilled }: Props) {
       <section className="relative px-6 pb-16 pt-24 md:pb-20 md:pt-32">
         <div className="mx-auto max-w-6xl">
           <div className="mb-8 flex justify-center md:justify-start">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-[var(--gold)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
-              Strictly Limited · {spotsFilled} / {SPOTS_TOTAL} Filled · {spotsOpen} Spots Open
+            <span className="inline-flex flex-wrap items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-4 py-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--green)]/20 px-2 py-0.5 text-xs font-black uppercase tracking-widest text-[var(--green)]">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--green)] opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--green)]" />
+                </span>
+                Live
+              </span>
+              <span className="text-sm font-bold uppercase tracking-widest text-[var(--gold)] md:text-base">
+                {spotsFilled} of {SPOTS_TOTAL} Spots Filled · {spotsOpen} Left
+              </span>
             </span>
           </div>
           <div className="grid gap-10 md:grid-cols-[1.15fr_1fr] md:items-center md:gap-14">
@@ -121,14 +129,14 @@ export function CallPageClient({ spotsFilled }: Props) {
               <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
                 The VIP Experience
               </p>
-              <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+              <h1 className="font-display text-5xl leading-[1] tracking-tight md:text-6xl lg:text-7xl">
                 Improve Faster With One-on-One Coaching.
               </h1>
-              <p className="mx-auto mt-6 max-w-xl text-lg text-white/70 md:mx-0 md:text-xl">
+              <p className="mx-auto mt-6 max-w-xl text-xl text-white/80 md:mx-0 md:text-2xl">
                 Get a pro&apos;s eyes on your gameplay to pinpoint your bad
                 habits and exactly what to do to improve the fastest.
               </p>
-              <p className="mx-auto mt-4 max-w-xl text-base font-semibold text-[var(--green)] md:mx-0 md:text-lg">
+              <p className="mx-auto mt-5 max-w-xl text-lg font-semibold text-[var(--green)] md:mx-0 md:text-xl">
                 Rank up faster in 30 days. Guaranteed, or your money back. No
                 questions asked.
               </p>
@@ -166,10 +174,10 @@ export function CallPageClient({ spotsFilled }: Props) {
               <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
                 From SpookyLuke
               </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+              <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
                 Built By The #1 Rocket League YouTuber In The World.
               </h2>
-              <p className="mt-4 text-white/70 md:text-lg">
+              <p className="mt-5 text-lg text-white/80 md:text-xl">
                 I built VIP to give the average player what&apos;s usually
                 reserved for the top 1%: real one-on-one coaching, a
                 personalized plan, accountability while you grind, a guarantee
@@ -200,7 +208,7 @@ export function CallPageClient({ spotsFilled }: Props) {
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             Real Results
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
             Real Players. Real Rank-Ups.
           </h2>
 
@@ -259,7 +267,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                   ))}
                 </div>
 
-                <p className="flex-1 text-sm leading-relaxed text-white/60">
+                <p className="flex-1 text-base leading-relaxed text-white/80 md:text-lg">
                   &ldquo;{t.quote}&rdquo;
                 </p>
 
@@ -290,10 +298,10 @@ export function CallPageClient({ spotsFilled }: Props) {
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             Two Ways To Train
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
             VIP Vs. Bootcamp.
           </h2>
-          <p className="mt-4 max-w-2xl text-white/60">
+          <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
             Bootcamp is the flagship. The fastest path to improvement that
             exists. VIP is where most players start: real coaching, real plan,
             without the all-in commitment.
@@ -309,10 +317,10 @@ export function CallPageClient({ spotsFilled }: Props) {
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             Today&apos;s Offer
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
             Here&apos;s Everything You Get.
           </h2>
-          <p className="mt-4 max-w-2xl text-white/60">
+          <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
             Real coaching. Real plan. Same caliber of coaches as Bootcamp, at a
             starting commitment.
           </p>
@@ -354,10 +362,10 @@ export function CallPageClient({ spotsFilled }: Props) {
             <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
               Why VIP Works
             </p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight md:text-3xl">
+            <h2 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
               Faster Than Going Solo. Less Than Bootcamp.
             </h2>
-            <p className="mt-3 text-white/60 md:text-lg">
+            <p className="mt-4 text-lg text-white/80 md:text-xl">
               Solo grinding and YouTube can take months to figure out
               what&apos;s actually holding you back. Bootcamp is the fastest
               path that exists, but it&apos;s a serious commitment. VIP gets
@@ -373,10 +381,10 @@ export function CallPageClient({ spotsFilled }: Props) {
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             On 1:1 Coaching
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
             Why A Coach Beats A Class.
           </h2>
-          <p className="mt-4 max-w-2xl text-white/50">
+          <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
             If you&apos;ve never done 1:1 before, here&apos;s what changes.
           </p>
 
@@ -411,10 +419,10 @@ export function CallPageClient({ spotsFilled }: Props) {
           <p className="mb-2 text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             Meet The Coaches
           </p>
-          <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="font-display mb-4 text-center text-4xl tracking-tight md:text-5xl">
             The People Behind Your Improvement.
           </h2>
-          <p className="mb-12 text-center text-white/50 max-w-xl mx-auto">
+          <p className="mb-12 text-center text-lg text-white/70 max-w-xl mx-auto md:text-xl">
             RLCS-level pros. Each has their own style. You get matched to
             whoever fits your goals.
           </p>
@@ -477,10 +485,10 @@ export function CallPageClient({ spotsFilled }: Props) {
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             The VIP Promise
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
             Rank Up. We Send You A New Controller.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/50">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-white/70 md:text-xl">
             Put in the work. Hit a full rank up. Hold it. We&apos;ll ship you a
             brand new controller.
           </p>
@@ -492,8 +500,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--accent)] text-lg font-black text-[var(--accent)]">
               1
             </div>
-            <h3 className="mt-4 text-lg font-extrabold">Rank Up</h3>
-            <p className="mt-2 text-sm text-white/50">
+            <h3 className="mt-4 text-xl font-extrabold md:text-2xl">Rank Up</h3>
+            <p className="mt-3 text-base text-white/75 md:text-lg">
               Full rank up within 90 days. Plat → Diamond. Diamond → Champ.
               Champ → GC.
             </p>
@@ -502,8 +510,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--accent)] text-lg font-black text-[var(--accent)]">
               2
             </div>
-            <h3 className="mt-4 text-lg font-extrabold">Hold It</h3>
-            <p className="mt-2 text-sm text-white/50">
+            <h3 className="mt-4 text-xl font-extrabold md:text-2xl">Hold It</h3>
+            <p className="mt-3 text-base text-white/75 md:text-lg">
               Maintain your new rank across two consecutive seasons. One
               check-in session with the team.
             </p>
@@ -512,10 +520,10 @@ export function CallPageClient({ spotsFilled }: Props) {
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--green)] text-lg font-black text-[var(--green)]">
               ✓
             </div>
-            <h3 className="mt-4 text-lg font-extrabold text-[var(--green)]">
+            <h3 className="mt-4 text-xl font-extrabold text-[var(--green)] md:text-2xl">
               New Controller
             </h3>
-            <p className="mt-2 text-sm text-white/50">
+            <p className="mt-3 text-base text-white/75 md:text-lg">
               Send proof. We verify everything and ship you a brand new
               controller. On us.
             </p>
@@ -541,7 +549,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             <p className="text-xs font-bold uppercase tracking-widest text-[var(--green)]">
               No Risk
             </p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight md:text-3xl">
+            <h2 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
               You&apos;re Not Locked In.
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-white/60">
@@ -557,7 +565,7 @@ export function CallPageClient({ spotsFilled }: Props) {
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             The Value
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
             What This Would Cost Separately.
           </h2>
 
@@ -608,15 +616,23 @@ export function CallPageClient({ spotsFilled }: Props) {
       >
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 flex justify-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-[var(--gold)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
-              {spotsFilled} / {SPOTS_TOTAL} Filled · {spotsOpen} Spots Open
+            <span className="inline-flex flex-wrap items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-4 py-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--green)]/20 px-2 py-0.5 text-xs font-black uppercase tracking-widest text-[var(--green)]">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--green)] opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--green)]" />
+                </span>
+                Live
+              </span>
+              <span className="text-sm font-bold uppercase tracking-widest text-[var(--gold)] md:text-base">
+                {spotsFilled} of {SPOTS_TOTAL} Spots Filled · {spotsOpen} Left
+              </span>
             </span>
           </div>
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             The Investment
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
             One Membership. Everything Above.
           </h2>
 
