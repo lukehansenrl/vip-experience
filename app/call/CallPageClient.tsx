@@ -27,6 +27,15 @@ const WHOP_URL = "https://whop.com/rlclubhouse/rlc-pro-vip-membership/";
 
 const FEATURED_TESTIMONIALS = ["Xeneson", "Dami", "deadshot8885"];
 
+// Update SPOTS_FILLED from the Whop dashboard (Products → VIP membership). Keep
+// SPOTS_TOTAL at 60 unless the cap actually changes.
+const SPOTS_TOTAL = 60;
+const SPOTS_FILLED = 39;
+const SPOTS_OPEN = SPOTS_TOTAL - SPOTS_FILLED;
+
+const SPOOKYLUKE_IMG =
+  "https://i0.wp.com/spookyluke.com/wp-content/uploads/2025/09/cutout-sept.webp?fit=592%2C713&ssl=1";
+
 export function CallPageClient() {
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -91,6 +100,12 @@ export function CallPageClient() {
       {/* ── HERO ── */}
       <section className="relative px-6 pb-16 pt-24 text-center md:pb-20 md:pt-32">
         <div className="mx-auto max-w-3xl">
+          <div className="mb-6 flex justify-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-[var(--gold)]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
+              Strictly Limited · {SPOTS_FILLED} / {SPOTS_TOTAL} Filled · {SPOTS_OPEN} Spots Open
+            </span>
+          </div>
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             The VIP Experience
           </p>
@@ -105,6 +120,142 @@ export function CallPageClient() {
             Rank up faster in 30 days. Guaranteed, or your money back. No
             questions asked.
           </p>
+        </div>
+      </section>
+
+      {/* ── CREATED BY SPOOKYLUKE (authority anchor + mission) ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-center md:gap-12">
+            <div className="flex justify-center md:justify-start">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-[var(--accent)]/30 blur-3xl" />
+                <img
+                  src={SPOOKYLUKE_IMG}
+                  alt="SpookyLuke"
+                  className="relative h-48 w-48 rounded-full border-4 border-[var(--accent)]/40 object-cover object-top md:h-60 md:w-60"
+                />
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+                From SpookyLuke
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+                Built By The #1 Rocket League YouTuber In The World.
+              </h2>
+              <p className="mt-4 text-white/70 md:text-lg">
+                I built VIP to give the average player what&apos;s usually
+                reserved for the top 1%: real one-on-one coaching, a
+                personalized plan, accountability while you grind, a guarantee
+                it&apos;ll work, and a reward when you rank up.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
+                  486K+ YouTube Subscribers
+                </span>
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
+                  216M+ Views
+                </span>
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
+                  GC3 Peak
+                </span>
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
+                  60K+ Discord
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PROOF (moved up: social proof early) ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Real Results
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            Real Players. Real Rank-Ups.
+          </h2>
+
+          {/* Rating summary */}
+          <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+            <div className="flex flex-col items-center gap-6 md:flex-row md:gap-12">
+              <div className="text-center">
+                <p className="text-6xl font-black">5.0</p>
+                <div className="mt-2 flex gap-0.5 justify-center">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
+                </div>
+                <p className="mt-1 text-sm text-white/50">95 ratings</p>
+              </div>
+              <div className="flex-1 space-y-2 w-full">
+                <RatingBar stars={5} percent={95} count={90} />
+                <RatingBar stars={4} percent={5} count={5} />
+                <RatingBar stars={3} percent={0} count={0} />
+                <RatingBar stars={2} percent={0} count={0} />
+                <RatingBar stars={1} percent={0} count={0} />
+              </div>
+            </div>
+          </div>
+
+          {/* Featured testimonials */}
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {featured.map((t) => (
+              <div
+                key={t.name}
+                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-[var(--accent)]/40"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-full ${t.color} text-sm font-bold text-white`}
+                  >
+                    {t.initials}
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">{t.name}</p>
+                    <p className="text-xs font-semibold text-[var(--accent)]">
+                      {t.rank}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mb-3 flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
+                </div>
+
+                <p className="flex-1 text-sm leading-relaxed text-white/60">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+
+                {t.coachNotes && (
+                  <p className="mt-3 text-xs text-white/30">
+                    Coached on: {t.coachNotes}
+                  </p>
+                )}
+
+                <a
+                  href={t.vodUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-[var(--accent)]/40 hover:text-white"
+                >
+                  <Play className="h-4 w-4 text-[var(--accent)]" />
+                  Watch the coaching session
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -226,96 +377,6 @@ export function CallPageClient() {
             You don&apos;t have to love coaching. You just have to want to get
             better.
           </p>
-        </div>
-      </section>
-
-      {/* ── PROOF ── */}
-      <section className="border-t border-white/10 px-6 py-20 md:py-24">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Real Results
-          </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
-            Real Players. Real Rank-Ups.
-          </h2>
-
-          {/* Rating summary */}
-          <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
-            <div className="flex flex-col items-center gap-6 md:flex-row md:gap-12">
-              <div className="text-center">
-                <p className="text-6xl font-black">5.0</p>
-                <div className="mt-2 flex gap-0.5 justify-center">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
-                <p className="mt-1 text-sm text-white/50">95 ratings</p>
-              </div>
-              <div className="flex-1 space-y-2 w-full">
-                <RatingBar stars={5} percent={95} count={90} />
-                <RatingBar stars={4} percent={5} count={5} />
-                <RatingBar stars={3} percent={0} count={0} />
-                <RatingBar stars={2} percent={0} count={0} />
-                <RatingBar stars={1} percent={0} count={0} />
-              </div>
-            </div>
-          </div>
-
-          {/* Featured testimonials */}
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {featured.map((t) => (
-              <div
-                key={t.name}
-                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-[var(--accent)]/40"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full ${t.color} text-sm font-bold text-white`}
-                  >
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p className="font-bold text-white">{t.name}</p>
-                    <p className="text-xs font-semibold text-[var(--accent)]">
-                      {t.rank}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mb-3 flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
-
-                <p className="flex-1 text-sm leading-relaxed text-white/60">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-
-                {t.coachNotes && (
-                  <p className="mt-3 text-xs text-white/30">
-                    Coached on: {t.coachNotes}
-                  </p>
-                )}
-
-                <a
-                  href={t.vodUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-[var(--accent)]/40 hover:text-white"
-                >
-                  <Play className="h-4 w-4 text-[var(--accent)]" />
-                  Watch the coaching session
-                </a>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -521,6 +582,12 @@ export function CallPageClient() {
         className="border-t border-white/10 px-6 py-20 md:py-28"
       >
         <div className="mx-auto max-w-3xl text-center">
+          <div className="mb-6 flex justify-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-[var(--gold)]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
+              {SPOTS_FILLED} / {SPOTS_TOTAL} Filled · {SPOTS_OPEN} Spots Open
+            </span>
+          </div>
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             The Investment
           </p>

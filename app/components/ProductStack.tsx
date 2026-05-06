@@ -13,6 +13,9 @@ type Tier = {
   icon: React.ReactNode;
   highlighted?: boolean;
   ribbon?: string;
+  /** Visual treatment for the ribbon. "accent" = purple (popular), "gold" =
+   *  gold (premium / highest tier). Defaults to "accent". */
+  ribbonStyle?: "accent" | "gold";
 };
 
 const ROW_LABELS = [
@@ -30,7 +33,8 @@ const TIERS: Tier[] = [
     positioning: "Coach + plan + community",
     icon: <Crosshair className="h-5 w-5 text-[var(--accent)]" />,
     highlighted: true,
-    ribbon: "Where most players start",
+    ribbon: "Most Popular",
+    ribbonStyle: "accent",
     rows: [
       { value: "Coach + plan + community" },
       { value: "1 live + 1 async", check: "yes" },
@@ -44,7 +48,9 @@ const TIERS: Tier[] = [
     price: "$300 to $550",
     priceNote: "/ 4 weeks",
     positioning: "1:1 intensive flagship",
-    icon: <Trophy className="h-5 w-5 text-white/70" />,
+    icon: <Trophy className="h-5 w-5 text-[var(--gold)]" />,
+    ribbon: "Highest Tier",
+    ribbonStyle: "gold",
     rows: [
       { value: "1:1 intensive" },
       { value: "Custom", check: "custom" },
@@ -78,7 +84,13 @@ function TierColumn({ tier }: { tier: Tier }) {
       className={`relative flex flex-col rounded-2xl border ${baseRing} p-6 transition`}
     >
       {tier.ribbon && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[var(--accent)] px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-[var(--accent-glow)]">
+        <div
+          className={`absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-widest shadow-lg ${
+            tier.ribbonStyle === "gold"
+              ? "bg-[var(--gold)] text-black shadow-[var(--gold-glow)]"
+              : "bg-[var(--accent)] text-white shadow-[var(--accent-glow)]"
+          }`}
+        >
           {tier.ribbon}
         </div>
       )}
