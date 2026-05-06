@@ -790,19 +790,20 @@ export function CallPageClient({ spotsFilled }: Props) {
               </div>
             ))}
             <div className="flex items-center justify-between bg-white/[0.03] px-6 py-5 border-t border-white/10">
-              <span className="font-bold text-white/70">
-                Total if bought separately
-              </span>
+              <span className="font-bold text-white/70">Total value</span>
               <span className="text-lg font-black text-white">
-                $227 to $377 / mo
+                $202 to $352 / mo
               </span>
             </div>
             <a
               href="#investment"
-              className="flex items-center justify-between bg-[var(--accent)]/10 px-6 py-5 transition hover:bg-[var(--accent)]/15"
+              className="flex flex-wrap items-center justify-between gap-3 bg-[var(--accent)]/10 px-6 py-5 transition hover:bg-[var(--accent)]/15"
             >
-              <span className="font-bold">VIP bundles all of the above.</span>
-              <span className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-widest text-[var(--accent)]">
+              <span className="font-bold">
+                VIP bundles all of the above for less than you would pay
+                individually.
+              </span>
+              <span className="inline-flex items-center gap-1 whitespace-nowrap text-xs font-black uppercase tracking-widest text-[var(--accent)]">
                 Pricing below ↓
               </span>
             </a>

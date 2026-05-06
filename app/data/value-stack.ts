@@ -7,8 +7,8 @@ export type ValueStackRow = {
 export const VALUE_STACK: ValueStackRow[] = [
   {
     item: "1x 1:1 Pro Coaching Call (60 min, live)",
-    value: "$75 to $125",
-    note: "Market rate for one live session with a pro coach",
+    value: "$50 to $100",
+    note: "Value of a live session with a pro coach",
   },
   {
     item: "1x Async Replay Review (30 min)",
