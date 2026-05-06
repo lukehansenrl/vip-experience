@@ -12,8 +12,6 @@ import {
   Crosshair,
   Layers,
   Clock,
-  Check,
-  Minus,
 } from "lucide-react";
 
 import { StickyNav } from "../components/StickyNav";
@@ -148,6 +146,28 @@ export function CallPageClient({ spotsFilled }: Props) {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── BOOTCAMP PRICE ANCHOR (right after hero) ── */}
+      <section className="border-t border-white/10 px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-2xl border border-[var(--gold)]/30 bg-[var(--gold)]/5 p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+              First, our flagship
+            </p>
+            <h2 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
+              Bootcamp Is Our 1:1 Intensive.
+            </h2>
+            <p className="mt-3 text-base text-white/80 md:text-lg">
+              4 to 12 weeks, application only.{" "}
+              <span className="font-bold text-white">
+                $300 to $550 / 4 weeks.
+              </span>{" "}
+              The fastest path to improvement that exists. But that&apos;s not
+              what we&apos;re here for today.
+            </p>
           </div>
         </div>
       </section>
@@ -288,81 +308,6 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── WHY 1:1 COACHING (sells the vehicle: 1:1 vs DIY) ── */}
-      <section className="border-t border-white/10 px-6 py-20 md:py-24">
-        <div className="mx-auto max-w-5xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            The Choice
-          </p>
-          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
-            Why 1:1 Coaching.
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
-            You&apos;ve been queueing ranked, watching YouTube, hopping into
-            the Discord. If that was going to get you there, it would have by
-            now. Here&apos;s what changes when a pro actually looks at YOUR
-            gameplay.
-          </p>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2 md:gap-6">
-            {/* DIY card (current state) */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-7">
-              <p className="text-xs font-bold uppercase tracking-widest text-white/40">
-                What you&apos;re doing now
-              </p>
-              <h3 className="font-display mt-2 text-2xl md:text-3xl">
-                YouTube + Grinding Solo
-              </h3>
-              <ul className="mt-5 space-y-3 text-base text-white/70 md:text-lg">
-                <li className="flex items-start gap-3">
-                  <Minus className="mt-1.5 h-4 w-4 flex-shrink-0 text-white/30" />
-                  Generic concepts, not built for your rank or your habits
-                </li>
-                <li className="flex items-start gap-3">
-                  <Minus className="mt-1.5 h-4 w-4 flex-shrink-0 text-white/30" />
-                  No idea which of your habits is actually keeping you stuck
-                </li>
-                <li className="flex items-start gap-3">
-                  <Minus className="mt-1.5 h-4 w-4 flex-shrink-0 text-white/30" />
-                  No plan, no feedback, no accountability
-                </li>
-                <li className="flex items-start gap-3">
-                  <Minus className="mt-1.5 h-4 w-4 flex-shrink-0 text-white/30" />
-                  Months pass without measurable progress
-                </li>
-              </ul>
-            </div>
-
-            {/* VIP card (the answer) */}
-            <div className="rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/5 p-7 shadow-xl shadow-[var(--accent-glow)]">
-              <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-                What VIP gives you
-              </p>
-              <h3 className="font-display mt-2 text-2xl md:text-3xl">
-                A Pro Watches Your Replays
-              </h3>
-              <ul className="mt-5 space-y-3 text-base text-white md:text-lg">
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  Coaching built around YOUR rank, mechanics, and decisions
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  A pro shows you the exact habits keeping you stuck
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  Personalized 30-day plan + biweekly check-ins
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  Real progress in weeks, not months
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── WHAT'S INCLUDED — VIP introduction + 5 features ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
@@ -404,6 +349,117 @@ export function CallPageClient({ spotsFilled }: Props) {
               title="Full RL Clubhouse Membership"
               description="15+ live events monthly, weekly classes, replay reviews, recordings, community."
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ── WAYS TO IMPROVE — TIER LIST (sells 1:1 vs DIY) ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Ways To Improve · Tier List
+          </p>
+          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
+            Not All Practice Is Equal.
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
+            You&apos;ve been queueing ranked, watching YouTube, hopping into
+            the Discord. If that was going to get you there, it would have by
+            now.
+          </p>
+
+          <div className="mt-12 space-y-3">
+            {/* S TIER — 1:1 Coaching */}
+            <div className="rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/10 p-4 shadow-xl shadow-[var(--accent-glow)] md:p-5">
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
+                <div className="flex items-center gap-3 md:w-60 md:flex-shrink-0">
+                  <span className="font-display flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-[var(--accent)] text-lg text-white shadow-lg shadow-[var(--accent-glow)] md:h-12 md:w-12 md:text-xl">
+                    S
+                  </span>
+                  <span className="font-display text-xl text-white md:text-2xl">
+                    1:1 Coaching
+                  </span>
+                </div>
+                <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/10 md:h-4">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--green)]"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <div className="text-sm text-white/85 md:w-56 md:flex-shrink-0 md:text-base">
+                  A pro shows you what to fix in YOUR replays
+                </div>
+              </div>
+            </div>
+
+            {/* B TIER — Group Classes / Community */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5">
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
+                <div className="flex items-center gap-3 md:w-60 md:flex-shrink-0">
+                  <span className="font-display flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-white/15 text-lg text-white/80 md:h-12 md:w-12 md:text-xl">
+                    B
+                  </span>
+                  <span className="font-display text-xl text-white/85 md:text-2xl">
+                    Community + Group Classes
+                  </span>
+                </div>
+                <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/10 md:h-4">
+                  <div
+                    className="h-full rounded-full bg-white/40"
+                    style={{ width: "50%" }}
+                  />
+                </div>
+                <div className="text-sm text-white/55 md:w-56 md:flex-shrink-0 md:text-base">
+                  Generic for the room, not for you
+                </div>
+              </div>
+            </div>
+
+            {/* C TIER — YouTube */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5">
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
+                <div className="flex items-center gap-3 md:w-60 md:flex-shrink-0">
+                  <span className="font-display flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-white/15 text-lg text-white/70 md:h-12 md:w-12 md:text-xl">
+                    C
+                  </span>
+                  <span className="font-display text-xl text-white/80 md:text-2xl">
+                    YouTube Tutorials
+                  </span>
+                </div>
+                <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/10 md:h-4">
+                  <div
+                    className="h-full rounded-full bg-white/30"
+                    style={{ width: "28%" }}
+                  />
+                </div>
+                <div className="text-sm text-white/55 md:w-56 md:flex-shrink-0 md:text-base">
+                  Concepts, not your habits
+                </div>
+              </div>
+            </div>
+
+            {/* D TIER — Grinding Solo */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5">
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
+                <div className="flex items-center gap-3 md:w-60 md:flex-shrink-0">
+                  <span className="font-display flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-white/15 text-lg text-white/60 md:h-12 md:w-12 md:text-xl">
+                    D
+                  </span>
+                  <span className="font-display text-xl text-white/75 md:text-2xl">
+                    Grinding Solo
+                  </span>
+                </div>
+                <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/10 md:h-4">
+                  <div
+                    className="h-full rounded-full bg-white/20"
+                    style={{ width: "15%" }}
+                  />
+                </div>
+                <div className="text-sm text-white/55 md:w-56 md:flex-shrink-0 md:text-base">
+                  Practicing your mistakes
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -638,26 +694,6 @@ export function CallPageClient({ spotsFilled }: Props) {
                 Pricing below ↓
               </span>
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── BOOTCAMP HIGH ANCHOR (small, before price reveal) ── */}
-      <section className="border-t border-white/10 px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-3xl">
-          <div className="rounded-2xl border border-[var(--gold)]/30 bg-[var(--gold)]/5 p-6 md:p-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
-              Want To Go Even Deeper?
-            </p>
-            <h3 className="font-display mt-2 text-2xl tracking-tight md:text-3xl">
-              Bootcamp Is Our Flagship.
-            </h3>
-            <p className="mt-3 text-base text-white/75 md:text-lg">
-              4-to-12-week 1:1 intensives. Application only.{" "}
-              <span className="font-bold text-white">$300 to $550 / 4 weeks.</span>{" "}
-              For players ready to commit deeper. Most players start with VIP
-              and work their way up.
-            </p>
           </div>
         </div>
       </section>
