@@ -12,6 +12,8 @@ import {
   Crosshair,
   Layers,
   Clock,
+  Check,
+  Minus,
 } from "lucide-react";
 
 import { StickyNav } from "../components/StickyNav";
@@ -19,7 +21,6 @@ import { IncludeCard } from "../components/IncludeCard";
 import { BenefitCard } from "../components/BenefitCard";
 import { RatingBar } from "../components/RatingBar";
 import { PricingCard } from "../components/PricingCard";
-import { ProductStack } from "../components/ProductStack";
 import { VIDEO_TESTIMONIALS } from "../data/testimonials";
 import { VALUE_STACK } from "../data/value-stack";
 
@@ -30,14 +31,9 @@ const FEATURED_TESTIMONIALS = ["Xeneson", "Dami", "deadshot8885"];
 // Total cap. Only changes if the business actually raises the cap.
 const SPOTS_TOTAL = 60;
 
-// TODO: replace both with local files once Luke saves the professional photos
-// to public/graphics/spookyluke-hero.jpg and spookyluke-creator.jpg.
-// Using the existing spookyluke.com cutout as a temporary placeholder so the
-// page never shows broken images during a sales call.
-const SPOOKYLUKE_REMOTE_CUTOUT =
-  "https://i0.wp.com/spookyluke.com/wp-content/uploads/2025/09/cutout-sept.webp?fit=592%2C713&ssl=1";
-const HERO_IMG = SPOOKYLUKE_REMOTE_CUTOUT;
-const CREATOR_IMG = SPOOKYLUKE_REMOTE_CUTOUT;
+// Local pro shots from the July 2025 photo shoot.
+const HERO_IMG = "/graphics/spookyluke-hero.jpg";
+const CREATOR_IMG = "/graphics/spookyluke-creator.jpg";
 
 type Props = {
   /** Active member count fetched server-side from the Whop API. */
@@ -292,22 +288,79 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── PRODUCT STACK (VIP vs Bootcamp, 2-col) ── */}
+      {/* ── WHY 1:1 COACHING (sells the vehicle: 1:1 vs DIY) ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-5xl">
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Two Ways To Train
+            The Choice
           </p>
           <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
-            VIP Vs. Bootcamp.
+            Why 1:1 Coaching.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
-            Bootcamp is the flagship. The fastest path to improvement that
-            exists. VIP is where most players start: coaching, a plan, and a
-            community, without the all-in commitment.
+            You&apos;ve been queueing ranked, watching YouTube, hopping into
+            the Discord. If that was going to get you there, it would have by
+            now. Here&apos;s what changes when a pro actually looks at YOUR
+            gameplay.
           </p>
 
-          <ProductStack />
+          <div className="mt-12 grid gap-5 md:grid-cols-2 md:gap-6">
+            {/* DIY card (current state) */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+              <p className="text-xs font-bold uppercase tracking-widest text-white/40">
+                What you&apos;re doing now
+              </p>
+              <h3 className="font-display mt-2 text-2xl md:text-3xl">
+                YouTube + Grinding Solo
+              </h3>
+              <ul className="mt-5 space-y-3 text-base text-white/70 md:text-lg">
+                <li className="flex items-start gap-3">
+                  <Minus className="mt-1.5 h-4 w-4 flex-shrink-0 text-white/30" />
+                  Generic concepts, not built for your rank or your habits
+                </li>
+                <li className="flex items-start gap-3">
+                  <Minus className="mt-1.5 h-4 w-4 flex-shrink-0 text-white/30" />
+                  No idea which of your habits is actually keeping you stuck
+                </li>
+                <li className="flex items-start gap-3">
+                  <Minus className="mt-1.5 h-4 w-4 flex-shrink-0 text-white/30" />
+                  No plan, no feedback, no accountability
+                </li>
+                <li className="flex items-start gap-3">
+                  <Minus className="mt-1.5 h-4 w-4 flex-shrink-0 text-white/30" />
+                  Months pass without measurable progress
+                </li>
+              </ul>
+            </div>
+
+            {/* VIP card (the answer) */}
+            <div className="rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/5 p-7 shadow-xl shadow-[var(--accent-glow)]">
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+                What VIP gives you
+              </p>
+              <h3 className="font-display mt-2 text-2xl md:text-3xl">
+                A Pro Watches Your Replays
+              </h3>
+              <ul className="mt-5 space-y-3 text-base text-white md:text-lg">
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
+                  Coaching built around YOUR rank, mechanics, and decisions
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
+                  A pro shows you the exact habits keeping you stuck
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
+                  Personalized 30-day plan + biweekly check-ins
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1.5 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
+                  Real progress in weeks, not months
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -333,8 +386,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             />
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
-              title="One 30-Minute Async Replay Review"
-              description="Send your replays. Your coach returns specific timestamps, clear corrections, and what to focus on next."
+              title="30-Minute Personalized Replay Review"
+              description="Send your replays. Your coach sends back specific timestamps, clear corrections, and exactly what to focus on next."
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
@@ -351,26 +404,6 @@ export function CallPageClient({ spotsFilled }: Props) {
               title="Full RL Clubhouse Membership"
               description="15+ live events monthly, weekly classes, replay reviews, recordings, community."
             />
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY VIP WORKS (improve-faster reframe) ── */}
-      <section className="border-t border-white/10 px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl">
-          <div className="rounded-2xl border border-[var(--accent)]/40 bg-[var(--accent)]/5 p-6 md:p-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-              Why VIP Works
-            </p>
-            <h2 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
-              Faster Than Going Solo. Less Than Bootcamp.
-            </h2>
-            <p className="mt-4 text-lg text-white/80 md:text-xl">
-              Solo grinding and YouTube can take months to figure out
-              what&apos;s actually holding you back. Bootcamp is the fastest
-              path that exists, but it&apos;s a serious commitment. VIP gets
-              you the same caliber of coach without going all-in.
-            </p>
           </div>
         </div>
       </section>
@@ -605,6 +638,26 @@ export function CallPageClient({ spotsFilled }: Props) {
                 Pricing below ↓
               </span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── BOOTCAMP HIGH ANCHOR (small, before price reveal) ── */}
+      <section className="border-t border-white/10 px-6 py-12 md:py-16">
+        <div className="mx-auto max-w-3xl">
+          <div className="rounded-2xl border border-[var(--gold)]/30 bg-[var(--gold)]/5 p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+              Want To Go Even Deeper?
+            </p>
+            <h3 className="font-display mt-2 text-2xl tracking-tight md:text-3xl">
+              Bootcamp Is Our Flagship.
+            </h3>
+            <p className="mt-3 text-base text-white/75 md:text-lg">
+              4-to-12-week 1:1 intensives. Application only.{" "}
+              <span className="font-bold text-white">$300 to $550 / 4 weeks.</span>{" "}
+              For players ready to commit deeper. Most players start with VIP
+              and work their way up.
+            </p>
           </div>
         </div>
       </section>
