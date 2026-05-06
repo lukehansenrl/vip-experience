@@ -137,7 +137,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 habits and exactly what to do to improve the fastest.
               </p>
               <p className="mx-auto mt-5 max-w-xl text-lg font-semibold text-[var(--green)] md:mx-0 md:text-xl">
-                Rank up faster in 30 days. Guaranteed, or your money back. No
+                Improve faster in 30 days. Guaranteed, or your money back. No
                 questions asked.
               </p>
             </div>
@@ -175,26 +175,26 @@ export function CallPageClient({ spotsFilled }: Props) {
                 From SpookyLuke
               </p>
               <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
-                Built By The #1 Rocket League YouTuber In The World.
+                Built By The #1 Rocket League Coach In The World.
               </h2>
               <p className="mt-5 text-lg text-white/80 md:text-xl">
                 I built VIP to give the average player what&apos;s usually
-                reserved for the top 1%: real one-on-one coaching, a
-                personalized plan, accountability while you grind, a guarantee
-                it&apos;ll work, and a reward when you rank up.
+                reserved for the top 1%: pro one-on-one coaching, a
+                personalized plan, accountability while you grind, guaranteed
+                to work, and a reward when you rank up.
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
-                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
-                  486K+ YouTube Subscribers
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-sm font-bold text-[var(--accent)]">
+                  530K+ YouTube Subscribers
                 </span>
-                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
-                  216M+ Views
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-sm font-bold text-[var(--accent)]">
+                  268M+ Views
                 </span>
-                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-sm font-bold text-[var(--accent)]">
                   GC3 Peak
                 </span>
-                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-bold text-[var(--accent)]">
-                  60K+ Discord
+                <span className="rounded-full bg-[var(--accent)]/10 px-3 py-1 text-sm font-bold text-[var(--accent)]">
+                  100K+ Discord
                 </span>
               </div>
             </div>
@@ -209,7 +209,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             Real Results
           </p>
           <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
-            Real Players. Real Rank-Ups.
+            Real Players. Real Progress.
           </h2>
 
           {/* Rating summary */}
@@ -303,8 +303,8 @@ export function CallPageClient({ spotsFilled }: Props) {
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
             Bootcamp is the flagship. The fastest path to improvement that
-            exists. VIP is where most players start: real coaching, real plan,
-            without the all-in commitment.
+            exists. VIP is where most players start: coaching, a plan, and a
+            community, without the all-in commitment.
           </p>
 
           <ProductStack />
@@ -321,8 +321,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             Here&apos;s Everything You Get.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
-            Real coaching. Real plan. Same caliber of coaches as Bootcamp, at a
-            starting commitment.
+            Coaching. Plan. Same caliber of coaches as Bootcamp, without the
+            all-in commitment.
           </p>
 
           <div className="mt-10 flex flex-col gap-5">
