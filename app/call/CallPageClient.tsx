@@ -12,6 +12,7 @@ import {
   Crosshair,
   Layers,
   Clock,
+  ArrowUp,
 } from "lucide-react";
 
 import { StickyNav } from "../components/StickyNav";
@@ -353,7 +354,7 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── WAYS TO IMPROVE — TIER LIST (sells 1:1 vs DIY) ── */}
+      {/* ── WAYS TO IMPROVE — VERTICAL BAR CHART ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
         <div className="mx-auto max-w-5xl">
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
@@ -368,95 +369,78 @@ export function CallPageClient({ spotsFilled }: Props) {
             now.
           </p>
 
-          <div className="mt-12 space-y-3">
-            {/* S TIER — 1:1 Coaching */}
-            <div className="rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/10 p-4 shadow-xl shadow-[var(--accent-glow)] md:p-5">
-              <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
-                <div className="flex items-center gap-3 md:w-60 md:flex-shrink-0">
-                  <span className="font-display flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-[var(--accent)] text-lg text-white shadow-lg shadow-[var(--accent-glow)] md:h-12 md:w-12 md:text-xl">
-                    S
-                  </span>
-                  <span className="font-display text-xl text-white md:text-2xl">
-                    1:1 Coaching
-                  </span>
-                </div>
-                <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/10 md:h-4">
-                  <div
-                    className="h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--green)]"
-                    style={{ width: "100%" }}
-                  />
-                </div>
-                <div className="text-sm text-white/85 md:w-56 md:flex-shrink-0 md:text-base">
-                  A pro shows you what to fix in YOUR replays
-                </div>
+          {/* Chart card */}
+          <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-10">
+            {/* Y axis label */}
+            <p className="mb-3 flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-white/50 md:text-sm">
+              <ArrowUp className="h-3.5 w-3.5 md:h-4 md:w-4" />
+              Improvement Speed
+            </p>
+
+            {/* Bars */}
+            <div className="flex h-72 items-end justify-between gap-3 border-b-2 border-l-2 border-white/15 pl-2 md:h-96 md:gap-6 md:pl-4">
+              {/* S — 1:1 Coaching */}
+              <div className="flex h-full flex-1 flex-col justify-end">
+                <div
+                  className="rounded-t-lg bg-[var(--accent)] shadow-lg shadow-[var(--accent-glow)]"
+                  style={{ height: "100%" }}
+                />
+              </div>
+              {/* A — Community */}
+              <div className="flex h-full flex-1 flex-col justify-end">
+                <div
+                  className="rounded-t-lg bg-white/45"
+                  style={{ height: "55%" }}
+                />
+              </div>
+              {/* B — YouTube */}
+              <div className="flex h-full flex-1 flex-col justify-end">
+                <div
+                  className="rounded-t-lg bg-white/30"
+                  style={{ height: "30%" }}
+                />
+              </div>
+              {/* C — Grinding Solo */}
+              <div className="flex h-full flex-1 flex-col justify-end">
+                <div
+                  className="rounded-t-lg bg-white/20"
+                  style={{ height: "15%" }}
+                />
               </div>
             </div>
 
-            {/* B TIER — Group Classes / Community */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5">
-              <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
-                <div className="flex items-center gap-3 md:w-60 md:flex-shrink-0">
-                  <span className="font-display flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-white/15 text-lg text-white/80 md:h-12 md:w-12 md:text-xl">
-                    B
-                  </span>
-                  <span className="font-display text-xl text-white/85 md:text-2xl">
-                    Community + Group Classes
-                  </span>
+            {/* X axis labels: method name + tier letter */}
+            <div className="mt-4 grid grid-cols-4 gap-3 pl-2 md:mt-5 md:gap-6 md:pl-4">
+              <div className="text-center">
+                <div className="font-display text-xs leading-tight text-white sm:text-sm md:text-base">
+                  1:1 Coaching
                 </div>
-                <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/10 md:h-4">
-                  <div
-                    className="h-full rounded-full bg-white/40"
-                    style={{ width: "50%" }}
-                  />
-                </div>
-                <div className="text-sm text-white/55 md:w-56 md:flex-shrink-0 md:text-base">
-                  Generic for the room, not for you
+                <div className="font-display mt-1 text-2xl text-[var(--accent)] md:mt-2 md:text-4xl">
+                  S
                 </div>
               </div>
-            </div>
-
-            {/* C TIER — YouTube */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5">
-              <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
-                <div className="flex items-center gap-3 md:w-60 md:flex-shrink-0">
-                  <span className="font-display flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-white/15 text-lg text-white/70 md:h-12 md:w-12 md:text-xl">
-                    C
-                  </span>
-                  <span className="font-display text-xl text-white/80 md:text-2xl">
-                    YouTube Tutorials
-                  </span>
+              <div className="text-center">
+                <div className="font-display text-xs leading-tight text-white/85 sm:text-sm md:text-base">
+                  Community
                 </div>
-                <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/10 md:h-4">
-                  <div
-                    className="h-full rounded-full bg-white/30"
-                    style={{ width: "28%" }}
-                  />
-                </div>
-                <div className="text-sm text-white/55 md:w-56 md:flex-shrink-0 md:text-base">
-                  Concepts, not your habits
+                <div className="font-display mt-1 text-2xl text-white/65 md:mt-2 md:text-4xl">
+                  A
                 </div>
               </div>
-            </div>
-
-            {/* D TIER — Grinding Solo */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-5">
-              <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
-                <div className="flex items-center gap-3 md:w-60 md:flex-shrink-0">
-                  <span className="font-display flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-white/15 text-lg text-white/60 md:h-12 md:w-12 md:text-xl">
-                    D
-                  </span>
-                  <span className="font-display text-xl text-white/75 md:text-2xl">
-                    Grinding Solo
-                  </span>
+              <div className="text-center">
+                <div className="font-display text-xs leading-tight text-white/80 sm:text-sm md:text-base">
+                  YouTube
                 </div>
-                <div className="h-3 flex-1 overflow-hidden rounded-full bg-white/10 md:h-4">
-                  <div
-                    className="h-full rounded-full bg-white/20"
-                    style={{ width: "15%" }}
-                  />
+                <div className="font-display mt-1 text-2xl text-white/55 md:mt-2 md:text-4xl">
+                  B
                 </div>
-                <div className="text-sm text-white/55 md:w-56 md:flex-shrink-0 md:text-base">
-                  Practicing your mistakes
+              </div>
+              <div className="text-center">
+                <div className="font-display text-xs leading-tight text-white/75 sm:text-sm md:text-base">
+                  Grinding Solo
+                </div>
+                <div className="font-display mt-1 text-2xl text-white/45 md:mt-2 md:text-4xl">
+                  C
                 </div>
               </div>
             </div>
