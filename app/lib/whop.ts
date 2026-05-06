@@ -10,7 +10,9 @@ const WHOP_BASE = "https://api.whop.com/api/v1";
  * this number occasionally so a degraded page doesn't show a wildly stale
  * count during a sales call.
  */
-const FALLBACK_ACTIVE_MEMBERS = 53;
+// Temporarily 1 to verify the live Whop API is firing on prod (will revert
+// to 53 in the next commit once verified).
+const FALLBACK_ACTIVE_MEMBERS = 1;
 
 type WhopMember = {
   id: string;
