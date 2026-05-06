@@ -1,0 +1,544 @@
+"use client";
+
+import { useEffect } from "react";
+import {
+  Gamepad2,
+  Video,
+  ClipboardList,
+  PhoneCall,
+  Trophy,
+  Star,
+  Play,
+  Crosshair,
+  Layers,
+  Clock,
+} from "lucide-react";
+
+import { StickyNav } from "../components/StickyNav";
+import { IncludeCard } from "../components/IncludeCard";
+import { BenefitCard } from "../components/BenefitCard";
+import { RatingBar } from "../components/RatingBar";
+import { PricingCard } from "../components/PricingCard";
+import { ProductStack } from "../components/ProductStack";
+import { VIDEO_TESTIMONIALS } from "../data/testimonials";
+import { VALUE_STACK } from "../data/value-stack";
+
+const WHOP_URL = "https://whop.com/rlclubhouse/rlc-pro-vip-membership/";
+
+const FEATURED_TESTIMONIALS = ["Xeneson", "Dami", "deadshot8885"];
+
+export function CallPageClient() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+      return;
+
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("section")
+    );
+    sections.forEach((s, idx) => {
+      if (idx === 0) return;
+      s.style.opacity = "0";
+      s.style.transform = "translateY(40px)";
+      s.style.transition =
+        "opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), transform 800ms cubic-bezier(0.22, 1, 0.36, 1)";
+      s.style.willChange = "opacity, transform";
+    });
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -80px 0px" }
+    );
+
+    sections.forEach((s, idx) => {
+      if (idx === 0) return;
+      io.observe(s);
+    });
+
+    return () => io.disconnect();
+  }, []);
+
+  const featured = VIDEO_TESTIMONIALS.filter((t) =>
+    FEATURED_TESTIMONIALS.includes(t.name)
+  );
+
+  return (
+    <div
+      className="min-h-screen text-white"
+      style={{
+        backgroundColor: "#0b0e17",
+        backgroundImage: `
+          radial-gradient(ellipse 90% 60% at 50% 0%, rgba(108,99,255,0.35) 0%, transparent 70%),
+          radial-gradient(ellipse 70% 50% at 50% 100%, rgba(80,60,200,0.15) 0%, transparent 70%)
+        `,
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <StickyNav />
+
+      {/* ── HERO ── */}
+      <section className="relative px-6 pb-16 pt-24 text-center md:pb-20 md:pt-32">
+        <div className="mx-auto max-w-3xl">
+          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            The VIP Experience
+          </p>
+          <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight md:text-6xl">
+            Improve Faster With Real 1:1 Coaching.
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-lg text-white/60 md:text-xl">
+            A real coach, a personalized plan, and accountability — built to
+            actually move your rank, not just queue more games and hope.
+          </p>
+        </div>
+      </section>
+
+      {/* ── PRODUCT STACK (VIP vs Bootcamp, 2-col) ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Two Ways To Train
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            VIP Vs. Bootcamp.
+          </h2>
+          <p className="mt-4 max-w-2xl text-white/60">
+            Bootcamp is the flagship — the fastest path to improvement that
+            exists. VIP is where most players start: real coaching, real plan,
+            without the all-in commitment.
+          </p>
+
+          <ProductStack />
+        </div>
+      </section>
+
+      {/* ── WHAT'S INCLUDED — VIP introduction + 5 features ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            VIP — Today&apos;s Offer
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            Here&apos;s Everything You Get.
+          </h2>
+          <p className="mt-4 max-w-2xl text-white/60">
+            Real coaching. Real plan. Same caliber of coaches as Bootcamp — at
+            a starting commitment.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-5">
+            <IncludeCard
+              icon={<Gamepad2 className="h-5 w-5 text-[var(--accent)]" />}
+              title="One 60-Minute Live 1:1 Coaching Call With A Pro"
+              description="Once a month. Your coach watches your replays before the call, then walks through exactly what&apos;s holding you back and how to fix it on a live screenshare."
+            />
+            <IncludeCard
+              icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
+              title="One 30-Minute Async Replay Review"
+              description="Send your replays. Your coach returns specific timestamps, clear corrections, and what to focus on next."
+            />
+            <IncludeCard
+              icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
+              title="Personalized 30-Day Training Routine"
+              description="Built around your schedule and rank so you always know what to practice."
+            />
+            <IncludeCard
+              icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
+              title="Accountability Check-Ins"
+              description="Short calls to keep you consistent and adjust the plan as you go."
+            />
+            <IncludeCard
+              icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
+              title="Full RL Clubhouse Membership"
+              description="15+ live events monthly, weekly classes, replay reviews, recordings, community."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHY VIP WORKS (improve-faster reframe) ── */}
+      <section className="border-t border-white/10 px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-3xl">
+          <div className="rounded-2xl border border-[var(--accent)]/40 bg-[var(--accent)]/5 p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+              Why VIP Works
+            </p>
+            <h2 className="mt-2 text-2xl font-extrabold tracking-tight md:text-3xl">
+              Faster Than Going Solo. Less Than Bootcamp.
+            </h2>
+            <p className="mt-3 text-white/60 md:text-lg">
+              Solo grinding and YouTube can take months to figure out
+              what&apos;s actually holding you back. Bootcamp is the fastest
+              path that exists — but it&apos;s a serious commitment. VIP gets
+              you the same caliber of coach without going all-in.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHY A COACH ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            On 1:1 Coaching
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            Why A Coach Beats A Class.
+          </h2>
+          <p className="mt-4 max-w-2xl text-white/50">
+            If you&apos;ve never done 1:1 before, here&apos;s what changes.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <BenefitCard
+              icon={<Crosshair className="h-6 w-6 text-[var(--accent)]" />}
+              title="It's your gameplay."
+              description="Group classes teach concepts. A coach watches your replays and tells you what you do wrong."
+            />
+            <BenefitCard
+              icon={<Layers className="h-6 w-6 text-[var(--accent)]" />}
+              title="It's built around your rank."
+              description="Plat, Champ, GC — coaching adapts. The drills, the focus areas, and the plan all move with you."
+            />
+            <BenefitCard
+              icon={<Clock className="h-6 w-6 text-[var(--accent)]" />}
+              title="Two coach touchpoints a month."
+              description="One live 60-min call plus one 30-min async review. The other 28 days are your plan, the community, and your own queueing."
+            />
+          </div>
+
+          <p className="mt-8 text-center text-sm italic text-white/40">
+            You don&apos;t have to love coaching. You just have to want to get
+            better.
+          </p>
+        </div>
+      </section>
+
+      {/* ── PROOF ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Real Results
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            Real Players. Real Rank-Ups.
+          </h2>
+
+          {/* Rating summary */}
+          <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+            <div className="flex flex-col items-center gap-6 md:flex-row md:gap-12">
+              <div className="text-center">
+                <p className="text-6xl font-black">5.0</p>
+                <div className="mt-2 flex gap-0.5 justify-center">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
+                </div>
+                <p className="mt-1 text-sm text-white/50">95 ratings</p>
+              </div>
+              <div className="flex-1 space-y-2 w-full">
+                <RatingBar stars={5} percent={95} count={90} />
+                <RatingBar stars={4} percent={5} count={5} />
+                <RatingBar stars={3} percent={0} count={0} />
+                <RatingBar stars={2} percent={0} count={0} />
+                <RatingBar stars={1} percent={0} count={0} />
+              </div>
+            </div>
+          </div>
+
+          {/* Featured testimonials */}
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {featured.map((t) => (
+              <div
+                key={t.name}
+                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-[var(--accent)]/40"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-full ${t.color} text-sm font-bold text-white`}
+                  >
+                    {t.initials}
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">{t.name}</p>
+                    <p className="text-xs font-semibold text-[var(--accent)]">
+                      {t.rank}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mb-3 flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
+                </div>
+
+                <p className="flex-1 text-sm leading-relaxed text-white/60">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+
+                {t.coachNotes && (
+                  <p className="mt-3 text-xs text-white/30">
+                    Coached on: {t.coachNotes}
+                  </p>
+                )}
+
+                <a
+                  href={t.vodUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-[var(--accent)]/40 hover:text-white"
+                >
+                  <Play className="h-4 w-4 text-[var(--accent)]" />
+                  Watch the coaching session
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── MEET THE TEAM ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="mb-2 text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Meet The Coaches
+          </p>
+          <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
+            The People Behind Your Improvement.
+          </h2>
+          <p className="mb-12 text-center text-white/50 max-w-xl mx-auto">
+            RLCS-level pros. Each has their own style — you get matched to
+            whoever fits your goals.
+          </p>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
+              <img
+                src="/graphics/torment.jpg"
+                alt="Torment"
+                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
+              />
+              <div className="font-extrabold text-xl">Torment</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
+                World Champion S7
+              </div>
+              <div className="text-xs text-white/50 mt-3 leading-relaxed">
+                RLCS Season 7 World Champion. Specializes in rotations,
+                positioning, and high-level decision-making.
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
+              <img
+                src="/graphics/freakii-lp.jpg"
+                alt="Freakii"
+                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
+              />
+              <div className="font-extrabold text-xl">Freakii</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
+                Former EU Pro &middot; Head Coach at PWR
+              </div>
+              <div className="text-xs text-white/50 mt-3 leading-relaxed">
+                Former Renault Vitality pro, now head coach at PWR. EU
+                perspective on mechanics and technical consistency.
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
+              <img
+                src="/graphics/shock-lp.jpg"
+                alt="Shock"
+                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
+              />
+              <div className="font-extrabold text-xl">Shock</div>
+              <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
+                Former NA Pro &middot; RLCS S9 MVP
+              </div>
+              <div className="text-xs text-white/50 mt-3 leading-relaxed">
+                Former Soniqs and Ghost Gaming pro. RLCS Season 9 NA Regular
+                Season MVP. Known for controlled aggression and high IQ plays.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── RANK-UP PROMISE ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            The VIP Promise
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            Rank Up. We Send You A New Controller.
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-white/50">
+            Put in the work. Hit a full rank up. Hold it. We&apos;ll ship you a
+            brand new controller.
+          </p>
+        </div>
+
+        {/* 3-step */}
+        <div className="mx-auto mt-12 max-w-4xl grid gap-8 md:grid-cols-3">
+          <div className="text-center">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--accent)] text-lg font-black text-[var(--accent)]">
+              1
+            </div>
+            <h3 className="mt-4 text-lg font-extrabold">Rank Up</h3>
+            <p className="mt-2 text-sm text-white/50">
+              Full rank up within 90 days. Plat → Diamond. Diamond → Champ.
+              Champ → GC.
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--accent)] text-lg font-black text-[var(--accent)]">
+              2
+            </div>
+            <h3 className="mt-4 text-lg font-extrabold">Hold It</h3>
+            <p className="mt-2 text-sm text-white/50">
+              Maintain your new rank across two consecutive seasons. One
+              check-in session with the team.
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--green)] text-lg font-black text-[var(--green)]">
+              ✓
+            </div>
+            <h3 className="mt-4 text-lg font-extrabold text-[var(--green)]">
+              New Controller
+            </h3>
+            <p className="mt-2 text-sm text-white/50">
+              Send proof. We verify everything and ship you a brand new
+              controller. On us.
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-10 text-center">
+          <a
+            href="/promise"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-white/30 underline hover:text-white/50 transition"
+          >
+            Full terms &amp; conditions
+          </a>
+        </p>
+      </section>
+
+      {/* ── YOU'RE NOT LOCKED IN ── */}
+      <section className="border-t border-white/10 px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-3xl">
+          <div className="rounded-2xl border border-[var(--green)]/30 bg-[var(--green)]/5 p-6 text-center md:p-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--green)]">
+              No Risk
+            </p>
+            <h2 className="mt-2 text-2xl font-extrabold tracking-tight md:text-3xl">
+              You&apos;re Not Locked In.
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-white/60">
+              30-day money-back guarantee. Cancel anytime. No contracts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── VALUE STACK ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            The Value
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            What This Would Cost Separately.
+          </h2>
+
+          <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+            {VALUE_STACK.map((row, i) => (
+              <div
+                key={row.item}
+                className={`flex items-center justify-between gap-4 px-6 py-4 ${
+                  i < VALUE_STACK.length - 1 ? "border-b border-white/10" : ""
+                }`}
+              >
+                <div>
+                  <span className="text-sm text-white/70">{row.item}</span>
+                  {row.note && (
+                    <p className="text-xs text-white/30 mt-0.5">{row.note}</p>
+                  )}
+                </div>
+                <span className="text-sm font-bold whitespace-nowrap">
+                  {row.value}
+                </span>
+              </div>
+            ))}
+            <div className="flex items-center justify-between bg-white/[0.03] px-6 py-5 border-t border-white/10">
+              <span className="font-bold text-white/70">
+                Total if bought separately
+              </span>
+              <span className="text-lg font-black text-white">
+                $227 – $377 / mo
+              </span>
+            </div>
+            <a
+              href="#investment"
+              className="flex items-center justify-between bg-[var(--accent)]/10 px-6 py-5 transition hover:bg-[var(--accent)]/15"
+            >
+              <span className="font-bold">VIP bundles all of the above.</span>
+              <span className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-widest text-[var(--accent)]">
+                Pricing below ↓
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── INVESTMENT (PRICE REVEAL) ── */}
+      <section
+        id="investment"
+        className="border-t border-white/10 px-6 py-20 md:py-28"
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            The Investment
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            One Membership. Everything Above.
+          </h2>
+
+          <PricingCard
+            variant="call"
+            action={{
+              type: "link",
+              label: "Lock In Your Spot",
+              href: WHOP_URL,
+            }}
+          />
+        </div>
+      </section>
+
+      {/* ── FOOTER ── */}
+      <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/30">
+        &copy; {new Date().getFullYear()} RL Clubhouse. All rights reserved.
+      </footer>
+    </div>
+  );
+}
