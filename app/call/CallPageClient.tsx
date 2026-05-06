@@ -342,8 +342,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
-              title="Accountability Check-Ins"
-              description="Short calls to keep you consistent and adjust the plan as you go."
+              title="Biweekly Accountability Calls With Your Guide"
+              description="Two calls a month with your member guide (separate from your coach) to keep you on track, work through whatever&apos;s blocking you, and adjust the plan as you go."
             />
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
@@ -474,8 +474,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             />
             <BenefitCard
               icon={<Clock className="h-6 w-6 text-[var(--accent)]" />}
-              title="Two coach touchpoints a month."
-              description="One live 60-min call plus one 30-min async review. The other 28 days are your plan, the community, and your own queueing."
+              title="Two pros on your team."
+              description="Four touchpoints every month: two with your coach (a live call and a replay review) plus two with your member guide (biweekly accountability calls). You&apos;re never grinding alone."
             />
           </div>
 
