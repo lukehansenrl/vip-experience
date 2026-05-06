@@ -27,16 +27,25 @@ const WHOP_URL = "https://whop.com/rlclubhouse/rlc-pro-vip-membership/";
 
 const FEATURED_TESTIMONIALS = ["Xeneson", "Dami", "deadshot8885"];
 
-// Update SPOTS_FILLED from the Whop dashboard (Products → VIP membership). Keep
-// SPOTS_TOTAL at 60 unless the cap actually changes.
+// Total cap. Only changes if the business actually raises the cap.
 const SPOTS_TOTAL = 60;
-const SPOTS_FILLED = 39;
-const SPOTS_OPEN = SPOTS_TOTAL - SPOTS_FILLED;
 
-const SPOOKYLUKE_IMG =
+// TODO: replace both with local files once Luke saves the professional photos
+// to public/graphics/spookyluke-hero.jpg and spookyluke-creator.jpg.
+// Using the existing spookyluke.com cutout as a temporary placeholder so the
+// page never shows broken images during a sales call.
+const SPOOKYLUKE_REMOTE_CUTOUT =
   "https://i0.wp.com/spookyluke.com/wp-content/uploads/2025/09/cutout-sept.webp?fit=592%2C713&ssl=1";
+const HERO_IMG = SPOOKYLUKE_REMOTE_CUTOUT;
+const CREATOR_IMG = SPOOKYLUKE_REMOTE_CUTOUT;
 
-export function CallPageClient() {
+type Props = {
+  /** Active member count fetched server-side from the Whop API. */
+  spotsFilled: number;
+};
+
+export function CallPageClient({ spotsFilled }: Props) {
+  const spotsOpen = Math.max(0, SPOTS_TOTAL - spotsFilled);
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (
@@ -98,28 +107,44 @@ export function CallPageClient() {
       <StickyNav />
 
       {/* ── HERO ── */}
-      <section className="relative px-6 pb-16 pt-24 text-center md:pb-20 md:pt-32">
-        <div className="mx-auto max-w-3xl">
-          <div className="mb-6 flex justify-center">
+      <section className="relative px-6 pb-16 pt-24 md:pb-20 md:pt-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-8 flex justify-center md:justify-start">
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-[var(--gold)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
-              Strictly Limited · {SPOTS_FILLED} / {SPOTS_TOTAL} Filled · {SPOTS_OPEN} Spots Open
+              Strictly Limited · {spotsFilled} / {SPOTS_TOTAL} Filled · {spotsOpen} Spots Open
             </span>
           </div>
-          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            The VIP Experience
-          </p>
-          <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight md:text-6xl">
-            Improve Faster With One-on-One Coaching.
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70 md:text-xl">
-            Get a pro&apos;s eyes on your gameplay to pinpoint your bad habits
-            and exactly what to do to improve the fastest.
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-base font-semibold text-[var(--green)] md:text-lg">
-            Rank up faster in 30 days. Guaranteed, or your money back. No
-            questions asked.
-          </p>
+          <div className="grid gap-10 md:grid-cols-[1.15fr_1fr] md:items-center md:gap-14">
+            {/* Copy */}
+            <div className="text-center md:text-left">
+              <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+                The VIP Experience
+              </p>
+              <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+                Improve Faster With One-on-One Coaching.
+              </h1>
+              <p className="mx-auto mt-6 max-w-xl text-lg text-white/70 md:mx-0 md:text-xl">
+                Get a pro&apos;s eyes on your gameplay to pinpoint your bad
+                habits and exactly what to do to improve the fastest.
+              </p>
+              <p className="mx-auto mt-4 max-w-xl text-base font-semibold text-[var(--green)] md:mx-0 md:text-lg">
+                Rank up faster in 30 days. Guaranteed, or your money back. No
+                questions asked.
+              </p>
+            </div>
+            {/* Photo */}
+            <div className="flex justify-center md:justify-end">
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-3xl bg-[var(--accent)]/20 blur-3xl" />
+                <img
+                  src={HERO_IMG}
+                  alt="SpookyLuke at his Rocket League setup"
+                  className="relative w-full max-w-md rounded-2xl border border-white/10 object-cover shadow-2xl shadow-[var(--accent-glow)]"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -131,8 +156,8 @@ export function CallPageClient() {
               <div className="relative">
                 <div className="absolute inset-0 rounded-full bg-[var(--accent)]/30 blur-3xl" />
                 <img
-                  src={SPOOKYLUKE_IMG}
-                  alt="SpookyLuke"
+                  src={CREATOR_IMG}
+                  alt="SpookyLuke holding the YouTube silver play button"
                   className="relative h-48 w-48 rounded-full border-4 border-[var(--accent)]/40 object-cover object-top md:h-60 md:w-60"
                 />
               </div>
@@ -585,7 +610,7 @@ export function CallPageClient() {
           <div className="mb-6 flex justify-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-[var(--gold)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] animate-pulse" />
-              {SPOTS_FILLED} / {SPOTS_TOTAL} Filled · {SPOTS_OPEN} Spots Open
+              {spotsFilled} / {SPOTS_TOTAL} Filled · {spotsOpen} Spots Open
             </span>
           </div>
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
