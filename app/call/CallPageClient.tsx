@@ -12,6 +12,10 @@ import {
   Crosshair,
   Layers,
   Clock,
+  Check,
+  Monitor,
+  Users,
+  ArrowDown,
 } from "lucide-react";
 
 import { StickyNav } from "../components/StickyNav";
@@ -150,24 +154,132 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── BOOTCAMP PRICE ANCHOR (right after hero) ── */}
-      <section className="border-t border-white/10 px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-4xl">
-          <div className="rounded-2xl border border-[var(--gold)]/30 bg-[var(--gold)]/5 p-6 md:p-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
-              First, our flagship
-            </p>
-            <h2 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
-              Bootcamp Is Our 1:1 Intensive.
-            </h2>
-            <p className="mt-3 text-base text-white/80 md:text-lg">
-              4 to 12 weeks, application only.{" "}
-              <span className="font-bold text-white">
-                $300 to $550 / 4 weeks.
-              </span>{" "}
-              The fastest path to improvement that exists. But that&apos;s not
-              what we&apos;re here for today.
-            </p>
+      {/* ── BOOTCAMP + VIP CARDS (spookyluke.com-style 2-up, right after hero) ── */}
+      <section className="border-t border-white/10 px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-display text-center text-4xl tracking-tight md:text-5xl lg:text-6xl">
+            Want To Improve Faster? Learn From Pros.
+          </h2>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 md:gap-6">
+            {/* RL BOOTCAMP — pink/red theme */}
+            <div
+              className="relative overflow-hidden rounded-2xl border border-white/10 p-6 md:p-8"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(190, 18, 60, 0.45) 0%, rgba(83, 17, 47, 0.55) 30%, rgba(15, 8, 14, 0.95) 75%)",
+              }}
+            >
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="font-display text-3xl tracking-tight text-white md:text-4xl">
+                  RL Bootcamp
+                </span>
+                <span className="font-display whitespace-nowrap text-lg text-white md:text-xl">
+                  $300 to $550 / mo
+                </span>
+              </div>
+              <p className="mt-2 text-sm font-bold text-pink-300 md:text-base">
+                4 to 12 Week 1:1 Coaching Experience With A Pro
+              </p>
+
+              <h3 className="font-display mt-7 text-xl text-white md:text-2xl">
+                Improve So Fast Your Friends Think You&apos;re Boosted.
+              </h3>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-500/15 px-3 py-1 text-xs font-bold text-pink-200 md:text-sm">
+                  <Monitor className="h-3.5 w-3.5" /> PC Required
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-500/15 px-3 py-1 text-xs font-bold text-pink-200 md:text-sm">
+                  <Star className="h-3.5 w-3.5" /> Plat+
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-500/15 px-3 py-1 text-xs font-bold text-pink-200 md:text-sm">
+                  <Users className="h-3.5 w-3.5" /> Application Only
+                </span>
+              </div>
+
+              <ul className="mt-6 space-y-3 text-base text-white/85 md:text-lg">
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-pink-400" />
+                  1:1 coaching and accountability
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-pink-400" />
+                  Personalized feedback, training plans, and reviews
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-pink-400" />
+                  2 to 10 sessions per month
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-pink-400" />
+                  100% coach satisfaction guarantee
+                </li>
+              </ul>
+            </div>
+
+            {/* RL VIP — accent purple theme, NO price */}
+            <div
+              className="relative overflow-hidden rounded-2xl border-2 border-[var(--accent)]/50 p-6 shadow-xl shadow-[var(--accent-glow)] md:p-8"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(108, 99, 255, 0.45) 0%, rgba(50, 30, 130, 0.55) 30%, rgba(15, 8, 14, 0.95) 75%)",
+              }}
+            >
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="font-display text-3xl tracking-tight text-white md:text-4xl">
+                  VIP Experience
+                </span>
+                <a
+                  href="#investment"
+                  className="inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-[var(--accent)]/60 bg-[var(--accent)]/20 px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-white transition hover:bg-[var(--accent)]/30 md:text-xs"
+                >
+                  Pricing Below <ArrowDown className="h-3 w-3" />
+                </a>
+              </div>
+              <p className="mt-2 text-sm font-bold text-[var(--accent)] md:text-base">
+                1:1 Coaching For Players Who Want To Improve Faster
+              </p>
+
+              <h3 className="font-display mt-7 text-xl text-white md:text-2xl">
+                Two Pros On Your Team. Four Touchpoints A Month.
+              </h3>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--accent)]/20 px-3 py-1 text-xs font-bold text-[var(--accent)] md:text-sm">
+                  <Star className="h-3.5 w-3.5" /> Plat+
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--accent)]/20 px-3 py-1 text-xs font-bold text-[var(--accent)] md:text-sm">
+                  <Users className="h-3.5 w-3.5" /> Max. {SPOTS_TOTAL} Members
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--green)]/20 px-3 py-1 text-xs font-black uppercase tracking-widest text-[var(--green)] md:text-sm">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--green)] opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--green)]" />
+                  </span>
+                  {spotsOpen} Spots Open
+                </span>
+              </div>
+
+              <ul className="mt-6 space-y-3 text-base text-white/90 md:text-lg">
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
+                  60-min live 1:1 coaching call + 30-min replay review
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
+                  Personalized 30-day training plan
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
+                  Biweekly accountability calls with your guide
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
+                  30-day money-back guarantee
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
