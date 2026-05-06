@@ -41,7 +41,7 @@ const TIERS: Tier[] = [
   },
   {
     name: "Bootcamp",
-    price: "$300 – $550",
+    price: "$300 to $550",
     priceNote: "/ 4 weeks",
     positioning: "1:1 intensive flagship",
     icon: <Trophy className="h-5 w-5 text-white/70" />,
@@ -49,7 +49,7 @@ const TIERS: Tier[] = [
       { value: "1:1 intensive" },
       { value: "Custom", check: "custom" },
       { value: "Custom", check: "custom" },
-      { value: "4–12 week block, application only", check: "custom" },
+      { value: "4 to 12 week block, application only", check: "custom" },
       { value: "Going all-in" },
     ],
   },

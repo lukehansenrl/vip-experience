@@ -95,11 +95,15 @@ export function CallPageClient() {
             The VIP Experience
           </p>
           <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight md:text-6xl">
-            Improve Faster With Real 1:1 Coaching.
+            Improve Faster With One-on-One Coaching.
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-white/60 md:text-xl">
-            A real coach, a personalized plan, and accountability — built to
-            actually move your rank, not just queue more games and hope.
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70 md:text-xl">
+            Get a pro&apos;s eyes on your gameplay to pinpoint your bad habits
+            and exactly what to do to improve the fastest.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-base font-semibold text-[var(--green)] md:text-lg">
+            Rank up faster in 30 days. Guaranteed, or your money back. No
+            questions asked.
           </p>
         </div>
       </section>
@@ -114,7 +118,7 @@ export function CallPageClient() {
             VIP Vs. Bootcamp.
           </h2>
           <p className="mt-4 max-w-2xl text-white/60">
-            Bootcamp is the flagship — the fastest path to improvement that
+            Bootcamp is the flagship. The fastest path to improvement that
             exists. VIP is where most players start: real coaching, real plan,
             without the all-in commitment.
           </p>
@@ -127,14 +131,14 @@ export function CallPageClient() {
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
         <div className="mx-auto max-w-5xl">
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            VIP — Today&apos;s Offer
+            Today&apos;s Offer
           </p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
             Here&apos;s Everything You Get.
           </h2>
           <p className="mt-4 max-w-2xl text-white/60">
-            Real coaching. Real plan. Same caliber of coaches as Bootcamp — at
-            a starting commitment.
+            Real coaching. Real plan. Same caliber of coaches as Bootcamp, at a
+            starting commitment.
           </p>
 
           <div className="mt-10 flex flex-col gap-5">
@@ -180,7 +184,7 @@ export function CallPageClient() {
             <p className="mt-3 text-white/60 md:text-lg">
               Solo grinding and YouTube can take months to figure out
               what&apos;s actually holding you back. Bootcamp is the fastest
-              path that exists — but it&apos;s a serious commitment. VIP gets
+              path that exists, but it&apos;s a serious commitment. VIP gets
               you the same caliber of coach without going all-in.
             </p>
           </div>
@@ -209,7 +213,7 @@ export function CallPageClient() {
             <BenefitCard
               icon={<Layers className="h-6 w-6 text-[var(--accent)]" />}
               title="It's built around your rank."
-              description="Plat, Champ, GC — coaching adapts. The drills, the focus areas, and the plan all move with you."
+              description="Plat, Champ, GC. Coaching adapts to your rank. The drills, the focus areas, and the plan all move with you."
             />
             <BenefitCard
               icon={<Clock className="h-6 w-6 text-[var(--accent)]" />}
@@ -325,7 +329,7 @@ export function CallPageClient() {
             The People Behind Your Improvement.
           </h2>
           <p className="mb-12 text-center text-white/50 max-w-xl mx-auto">
-            RLCS-level pros. Each has their own style — you get matched to
+            RLCS-level pros. Each has their own style. You get matched to
             whoever fits your goals.
           </p>
 
@@ -495,7 +499,7 @@ export function CallPageClient() {
                 Total if bought separately
               </span>
               <span className="text-lg font-black text-white">
-                $227 – $377 / mo
+                $227 to $377 / mo
               </span>
             </div>
             <a

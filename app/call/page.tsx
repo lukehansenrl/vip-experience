@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CallPageClient } from "./CallPageClient";
 
 export const metadata: Metadata = {
-  title: "VIP — RL Clubhouse",
+  title: "VIP | RL Clubhouse",
   robots: { index: false, follow: false },
 };
 
