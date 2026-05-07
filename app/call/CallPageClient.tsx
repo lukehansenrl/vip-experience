@@ -532,6 +532,88 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
+      {/* ── WEEK 8 UNLOCK — earn a SpookyLuke replay review at week 8 ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Week 8 Unlock
+          </p>
+          <h2 className="font-display mt-3 text-center text-4xl tracking-tight md:text-5xl">
+            Earn Luke.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
+            Stick with the program through week 8 and your third replay
+            review comes from SpookyLuke himself. Not a rotating pro. Luke.
+          </p>
+
+          {/* Metafy-style service card */}
+          <div className="mx-auto mt-12 max-w-md overflow-hidden rounded-2xl border-2 border-[var(--accent)]/50 bg-white/[0.03] shadow-xl shadow-[var(--accent-glow)]">
+            {/* Header row */}
+            <div className="flex items-center justify-between border-b border-white/10 bg-[var(--accent)]/10 px-4 py-3">
+              <span className="flex items-center gap-2">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--accent)] text-xs font-black text-white">
+                  SL
+                </span>
+                <span className="font-display text-sm tracking-wide text-white">
+                  SpookyLuke
+                </span>
+              </span>
+              <span className="rounded-md bg-[var(--accent)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
+                Bonus
+              </span>
+            </div>
+
+            {/* Image */}
+            <div className="relative">
+              <img
+                src={CREATOR_IMG}
+                alt="SpookyLuke"
+                className="aspect-[16/10] w-full object-cover object-top"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-6">
+              <h3 className="font-display text-2xl tracking-tight md:text-3xl">
+                30-Min Replay Review With SpookyLuke
+              </h3>
+              <p className="mt-3 text-base leading-relaxed text-white/75 md:text-lg">
+                Submit a replay. Luke records a personalized 30-minute
+                breakdown of YOUR gameplay and sends it directly to you. The
+                exact thing he charges $125 for on Metafy. Yours when you
+                make it to week 8.
+              </p>
+
+              {/* Footer stats — Metafy-style */}
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
+                <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-white/60 md:text-sm">
+                  <span className="flex items-center gap-1.5 rounded-full bg-[var(--accent)]/20 px-2 py-0.5 text-[var(--accent)]">
+                    <Star className="h-3 w-3" /> Plat to GC
+                  </span>
+                  <span className="text-white/40">·</span>
+                  <span className="flex items-center gap-1.5">
+                    <Clock className="h-3.5 w-3.5" /> 30 mins
+                  </span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display text-base text-white/40 line-through md:text-lg">
+                    $125
+                  </span>
+                  <span className="font-display text-xl text-[var(--green)] md:text-2xl">
+                    Earned
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-white/50 md:text-base">
+            Most members never get to work with Luke directly. The 60 VIP
+            seats who make it to week 8 will.
+          </p>
+        </div>
+      </section>
+
       {/* ── WAYS TO IMPROVE — HORIZONTAL TIER LIST ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
         <div className="mx-auto max-w-5xl">
@@ -898,7 +980,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 Total value over 12 weeks
               </span>
               <span className="text-lg font-black text-white">
-                $546 to $906
+                $671 to $1,031
               </span>
             </div>
             <a

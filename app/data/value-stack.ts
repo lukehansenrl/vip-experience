@@ -30,4 +30,9 @@ export const VALUE_STACK: ValueStackRow[] = [
     value: "$81",
     note: "15+ live events monthly, weekly classes, community access",
   },
+  {
+    item: "BONUS · 3rd Replay Review With SpookyLuke (Week 8 Unlock)",
+    value: "$125",
+    note: "Luke's published Metafy rate. Earned by sticking with the program",
+  },
 ];
