@@ -90,21 +90,26 @@ export function PricingCard({
         </p>
       )}
       <p className="mt-4 text-white/50">
-        Cancel anytime. No contracts. No hidden fees.
+        {variant === "call"
+          ? "Risk is on us. Two-guarantee stack covers the entire 12 weeks."
+          : "Cancel anytime. No contracts. No hidden fees."}
       </p>
 
       {cta}
 
       {caption && <p className="mt-6 text-sm text-white/30">{caption}</p>}
 
-      {/* 30-day guarantee */}
+      {/* Guarantee callout */}
       <div className="mx-auto mt-6 max-w-md rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-5 py-3">
         <p className="text-sm font-semibold text-[var(--green)]">
-          30-Day Money-Back Guarantee
+          {variant === "call"
+            ? "30-Day Money-Back + 90-Day Keep Coaching You"
+            : "30-Day Money-Back Guarantee"}
         </p>
         <p className="mt-1 text-xs text-white/50">
-          If VIP doesn&apos;t deliver everything we promised in your first 30
-          days, we&apos;ll give you your money back. No questions asked.
+          {variant === "call"
+            ? "Don't love it in 30 days, full refund. Don't rank up in 90 days (and you showed up), we keep coaching you free until you do."
+            : "If VIP doesn't deliver everything we promised in your first 30 days, we'll give you your money back. No questions asked."}
         </p>
       </div>
     </div>

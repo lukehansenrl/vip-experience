@@ -6,28 +6,28 @@ export type ValueStackRow = {
 
 export const VALUE_STACK: ValueStackRow[] = [
   {
-    item: "1x 1:1 Pro Coaching Call (60 min, live)",
-    value: "$50 to $100",
-    note: "Value of a live session with a pro coach",
+    item: "3x 1:1 Pro Coaching Calls (60 min, live)",
+    value: "$150 to $300",
+    note: "Value of three live sessions with a pro coach over 12 weeks",
   },
   {
-    item: "1x Async Replay Review (30 min)",
-    value: "$50 to $75",
+    item: "3x 30-Min Personalized Replay Reviews",
+    value: "$150 to $225",
     note: "Send your replays. Coach returns timestamps and corrections",
   },
   {
-    item: "Personalized 30-Day Training Routine",
-    value: "$25 to $50",
-    note: "Custom routine built around your schedule and rank",
+    item: "3x Guide Accountability Check-Ins",
+    value: "$90 to $150",
+    note: "Monthly calls with your member guide to keep you on track",
   },
   {
-    item: "Accountability Check-ins",
-    value: "$50 to $100",
-    note: "Regular calls to keep you on track and adjust your training",
+    item: "Personalized 90-Day Training Plan",
+    value: "$75 to $150",
+    note: "Custom plan built around your rank, weaknesses, and schedule",
   },
   {
-    item: "Full RL Clubhouse Membership",
-    value: "$27",
+    item: "12 Weeks Of Full Clubhouse Access",
+    value: "$81",
     note: "15+ live events monthly, weekly classes, community access",
   },
 ];

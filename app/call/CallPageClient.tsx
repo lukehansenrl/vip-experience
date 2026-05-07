@@ -135,8 +135,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 habits and exactly what to do to improve the fastest.
               </p>
               <p className="mx-auto mt-5 max-w-xl text-lg font-semibold text-[var(--green)] md:mx-0 md:text-xl">
-                Improve faster in 30 days. Guaranteed, or your money back. No
-                questions asked.
+                Rank up one full rank in 90 days. Or your money back.
               </p>
             </div>
             {/* Photo */}
@@ -292,7 +291,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             >
               <div className="flex items-baseline justify-between gap-3">
                 <span className="font-display text-3xl tracking-tight text-white md:text-4xl">
-                  VIP Experience
+                  12-Week VIP Program
                 </span>
                 <a
                   href="#investment"
@@ -302,16 +301,16 @@ export function CallPageClient({ spotsFilled }: Props) {
                 </a>
               </div>
               <p className="mt-2 text-sm font-bold text-[var(--accent)] md:text-base">
-                1:1 Coaching For Players Who Want To Improve Faster
+                Rank Up One Full Rank In 90 Days, Guaranteed
               </p>
 
               <h3 className="font-display mt-7 text-xl text-white md:text-2xl">
-                Two Pros On Your Team. Four Touchpoints A Month.
+                Two Pros On Your Team. A Plan, A Coach, And Accountability.
               </h3>
 
               <div className="mt-5 flex flex-wrap gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--accent)]/20 px-3 py-1 text-xs font-bold text-[var(--accent)] md:text-sm">
-                  <Star className="h-3.5 w-3.5" /> Plat+
+                  <Star className="h-3.5 w-3.5" /> Plat to GC
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--accent)]/20 px-3 py-1 text-xs font-bold text-[var(--accent)] md:text-sm">
                   <Users className="h-3.5 w-3.5" /> Max. {SPOTS_TOTAL} Members
@@ -328,19 +327,23 @@ export function CallPageClient({ spotsFilled }: Props) {
               <ul className="mt-6 space-y-3 text-base text-white/90 md:text-lg">
                 <li className="flex items-start gap-3">
                   <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  60-min live 1:1 coaching call + 30-min replay review
+                  60-min live 1:1 coaching call (every month)
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  Personalized 30-day training plan
+                  30-min personalized replay review (every month)
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  Biweekly accountability calls with your guide
+                  Accountability check-in with your guide (every month)
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  30-day money-back guarantee
+                  Personalized training plan + full Clubhouse access
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
+                  30-day money-back + 90-day Keep Coaching You guarantee
                 </li>
               </ul>
             </div>
@@ -517,8 +520,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
-              title="Biweekly Accountability Calls With Your Guide"
-              description="Two calls a month with your member guide (separate from your coach) to keep you on track, work through whatever&apos;s blocking you, and adjust the plan as you go."
+              title="Monthly Accountability Check-In With Your Guide"
+              description="One call a month with your member guide (separate from your coach) to keep you on track, work through whatever&apos;s blocking you, and adjust the plan as you go."
             />
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
@@ -667,7 +670,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             <BenefitCard
               icon={<Clock className="h-6 w-6 text-[var(--accent)]" />}
               title="Two pros on your team."
-              description="Four touchpoints every month: two with your coach (a live call and a replay review) plus two with your member guide (biweekly accountability calls). You&apos;re never grinding alone."
+              description="Three touchpoints every month: two with your coach (a live call and a replay review) plus one with your member guide (an accountability check-in). You&apos;re never grinding alone."
             />
           </div>
 
@@ -807,20 +810,57 @@ export function CallPageClient({ spotsFilled }: Props) {
         </p>
       </section>
 
-      {/* ── YOU'RE NOT LOCKED IN ── */}
-      <section className="border-t border-white/10 px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl">
-          <div className="rounded-2xl border border-[var(--green)]/30 bg-[var(--green)]/5 p-6 text-center md:p-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-[var(--green)]">
-              No Risk
-            </p>
-            <h2 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
-              You&apos;re Not Locked In.
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-white/60">
-              30-day money-back guarantee. Cancel anytime. No contracts.
-            </p>
+      {/* ── DOUBLE GUARANTEE (30-day money-back + 90-day Keep Coaching You) ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--green)]">
+            Double Guarantee
+          </p>
+          <h2 className="font-display mt-3 text-center text-4xl tracking-tight md:text-5xl">
+            We Take The Risk.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
+            Most coaches are incentivized to drag things out. We&apos;re
+            incentivized to actually get you results.
+          </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 md:gap-6">
+            {/* 30-Day Money-Back */}
+            <div className="rounded-2xl border border-[var(--green)]/30 bg-[var(--green)]/5 p-6 md:p-8">
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--green)]">
+                Guarantee #1
+              </p>
+              <h3 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
+                30-Day Money Back.
+              </h3>
+              <p className="mt-4 text-lg text-white/85 md:text-xl">
+                Don&apos;t love it? Full refund, no questions asked. Don&apos;t
+                try to make it work for 30 days. If you don&apos;t immediately
+                see the value, get your money back.
+              </p>
+            </div>
+
+            {/* 90-Day Keep Coaching You */}
+            <div className="rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/10 p-6 shadow-xl shadow-[var(--accent-glow)] md:p-8">
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+                Guarantee #2
+              </p>
+              <h3 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
+                90-Day Keep Coaching You.
+              </h3>
+              <p className="mt-4 text-lg text-white/90 md:text-xl">
+                Show up to your monthly coaching session and replay review.
+                Don&apos;t rank up in 90 days? We keep coaching you for free,
+                every month, until you do. Most coaches drag things out. We
+                don&apos;t get to stop until you rank up.
+              </p>
+            </div>
           </div>
+
+          <p className="mx-auto mt-8 max-w-3xl text-center text-sm text-white/50 md:text-base">
+            Rank-up promise applies to one full rank (~100 MMR). Examples:
+            Plat 2 → Plat 3, Diamond 3 → Champ 1, Champ 1 → Champ 2.
+          </p>
         </div>
       </section>
 
@@ -854,9 +894,11 @@ export function CallPageClient({ spotsFilled }: Props) {
               </div>
             ))}
             <div className="flex items-center justify-between bg-white/[0.03] px-6 py-5 border-t border-white/10">
-              <span className="font-bold text-white/70">Total value</span>
+              <span className="font-bold text-white/70">
+                Total value over 12 weeks
+              </span>
               <span className="text-lg font-black text-white">
-                $202 to $352 / mo
+                $546 to $906
               </span>
             </div>
             <a
@@ -899,11 +941,14 @@ export function CallPageClient({ spotsFilled }: Props) {
             The Investment
           </p>
           <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
-            One Membership. Everything Above.
+            The 12-Week Program. One Price.
           </h2>
 
           <PricingCard
             variant="call"
+            price={497}
+            cadence="/ 12 weeks"
+            cadenceNote="Paid upfront for 12 weeks. Optional monthly continuation after if you want to keep going."
             action={{
               type: "link",
               label: "Lock In Your Spot",
