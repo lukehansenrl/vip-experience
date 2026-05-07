@@ -154,6 +154,70 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
+      {/* ── PROBLEM-AWARE SECTION (meet them where they are) ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Sound Familiar?
+          </p>
+          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
+            You Could Be A Higher Rank. You Just Don&apos;t Know What To
+            Focus On.
+          </h2>
+
+          {/* Three problem quote cards */}
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <span className="font-display text-3xl leading-none text-[var(--accent)]/50">
+                &ldquo;
+              </span>
+              <p className="mt-2 text-lg italic leading-relaxed text-white/90 md:text-xl">
+                I feel inconsistent in my games. Some days I&apos;m sharp, some
+                days I&apos;m awful.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <span className="font-display text-3xl leading-none text-[var(--accent)]/50">
+                &ldquo;
+              </span>
+              <p className="mt-2 text-lg italic leading-relaxed text-white/90 md:text-xl">
+                I know what I should be doing. I just can&apos;t do it
+                consistently.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <span className="font-display text-3xl leading-none text-[var(--accent)]/50">
+                &ldquo;
+              </span>
+              <p className="mt-2 text-lg italic leading-relaxed text-white/90 md:text-xl">
+                I could be a higher rank if I just knew what to focus on.
+              </p>
+            </div>
+          </div>
+
+          {/* Insight + reframe */}
+          <div className="mt-10 rounded-2xl border-2 border-[var(--accent)]/40 bg-[var(--accent)]/5 p-6 shadow-xl shadow-[var(--accent-glow)] md:p-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+              It&apos;s not a talent problem
+            </p>
+            <h3 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
+              It&apos;s a focus problem.
+            </h3>
+            <p className="mt-4 text-lg text-white/85 md:text-xl">
+              There are a million things you could be practicing. The real
+              question is what you actually need at YOUR rank. Focus on the
+              wrong things and you&apos;ll play more without improving.
+            </p>
+            <p className="mt-4 text-base text-white/75 md:text-lg">
+              A coach doesn&apos;t make you improve. You do. But a coach takes
+              your speed of improvement from where it is now to where it could
+              be. You stop guessing what to work on. You know exactly what to
+              focus on to improve the fastest.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── BOOTCAMP + VIP CARDS (spookyluke.com-style 2-up, right after hero) ── */}
       <section className="border-t border-white/10 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
