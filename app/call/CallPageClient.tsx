@@ -127,8 +127,8 @@ export function CallPageClient({ spotsFilled }: Props) {
                 Improve Faster With One-on-One Coaching.
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-xl text-white/80 md:mx-0 md:text-2xl">
-                Get a pro&apos;s eyes on your gameplay to pinpoint your bad
-                habits and exactly what to do to improve the fastest.
+                Stop guessing what to focus on. Three pro coaches, twelve
+                weeks, and a plan built for your rank.
               </p>
               <p className="mx-auto mt-5 max-w-xl text-lg font-semibold text-[var(--green)] md:mx-0 md:text-xl">
                 Rank up one full rank in 90 days. Or your money back.
@@ -731,88 +731,6 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── WEEK 8 UNLOCK — earn a SpookyLuke replay review at week 8 ── */}
-      <section className="border-t border-white/10 px-6 py-20 md:py-24">
-        <div className="mx-auto max-w-4xl">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Week 8 Unlock
-          </p>
-          <h2 className="font-display mt-3 text-center text-4xl tracking-tight md:text-5xl">
-            Earn Luke.
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
-            Stick with the program through week 8 and your third replay
-            review comes from SpookyLuke himself. Not a rotating pro. Luke.
-          </p>
-
-          {/* Metafy-style service card */}
-          <div className="mx-auto mt-12 max-w-md overflow-hidden rounded-2xl border-2 border-[var(--accent)]/50 bg-white/[0.03] shadow-xl shadow-[var(--accent-glow)]">
-            {/* Header row */}
-            <div className="flex items-center justify-between border-b border-white/10 bg-[var(--accent)]/10 px-4 py-3">
-              <span className="flex items-center gap-2">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--accent)] text-xs font-black text-white">
-                  SL
-                </span>
-                <span className="font-display text-sm tracking-wide text-white">
-                  SpookyLuke
-                </span>
-              </span>
-              <span className="rounded-md bg-[var(--accent)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
-                Bonus
-              </span>
-            </div>
-
-            {/* Image */}
-            <div className="relative">
-              <img
-                src={CREATOR_IMG}
-                alt="SpookyLuke"
-                className="aspect-[16/10] w-full object-cover object-top"
-              />
-            </div>
-
-            {/* Content */}
-            <div className="p-6">
-              <h3 className="font-display text-2xl tracking-tight md:text-3xl">
-                30-Min Replay Review With SpookyLuke
-              </h3>
-              <p className="mt-3 text-base leading-relaxed text-white/75 md:text-lg">
-                Submit a replay. Luke records a personalized 30-minute
-                breakdown of YOUR gameplay and sends it directly to you. The
-                exact thing he charges $125 for on Metafy. Yours when you
-                make it to week 8.
-              </p>
-
-              {/* Footer stats — Metafy-style */}
-              <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
-                <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-white/60 md:text-sm">
-                  <span className="flex items-center gap-1.5 rounded-full bg-[var(--accent)]/20 px-2 py-0.5 text-[var(--accent)]">
-                    <Star className="h-3 w-3" /> Plat to GC
-                  </span>
-                  <span className="text-white/40">·</span>
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" /> 30 mins
-                  </span>
-                </div>
-                <div className="flex items-baseline gap-2">
-                  <span className="font-display text-base text-white/40 line-through md:text-lg">
-                    $125
-                  </span>
-                  <span className="font-display text-xl text-[var(--green)] md:text-2xl">
-                    Earned
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-white/50 md:text-base">
-            Most members never get to work with Luke directly. The 60 VIP
-            seats who make it to week 8 will.
-          </p>
-        </div>
-      </section>
-
       {/* ── WAYS TO IMPROVE — HORIZONTAL TIER LIST ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
         <div className="mx-auto max-w-5xl">
@@ -1028,67 +946,157 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── RANK-UP PROMISE ── */}
+      {/* ── BONUS STACK (4 bonuses, Hormozi-style) ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            The VIP Promise
+        <div className="mx-auto max-w-5xl">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+            Stacked Bonuses
           </p>
-          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
-            Rank Up. We Send You A New Controller.
+          <h2 className="font-display mt-3 text-center text-4xl tracking-tight md:text-5xl">
+            Plus, You Also Get...
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/70 md:text-xl">
-            Put in the work. Hit a full rank up. Hold it. We&apos;ll ship you a
-            brand new controller.
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
+            Four bonuses stacked on top of the core program. Two unlock the
+            moment you sign up. Two you earn by sticking with the program.
+          </p>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 md:gap-6">
+            {/* Bonus #1 — Training Pack Vault */}
+            <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
+                  Bonus #1 · Day 1 Unlock
+                </span>
+                <span className="rounded-md bg-[var(--green)]/15 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--green)]">
+                  Instant
+                </span>
+              </div>
+              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
+                The Training Pack Vault.
+              </h3>
+              <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
+                Our hand-picked list of training packs we&apos;ve assigned to
+                every VIP member. Drills mapped to what each rank actually
+                needs. Unlocked the moment you join.
+              </p>
+              <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
+                <span className="text-xs font-bold uppercase tracking-widest text-white/50">
+                  Value
+                </span>
+                <span className="font-display text-xl text-white md:text-2xl">
+                  $25
+                </span>
+              </div>
+            </div>
+
+            {/* Bonus #2 — VIP Discord Tag */}
+            <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
+                  Bonus #2 · Day 1 Unlock
+                </span>
+                <span className="rounded-md bg-[var(--green)]/15 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--green)]">
+                  Instant
+                </span>
+              </div>
+              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
+                VIP Tag In The Discord.
+              </h3>
+              <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
+                A purple VIP tag pins you at the top of the Discord member
+                list. Coaches, the guide, and the community can find you fast.
+              </p>
+              <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
+                <span className="text-xs font-bold uppercase tracking-widest text-white/50">
+                  Value
+                </span>
+                <span className="font-display text-xl text-white md:text-2xl">
+                  $20
+                </span>
+              </div>
+            </div>
+
+            {/* Bonus #3 — Replay Review With SpookyLuke */}
+            <div className="flex flex-col rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/5 p-6 shadow-lg shadow-[var(--accent-glow)] md:p-7">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-xs uppercase tracking-widest text-[var(--accent)]">
+                  Bonus #3 · Week 8 Unlock
+                </span>
+                <span className="rounded-md bg-[var(--accent)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
+                  Earned
+                </span>
+              </div>
+              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
+                30-Min Replay Review With SpookyLuke.
+              </h3>
+              <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
+                Stick with the program through week 8 and your third replay
+                review comes from Luke himself. Not a rotating pro. The exact
+                thing he charges $125 for on Metafy.
+              </p>
+              <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
+                <span className="text-xs font-bold uppercase tracking-widest text-white/50">
+                  Value
+                </span>
+                <span className="font-display text-xl text-white md:text-2xl">
+                  $125
+                </span>
+              </div>
+            </div>
+
+            {/* Bonus #4 — Signed Controller */}
+            <div className="flex flex-col rounded-2xl border-2 border-[var(--green)]/40 bg-[var(--green)]/5 p-6 shadow-lg shadow-[var(--green)]/10 md:p-7">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-xs uppercase tracking-widest text-[var(--green)]">
+                  Bonus #4 · Rank-Up Reward
+                </span>
+                <span className="rounded-md bg-[var(--green)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
+                  Earned
+                </span>
+              </div>
+              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
+                Signed Controller On The House.
+              </h3>
+              <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
+                Rank up one full rank. Hold it for two consecutive seasons.
+                Stay active in the community throughout. We ship you a brand
+                new controller, signed by the team.
+              </p>
+              <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
+                <span className="text-xs font-bold uppercase tracking-widest text-white/50">
+                  Value
+                </span>
+                <span className="font-display text-xl text-white md:text-2xl">
+                  $150
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bonus value tally */}
+          <div className="mx-auto mt-8 max-w-md rounded-2xl border-2 border-[var(--gold)]/40 bg-[var(--gold)]/10 p-5 text-center">
+            <p className="text-xs font-black uppercase tracking-widest text-[var(--gold)]">
+              Total Bonus Value
+            </p>
+            <p className="font-display mt-1 text-4xl text-white md:text-5xl">
+              $320
+            </p>
+            <p className="mt-2 text-xs text-white/60 md:text-sm">
+              Stacked on top of the 12-week program
+            </p>
+          </div>
+
+          <p className="mt-6 text-center text-xs text-white/40">
+            <a
+              href="/promise"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white/60 transition"
+            >
+              Full terms &amp; conditions for the controller bonus
+            </a>
           </p>
         </div>
-
-        {/* 3-step */}
-        <div className="mx-auto mt-12 max-w-4xl grid gap-8 md:grid-cols-3">
-          <div className="text-center">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--accent)] text-lg font-black text-[var(--accent)]">
-              1
-            </div>
-            <h3 className="mt-4 text-xl font-extrabold md:text-2xl">Rank Up</h3>
-            <p className="mt-3 text-base text-white/75 md:text-lg">
-              Full rank up within 90 days. Plat → Diamond. Diamond → Champ.
-              Champ → GC.
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--accent)] text-lg font-black text-[var(--accent)]">
-              2
-            </div>
-            <h3 className="mt-4 text-xl font-extrabold md:text-2xl">Hold It</h3>
-            <p className="mt-3 text-base text-white/75 md:text-lg">
-              Maintain your new rank across two consecutive seasons. One
-              check-in session with the team.
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--green)] text-lg font-black text-[var(--green)]">
-              ✓
-            </div>
-            <h3 className="mt-4 text-xl font-extrabold text-[var(--green)] md:text-2xl">
-              New Controller
-            </h3>
-            <p className="mt-3 text-base text-white/75 md:text-lg">
-              Send proof. We verify everything and ship you a brand new
-              controller. On us.
-            </p>
-          </div>
-        </div>
-
-        <p className="mt-10 text-center">
-          <a
-            href="/promise"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-white/30 underline hover:text-white/50 transition"
-          >
-            Full terms &amp; conditions
-          </a>
-        </p>
       </section>
 
       {/* ── DOUBLE GUARANTEE (30-day money-back + 90-day Keep Coaching You) ── */}
@@ -1179,7 +1187,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 Total value over 12 weeks
               </span>
               <span className="text-lg font-black text-white">
-                $671 to $1,031
+                $866 to $1,226
               </span>
             </div>
             <a
