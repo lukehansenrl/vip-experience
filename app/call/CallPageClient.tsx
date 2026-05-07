@@ -12,10 +12,6 @@ import {
   Crosshair,
   Layers,
   Clock,
-  Check,
-  Monitor,
-  Users,
-  ArrowDown,
 } from "lucide-react";
 
 import { StickyNav } from "../components/StickyNav";
@@ -217,139 +213,342 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── BOOTCAMP + VIP CARDS (spookyluke.com-style 2-up, right after hero) ── */}
-      <section className="border-t border-white/10 px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-center text-4xl tracking-tight md:text-5xl lg:text-6xl">
-            Want To Improve Faster? Learn From Pros.
+      {/* ── 12-WEEK ROADMAP (RL-tracker-styled progression visual) ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Your 12-Week Roadmap
+          </p>
+          <h2 className="font-display mt-3 text-center text-4xl tracking-tight md:text-5xl">
+            What Happens Day 1 To Day 90.
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
+            Three months. Three coaches. Two guarantees. One full rank.
+          </p>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 md:gap-6">
-            {/* RL BOOTCAMP — pink/red theme */}
-            <div
-              className="relative overflow-hidden rounded-2xl border border-white/10 p-6 md:p-8"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(190, 18, 60, 0.45) 0%, rgba(83, 17, 47, 0.55) 30%, rgba(15, 8, 14, 0.95) 75%)",
-              }}
-            >
-              <div className="flex items-baseline justify-between gap-3">
-                <span className="font-display text-3xl tracking-tight text-white md:text-4xl">
-                  RL Bootcamp
+          {/* RL-Tracker-styled card */}
+          <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-[#0a1530] via-[#0a1124] to-[#0b0e17]">
+            {/* Header strip mimicking RL Tracker player profile */}
+            <div className="flex items-center justify-between border-b border-white/10 bg-[#0a1530]/80 px-4 py-3">
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[var(--accent)] bg-[var(--accent)]/30 text-[10px] font-black text-white">
+                  YOU
                 </span>
-                <span className="font-display whitespace-nowrap text-lg text-white md:text-xl">
-                  $300 to $550 / mo
+                <span className="font-display text-sm tracking-wide text-white">
+                  Your Rating Progression
                 </span>
               </div>
-              <p className="mt-2 text-sm font-bold text-pink-300 md:text-base">
-                4 to 12 Week 1:1 Coaching Experience With A Pro
-              </p>
-
-              <h3 className="font-display mt-7 text-xl text-white md:text-2xl">
-                Improve So Fast Your Friends Think You&apos;re Boosted.
-              </h3>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-500/15 px-3 py-1 text-xs font-bold text-pink-200 md:text-sm">
-                  <Monitor className="h-3.5 w-3.5" /> PC Required
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-500/15 px-3 py-1 text-xs font-bold text-pink-200 md:text-sm">
-                  <Star className="h-3.5 w-3.5" /> Plat+
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-pink-500/15 px-3 py-1 text-xs font-bold text-pink-200 md:text-sm">
-                  <Users className="h-3.5 w-3.5" /> Application Only
-                </span>
-              </div>
-
-              <ul className="mt-6 space-y-3 text-base text-white/85 md:text-lg">
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-pink-400" />
-                  1:1 coaching and accountability
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-pink-400" />
-                  Personalized feedback, training plans, and reviews
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-pink-400" />
-                  2 to 10 sessions per month
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-pink-400" />
-                  100% coach satisfaction guarantee
-                </li>
-              </ul>
+              <span className="rounded-md bg-[var(--accent)]/20 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--accent)]">
+                Example
+              </span>
             </div>
 
-            {/* RL VIP — accent purple theme, NO price */}
-            <div
-              className="relative overflow-hidden rounded-2xl border-2 border-[var(--accent)]/50 p-6 shadow-xl shadow-[var(--accent-glow)] md:p-8"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(108, 99, 255, 0.45) 0%, rgba(50, 30, 130, 0.55) 30%, rgba(15, 8, 14, 0.95) 75%)",
-              }}
-            >
-              <div className="flex items-baseline justify-between gap-3">
-                <span className="font-display text-3xl tracking-tight text-white md:text-4xl">
-                  12-Week VIP Program
-                </span>
-                <a
-                  href="#investment"
-                  className="inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-[var(--accent)]/60 bg-[var(--accent)]/20 px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-white transition hover:bg-[var(--accent)]/30 md:text-xs"
+            {/* Chart area */}
+            <div className="relative px-3 py-4 pl-12 md:px-8 md:py-8 md:pl-20">
+              <div className="relative aspect-[2/1]">
+                {/* Y-axis labels (rank tiers) */}
+                <div className="absolute -left-9 top-0 flex h-full flex-col justify-between text-right text-[8px] font-bold uppercase tracking-widest text-white/40 md:-left-14 md:text-[10px]">
+                  <span className="text-[var(--green)]">Champ III</span>
+                  <span></span>
+                  <span>Champ II</span>
+                  <span>Champ I</span>
+                </div>
+
+                {/* Rank-up label floating top right */}
+                <div className="absolute right-0 top-0 z-10 rounded-full border border-[var(--green)]/50 bg-[var(--green)]/20 px-2 py-1 text-[9px] font-black uppercase tracking-widest text-[var(--green)] md:px-3 md:text-[10px]">
+                  Rank Up
+                </div>
+
+                {/* SVG chart */}
+                <svg
+                  viewBox="0 0 800 400"
+                  preserveAspectRatio="none"
+                  className="absolute inset-0 h-full w-full"
                 >
-                  Pricing Below <ArrowDown className="h-3 w-3" />
-                </a>
+                  <defs>
+                    <linearGradient
+                      id="rankProgressLine"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="0%"
+                    >
+                      <stop offset="0%" stopColor="#fb923c" />
+                      <stop offset="100%" stopColor="#34d399" />
+                    </linearGradient>
+                    <linearGradient
+                      id="rankProgressFill"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        stopColor="#fb923c"
+                        stopOpacity="0.25"
+                      />
+                      <stop
+                        offset="100%"
+                        stopColor="#34d399"
+                        stopOpacity="0"
+                      />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Tier divider lines */}
+                  <line
+                    x1="0"
+                    y1="60"
+                    x2="800"
+                    y2="60"
+                    stroke="rgba(52, 211, 153, 0.4)"
+                    strokeWidth="2"
+                    strokeDasharray="6 6"
+                  />
+                  <line
+                    x1="0"
+                    y1="200"
+                    x2="800"
+                    y2="200"
+                    stroke="rgba(255,255,255,0.08)"
+                    strokeDasharray="4 4"
+                  />
+                  <line
+                    x1="0"
+                    y1="340"
+                    x2="800"
+                    y2="340"
+                    stroke="rgba(255,255,255,0.08)"
+                    strokeDasharray="4 4"
+                  />
+
+                  {/* Area under curve (subtle gradient fill) */}
+                  <path
+                    d="M 60,340 Q 140,330 240,290 Q 320,275 420,210 Q 500,180 600,130 Q 670,95 740,60 L 740,400 L 60,400 Z"
+                    fill="url(#rankProgressFill)"
+                  />
+
+                  {/* Progression curve */}
+                  <path
+                    d="M 60,340 Q 140,330 240,290 Q 320,275 420,210 Q 500,180 600,130 Q 670,95 740,60"
+                    stroke="url(#rankProgressLine)"
+                    strokeWidth="4"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+
+                  {/* Milestone dots */}
+                  <circle cx="60" cy="340" r="6" fill="#fb923c" />
+                  <circle
+                    cx="240"
+                    cy="290"
+                    r="6"
+                    fill="#fff"
+                    stroke="#6c63ff"
+                    strokeWidth="3"
+                  />
+                  <circle
+                    cx="420"
+                    cy="210"
+                    r="6"
+                    fill="#fff"
+                    stroke="#6c63ff"
+                    strokeWidth="3"
+                  />
+                  <circle
+                    cx="740"
+                    cy="60"
+                    r="9"
+                    fill="#34d399"
+                    stroke="#fff"
+                    strokeWidth="2"
+                  />
+                </svg>
+
+                {/* Coach photos overlaid at milestones */}
+                {/* Day 1 — YOU starting point */}
+                <div
+                  className="absolute z-20"
+                  style={{
+                    left: "7.5%",
+                    top: "85%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#fb923c] bg-[#0a1530] text-[9px] font-black text-[#fb923c] md:h-11 md:w-11 md:text-xs">
+                      YOU
+                    </span>
+                    <span className="rounded bg-black/70 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-white md:text-[10px]">
+                      Day 1
+                    </span>
+                  </div>
+                </div>
+
+                {/* Month 1 — Torment */}
+                <div
+                  className="absolute z-20"
+                  style={{
+                    left: "30%",
+                    top: "72.5%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <div className="flex flex-col items-center gap-1">
+                    <img
+                      src="/graphics/torment.jpg"
+                      alt="Torment"
+                      className="h-9 w-9 rounded-full border-2 border-[var(--accent)] object-cover object-top md:h-12 md:w-12"
+                    />
+                    <span className="rounded bg-black/70 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-white md:text-[10px]">
+                      M1: Torment
+                    </span>
+                  </div>
+                </div>
+
+                {/* Month 2 — Freakii */}
+                <div
+                  className="absolute z-20"
+                  style={{
+                    left: "52.5%",
+                    top: "52.5%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <div className="flex flex-col items-center gap-1">
+                    <img
+                      src="/graphics/freakii-lp.jpg"
+                      alt="Freakii"
+                      className="h-9 w-9 rounded-full border-2 border-[var(--accent)] object-cover object-top md:h-12 md:w-12"
+                    />
+                    <span className="rounded bg-black/70 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-white md:text-[10px]">
+                      M2: Freakii
+                    </span>
+                  </div>
+                </div>
+
+                {/* Month 3 — SpookyLuke (rank up!) */}
+                <div
+                  className="absolute z-20"
+                  style={{
+                    left: "92.5%",
+                    top: "15%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <div className="flex flex-col items-center gap-1">
+                    <img
+                      src="/graphics/spookyluke-creator.jpg"
+                      alt="SpookyLuke"
+                      className="h-10 w-10 rounded-full border-2 border-[var(--green)] object-cover object-top md:h-14 md:w-14"
+                    />
+                    <span className="rounded bg-[var(--green)]/40 px-1.5 py-0.5 text-[8px] font-black uppercase tracking-wider text-white md:text-[10px]">
+                      M3: Luke
+                    </span>
+                  </div>
+                </div>
               </div>
-              <p className="mt-2 text-sm font-bold text-[var(--accent)] md:text-base">
-                Rank Up One Full Rank In 90 Days, Guaranteed
-              </p>
 
-              <h3 className="font-display mt-7 text-xl text-white md:text-2xl">
-                Two Pros On Your Team. A Plan, A Coach, And Accountability.
-              </h3>
+              {/* X axis labels */}
+              <div className="mt-4 grid grid-cols-4 gap-2 text-center text-[10px] font-bold uppercase tracking-widest text-white/50 md:text-xs">
+                <span>Day 1</span>
+                <span>Month 1</span>
+                <span>Month 2</span>
+                <span>Month 3</span>
+              </div>
+            </div>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--accent)]/20 px-3 py-1 text-xs font-bold text-[var(--accent)] md:text-sm">
-                  <Star className="h-3.5 w-3.5" /> Plat to GC
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--accent)]/20 px-3 py-1 text-xs font-bold text-[var(--accent)] md:text-sm">
-                  <Users className="h-3.5 w-3.5" /> Max. {SPOTS_TOTAL} Members
-                </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--green)]/20 px-3 py-1 text-xs font-black uppercase tracking-widest text-[var(--green)] md:text-sm">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--green)] opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--green)]" />
+            {/* Guarantee zones */}
+            <div className="space-y-2 border-t border-white/10 px-4 py-4 md:px-8">
+              <div className="relative h-7 overflow-hidden rounded-full bg-white/5 md:h-8">
+                <div className="absolute left-0 top-0 flex h-full w-1/3 items-center justify-center rounded-full border border-[var(--green)]/40 bg-[var(--green)]/15 px-2">
+                  <span className="text-[9px] font-black uppercase tracking-widest text-[var(--green)] md:text-[11px]">
+                    30-Day Money-Back
                   </span>
-                  {spotsOpen} Spots Open
-                </span>
+                </div>
               </div>
+              <div className="relative h-7 overflow-hidden rounded-full bg-white/5 md:h-8">
+                <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-full border border-[var(--accent)]/40 bg-[var(--accent)]/15 px-2">
+                  <span className="text-[9px] font-black uppercase tracking-widest text-[var(--accent)] md:text-[11px]">
+                    90-Day Keep Coaching You Guarantee
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-              <ul className="mt-6 space-y-3 text-base text-white/90 md:text-lg">
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  60-min live 1:1 coaching call (every month)
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  30-min personalized replay review (every month)
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  Accountability check-in with your guide (every month)
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  Personalized training plan + full Clubhouse access
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--green)]" />
-                  30-day money-back + 90-day Keep Coaching You guarantee
-                </li>
-              </ul>
+          <p className="mt-4 text-center text-xs text-white/40 md:text-sm">
+            Example progression based on a real ranked trajectory (Zen, GC2 →
+            SSL). Individual results vary.
+          </p>
+
+          {/* 3 coach month cards */}
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/graphics/torment.jpg"
+                  alt="Torment"
+                  className="h-12 w-12 rounded-full border-2 border-white/10 object-cover object-top"
+                />
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-[var(--accent)]">
+                    Month 1
+                  </p>
+                  <p className="font-display text-lg">Torment</p>
+                </div>
+              </div>
+              <p className="mt-3 text-base leading-relaxed text-white/75 md:text-lg">
+                RLCS S7 World Champion. Live 1:1 + replay review focused on
+                rotations and decision-making.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/graphics/freakii-lp.jpg"
+                  alt="Freakii"
+                  className="h-12 w-12 rounded-full border-2 border-white/10 object-cover object-top"
+                />
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-[var(--accent)]">
+                    Month 2
+                  </p>
+                  <p className="font-display text-lg">Freakii</p>
+                </div>
+              </div>
+              <p className="mt-3 text-base leading-relaxed text-white/75 md:text-lg">
+                Former Renault Vitality pro, head coach at PWR. EU mechanics +
+                technical consistency to sharpen your foundation.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border-2 border-[var(--accent)]/40 bg-[var(--accent)]/5 p-5 shadow-lg shadow-[var(--accent-glow)]">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/graphics/spookyluke-creator.jpg"
+                  alt="SpookyLuke"
+                  className="h-12 w-12 rounded-full border-2 border-[var(--accent)] object-cover object-top"
+                />
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-[var(--green)]">
+                    Month 3 + Bonus
+                  </p>
+                  <p className="font-display text-lg">SpookyLuke</p>
+                </div>
+              </div>
+              <p className="mt-3 text-base leading-relaxed text-white md:text-lg">
+                Week 8 unlock: your final replay review comes from Luke
+                himself. The push to rank up.
+              </p>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* ── CREATED BY SPOOKYLUKE (authority anchor + mission) ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
