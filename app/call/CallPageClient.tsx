@@ -374,6 +374,9 @@ export function CallPageClient({ spotsFilled }: Props) {
                 rank — with custom drills, training packs, and step-by-step
                 guides for each tier. Updated quarterly as the meta shifts.
               </p>
+              <p className="mt-2 text-sm text-[var(--accent)]/80">
+                Launching May 24 for all VIP members.
+              </p>
               <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-white/50">
                   Value
@@ -402,6 +405,9 @@ export function CallPageClient({ spotsFilled }: Props) {
                 at — with the reasoning behind each tweak so you can adapt to
                 your playstyle. Camera, deadzones, controller layout, all of
                 it.
+              </p>
+              <p className="mt-2 text-sm text-[var(--accent)]/80">
+                Launching May 24 for all VIP members.
               </p>
               <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-white/50">
