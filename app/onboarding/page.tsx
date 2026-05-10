@@ -4,11 +4,14 @@ import { Suspense, useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   AGES,
+  COUNTRIES,
   RANKS,
+  PLATFORMS,
   HOURS,
   GOALS,
   TRIED_OPTIONS,
   SPENT,
+  HOW_FOUND_US,
   INTEREST,
   type OnboardingSubmission,
 } from "../lib/onboarding";
@@ -48,10 +51,13 @@ function OnboardingForm() {
     !!form.discord &&
     !!form.email &&
     !!form.age &&
+    !!form.country &&
     !!form.rank &&
+    !!form.platform &&
     !!form.hours &&
     !!form.goal &&
     !!form.spent &&
+    !!form.howFoundUs &&
     !!form.interest;
 
   function update<K extends keyof OnboardingSubmission>(
@@ -178,8 +184,32 @@ function OnboardingForm() {
             />
           </FormBlock>
 
+          {/* Country */}
+          <FormBlock number={3} label="Where are you based?">
+            <select
+              value={form.country ?? ""}
+              onChange={(e) =>
+                update(
+                  "country",
+                  e.target.value as OnboardingSubmission["country"],
+                )
+              }
+              className={selectClass}
+              required
+            >
+              <option value="" disabled>
+                Select your country
+              </option>
+              {COUNTRIES.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </FormBlock>
+
           {/* Rank */}
-          <FormBlock number={3} label="What's your current rank?">
+          <FormBlock number={4} label="What's your current rank?">
             <RadioGroup
               name="rank"
               options={[...RANKS]}
@@ -191,9 +221,22 @@ function OnboardingForm() {
             />
           </FormBlock>
 
+          {/* Platform */}
+          <FormBlock number={5} label="What platform do you play on?">
+            <RadioGroup
+              name="platform"
+              options={[...PLATFORMS]}
+              value={form.platform}
+              onChange={(v) =>
+                update("platform", v as OnboardingSubmission["platform"])
+              }
+              columns={4}
+            />
+          </FormBlock>
+
           {/* Hours */}
           <FormBlock
-            number={4}
+            number={6}
             label="How many hours per week do you typically play?"
           >
             <RadioGroup
@@ -208,7 +251,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Goal */}
-          <FormBlock number={5} label="What's your goal for the next 90 days?">
+          <FormBlock number={7} label="What's your goal for the next 90 days?">
             <RadioGroup
               name="goal"
               options={[...GOALS]}
@@ -221,7 +264,7 @@ function OnboardingForm() {
 
           {/* Tried */}
           <FormBlock
-            number={6}
+            number={8}
             label="What have you already tried? (select all that apply)"
           >
             <div className="grid gap-2 md:grid-cols-2">
@@ -244,7 +287,7 @@ function OnboardingForm() {
 
           {/* Spent */}
           <FormBlock
-            number={7}
+            number={9}
             label="What's the most you've spent on a single online course, coaching service, or training program in the past year?"
           >
             <RadioGroup
@@ -258,9 +301,22 @@ function OnboardingForm() {
             />
           </FormBlock>
 
+          {/* How found us */}
+          <FormBlock number={10} label="How did you find us?">
+            <RadioGroup
+              name="howFoundUs"
+              options={[...HOW_FOUND_US]}
+              value={form.howFoundUs}
+              onChange={(v) =>
+                update("howFoundUs", v as OnboardingSubmission["howFoundUs"])
+              }
+              columns={3}
+            />
+          </FormBlock>
+
           {/* Interest */}
           <FormBlock
-            number={8}
+            number={11}
             label="Are you open to hearing about 1-on-1 coaching options today?"
           >
             <RadioGroup
@@ -303,6 +359,9 @@ function OnboardingForm() {
 const inputClass =
   "w-full rounded-xl border border-white/15 bg-white/[0.03] px-4 py-3 text-white placeholder-white/30 transition focus:border-[var(--accent)] focus:outline-none";
 
+const selectClass =
+  "w-full rounded-xl border border-white/15 bg-white/[0.03] px-4 py-3 text-white transition focus:border-[var(--accent)] focus:outline-none appearance-none cursor-pointer";
+
 function FormBlock({
   number,
   label,
@@ -341,9 +400,11 @@ function RadioGroup({
       ? "grid gap-2 md:grid-cols-5"
       : columns === 4
         ? "grid gap-2 md:grid-cols-4"
-        : columns === 2
-          ? "grid gap-2 md:grid-cols-2"
-          : "grid gap-2";
+        : columns === 3
+          ? "grid gap-2 md:grid-cols-3"
+          : columns === 2
+            ? "grid gap-2 md:grid-cols-2"
+            : "grid gap-2";
   return (
     <div className={gridClass}>
       {options.map((opt) => {

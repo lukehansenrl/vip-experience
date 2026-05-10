@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { CalendlyModal } from "../../components/CalendlyModal";
 
+// TODO (Jacob/Luke): Update this to the canonical Whop "Join the Community" /
+// Discord-claim URL for the Clubhouse product. Find it in your Whop admin:
+// Products → Rocket League Clubhouse → "Join the Community" page → copy URL.
+// Should look like: https://whop.com/joined/rlclubhouse/3-join-the-community-XXX/app/
+// Currently points to the product page, which still gets users to Discord
+// but adds an extra click vs the direct community-join URL.
 const CLUBHOUSE_URL = "https://whop.com/rlclubhouse/";
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
 
