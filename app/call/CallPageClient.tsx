@@ -341,7 +341,7 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── BONUS STACK (3 bonuses — controller moved to Loyalty Track) ── */}
+      {/* ── BONUS STACK (4 bonuses, Hormozi-style) ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
         <div className="mx-auto max-w-5xl">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
@@ -351,12 +351,12 @@ export function CallPageClient({ spotsFilled }: Props) {
             Plus, You Also Get...
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
-            Three bonuses stacked on top of the core program. Two unlock the
+            Four bonuses stacked on top of the core program. Three unlock the
             moment you sign up. One you earn by sticking with the program.
           </p>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 md:gap-6">
-            {/* Bonus #1 — Training Pack Vault */}
+            {/* Bonus #1 — 2026 Mechanics Tier List */}
             <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
@@ -367,28 +367,57 @@ export function CallPageClient({ spotsFilled }: Props) {
                 </span>
               </div>
               <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
-                The Training Pack Vault.
+                The 2026 Mechanics Tier List.
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
-                Our hand-picked list of training packs we&apos;ve assigned to
-                every VIP member. Drills mapped to what each rank actually
-                needs. Unlocked the moment you join.
+                The only ranked breakdown of which mechanics to learn at YOUR
+                rank — with custom drills, training packs, and step-by-step
+                guides for each tier. Updated quarterly as the meta shifts.
               </p>
               <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-white/50">
                   Value
                 </span>
                 <span className="font-display text-xl text-white md:text-2xl">
-                  $25
+                  $50
                 </span>
               </div>
             </div>
 
-            {/* Bonus #2 — VIP Discord Tag */}
+            {/* Bonus #2 — 2026 Pro Settings Vault */}
             <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
                   Bonus #2 · Day 1 Unlock
+                </span>
+                <span className="rounded-md bg-[var(--green)]/15 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--green)]">
+                  Instant
+                </span>
+              </div>
+              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
+                The 2026 Pro Settings Vault.
+              </h3>
+              <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
+                The exact settings every RLCS-level coach on our staff plays
+                at — with the reasoning behind each tweak so you can adapt to
+                your playstyle. Camera, deadzones, controller layout, all of
+                it.
+              </p>
+              <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
+                <span className="text-xs font-bold uppercase tracking-widest text-white/50">
+                  Value
+                </span>
+                <span className="font-display text-xl text-white md:text-2xl">
+                  $35
+                </span>
+              </div>
+            </div>
+
+            {/* Bonus #3 — VIP Discord Tag */}
+            <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
+                  Bonus #3 · Day 1 Unlock
                 </span>
                 <span className="rounded-md bg-[var(--green)]/15 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--green)]">
                   Instant
@@ -411,11 +440,11 @@ export function CallPageClient({ spotsFilled }: Props) {
               </div>
             </div>
 
-            {/* Bonus #3 — Replay Review With SpookyLuke */}
+            {/* Bonus #4 — Replay Review With SpookyLuke */}
             <div className="flex flex-col rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/5 p-6 shadow-lg shadow-[var(--accent-glow)] md:p-7">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs uppercase tracking-widest text-[var(--accent)]">
-                  Bonus #3 · Week 8 Unlock
+                  Bonus #4 · Week 8 Unlock
                 </span>
                 <span className="rounded-md bg-[var(--accent)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
                   Earned
@@ -447,7 +476,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               Total Bonus Value
             </p>
             <p className="font-display mt-1 text-4xl text-white md:text-5xl">
-              $170
+              $230
             </p>
             <p className="mt-2 text-xs text-white/60 md:text-sm">
               Stacked on top of the 12-week program
@@ -528,7 +557,8 @@ export function CallPageClient({ spotsFilled }: Props) {
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
                 The inner-circle channel. Direct access to other alumni and
                 the coaching team. Coordinate scrims, share insights, build
-                with players who&apos;ve actually made it.
+                with players who&apos;ve actually made it. Stays open as long
+                as you&apos;re an active member of the community.
               </p>
             </div>
 
@@ -575,6 +605,12 @@ export function CallPageClient({ spotsFilled }: Props) {
           <p className="mx-auto mt-10 max-w-2xl text-center text-base text-white/60">
             No discount. No coupon. The reward for graduating is more access,
             not less price.
+          </p>
+
+          <p className="mx-auto mt-4 max-w-2xl text-center text-xs text-white/40">
+            Recurring alumni access (Discord channel, monthly call, founding
+            rate) requires an active Clubhouse or VIP membership. The signed
+            controller and success feature are yours to keep regardless.
           </p>
 
           <p className="mt-4 text-center text-xs text-white/40">
