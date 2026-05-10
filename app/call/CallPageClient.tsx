@@ -241,8 +241,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             Here&apos;s Everything You Get.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
-            Coaching. Plan. Same caliber of coaches as Bootcamp, without the
-            all-in commitment.
+            Pro coaches, a personalized plan, and accountability — built
+            around your rank, your weaknesses, and your schedule.
           </p>
 
           <div className="mt-10 flex flex-col gap-5">
