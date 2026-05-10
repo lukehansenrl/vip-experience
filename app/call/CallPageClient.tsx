@@ -357,13 +357,13 @@ export function CallPageClient({ spotsFilled }: Props) {
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 md:gap-6">
             {/* Bonus #1 — 2026 Mechanics Tier List */}
-            <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
+            <div className="flex flex-col rounded-2xl border border-[var(--gold)]/30 bg-[var(--gold)]/5 p-6 md:p-7">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
-                  Bonus #1 · Day 1 Unlock
+                  Bonus #1 · Lifetime Access
                 </span>
-                <span className="rounded-md bg-[var(--green)]/15 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--green)]">
-                  Instant
+                <span className="rounded-md bg-[var(--gold)]/20 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--gold)]">
+                  Forever
                 </span>
               </div>
               <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
@@ -373,6 +373,10 @@ export function CallPageClient({ spotsFilled }: Props) {
                 The only ranked breakdown of which mechanics to learn at YOUR
                 rank — with custom drills, training packs, and step-by-step
                 guides for each tier. Updated quarterly as the meta shifts.
+              </p>
+              <p className="mt-2 text-sm font-semibold text-[var(--gold)]">
+                Yours for life — keep the dashboard and all future updates,
+                even if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
                 Launching May 24 for all VIP members.
@@ -388,13 +392,13 @@ export function CallPageClient({ spotsFilled }: Props) {
             </div>
 
             {/* Bonus #2 — 2026 Pro Settings Vault */}
-            <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
+            <div className="flex flex-col rounded-2xl border border-[var(--gold)]/30 bg-[var(--gold)]/5 p-6 md:p-7">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
-                  Bonus #2 · Day 1 Unlock
+                  Bonus #2 · Lifetime Access
                 </span>
-                <span className="rounded-md bg-[var(--green)]/15 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--green)]">
-                  Instant
+                <span className="rounded-md bg-[var(--gold)]/20 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--gold)]">
+                  Forever
                 </span>
               </div>
               <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
@@ -405,6 +409,10 @@ export function CallPageClient({ spotsFilled }: Props) {
                 at — with the reasoning behind each tweak so you can adapt to
                 your playstyle. Camera, deadzones, controller layout, all of
                 it.
+              </p>
+              <p className="mt-2 text-sm font-semibold text-[var(--gold)]">
+                Yours for life — keep the vault and all future updates, even
+                if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
                 Launching May 24 for all VIP members.
