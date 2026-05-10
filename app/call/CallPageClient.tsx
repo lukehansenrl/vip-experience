@@ -16,6 +16,7 @@ import { IncludeCard } from "../components/IncludeCard";
 import { BenefitCard } from "../components/BenefitCard";
 import { RatingBar } from "../components/RatingBar";
 import { PricingCard } from "../components/PricingCard";
+import { DiscordIcon } from "../components/DiscordIcon";
 import { VIDEO_TESTIMONIALS } from "../data/testimonials";
 
 const WHOP_URL = "https://whop.com/rlclubhouse/rlc-pro-vip-membership/";
@@ -189,7 +190,10 @@ export function CallPageClient({ spotsFilled }: Props) {
                     {t.initials}
                   </div>
                   <div>
-                    <p className="font-bold text-white">{t.name}</p>
+                    <p className="flex items-center gap-1.5 font-bold text-white">
+                      <DiscordIcon className="h-3.5 w-3.5 text-[#5865F2]" />
+                      {t.name}
+                    </p>
                     <p className="text-xs font-semibold text-[var(--accent)]">
                       {t.rank}
                     </p>
