@@ -47,7 +47,7 @@ export const VALUE_STACK: ValueStackRow[] = [
   },
   {
     item: "BONUS · Signed Controller (Rank-Up Reward)",
-    value: "$150",
+    value: "$80",
     note: "Rank up + hold 2 seasons + active in community = signed controller",
   },
 ];

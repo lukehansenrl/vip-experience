@@ -118,14 +118,11 @@ export function CallPageClient({ spotsFilled }: Props) {
                 The VIP Experience
               </p>
               <h1 className="font-display text-5xl leading-[1] tracking-tight md:text-6xl lg:text-7xl">
-                Improve Faster With One-on-One Coaching.
+                Rank up in 90 days. Or we coach you free until you do.
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-xl text-white/80 md:mx-0 md:text-2xl">
-                Stop guessing what to focus on. Three pro coaches, twelve
-                weeks, and a plan built for your rank.
-              </p>
-              <p className="mx-auto mt-5 max-w-xl text-lg font-semibold text-[var(--green)] md:mx-0 md:text-xl">
-                Rank up one full rank in 90 days. Or your money back.
+                1-on-1 with a pro coach, a personalized 90-day plan, and a
+                guarantee most coaches won&apos;t make.
               </p>
             </div>
             {/* Photo */}
@@ -465,7 +462,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                   Value
                 </span>
                 <span className="font-display text-xl text-white md:text-2xl">
-                  $150
+                  $80
                 </span>
               </div>
             </div>
@@ -477,7 +474,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               Total Bonus Value
             </p>
             <p className="font-display mt-1 text-4xl text-white md:text-5xl">
-              $320
+              $250
             </p>
             <p className="mt-2 text-xs text-white/60 md:text-sm">
               Stacked on top of the 12-week program
