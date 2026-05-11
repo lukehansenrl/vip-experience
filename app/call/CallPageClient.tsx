@@ -495,6 +495,28 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
+      {/* ── PULL QUOTE (rank-up moment — breaks the card-grid rhythm) ── */}
+      <section className="px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5">
+            <span className="text-xs font-bold uppercase tracking-widest text-white/40">
+              Champ 3
+            </span>
+            <span className="text-[var(--accent)]">→</span>
+            <span className="text-xs font-black uppercase tracking-widest text-[var(--accent)]">
+              Grand Champion
+            </span>
+          </div>
+          <blockquote className="font-display text-3xl leading-tight tracking-tight md:text-5xl md:leading-[1.1]">
+            &ldquo;Started at C3. I am now GC. The 1-on-1 with a pro player is
+            literally worth the entire price.&rdquo;
+          </blockquote>
+          <p className="mt-8 text-sm font-bold uppercase tracking-widest text-white/50">
+            Snizz &middot; 13 days after joining
+          </p>
+        </div>
+      </section>
+
       {/* ── LOYALTY TRACK (alumni tier — unlocked by ranking up) ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
         <div className="mx-auto max-w-5xl">
