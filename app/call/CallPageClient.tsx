@@ -141,8 +141,13 @@ export function CallPageClient({ spotsFilled }: Props) {
             Real Results
           </p>
           <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
-            Real Players. Real Progress.
+            The Most Experienced Coaching Team In Rocket League.
           </h2>
+          <p className="mt-5 max-w-3xl text-lg text-white/70 md:text-xl">
+            Our team includes an RLCS Season 7 World Champion, two former pro
+            players, and the largest Rocket League coaching channel on
+            YouTube. We&apos;ve been coaching paid members since 2020.
+          </p>
 
           {/* Rating summary */}
           <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
@@ -157,10 +162,10 @@ export function CallPageClient({ spotsFilled }: Props) {
                     />
                   ))}
                 </div>
-                <p className="mt-1 text-sm text-white/50">95 ratings</p>
+                <p className="mt-1 text-sm text-white/50">98 ratings</p>
               </div>
               <div className="flex-1 space-y-2 w-full">
-                <RatingBar stars={5} percent={95} count={90} />
+                <RatingBar stars={5} percent={95} count={93} />
                 <RatingBar stars={4} percent={5} count={5} />
                 <RatingBar stars={3} percent={0} count={0} />
                 <RatingBar stars={2} percent={0} count={0} />
