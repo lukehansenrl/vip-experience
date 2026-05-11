@@ -731,7 +731,7 @@ export function CallPageClient({ spotsFilled }: Props) {
           <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             The Investment
           </p>
-          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
+          <h2 className="font-display mt-3 text-5xl tracking-tight md:text-6xl lg:text-7xl">
             The 12-Week Program. One Price.
           </h2>
 
