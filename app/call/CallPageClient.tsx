@@ -322,7 +322,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
                 The only ranked breakdown of which mechanics to learn at YOUR
                 rank — with custom drills, training packs, and step-by-step
-                guides for each tier. Updated quarterly as the meta shifts.
+                guides for each tier. Updated yearly.
               </p>
               <p className="mt-2 text-sm font-semibold text-[var(--gold)]">
                 Yours for life — keep the dashboard and all future updates,
