@@ -2,6 +2,12 @@
  * Onboarding form data + routing logic.
  * Shared between the form page and the API route so the question schema
  * lives in exactly one place.
+ *
+ * v2 architecture (May 11, 2026):
+ *   - Form is purely a "can they pay" filter — 3 financial gates + 1
+ *     technical gate. Everything else collected as signal for the rep.
+ *   - Hard gates only, no scoring (yet). Scores can be layered later
+ *     if data shows they predict close rate.
  */
 
 // ── QUESTION SCHEMA ────────────────────────────────────────────────────
@@ -21,6 +27,15 @@ export const RANKS = [
 
 export const PLATFORMS = ["PC", "PlayStation", "Xbox", "Switch"] as const;
 
+export const EMPLOYMENT = [
+  "Employed full-time",
+  "Self-employed / Business owner",
+  "Part-time employed",
+  "Student",
+  "Retired",
+  "Unemployed",
+] as const;
+
 export const HOURS = ["<2", "2-5", "5-10", "10+"] as const;
 
 export const GOALS = [
@@ -39,7 +54,17 @@ export const TRIED_OPTIONS = [
   "Just grinding ranked",
 ] as const;
 
-export const SPENT = ["$0", "$1-50", "$51-200", "$201-500", "$500+"] as const;
+// Forward-looking budget (replaced the past-spending question).
+// Captures willingness to invest in improvement (coaching, gear,
+// training tools, etc.) over the next 12 months.
+export const BUDGET = [
+  "$0",
+  "$10-$99",
+  "$100-$300",
+  "$301-$500",
+  "$501-$1,000",
+  "$1,000+",
+] as const;
 
 export const HOW_FOUND_US = [
   "YouTube",
@@ -50,14 +75,15 @@ export const HOW_FOUND_US = [
   "Other",
 ] as const;
 
-export const INTEREST = [
-  "Yes — that's why I'm here",
-  "Maybe — tell me more",
-  "No — just want the community",
+// Replaces the old "Are you open to hearing about 1-on-1 coaching?"
+// One step removed from the pitch — asks about improvement commitment
+// instead of telegraphing the sales motion.
+export const IMPROVEMENT_INTENT = [
+  "Yes — I'm willing to invest time, money, and energy into improving faster",
+  "No — I'm not interested in improving faster. I play for enjoyment.",
 ] as const;
 
 // Curated country list — top RL-relevant countries.
-// Ordered roughly by community size, with "Other" as a catch-all.
 export const COUNTRIES = [
   "United States",
   "Canada",
@@ -99,13 +125,10 @@ export const COUNTRIES = [
   "Other",
 ] as const;
 
-// Countries where local purchasing power makes $500 USD a major
-// commitment for most buyers. Used as a SOFT signal in combination
-// with the spending question — not a hard disqualifier on its own.
-//
-// People in these countries with high training spend ($201+) are still
-// real buyers and SHOULD be pitched. People in these countries with
-// low spend ($0-50) are very unlikely to convert at $497/quarter.
+// Countries where local purchasing power makes $497 USD an automatic
+// barrier for nearly all buyers. Hard DQ on its own — does not combine
+// with other signals. (Stricter than the previous "low-PPP + medium
+// spend" rule per Luke's May 11 decision.)
 const LOW_PPP_COUNTRIES = new Set<string>([
   "Brazil",
   "Argentina",
@@ -124,18 +147,35 @@ export type OnboardingSubmission = {
   email: string;
   age: (typeof AGES)[number];
   country: (typeof COUNTRIES)[number];
+  employment: (typeof EMPLOYMENT)[number];
   rank: (typeof RANKS)[number];
   platform: (typeof PLATFORMS)[number];
   hours: (typeof HOURS)[number];
   goal: (typeof GOALS)[number];
   tried: string[];
-  spent: (typeof SPENT)[number];
+  budget: (typeof BUDGET)[number];
   howFoundUs: (typeof HOW_FOUND_US)[number];
-  interest: (typeof INTEREST)[number];
+  improvementIntent: (typeof IMPROVEMENT_INTENT)[number];
 };
 
 // ── ROUTING LOGIC ──────────────────────────────────────────────────────
-// Hard gates: anyone who trips one is unqualified for the call.
+//
+// Eight hard gates. Anyone tripping one is unqualified for the call.
+// Three financial, one technical, four fit-related.
+//
+// Financial:
+//   1. Age (legal — can't make purchase decisions under 18)
+//   2. Country (local purchasing power)
+//   3. Employment (no income source)
+//   8. Forward budget (explicit "I won't spend" signal)
+//
+// Technical:
+//   4. Platform (Console makes most drills/training impossible)
+//
+// Fit:
+//   5. Rank (community is built for Plat and above)
+//   6. Goal (coaching is for people who want to improve)
+//   7. Improvement intent (explicit "not trying to improve")
 
 export type RoutingDecision = {
   qualified: boolean;
@@ -150,34 +190,42 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
     reasons.push("under-18");
   }
 
-  // Gate 2: Rank (community is built for high gold to low SSL)
-  if (s.rank === "Bronze" || s.rank === "Silver") {
+  // Gate 2: Country (local purchasing power)
+  if (LOW_PPP_COUNTRIES.has(s.country)) {
+    reasons.push("low-ppp-country");
+  }
+
+  // Gate 3: Employment (no income source)
+  if (s.employment === "Unemployed") {
+    reasons.push("unemployed");
+  }
+
+  // Gate 4: Platform (Console can't run Bakkesmod or import training packs)
+  if (s.platform !== "PC") {
+    reasons.push("not-pc");
+  }
+
+  // Gate 5: Rank (community built for high gold to low SSL — but Plat+ for VIP)
+  if (s.rank === "Bronze" || s.rank === "Silver" || s.rank === "Gold") {
     reasons.push("below-plat");
   }
 
-  // Gate 3: Goal (coaching is for people who want to improve)
+  // Gate 6: Goal (coaching is for people who want to improve)
   if (s.goal === "Just have fun, no specific goal") {
     reasons.push("not-goal-driven");
   }
 
-  // Gate 4: Budget signal — combination of country + spending.
-  //
-  // For high-PPP countries: $0-50 spent on training in past year = unqualified.
-  // For low-PPP countries: $0-200 spent = unqualified (higher bar because
-  //   $500 USD is a much bigger ask in their economy, so we want stronger
-  //   proof of willingness to invest).
-  const isLowPpp = LOW_PPP_COUNTRIES.has(s.country);
-  const lowSpend = s.spent === "$0" || s.spent === "$1-50";
-  const mediumSpend = s.spent === "$51-200";
-  if (lowSpend) {
-    reasons.push("low-budget-signal");
-  } else if (isLowPpp && mediumSpend) {
-    reasons.push("low-ppp-medium-spend");
+  // Gate 7: Improvement intent (explicit opt-out from improving)
+  if (
+    s.improvementIntent ===
+    "No — I'm not interested in improving faster. I play for enjoyment."
+  ) {
+    reasons.push("not-trying-to-improve");
   }
 
-  // Gate 5: Explicit coaching interest
-  if (s.interest === "No — just want the community") {
-    reasons.push("not-interested-in-coaching");
+  // Gate 8: Forward budget — under $100 = below VIP monthly floor of $199
+  if (s.budget === "$0" || s.budget === "$10-$99") {
+    reasons.push("budget-below-floor");
   }
 
   return {
@@ -196,13 +244,14 @@ export function validateSubmission(
     "email",
     "age",
     "country",
+    "employment",
     "rank",
     "platform",
     "hours",
     "goal",
-    "spent",
+    "budget",
     "howFoundUs",
-    "interest",
+    "improvementIntent",
   ];
   for (const k of required) {
     if (!body[k]) return { ok: false, error: `Missing field: ${k}` };
@@ -213,6 +262,5 @@ export function validateSubmission(
   if (!Array.isArray(body.tried)) {
     body.tried = [];
   }
-  // Trust caller — types are enforced by the form's radios/checkboxes.
   return { ok: true, data: body as OnboardingSubmission };
 }

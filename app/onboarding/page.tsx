@@ -5,14 +5,15 @@ import { useRouter, useSearchParams } from "next/navigation";
 import {
   AGES,
   COUNTRIES,
+  EMPLOYMENT,
   RANKS,
   PLATFORMS,
   HOURS,
   GOALS,
   TRIED_OPTIONS,
-  SPENT,
+  BUDGET,
   HOW_FOUND_US,
-  INTEREST,
+  IMPROVEMENT_INTENT,
   type OnboardingSubmission,
 } from "../lib/onboarding";
 
@@ -52,13 +53,14 @@ function OnboardingForm() {
     !!form.email &&
     !!form.age &&
     !!form.country &&
+    !!form.employment &&
     !!form.rank &&
     !!form.platform &&
     !!form.hours &&
     !!form.goal &&
-    !!form.spent &&
+    !!form.budget &&
     !!form.howFoundUs &&
-    !!form.interest;
+    !!form.improvementIntent;
 
   function update<K extends keyof OnboardingSubmission>(
     key: K,
@@ -208,8 +210,21 @@ function OnboardingForm() {
             </select>
           </FormBlock>
 
+          {/* Employment */}
+          <FormBlock number={4} label="What's your current employment status?">
+            <RadioGroup
+              name="employment"
+              options={[...EMPLOYMENT]}
+              value={form.employment}
+              onChange={(v) =>
+                update("employment", v as OnboardingSubmission["employment"])
+              }
+              columns={2}
+            />
+          </FormBlock>
+
           {/* Rank */}
-          <FormBlock number={4} label="What's your current rank?">
+          <FormBlock number={5} label="What's your current rank?">
             <RadioGroup
               name="rank"
               options={[...RANKS]}
@@ -222,7 +237,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Platform */}
-          <FormBlock number={5} label="What platform do you play on?">
+          <FormBlock number={6} label="What platform do you play on?">
             <RadioGroup
               name="platform"
               options={[...PLATFORMS]}
@@ -236,7 +251,7 @@ function OnboardingForm() {
 
           {/* Hours */}
           <FormBlock
-            number={6}
+            number={7}
             label="How many hours per week do you typically play?"
           >
             <RadioGroup
@@ -251,7 +266,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Goal */}
-          <FormBlock number={7} label="What's your goal for the next 90 days?">
+          <FormBlock number={8} label="What's your goal for the next 90 days?">
             <RadioGroup
               name="goal"
               options={[...GOALS]}
@@ -264,7 +279,7 @@ function OnboardingForm() {
 
           {/* Tried */}
           <FormBlock
-            number={8}
+            number={9}
             label="What have you already tried? (select all that apply)"
           >
             <div className="grid gap-2 md:grid-cols-2">
@@ -285,24 +300,24 @@ function OnboardingForm() {
             </div>
           </FormBlock>
 
-          {/* Spent */}
+          {/* Budget — forward-looking */}
           <FormBlock
-            number={9}
-            label="What's the most you've spent on a single online course, coaching service, or training program in the past year?"
+            number={10}
+            label="If we recommended a path to improve fast — coaching, better gear, training tools — what's your budget for the next 12 months?"
           >
             <RadioGroup
-              name="spent"
-              options={[...SPENT]}
-              value={form.spent}
+              name="budget"
+              options={[...BUDGET]}
+              value={form.budget}
               onChange={(v) =>
-                update("spent", v as OnboardingSubmission["spent"])
+                update("budget", v as OnboardingSubmission["budget"])
               }
-              columns={5}
+              columns={3}
             />
           </FormBlock>
 
           {/* How found us */}
-          <FormBlock number={10} label="How did you find us?">
+          <FormBlock number={11} label="How did you find us?">
             <RadioGroup
               name="howFoundUs"
               options={[...HOW_FOUND_US]}
@@ -314,17 +329,20 @@ function OnboardingForm() {
             />
           </FormBlock>
 
-          {/* Interest */}
+          {/* Improvement intent — one step removed from "are you interested in coaching" */}
           <FormBlock
-            number={11}
-            label="Are you open to hearing about 1-on-1 coaching options today?"
+            number={12}
+            label="Do you want to improve at Rocket League as fast as possible?"
           >
             <RadioGroup
-              name="interest"
-              options={[...INTEREST]}
-              value={form.interest}
+              name="improvementIntent"
+              options={[...IMPROVEMENT_INTENT]}
+              value={form.improvementIntent}
               onChange={(v) =>
-                update("interest", v as OnboardingSubmission["interest"])
+                update(
+                  "improvementIntent",
+                  v as OnboardingSubmission["improvementIntent"],
+                )
               }
             />
           </FormBlock>
