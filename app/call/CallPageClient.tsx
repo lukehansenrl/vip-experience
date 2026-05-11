@@ -646,6 +646,144 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
+      {/* ── TOTAL VALUE STACK (everything vs $497) ── */}
+      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+            Total Value
+          </p>
+          <h2 className="font-display mt-3 text-center text-4xl tracking-tight md:text-5xl">
+            What This Stack Is Actually Worth.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
+            Priced at market rates. Per item. Over 12 weeks.
+          </p>
+
+          <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+            {/* Core deliverables */}
+            <div className="px-5 py-3 text-xs font-bold uppercase tracking-widest text-white/40 md:px-6">
+              The 12-Week Program
+            </div>
+            {[
+              {
+                item: "3× 60-min 1:1 Pro Coaching Calls",
+                note: "Pro-level live coaching, market rate ~$150/session",
+                value: "$450",
+              },
+              {
+                item: "3× 30-min Personalized Replay Reviews",
+                note: "Luke's published Metafy rate is $125 per review",
+                value: "$375",
+              },
+              {
+                item: "3× Monthly Accountability Check-Ins",
+                note: "Member guide calls — separate from your coach",
+                value: "$150",
+              },
+              {
+                item: "Personalized 12-Week Training Plan",
+                note: "Refreshed monthly, built around your rank and schedule",
+                value: "$150",
+              },
+              {
+                item: "12 Weeks Of Full Clubhouse Access",
+                note: "15+ live events monthly, weekly classes, community",
+                value: "$81",
+              },
+            ].map((row) => (
+              <div
+                key={row.item}
+                className="flex items-start justify-between gap-4 border-t border-white/10 px-5 py-4 md:px-6"
+              >
+                <div className="min-w-0 flex-1">
+                  <div className="text-base font-semibold text-white md:text-lg">
+                    {row.item}
+                  </div>
+                  <div className="mt-1 text-xs text-white/50 md:text-sm">
+                    {row.note}
+                  </div>
+                </div>
+                <div className="font-display whitespace-nowrap text-xl text-white md:text-2xl">
+                  {row.value}
+                </div>
+              </div>
+            ))}
+
+            {/* Bonuses */}
+            <div className="border-t border-white/10 bg-[var(--gold)]/[0.04] px-5 py-3 text-xs font-bold uppercase tracking-widest text-[var(--gold)] md:px-6">
+              Stacked Bonuses
+            </div>
+            {[
+              {
+                item: "Bonus #1 · 2026 Mechanics Tier List (Lifetime)",
+                note: "The only ranked breakdown of what to learn at YOUR rank",
+                value: "$50",
+              },
+              {
+                item: "Bonus #2 · 2026 Pro Settings Vault (Lifetime)",
+                note: "Exact settings every RLCS-level coach on staff uses",
+                value: "$35",
+              },
+              {
+                item: "Bonus #3 · VIP Discord Tag",
+                note: "Pinned at the top of the member list",
+                value: "$20",
+              },
+              {
+                item: "Bonus #4 · 30-min Replay Review With SpookyLuke",
+                note: "Luke's $125 Metafy rate. Earned at week 8.",
+                value: "$125",
+              },
+            ].map((row) => (
+              <div
+                key={row.item}
+                className="flex items-start justify-between gap-4 border-t border-white/10 bg-[var(--gold)]/[0.04] px-5 py-4 md:px-6"
+              >
+                <div className="min-w-0 flex-1">
+                  <div className="text-base font-semibold text-white md:text-lg">
+                    {row.item}
+                  </div>
+                  <div className="mt-1 text-xs text-white/50 md:text-sm">
+                    {row.note}
+                  </div>
+                </div>
+                <div className="font-display whitespace-nowrap text-xl text-white md:text-2xl">
+                  {row.value}
+                </div>
+              </div>
+            ))}
+
+            {/* Total row */}
+            <div className="flex items-center justify-between gap-4 border-t-2 border-[var(--gold)]/40 bg-[var(--gold)]/10 px-5 py-5 md:px-6">
+              <div className="text-sm font-black uppercase tracking-widest text-[var(--gold)] md:text-base">
+                Total Value
+              </div>
+              <div className="font-display text-3xl text-white md:text-4xl">
+                $1,436
+              </div>
+            </div>
+
+            {/* Price row */}
+            <div className="flex items-center justify-between gap-4 border-t border-white/10 bg-[var(--accent)]/10 px-5 py-5 md:px-6">
+              <div className="text-sm font-black uppercase tracking-widest text-[var(--accent)] md:text-base">
+                Your Price Today
+              </div>
+              <div className="font-display text-3xl text-white md:text-4xl">
+                $497
+              </div>
+            </div>
+          </div>
+
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-white/80 md:text-xl">
+            <span className="font-bold text-[var(--green)]">
+              You save $939.
+            </span>{" "}
+            And if you don&apos;t rank up in 90 days, we keep coaching you free
+            until you do.
+          </p>
+        </div>
+      </section>
+
       {/* ── INVESTMENT (PRICE REVEAL) ── */}
       <section
         id="investment"
