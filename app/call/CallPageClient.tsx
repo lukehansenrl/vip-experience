@@ -750,8 +750,77 @@ export function CallPageClient({ spotsFilled }: Props) {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/30">
-        &copy; {new Date().getFullYear()} RL Clubhouse. All rights reserved.
+      <footer className="border-t border-white/10 px-6 py-12">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid gap-8 md:grid-cols-[2fr_1fr_1fr]">
+            <div>
+              <p className="text-sm font-black tracking-tight">
+                RL <span className="text-[var(--accent)]">Clubhouse</span>{" "}
+                <span className="text-white/30">&middot;</span>{" "}
+                <span className="text-white/50 text-xs font-semibold">VIP</span>
+              </p>
+              <p className="mt-3 max-w-xs text-xs leading-relaxed text-white/40">
+                1-on-1 Rocket League coaching with RLCS-level pros. Rank up or
+                we keep coaching you free.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/60">
+                Programs
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-white/50">
+                <li>
+                  <a
+                    href={WHOP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition hover:text-white/80"
+                  >
+                    VIP Coaching
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://whop.com/rlclubhouse/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition hover:text-white/80"
+                  >
+                    Clubhouse Community
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/60">
+                Trust
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-white/50">
+                <li>
+                  <a
+                    href="/promise"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition hover:text-white/80"
+                  >
+                    Our Guarantees
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#investment"
+                    className="transition hover:text-white/80"
+                  >
+                    Pricing
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-10 border-t border-white/10 pt-6 text-xs text-white/30">
+            &copy; {new Date().getFullYear()} RL Clubhouse. All rights reserved.
+          </div>
+        </div>
       </footer>
     </div>
   );
