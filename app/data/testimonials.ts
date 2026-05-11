@@ -42,7 +42,7 @@ export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
     quote:
       "It changed the way I view my rocket league gameplay and opened my eyes to all the little mistakes I was making. I started reviewing my replays using the info I learned.",
     vodTitle: "1:1 Coaching Session with Torment",
-    vodUrl: "https://www.youtube.com/@SpookyLukeCoaching",
+    vodUrl: "https://www.youtube.com/watch?v=oscG7AVOiQ8",
     coachNotes: "Control to wall, wheel touches, 2nd man positioning",
     initials: "BB",
     color: "bg-purple-500",
@@ -86,7 +86,7 @@ export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
     quote:
       "Coaching helped so much went from low D1 to high D2 in just 2 days. The fastest I've ever ranked up.",
     vodTitle: "SpookyLuke Coaching Diamond 3 2v2 | MMR 987",
-    vodUrl: "https://www.youtube.com/@SpookyLukeCoaching",
+    vodUrl: "https://www.youtube.com/watch?v=9n-tyq4wOrc&t=78s",
     coachNotes: "Mechanics & decision-making",
     initials: "CR",
     color: "bg-blue-500",

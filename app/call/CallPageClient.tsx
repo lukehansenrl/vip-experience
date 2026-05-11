@@ -566,10 +566,6 @@ export function CallPageClient({ spotsFilled }: Props) {
             </div>
           </div>
 
-          <p className="mx-auto mt-10 max-w-2xl text-center text-base text-white/60">
-            No discount. No coupon. The reward for graduating is more access,
-            not less price.
-          </p>
 
           <p className="mx-auto mt-4 max-w-2xl text-center text-xs text-white/40">
             Recurring alumni access (Discord channel, monthly call, founding
