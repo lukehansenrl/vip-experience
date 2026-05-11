@@ -13,6 +13,7 @@ import {
   SPENT,
   HOW_FOUND_US,
   INTEREST,
+  isUnderageAge,
   type OnboardingSubmission,
 } from "../lib/onboarding";
 
@@ -47,10 +48,13 @@ function OnboardingForm() {
     tried: [],
   });
 
+  const isUnderage = isUnderageAge(form.age);
+
   const isComplete =
     !!form.discord &&
     !!form.email &&
     !!form.age &&
+    !isUnderage &&
     !!form.country &&
     !!form.rank &&
     !!form.platform &&
@@ -182,6 +186,12 @@ function OnboardingForm() {
               value={form.age}
               onChange={(v) => update("age", v as OnboardingSubmission["age"])}
             />
+            {isUnderage && (
+              <div className="mt-3 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
+                Heads up — RL Clubhouse memberships are limited to users 18
+                and older. Sorry we can&apos;t get you in just yet.
+              </div>
+            )}
           </FormBlock>
 
           {/* Country */}

@@ -134,6 +134,14 @@ export type OnboardingSubmission = {
   interest: (typeof INTEREST)[number];
 };
 
+// ── AGE GATE (HARD BLOCK) ──────────────────────────────────────────────
+// Anyone under 18 is blocked entirely — no Discord access, no thank-you page.
+// Checked by the form (inline UX) and the API (server-side enforcement).
+
+export function isUnderageAge(age: string | undefined): boolean {
+  return age === "13-15" || age === "16-17";
+}
+
 // ── ROUTING LOGIC ──────────────────────────────────────────────────────
 // Hard gates: anyone who trips one is unqualified for the call.
 
@@ -209,6 +217,13 @@ export function validateSubmission(
   }
   if (!body.email || !body.email.includes("@")) {
     return { ok: false, error: "Invalid email" };
+  }
+  if (isUnderageAge(body.age)) {
+    return {
+      ok: false,
+      error:
+        "RL Clubhouse memberships are limited to users 18 and older. Sorry we can't get you in just yet.",
+    };
   }
   if (!Array.isArray(body.tried)) {
     body.tried = [];
