@@ -123,7 +123,7 @@ function OnboardingForm() {
           <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             Step 1 of 2 — Member Onboarding
           </p>
-          <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl">
             You&apos;re one step away from gaining 100 MMR in the next
             90 days.
           </h1>
