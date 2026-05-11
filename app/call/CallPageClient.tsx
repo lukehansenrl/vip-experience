@@ -134,6 +134,46 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
+      {/* ── STAT BAND (laurel-style proof row, spookyluke.com-inspired) ── */}
+      <section className="border-t border-white/10 px-6 py-10 md:py-14">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid grid-cols-2 gap-y-8 sm:grid-cols-4 sm:gap-x-4">
+            <div className="text-center">
+              <p className="font-display text-3xl tracking-tight md:text-4xl">
+                530K+
+              </p>
+              <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-white/50 md:text-xs">
+                YouTube Subscribers
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="font-display text-3xl tracking-tight md:text-4xl">
+                268M+
+              </p>
+              <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-white/50 md:text-xs">
+                Video Views
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="font-display text-3xl tracking-tight md:text-4xl">
+                Since 2020
+              </p>
+              <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-white/50 md:text-xs">
+                Coaching Paid Members
+              </p>
+            </div>
+            <div className="text-center">
+              <p className="font-display text-3xl tracking-tight md:text-4xl">
+                6 Pros
+              </p>
+              <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-white/50 md:text-xs">
+                RLCS-Level Coaches
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── PROOF (moved up: social proof early) ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
         <div className="mx-auto max-w-5xl">
