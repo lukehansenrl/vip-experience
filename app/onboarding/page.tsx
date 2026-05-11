@@ -50,6 +50,25 @@ function OnboardingForm() {
 
   const isUnderage = isUnderageAge(form.age);
 
+  // Progress tracking — counts each FormBlock as one step (11 total).
+  // `tried` is optional in validation but counts toward progress so the bar
+  // can reach 11/11 for users who picked at least one option.
+  const stepsFilled = [
+    !!form.discord && !!form.email,
+    !!form.age && !isUnderage,
+    !!form.country,
+    !!form.rank,
+    !!form.platform,
+    !!form.hours,
+    !!form.goal,
+    (form.tried?.length ?? 0) > 0,
+    !!form.spent,
+    !!form.howFoundUs,
+    !!form.interest,
+  ].filter(Boolean).length;
+  const totalSteps = 11;
+  const progressPercent = (stepsFilled / totalSteps) * 100;
+
   const isComplete =
     !!form.discord &&
     !!form.email &&
@@ -123,13 +142,27 @@ function OnboardingForm() {
         backgroundAttachment: "fixed",
       }}
     >
-      <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
-        <div className="mx-auto max-w-3xl px-6 py-4 text-center">
-          <div className="text-lg font-extrabold tracking-tight">
-            RL <span className="text-[var(--accent)]">Clubhouse</span>
+      <div className="sticky top-0 z-40">
+        <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
+          <div className="mx-auto max-w-3xl px-6 py-3">
+            <div className="flex items-center justify-between">
+              <div className="text-lg font-extrabold tracking-tight">
+                RL <span className="text-[var(--accent)]">Clubhouse</span>
+              </div>
+              <div className="text-xs text-white/50">
+                <span className="font-bold text-white/70">{stepsFilled}</span>
+                <span className="text-white/40"> / {totalSteps} answered</span>
+              </div>
+            </div>
+            <div className="mt-2 h-1 w-full overflow-hidden rounded-full bg-white/10">
+              <div
+                className="h-full rounded-full bg-[var(--accent)] transition-all duration-300"
+                style={{ width: `${progressPercent}%` }}
+              />
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       {/* HERO */}
       <section className="px-6 pt-16 pb-8 text-center md:pt-20">
