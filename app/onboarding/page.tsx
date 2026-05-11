@@ -325,11 +325,6 @@ function OnboardingForm() {
               Takes about 60 seconds. We&apos;ll tell you the right path
               instantly.
             </p>
-            <p className="mx-auto mt-4 max-w-md text-xs text-white/30">
-              VIP eligibility: Plat+ rank, PC, $100+ annual budget. Other
-              ranks/regions still get full Clubhouse access + Discord
-              roles auto-assigned.
-            </p>
           </div>
         </form>
       </section>
