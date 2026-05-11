@@ -133,19 +133,37 @@ export const COUNTRIES = [
   "Other",
 ] as const;
 
-// Countries where local purchasing power makes $497 USD an automatic
-// barrier for nearly all buyers.
-const LOW_PPP_COUNTRIES = new Set<string>([
-  "Brazil",
-  "Argentina",
-  "Colombia",
-  "South Africa",
-  "Philippines",
-  "Indonesia",
-  "India",
-  "Turkey",
-  "Russia",
-  "Ukraine",
+// Allowlist approach — only US, Europe, and Oceania (+ Canada) pass the
+// country gate. Anyone else DQs based on regional purchasing power.
+// Stricter than the previous denylist — high-income Asian and Middle
+// Eastern countries (Japan, South Korea, Singapore, UAE) currently DQ
+// under this rule even though their buyers can technically afford $497.
+// If we want exceptions for those, add them here.
+const ALLOWED_COUNTRIES = new Set<string>([
+  // North America
+  "United States",
+  "Canada",
+  // Europe (all countries in our dropdown)
+  "United Kingdom",
+  "Germany",
+  "France",
+  "Netherlands",
+  "Belgium",
+  "Spain",
+  "Italy",
+  "Portugal",
+  "Sweden",
+  "Norway",
+  "Denmark",
+  "Finland",
+  "Ireland",
+  "Switzerland",
+  "Austria",
+  "Poland",
+  "Czech Republic",
+  // Oceania
+  "Australia",
+  "New Zealand",
 ]);
 
 export type OnboardingSubmission = {
@@ -194,8 +212,10 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
   }
 
   // Gate 2: Country (local purchasing power)
-  if (LOW_PPP_COUNTRIES.has(s.country)) {
-    reasons.push("low-ppp-country");
+  // Allowlist: only US/Canada, Europe, and Oceania pass. Everyone else
+  // (including "Other") DQs.
+  if (!ALLOWED_COUNTRIES.has(s.country)) {
+    reasons.push("country-not-allowed");
   }
 
   // Gate 3: Employment (no income source)
