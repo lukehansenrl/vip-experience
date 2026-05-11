@@ -282,66 +282,83 @@ export function CallPageClient({ spotsFilled }: Props) {
 
       {/* ── MEET THE TEAM ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-6xl">
           <p className="mb-2 text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             Meet The Coaches
           </p>
           <h2 className="font-display mb-4 text-center text-4xl tracking-tight md:text-5xl">
             The People Behind Your Improvement.
           </h2>
-          <p className="mb-12 text-center text-lg text-white/70 max-w-xl mx-auto md:text-xl">
+          <p className="mx-auto mb-12 max-w-xl text-center text-lg text-white/70 md:text-xl">
             RLCS-level pros. Each has their own style. You get matched to
             whoever fits your goals.
           </p>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
-              <img
-                src="/graphics/torment.jpg"
-                alt="Torment"
-                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
-              />
-              <div className="font-extrabold text-xl">Torment</div>
-              <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
-                World Champion S7
+          <div className="grid gap-5 md:grid-cols-3 md:gap-6">
+            {[
+              {
+                photo: "/graphics/torment.jpg",
+                name: "Torment",
+                fullName: "Kyle Storer",
+                badge: "World Champion · S6 MVP",
+                role: "Rotations & Decision-Making",
+                bio: "RLCS Season 6 World Champion with Cloud9 (2018) and S6 World Championship MVP. Specializes in rotations, positioning, and high-level decision-making.",
+              },
+              {
+                photo: "/graphics/freakii-lp.jpg",
+                name: "FreaKii",
+                fullName: "Sandro Holzwarth",
+                badge: "Head Coach · PWR",
+                role: "Mechanics & Consistency",
+                bio: "Former Renault Vitality pro. Currently head coach at PWR. RLCS S8 EU \"Savior of the Season\" — known for technical consistency and the EU mechanical edge.",
+              },
+              {
+                photo: "/graphics/shock-lp.jpg",
+                name: "Shock",
+                fullName: "Nathan Frommelt",
+                badge: "RLCS S9 NA MVP",
+                role: "High-IQ Aggression",
+                bio: "Former Soniqs and Ghost Gaming pro. RLCS Season 9 NA Regular Season MVP. Known for controlled aggression and high IQ plays.",
+              },
+            ].map((coach) => (
+              <div
+                key={coach.name}
+                className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:border-[var(--accent)]/40 hover:shadow-xl hover:shadow-[var(--accent-glow)]"
+              >
+                <div className="relative aspect-[3/2] overflow-hidden">
+                  <img
+                    src={coach.photo}
+                    alt={`${coach.name} — ${coach.fullName}`}
+                    className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
+                  />
+                  {/* Bottom gradient for legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                  {/* Achievement badge — top left */}
+                  <div className="absolute left-4 top-4">
+                    <span className="inline-block rounded-md border border-[var(--gold)]/40 bg-black/60 px-2.5 py-1 text-[10px] font-black uppercase tracking-widest text-[var(--gold)] backdrop-blur">
+                      {coach.badge}
+                    </span>
+                  </div>
+                  {/* Name overlay — bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--accent)]">
+                      {coach.role}
+                    </p>
+                    <h3 className="font-display mt-1 text-3xl leading-none tracking-tight text-white md:text-4xl">
+                      {coach.name}
+                    </h3>
+                    <p className="mt-1 text-sm font-medium text-white/60">
+                      {coach.fullName}
+                    </p>
+                  </div>
+                </div>
+                <div className="px-5 py-4">
+                  <p className="text-sm leading-relaxed text-white/70">
+                    {coach.bio}
+                  </p>
+                </div>
               </div>
-              <div className="text-xs text-white/50 mt-3 leading-relaxed">
-                RLCS Season 7 World Champion. Specializes in rotations,
-                positioning, and high-level decision-making.
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
-              <img
-                src="/graphics/freakii-lp.jpg"
-                alt="Freakii"
-                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
-              />
-              <div className="font-extrabold text-xl">Freakii</div>
-              <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
-                Former EU Pro &middot; Head Coach at PWR
-              </div>
-              <div className="text-xs text-white/50 mt-3 leading-relaxed">
-                Former Renault Vitality pro, now head coach at PWR. EU
-                perspective on mechanics and technical consistency.
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5">
-              <img
-                src="/graphics/shock-lp.jpg"
-                alt="Shock"
-                className="mx-auto h-20 w-20 rounded-full object-cover object-top border-2 border-white/10 mb-4"
-              />
-              <div className="font-extrabold text-xl">Shock</div>
-              <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
-                Former NA Pro &middot; RLCS S9 MVP
-              </div>
-              <div className="text-xs text-white/50 mt-3 leading-relaxed">
-                Former Soniqs and Ghost Gaming pro. RLCS Season 9 NA Regular
-                Season MVP. Known for controlled aggression and high IQ plays.
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
