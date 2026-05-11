@@ -29,17 +29,22 @@ export const RANKS = [
 
 export const PLATFORMS = ["PC", "PlayStation", "Xbox", "Switch"] as const;
 
-// RL game servers — used for matchmaking, coach matching, and Discord
-// role auto-assignment. Separate from "country" (which is for PPP signal).
+// RL game servers — the 12 official matchmaking regions.
+// Used for matchmaking, coach matching, and Discord role auto-assignment.
+// Separate from "country" (which is for PPP signal).
 export const SERVERS = [
-  "US East",
-  "US West",
-  "US Central",
-  "Europe",
-  "Middle East",
-  "South America",
-  "Oceania",
-  "Asia",
+  "US-East (USE)",
+  "US-West (USW)",
+  "US-Central (USC)",
+  "Europe (EU)",
+  "Asia-SE Mainland (ASC)",
+  "Asia-SE Maritime (ASM)",
+  "Asia-East (JPN)",
+  "Middle East (ME)",
+  "Oceania (OCE)",
+  "South Africa (SAF)",
+  "South America (SAM)",
+  "India (IND)",
 ] as const;
 
 export const EMPLOYMENT = [

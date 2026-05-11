@@ -121,7 +121,7 @@ function OnboardingForm() {
       <section className="px-6 pt-12 pb-6 text-center md:pt-16">
         <div className="mx-auto max-w-3xl">
           <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Step 1 of 2 — VIP Coaching Application
+            Step 1 of 2 — Member Onboarding
           </p>
           <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
             You&apos;re one step away from gaining 100 MMR in the next
@@ -131,6 +131,10 @@ function OnboardingForm() {
             VIP coaching guarantees one full rank in 90 days — or we coach
             you free until you do. Apply in 60 seconds to see if you
             qualify.
+          </p>
+          <p className="mx-auto mt-4 max-w-xl text-sm text-white/50">
+            You&apos;ll also get your Discord rank, server, and platform
+            roles auto-assigned the moment you submit.
           </p>
         </div>
       </section>
@@ -209,7 +213,7 @@ function OnboardingForm() {
               onChange={(v) =>
                 update("server", v as OnboardingSubmission["server"])
               }
-              columns={4}
+              columns={3}
             />
           </FormBlock>
 
@@ -320,6 +324,11 @@ function OnboardingForm() {
             <p className="mt-3 text-xs text-white/40">
               Takes about 60 seconds. We&apos;ll tell you the right path
               instantly.
+            </p>
+            <p className="mx-auto mt-4 max-w-md text-xs text-white/30">
+              VIP eligibility: Plat+ rank, PC, $100+ annual budget. Other
+              ranks/regions still get full Clubhouse access + Discord
+              roles auto-assigned.
             </p>
           </div>
         </form>
