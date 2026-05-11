@@ -29,6 +29,19 @@ export const RANKS = [
 
 export const PLATFORMS = ["PC", "PlayStation", "Xbox", "Switch"] as const;
 
+// RL game servers — used for matchmaking, coach matching, and Discord
+// role auto-assignment. Separate from "country" (which is for PPP signal).
+export const SERVERS = [
+  "US East",
+  "US West",
+  "US Central",
+  "Europe",
+  "Middle East",
+  "South America",
+  "Oceania",
+  "Asia",
+] as const;
+
 export const EMPLOYMENT = [
   "Employed full-time",
   "Self-employed / Business owner",
@@ -135,6 +148,7 @@ export type OnboardingSubmission = {
   email: string;
   age: (typeof AGES)[number];
   country: (typeof COUNTRIES)[number];
+  server: (typeof SERVERS)[number];
   employment: (typeof EMPLOYMENT)[number];
   rank: (typeof RANKS)[number];
   platform: (typeof PLATFORMS)[number];
@@ -224,6 +238,7 @@ export function validateSubmission(
     "email",
     "age",
     "country",
+    "server",
     "employment",
     "rank",
     "platform",

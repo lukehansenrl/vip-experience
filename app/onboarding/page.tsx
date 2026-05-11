@@ -9,6 +9,7 @@ import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 import {
   AGES,
   COUNTRIES,
+  SERVERS,
   EMPLOYMENT,
   RANKS,
   PLATFORMS,
@@ -53,6 +54,7 @@ function OnboardingForm() {
     !!form.email &&
     !!form.age &&
     !!form.country &&
+    !!form.server &&
     !!form.employment &&
     !!form.rank &&
     !!form.platform &&
@@ -198,8 +200,21 @@ function OnboardingForm() {
             </select>
           </FormBlock>
 
+          {/* Server */}
+          <FormBlock number={4} label="Which Rocket League server do you play on?">
+            <RadioGroup
+              name="server"
+              options={[...SERVERS]}
+              value={form.server}
+              onChange={(v) =>
+                update("server", v as OnboardingSubmission["server"])
+              }
+              columns={4}
+            />
+          </FormBlock>
+
           {/* Employment */}
-          <FormBlock number={4} label="What's your current employment status?">
+          <FormBlock number={5} label="What's your current employment status?">
             <RadioGroup
               name="employment"
               options={[...EMPLOYMENT]}
@@ -212,7 +227,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Rank */}
-          <FormBlock number={5} label="What's your current rank?">
+          <FormBlock number={6} label="What's your current rank?">
             <RadioGroup
               name="rank"
               options={[...RANKS]}
@@ -225,7 +240,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Platform */}
-          <FormBlock number={6} label="What platform do you play on?">
+          <FormBlock number={7} label="What platform do you play on?">
             <RadioGroup
               name="platform"
               options={[...PLATFORMS]}
@@ -239,8 +254,8 @@ function OnboardingForm() {
 
           {/* Budget — forward-looking, the financial gate */}
           <FormBlock
-            number={7}
-            label="If we recommended a path to improve fast — coaching, better gear, training tools — what's your budget for the next 12 months?"
+            number={8}
+            label="What's your annual budget for improving at Rocket League? (Coaching, gear, training tools, etc.)"
           >
             <RadioGroup
               name="budget"
@@ -255,7 +270,7 @@ function OnboardingForm() {
 
           {/* Player type — identity-based, replaces old Goal + Improvement Intent */}
           <FormBlock
-            number={8}
+            number={9}
             label="Which of these matches you better?"
           >
             <RadioGroup
@@ -270,7 +285,7 @@ function OnboardingForm() {
 
           {/* Biggest blocker — signal only, used by rep on the call */}
           <FormBlock
-            number={9}
+            number={10}
             label="What do you think is the SINGLE biggest thing holding you back right now?"
           >
             <RadioGroup
