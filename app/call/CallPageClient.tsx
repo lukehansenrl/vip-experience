@@ -303,6 +303,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 badge: "World Champion · S6 MVP",
                 role: "Rotations & Decision-Making",
                 bio: "RLCS Season 6 World Champion with Cloud9 (2018) and S6 World Championship MVP. Specializes in rotations, positioning, and high-level decision-making.",
+                credit: "FIFAe World Cup / Liquipedia",
               },
               {
                 photo: "/graphics/freakii-lp.jpg",
@@ -311,6 +312,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 badge: "Head Coach · PWR",
                 role: "Mechanics & Consistency",
                 bio: "Former Renault Vitality pro. Currently head coach at PWR. RLCS S8 EU \"Savior of the Season\" — known for technical consistency and the EU mechanical edge.",
+                credit: "Michal Konkol / Liquipedia",
               },
               {
                 photo: "/graphics/shock-lp.jpg",
@@ -319,6 +321,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 badge: "RLCS S9 NA MVP",
                 role: "High-IQ Aggression",
                 bio: "Former Soniqs and Ghost Gaming pro. RLCS Season 9 NA Regular Season MVP. Known for controlled aggression and high IQ plays.",
+                credit: "Liquipedia",
               },
             ].map((coach) => (
               <div
@@ -339,6 +342,10 @@ export function CallPageClient({ spotsFilled }: Props) {
                       {coach.badge}
                     </span>
                   </div>
+                  {/* Photo credit — top right, subtle */}
+                  <span className="absolute right-3 top-3 rounded bg-black/40 px-1.5 py-0.5 text-[9px] font-medium text-white/50 backdrop-blur">
+                    Photo: {coach.credit}
+                  </span>
                   {/* Name overlay — bottom */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--accent)]">
