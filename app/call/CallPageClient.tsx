@@ -204,17 +204,17 @@ export function CallPageClient({ spotsFilled }: Props) {
           <div className="mt-10 flex flex-col gap-5">
             <IncludeCard
               icon={<Gamepad2 className="h-5 w-5 text-[var(--accent)]" />}
-              title="One 60-Minute Live 1:1 Coaching Call With A Pro"
-              description="Once a month. Your coach watches your replays before the call, then walks through exactly what&apos;s holding you back and how to fix it on a live screenshare."
+              title="Monthly 60-Min 1:1 Coaching Call With A Pro"
+              description="Your coach watches your replays before the call, then walks through exactly what&apos;s holding you back and how to fix it on a live screenshare."
             />
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
-              title="30-Minute Personalized Replay Review"
-              description="Once a month, send your replays. Your coach sends back specific timestamps, clear corrections, and exactly what to focus on next."
+              title="Monthly 30-Min Personalized Replay Review"
+              description="Send your replays. Your coach sends back specific timestamps, clear corrections, and exactly what to focus on next."
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
-              title="Personalized 30-Day Training Routine"
+              title="Monthly Personalized Training Routine"
               description="Refreshed every month and built around your schedule and rank, so the plan always matches where you are."
             />
             <IncludeCard
