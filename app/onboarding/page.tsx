@@ -115,19 +115,20 @@ function OnboardingForm() {
         </div>
       </nav>
 
-      {/* HERO — tightened, Hormozi-style "application" framing */}
+      {/* HERO — outcome-led headline (Hormozi pattern: promise above application) */}
       <section className="px-6 pt-12 pb-6 text-center md:pt-16">
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-3xl">
           <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Step 1 of 2 — Apply
+            Step 1 of 2 — VIP Coaching Application
           </p>
-          <h1 className="font-display text-4xl tracking-tight md:text-5xl">
-            VIP Member Application
+          <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+            You&apos;re one step away from gaining 100 MMR in the next
+            90 days.
           </h1>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-white/70">
-            Could 1-on-1 coaching with a pro help you rank up faster? Apply
-            in 60 seconds — we&apos;ll tell you if VIP is the right fit or
-            point you to a better path.
+          <p className="mx-auto mt-5 max-w-xl text-lg text-white/70 md:text-xl">
+            VIP coaching guarantees one full rank in 90 days — or we coach
+            you free until you do. Apply in 60 seconds to see if you
+            qualify.
           </p>
         </div>
       </section>
