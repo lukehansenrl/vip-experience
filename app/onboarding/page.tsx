@@ -2,6 +2,10 @@
 
 import { Suspense, useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Star } from "lucide-react";
+import { RatingBar } from "../components/RatingBar";
+import { ScrollingTestimonials } from "../components/ScrollingTestimonials";
+import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 import {
   AGES,
   COUNTRIES,
@@ -111,18 +115,19 @@ function OnboardingForm() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section className="px-6 pt-16 pb-8 text-center md:pt-20">
+      {/* HERO — tightened, Hormozi-style "application" framing */}
+      <section className="px-6 pt-12 pb-6 text-center md:pt-16">
         <div className="mx-auto max-w-2xl">
           <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Welcome to the Clubhouse
+            Step 1 of 2 — Apply
           </p>
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
-            Tell us a bit about you.
+          <h1 className="font-display text-4xl tracking-tight md:text-5xl">
+            VIP Member Application
           </h1>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-white/65">
-            Quick 90-second survey so we can route you to the right onboarding.
-            We&apos;ll get you into the server right after.
+          <p className="mx-auto mt-5 max-w-lg text-lg text-white/70">
+            Could 1-on-1 coaching with a pro help you rank up faster? Apply
+            in 60 seconds — we&apos;ll tell you if VIP is the right fit or
+            point you to a better path.
           </p>
         </div>
       </section>
@@ -294,14 +299,67 @@ function OnboardingForm() {
               disabled={!isComplete || isPending}
               className="rounded-full bg-[var(--accent)] px-12 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)] disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/40 disabled:shadow-none"
             >
-              {isPending ? "Submitting..." : "Continue →"}
+              {isPending ? "Submitting..." : "Submit Application →"}
             </button>
             <p className="mt-3 text-xs text-white/40">
-              Takes about 90 seconds. Your access is unlocked right after.
+              Takes about 60 seconds. We&apos;ll tell you the right path
+              instantly.
             </p>
           </div>
         </form>
       </section>
+
+      {/* RESULTS STACK — Hormozi pattern: application above, social proof below */}
+      <section className="border-t border-white/10 bg-black/20 px-6 py-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+              Real members. Real rank-ups.
+            </p>
+            <h2 className="font-display mt-3 text-3xl tracking-tight md:text-4xl">
+              The most experienced coaching team in Rocket League.
+            </h2>
+          </div>
+
+          {/* Rating summary — same component used on /call */}
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+            <div className="flex flex-col items-center gap-6 md:flex-row md:gap-12">
+              <div className="text-center">
+                <p className="text-6xl font-black">5.0</p>
+                <div className="mt-2 flex justify-center gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
+                </div>
+                <p className="mt-1 text-sm text-white/50">98 ratings</p>
+              </div>
+              <div className="w-full flex-1 space-y-2">
+                <RatingBar stars={5} percent={95} count={93} />
+                <RatingBar stars={4} percent={5} count={5} />
+                <RatingBar stars={3} percent={0} count={0} />
+                <RatingBar stars={2} percent={0} count={0} />
+                <RatingBar stars={1} percent={0} count={0} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scrolling testimonial marquee — same component used on /call */}
+        <div className="mt-10">
+          <ScrollingTestimonials
+            videoTestimonials={VIDEO_TESTIMONIALS}
+            textReviews={TEXT_REVIEWS}
+          />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/30">
+        &copy; {new Date().getFullYear()} RL Clubhouse. All rights reserved.
+      </footer>
     </div>
   );
 }
