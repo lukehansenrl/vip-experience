@@ -59,6 +59,20 @@ export const PLAYER_TYPE = [
   "I play Rocket League competitively. I care about improving my skill and rank over time.",
 ] as const;
 
+// Self-diagnosed primary blocker. Signal-only — NOT a gate. The rep uses
+// this on the call to tie the VIP pitch to whatever the prospect thinks
+// their problem is. Priestley-style "what do you think is wrong?"
+// question without the full Score model overhead.
+export const BIGGEST_BLOCKER = [
+  "My mechanics aren't consistent",
+  "My game sense / decision-making",
+  "I tilt / mental game",
+  "I don't have time to practice",
+  "I don't have a structured plan",
+  "I can't get past a specific rank wall",
+  "Something else",
+] as const;
+
 // Curated country list — top RL-relevant countries.
 export const COUNTRIES = [
   "United States",
@@ -126,6 +140,7 @@ export type OnboardingSubmission = {
   platform: (typeof PLATFORMS)[number];
   budget: (typeof BUDGET)[number];
   playerType: (typeof PLAYER_TYPE)[number];
+  biggestBlocker: (typeof BIGGEST_BLOCKER)[number];
 };
 
 // ── ROUTING LOGIC ──────────────────────────────────────────────────────
@@ -214,6 +229,7 @@ export function validateSubmission(
     "platform",
     "budget",
     "playerType",
+    "biggestBlocker",
   ];
   for (const k of required) {
     if (!body[k]) return { ok: false, error: `Missing field: ${k}` };

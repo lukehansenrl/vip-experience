@@ -10,6 +10,7 @@ import {
   PLATFORMS,
   BUDGET,
   PLAYER_TYPE,
+  BIGGEST_BLOCKER,
   type OnboardingSubmission,
 } from "../lib/onboarding";
 
@@ -52,7 +53,8 @@ function OnboardingForm() {
     !!form.rank &&
     !!form.platform &&
     !!form.budget &&
-    !!form.playerType;
+    !!form.playerType &&
+    !!form.biggestBlocker;
 
   function update<K extends keyof OnboardingSubmission>(
     key: K,
@@ -257,6 +259,25 @@ function OnboardingForm() {
               onChange={(v) =>
                 update("playerType", v as OnboardingSubmission["playerType"])
               }
+            />
+          </FormBlock>
+
+          {/* Biggest blocker — signal only, used by rep on the call */}
+          <FormBlock
+            number={9}
+            label="What do you think is the SINGLE biggest thing holding you back right now?"
+          >
+            <RadioGroup
+              name="biggestBlocker"
+              options={[...BIGGEST_BLOCKER]}
+              value={form.biggestBlocker}
+              onChange={(v) =>
+                update(
+                  "biggestBlocker",
+                  v as OnboardingSubmission["biggestBlocker"],
+                )
+              }
+              columns={2}
             />
           </FormBlock>
 
