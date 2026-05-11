@@ -186,6 +186,8 @@ function OnboardingForm() {
           onSubmit={handleSubmit}
           className="mx-auto max-w-2xl space-y-12"
         >
+          <SectionHeader step={1} total={4} title="About you" />
+
           {/* Identity */}
           <FormBlock
             number={1}
@@ -251,6 +253,8 @@ function OnboardingForm() {
             </select>
           </FormBlock>
 
+          <SectionHeader step={2} total={4} title="How you play" />
+
           {/* Rank */}
           <FormBlock number={4} label="What's your current rank?">
             <RadioGroup
@@ -293,6 +297,8 @@ function OnboardingForm() {
             />
           </FormBlock>
 
+          <SectionHeader step={3} total={4} title="Your goal" />
+
           {/* Goal */}
           <FormBlock number={7} label="What's your goal for the next 90 days?">
             <RadioGroup
@@ -327,6 +333,8 @@ function OnboardingForm() {
               ))}
             </div>
           </FormBlock>
+
+          <SectionHeader step={4} total={4} title="Wrapping up" />
 
           {/* Spent */}
           <FormBlock
@@ -404,6 +412,25 @@ const inputClass =
 
 const selectClass =
   "w-full rounded-xl border border-white/15 bg-white/[0.03] px-4 py-3 text-white transition focus:border-[var(--accent)] focus:outline-none appearance-none cursor-pointer";
+
+function SectionHeader({
+  step,
+  total,
+  title,
+}: {
+  step: number;
+  total: number;
+  title: string;
+}) {
+  return (
+    <div className="border-b border-white/10 pb-3">
+      <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--accent)]">
+        Section {step} of {total}
+      </p>
+      <p className="mt-1 text-sm font-semibold text-white/70">{title}</p>
+    </div>
+  );
+}
 
 function FormBlock({
   number,
