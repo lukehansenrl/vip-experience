@@ -196,8 +196,9 @@ export function CallPageClient({ spotsFilled }: Props) {
             Here&apos;s Everything You Get.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
-            Pro coaches, a personalized plan, and accountability — built
-            around your rank, your weaknesses, and your schedule.
+            Every month you get pro coaching, a personalized plan, and
+            accountability — built around your rank, your weaknesses, and
+            your schedule.
           </p>
 
           <div className="mt-10 flex flex-col gap-5">
@@ -209,12 +210,12 @@ export function CallPageClient({ spotsFilled }: Props) {
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
               title="30-Minute Personalized Replay Review"
-              description="Send your replays. Your coach sends back specific timestamps, clear corrections, and exactly what to focus on next."
+              description="Once a month, send your replays. Your coach sends back specific timestamps, clear corrections, and exactly what to focus on next."
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
               title="Personalized 30-Day Training Routine"
-              description="Built around your schedule and rank so you always know what to practice."
+              description="Refreshed every month and built around your schedule and rank, so the plan always matches where you are."
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
@@ -224,7 +225,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
               title="Full RL Clubhouse Membership"
-              description="15+ live events monthly, weekly classes, replay reviews, recordings, community."
+              description="Active for the full duration of your VIP — 15+ live events monthly, weekly classes, replay reviews, recordings, community."
             />
           </div>
         </div>
