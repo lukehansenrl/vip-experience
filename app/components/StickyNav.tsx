@@ -2,13 +2,20 @@
 
 export type NavLink = { label: string; href: string };
 
+type CTA =
+  | { label: string; onClick: () => void }
+  | { label: string; href: string; external?: boolean };
+
 type Props = {
   links?: NavLink[];
-  cta?: { label: string; onClick: () => void } | null;
+  cta?: CTA | null;
 };
 
 export function StickyNav({ links, cta }: Props) {
   const navLinks = links ?? [];
+
+  const ctaClasses =
+    "rounded-full bg-[var(--accent)] px-4 py-1.5 text-sm font-bold text-white shadow-md shadow-[var(--accent-glow)]/40 transition hover:bg-[var(--accent-hover)]";
 
   return (
     <div className="sticky top-0 left-0 right-0 z-40">
@@ -32,15 +39,25 @@ export function StickyNav({ links, cta }: Props) {
               ))}
             </nav>
           )}
-          {cta && (
-            <button
-              type="button"
-              onClick={cta.onClick}
-              className="rounded-full bg-[var(--accent)] px-4 py-1.5 text-sm font-bold text-white transition hover:bg-[var(--accent-hover)]"
-            >
-              {cta.label} &rarr;
-            </button>
-          )}
+          {cta &&
+            ("onClick" in cta ? (
+              <button
+                type="button"
+                onClick={cta.onClick}
+                className={ctaClasses}
+              >
+                {cta.label} &rarr;
+              </button>
+            ) : (
+              <a
+                href={cta.href}
+                target={cta.external ? "_blank" : undefined}
+                rel={cta.external ? "noopener noreferrer" : undefined}
+                className={ctaClasses}
+              >
+                {cta.label} &rarr;
+              </a>
+            ))}
         </div>
       </div>
     </div>

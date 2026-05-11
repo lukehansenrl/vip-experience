@@ -86,7 +86,13 @@ export function CallPageClient({ spotsFilled }: Props) {
         backgroundAttachment: "fixed",
       }}
     >
-      <StickyNav />
+      <StickyNav
+        cta={{
+          label: "Lock In Your Spot",
+          href: WHOP_URL,
+          external: true,
+        }}
+      />
 
       {/* ── HERO ── */}
       <section className="relative px-6 pb-16 pt-24 md:pb-20 md:pt-32">
@@ -118,6 +124,49 @@ export function CallPageClient({ spotsFilled }: Props) {
                 1-on-1 with a pro coach, a personalized 90-day plan, and a
                 guarantee most coaches won&apos;t make.
               </p>
+
+              {/* CTA row */}
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 md:items-center md:justify-start">
+                <a
+                  href={WHOP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-[var(--accent)] px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+                >
+                  Lock In Your Spot &rarr;
+                </a>
+                <a
+                  href="#investment"
+                  className="text-sm font-semibold text-white/60 underline-offset-4 transition hover:text-white hover:underline"
+                >
+                  See what&apos;s included &darr;
+                </a>
+              </div>
+
+              {/* Trust strip */}
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:justify-start">
+                <div className="flex items-center gap-1.5">
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400"
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm font-semibold text-white/70">
+                    5.0 from 98 reviews
+                  </span>
+                </div>
+                <span className="hidden h-1 w-1 rounded-full bg-white/20 md:block" />
+                <span className="text-sm font-semibold text-white/70">
+                  RLCS World Champion on staff
+                </span>
+                <span className="hidden h-1 w-1 rounded-full bg-white/20 md:block" />
+                <span className="text-sm font-semibold text-white/70">
+                  Coaching paid members since 2020
+                </span>
+              </div>
             </div>
             {/* Photo */}
             <div className="flex justify-center md:justify-end">
@@ -439,19 +488,6 @@ export function CallPageClient({ spotsFilled }: Props) {
             </div>
 
           </div>
-
-          {/* Bonus value tally */}
-          <div className="mx-auto mt-8 max-w-md rounded-2xl border-2 border-[var(--gold)]/40 bg-[var(--gold)]/10 p-5 text-center">
-            <p className="text-xs font-black uppercase tracking-widest text-[var(--gold)]">
-              Total Bonus Value
-            </p>
-            <p className="font-display mt-1 text-4xl text-white md:text-5xl">
-              $230
-            </p>
-            <p className="mt-2 text-xs text-white/60 md:text-sm">
-              Stacked on top of the 12-week program
-            </p>
-          </div>
         </div>
       </section>
 
@@ -466,128 +502,67 @@ export function CallPageClient({ spotsFilled }: Props) {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
             Hit the rank-up promise and you graduate into our alumni tier.
-            Same price. More access. The reward for getting better is
-            getting closer to the inner circle.
+            Same price. More access. Closer to the inner circle.
           </p>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2 md:gap-6">
-            {/* Signed Controller */}
-            <div className="flex flex-col rounded-2xl border-2 border-[var(--gold)]/40 bg-[var(--gold)]/5 p-6 shadow-lg shadow-[var(--gold)]/10 md:p-7">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
-                  Alumni Reward
+          {/* Compact 5-up alumni reward grid */}
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
+            {[
+              {
+                tag: "One-Time",
+                title: "Signed Controller",
+                desc: "Brand new, signed by Luke. Shipped on rank-up.",
+              },
+              {
+                tag: "Monthly",
+                title: "Monthly Call With Luke",
+                desc: "Alumni-only 60-min group session. Q&A, reviews, meta.",
+              },
+              {
+                tag: "Always On",
+                title: "Alumni Discord Channel",
+                desc: "Inner-circle access to alumni + the coaching team.",
+              },
+              {
+                tag: "For Life",
+                title: "Founding Rate Locked",
+                desc: "Your $497/qtr rate locked forever — even if we raise.",
+              },
+              {
+                tag: "On Request",
+                title: "Featured In Success Content",
+                desc: "Your rank-up story on YouTube + socials.",
+              },
+            ].map((reward) => (
+              <div
+                key={reward.title}
+                className="flex flex-col rounded-xl border border-[var(--gold)]/30 bg-[var(--gold)]/5 p-4 transition hover:border-[var(--gold)]/60 hover:bg-[var(--gold)]/10"
+              >
+                <span className="inline-block self-start rounded-md bg-[var(--gold)]/20 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--gold)]">
+                  {reward.tag}
                 </span>
-                <span className="rounded-md bg-[var(--gold)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
-                  One-Time
-                </span>
+                <h3 className="font-display mt-3 text-base leading-tight tracking-tight text-white md:text-lg">
+                  {reward.title}
+                </h3>
+                <p className="mt-2 flex-1 text-xs leading-relaxed text-white/65 md:text-sm">
+                  {reward.desc}
+                </p>
               </div>
-              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
-                Signed Controller On The House.
-              </h3>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
-                Brand new controller, signed by SpookyLuke himself. Shipped
-                on rank-up. The only physical artifact in the entire VIP
-                package.
-              </p>
-            </div>
-
-            {/* Monthly Group Call With Luke */}
-            <div className="flex flex-col rounded-2xl border-2 border-[var(--gold)]/40 bg-[var(--gold)]/5 p-6 shadow-lg shadow-[var(--gold)]/10 md:p-7">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
-                  Alumni Reward
-                </span>
-                <span className="rounded-md bg-[var(--gold)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
-                  Monthly
-                </span>
-              </div>
-              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
-                Monthly Call With SpookyLuke.
-              </h3>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
-                Alumni-only. Luke runs a 60-min group call every month —
-                Q&amp;A, replay reviews, what&apos;s working in the meta. Not
-                available at any tier below.
-              </p>
-            </div>
-
-            {/* Alumni Discord Channel */}
-            <div className="flex flex-col rounded-2xl border-2 border-[var(--gold)]/40 bg-[var(--gold)]/5 p-6 shadow-lg shadow-[var(--gold)]/10 md:p-7">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
-                  Alumni Reward
-                </span>
-                <span className="rounded-md bg-[var(--gold)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
-                  Always On
-                </span>
-              </div>
-              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
-                Alumni-Only Discord Channel.
-              </h3>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
-                The inner-circle channel. Direct access to other alumni and
-                the coaching team. Coordinate scrims, share insights, build
-                with players who&apos;ve actually made it. Stays open as long
-                as you&apos;re an active member of the community.
-              </p>
-            </div>
-
-            {/* Founding Rate Locked */}
-            <div className="flex flex-col rounded-2xl border-2 border-[var(--gold)]/40 bg-[var(--gold)]/5 p-6 shadow-lg shadow-[var(--gold)]/10 md:p-7">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
-                  Alumni Reward
-                </span>
-                <span className="rounded-md bg-[var(--gold)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
-                  For Life
-                </span>
-              </div>
-              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
-                Founding Rate Locked.
-              </h3>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
-                Your $497/quarter rate is locked for as long as you stay. If
-                we raise prices later, you keep yours. Forever.
-              </p>
-            </div>
-
-            {/* Featured in Success Content (full width) */}
-            <div className="flex flex-col rounded-2xl border-2 border-[var(--gold)]/40 bg-[var(--gold)]/5 p-6 shadow-lg shadow-[var(--gold)]/10 md:col-span-2 md:p-7">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-xs uppercase tracking-widest text-[var(--gold)]">
-                  Alumni Reward
-                </span>
-                <span className="rounded-md bg-[var(--gold)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
-                  On Request
-                </span>
-              </div>
-              <h3 className="font-display mt-3 text-2xl tracking-tight md:text-3xl">
-                Featured In Success Content.
-              </h3>
-              <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
-                Your rank-up story featured on YouTube and socials. Free
-                credibility for your own content channel — and a moment of
-                recognition you actually earned.
-              </p>
-            </div>
+            ))}
           </div>
 
-
-          <p className="mx-auto mt-4 max-w-2xl text-center text-xs text-white/40">
-            Recurring alumni access (Discord channel, monthly call, founding
-            rate) requires an active Clubhouse or VIP membership. The signed
-            controller and success feature are yours to keep regardless.
-          </p>
-
-          <p className="mt-4 text-center text-xs text-white/40">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-white/40">
+            Recurring access requires active membership. The signed controller
+            and success feature are yours to keep regardless.{" "}
             <a
               href="/promise"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-white/60 transition"
+              className="underline transition hover:text-white/60"
             >
-              Full terms &amp; conditions for alumni rewards
+              Full terms
             </a>
+            .
           </p>
         </div>
       </section>
