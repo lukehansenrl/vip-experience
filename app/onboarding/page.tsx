@@ -8,12 +8,8 @@ import {
   EMPLOYMENT,
   RANKS,
   PLATFORMS,
-  HOURS,
-  GOALS,
-  TRIED_OPTIONS,
   BUDGET,
-  HOW_FOUND_US,
-  IMPROVEMENT_INTENT,
+  PLAYER_TYPE,
   type OnboardingSubmission,
 } from "../lib/onboarding";
 
@@ -45,7 +41,6 @@ function OnboardingForm() {
   const [form, setForm] = useState<Partial<OnboardingSubmission>>({
     discord: initialDiscord,
     email: initialEmail,
-    tried: [],
   });
 
   const isComplete =
@@ -56,29 +51,14 @@ function OnboardingForm() {
     !!form.employment &&
     !!form.rank &&
     !!form.platform &&
-    !!form.hours &&
-    !!form.goal &&
     !!form.budget &&
-    !!form.howFoundUs &&
-    !!form.improvementIntent;
+    !!form.playerType;
 
   function update<K extends keyof OnboardingSubmission>(
     key: K,
     value: OnboardingSubmission[K],
   ) {
     setForm((f) => ({ ...f, [key]: value }));
-  }
-
-  function toggleTried(option: string) {
-    setForm((f) => {
-      const current = f.tried ?? [];
-      return {
-        ...f,
-        tried: current.includes(option)
-          ? current.filter((x) => x !== option)
-          : [...current, option],
-      };
-    });
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -249,60 +229,9 @@ function OnboardingForm() {
             />
           </FormBlock>
 
-          {/* Hours */}
+          {/* Budget — forward-looking, the financial gate */}
           <FormBlock
             number={7}
-            label="How many hours per week do you typically play?"
-          >
-            <RadioGroup
-              name="hours"
-              options={[...HOURS]}
-              value={form.hours}
-              onChange={(v) =>
-                update("hours", v as OnboardingSubmission["hours"])
-              }
-              columns={4}
-            />
-          </FormBlock>
-
-          {/* Goal */}
-          <FormBlock number={8} label="What's your goal for the next 90 days?">
-            <RadioGroup
-              name="goal"
-              options={[...GOALS]}
-              value={form.goal}
-              onChange={(v) =>
-                update("goal", v as OnboardingSubmission["goal"])
-              }
-            />
-          </FormBlock>
-
-          {/* Tried */}
-          <FormBlock
-            number={9}
-            label="What have you already tried? (select all that apply)"
-          >
-            <div className="grid gap-2 md:grid-cols-2">
-              {TRIED_OPTIONS.map((opt) => (
-                <label
-                  key={opt}
-                  className={checkboxLabelClass(form.tried?.includes(opt))}
-                >
-                  <input
-                    type="checkbox"
-                    checked={form.tried?.includes(opt) ?? false}
-                    onChange={() => toggleTried(opt)}
-                    className="sr-only"
-                  />
-                  <span>{opt}</span>
-                </label>
-              ))}
-            </div>
-          </FormBlock>
-
-          {/* Budget — forward-looking */}
-          <FormBlock
-            number={10}
             label="If we recommended a path to improve fast — coaching, better gear, training tools — what's your budget for the next 12 months?"
           >
             <RadioGroup
@@ -316,33 +245,17 @@ function OnboardingForm() {
             />
           </FormBlock>
 
-          {/* How found us */}
-          <FormBlock number={11} label="How did you find us?">
-            <RadioGroup
-              name="howFoundUs"
-              options={[...HOW_FOUND_US]}
-              value={form.howFoundUs}
-              onChange={(v) =>
-                update("howFoundUs", v as OnboardingSubmission["howFoundUs"])
-              }
-              columns={3}
-            />
-          </FormBlock>
-
-          {/* Improvement intent — one step removed from "are you interested in coaching" */}
+          {/* Player type — identity-based, replaces old Goal + Improvement Intent */}
           <FormBlock
-            number={12}
-            label="Do you want to improve at Rocket League as fast as possible?"
+            number={8}
+            label="Which of these matches you better?"
           >
             <RadioGroup
-              name="improvementIntent"
-              options={[...IMPROVEMENT_INTENT]}
-              value={form.improvementIntent}
+              name="playerType"
+              options={[...PLAYER_TYPE]}
+              value={form.playerType}
               onChange={(v) =>
-                update(
-                  "improvementIntent",
-                  v as OnboardingSubmission["improvementIntent"],
-                )
+                update("playerType", v as OnboardingSubmission["playerType"])
               }
             />
           </FormBlock>
@@ -453,11 +366,3 @@ function radioLabelClass(selected: boolean) {
   ].join(" ");
 }
 
-function checkboxLabelClass(selected: boolean | undefined) {
-  return [
-    "flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 text-sm transition select-none",
-    selected
-      ? "border-[var(--accent)] bg-[var(--accent)]/10 text-white"
-      : "border-white/15 bg-white/[0.02] text-white/70 hover:border-white/30 hover:text-white",
-  ].join(" ");
-}

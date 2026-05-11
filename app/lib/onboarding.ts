@@ -1,13 +1,15 @@
 /**
  * Onboarding form data + routing logic.
- * Shared between the form page and the API route so the question schema
- * lives in exactly one place.
  *
- * v2 architecture (May 11, 2026):
- *   - Form is purely a "can they pay" filter — 3 financial gates + 1
- *     technical gate. Everything else collected as signal for the rep.
- *   - Hard gates only, no scoring (yet). Scores can be layered later
- *     if data shows they predict close rate.
+ * v3 architecture (May 12, 2026):
+ *   - Tighter than v2: cut 4 questions (Hours, Goal, Tried, HowFoundUs)
+ *     and combined Goal + ImprovementIntent into one casual-vs-competitive
+ *     question.
+ *   - Form is now 8 questions, ~60 sec.
+ *   - Pure "can they pay" filter — 3 financial + 1 technical + 3 fit gates.
+ *   - Everything else (rank specifics, hours, what they've tried, etc.)
+ *     gathered by the rep on the call.
+ *   - How-found-us moves to Calendly thank-you (post-booking attribution).
  */
 
 // ── QUESTION SCHEMA ────────────────────────────────────────────────────
@@ -36,27 +38,9 @@ export const EMPLOYMENT = [
   "Unemployed",
 ] as const;
 
-export const HOURS = ["<2", "2-5", "5-10", "10+"] as const;
-
-export const GOALS = [
-  "Just have fun, no specific goal",
-  "Rank up one tier",
-  "Hit a specific rank or MMR",
-  "Compete in tournaments or work toward pro",
-] as const;
-
-export const TRIED_OPTIONS = [
-  "YouTube tutorials",
-  "Free Discord communities",
-  "Training packs only",
-  "Paid 1-on-1 coaching",
-  "Online courses",
-  "Just grinding ranked",
-] as const;
-
-// Forward-looking budget (replaced the past-spending question).
-// Captures willingness to invest in improvement (coaching, gear,
-// training tools, etc.) over the next 12 months.
+// Forward-looking budget (replaced past-spending question in v2).
+// Captures willingness to invest in improvement (coaching, gear, training
+// tools, etc.) over the next 12 months.
 export const BUDGET = [
   "$0",
   "$10-$99",
@@ -66,21 +50,13 @@ export const BUDGET = [
   "$1,000+",
 ] as const;
 
-export const HOW_FOUND_US = [
-  "YouTube",
-  "Discord",
-  "Friend",
-  "Twitter/X",
-  "TikTok",
-  "Other",
-] as const;
-
-// Replaces the old "Are you open to hearing about 1-on-1 coaching?"
-// One step removed from the pitch — asks about improvement commitment
-// instead of telegraphing the sales motion.
-export const IMPROVEMENT_INTENT = [
-  "Yes — I'm willing to invest time, money, and energy into improving faster",
-  "No — I'm not interested in improving faster. I play for enjoyment.",
+// Combined replacement for the old Goal + Improvement-Intent questions.
+// Identity-based framing ("I play X way") reads more honestly than
+// action-based ("Will you invest in...") and captures the same gate
+// signal: are they trying to improve, or just here for vibes?
+export const PLAYER_TYPE = [
+  "I play Rocket League casually. I don't particularly care about my rank or skill level.",
+  "I play Rocket League competitively. I care about improving my skill and rank over time.",
 ] as const;
 
 // Curated country list — top RL-relevant countries.
@@ -126,9 +102,7 @@ export const COUNTRIES = [
 ] as const;
 
 // Countries where local purchasing power makes $497 USD an automatic
-// barrier for nearly all buyers. Hard DQ on its own — does not combine
-// with other signals. (Stricter than the previous "low-PPP + medium
-// spend" rule per Luke's May 11 decision.)
+// barrier for nearly all buyers.
 const LOW_PPP_COUNTRIES = new Set<string>([
   "Brazil",
   "Argentina",
@@ -150,32 +124,27 @@ export type OnboardingSubmission = {
   employment: (typeof EMPLOYMENT)[number];
   rank: (typeof RANKS)[number];
   platform: (typeof PLATFORMS)[number];
-  hours: (typeof HOURS)[number];
-  goal: (typeof GOALS)[number];
-  tried: string[];
   budget: (typeof BUDGET)[number];
-  howFoundUs: (typeof HOW_FOUND_US)[number];
-  improvementIntent: (typeof IMPROVEMENT_INTENT)[number];
+  playerType: (typeof PLAYER_TYPE)[number];
 };
 
 // ── ROUTING LOGIC ──────────────────────────────────────────────────────
 //
-// Eight hard gates. Anyone tripping one is unqualified for the call.
-// Three financial, one technical, four fit-related.
+// Seven hard gates. Anyone tripping one is unqualified for the call.
+// Three financial, one technical, three fit-related.
 //
 // Financial:
 //   1. Age (legal — can't make purchase decisions under 18)
 //   2. Country (local purchasing power)
 //   3. Employment (no income source)
-//   8. Forward budget (explicit "I won't spend" signal)
+//   7. Forward budget (explicit "I won't spend" signal)
 //
 // Technical:
 //   4. Platform (Console makes most drills/training impossible)
 //
 // Fit:
 //   5. Rank (community is built for Plat and above)
-//   6. Goal (coaching is for people who want to improve)
-//   7. Improvement intent (explicit "not trying to improve")
+//   6. Player type (explicit "I play casually" = not our buyer)
 
 export type RoutingDecision = {
   qualified: boolean;
@@ -205,25 +174,21 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
     reasons.push("not-pc");
   }
 
-  // Gate 5: Rank (community built for high gold to low SSL — but Plat+ for VIP)
+  // Gate 5: Rank (Plat+ required — community built for high gold to low SSL,
+  //   but VIP specifically targets Plat and above)
   if (s.rank === "Bronze" || s.rank === "Silver" || s.rank === "Gold") {
     reasons.push("below-plat");
   }
 
-  // Gate 6: Goal (coaching is for people who want to improve)
-  if (s.goal === "Just have fun, no specific goal") {
-    reasons.push("not-goal-driven");
-  }
-
-  // Gate 7: Improvement intent (explicit opt-out from improving)
+  // Gate 6: Player type (explicit "I play casually" = not our buyer)
   if (
-    s.improvementIntent ===
-    "No — I'm not interested in improving faster. I play for enjoyment."
+    s.playerType ===
+    "I play Rocket League casually. I don't particularly care about my rank or skill level."
   ) {
-    reasons.push("not-trying-to-improve");
+    reasons.push("casual-player");
   }
 
-  // Gate 8: Forward budget — under $100 = below VIP monthly floor of $199
+  // Gate 7: Forward budget — under $100 = below VIP monthly floor of $199
   if (s.budget === "$0" || s.budget === "$10-$99") {
     reasons.push("budget-below-floor");
   }
@@ -247,20 +212,14 @@ export function validateSubmission(
     "employment",
     "rank",
     "platform",
-    "hours",
-    "goal",
     "budget",
-    "howFoundUs",
-    "improvementIntent",
+    "playerType",
   ];
   for (const k of required) {
     if (!body[k]) return { ok: false, error: `Missing field: ${k}` };
   }
   if (!body.email || !body.email.includes("@")) {
     return { ok: false, error: "Invalid email" };
-  }
-  if (!Array.isArray(body.tried)) {
-    body.tried = [];
   }
   return { ok: true, data: body as OnboardingSubmission };
 }
