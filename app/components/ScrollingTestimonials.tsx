@@ -90,11 +90,21 @@ function TestimonialCard({ item }: { item: UnifiedItem }) {
     <div className="flex w-[320px] flex-shrink-0 flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-[var(--accent)]/40 md:w-[360px]">
       {/* Header — avatar + name + rank/handle */}
       <div className="mb-4 flex items-center gap-3">
-        <div
-          className={`flex h-10 w-10 items-center justify-center rounded-full ${color} text-sm font-bold text-white`}
-        >
-          {data.initials}
-        </div>
+        {data.imageUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={data.imageUrl}
+            alt={data.name}
+            className="h-10 w-10 flex-shrink-0 rounded-full object-cover"
+            loading="lazy"
+          />
+        ) : (
+          <div
+            className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ${color} text-sm font-bold text-white`}
+          >
+            {data.initials}
+          </div>
+        )}
         <div className="min-w-0">
           <p className="flex items-center gap-1.5 truncate font-bold text-white">
             <DiscordIcon className="h-3.5 w-3.5 flex-shrink-0 text-[#5865F2]" />
