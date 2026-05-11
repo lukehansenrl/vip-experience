@@ -117,7 +117,7 @@ function OnboardingForm() {
         </div>
       </nav>
 
-      {/* HERO — outcome-led headline (Hormozi pattern: promise above application) */}
+      {/* HERO — outcome-led, tight (Hormozi pattern: promise above application) */}
       <section className="px-6 pt-12 pb-6 text-center md:pt-16">
         <div className="mx-auto max-w-3xl">
           <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
@@ -128,13 +128,8 @@ function OnboardingForm() {
             90 days.
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/70 md:text-xl">
-            VIP coaching guarantees one full rank in 90 days — or we coach
-            you free until you do. Apply in 60 seconds to see if you
-            qualify.
-          </p>
-          <p className="mx-auto mt-4 max-w-xl text-sm text-white/50">
-            You&apos;ll also get your Discord rank, server, and platform
-            roles auto-assigned the moment you submit.
+            Apply in 60 seconds. We&apos;ll auto-assign your Discord
+            roles + tell you if VIP is the right fit.
           </p>
         </div>
       </section>
