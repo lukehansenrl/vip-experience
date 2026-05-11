@@ -52,3 +52,27 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Horizontal scrolling marquee for testimonial carousel.
+ * Container renders the testimonials list twice; this animation slides
+ * the inner row by -50% to create a seamless infinite loop. */
+@keyframes scroll-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 80s linear infinite;
+  width: max-content;
+}
+
+/* Respect user preference for reduced motion — stop the marquee. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-x {
+    animation: none;
+  }
+}

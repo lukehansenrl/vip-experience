@@ -8,7 +8,6 @@ import {
   PhoneCall,
   Trophy,
   Star,
-  Play,
 } from "lucide-react";
 
 import { StickyNav } from "../components/StickyNav";
@@ -16,12 +15,10 @@ import { IncludeCard } from "../components/IncludeCard";
 import { BenefitCard } from "../components/BenefitCard";
 import { RatingBar } from "../components/RatingBar";
 import { PricingCard } from "../components/PricingCard";
-import { DiscordIcon } from "../components/DiscordIcon";
-import { VIDEO_TESTIMONIALS } from "../data/testimonials";
+import { ScrollingTestimonials } from "../components/ScrollingTestimonials";
+import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 
 const WHOP_URL = "https://whop.com/rlclubhouse/rlc-pro-vip-membership/";
-
-const FEATURED_TESTIMONIALS = ["Xeneson", "Dami", "deadshot8885"];
 
 // Total cap. Only changes if the business actually raises the cap.
 const SPOTS_TOTAL = 60;
@@ -76,10 +73,6 @@ export function CallPageClient({ spotsFilled }: Props) {
 
     return () => io.disconnect();
   }, []);
-
-  const featured = VIDEO_TESTIMONIALS.filter((t) =>
-    FEATURED_TESTIMONIALS.includes(t.name)
-  );
 
   return (
     <div
@@ -176,61 +169,14 @@ export function CallPageClient({ spotsFilled }: Props) {
             </div>
           </div>
 
-          {/* Featured testimonials */}
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {featured.map((t) => (
-              <div
-                key={t.name}
-                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-[var(--accent)]/40"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full ${t.color} text-sm font-bold text-white`}
-                  >
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p className="flex items-center gap-1.5 font-bold text-white">
-                      <DiscordIcon className="h-3.5 w-3.5 text-[#5865F2]" />
-                      {t.name}
-                    </p>
-                    <p className="text-xs font-semibold text-[var(--accent)]">
-                      {t.rank}
-                    </p>
-                  </div>
-                </div>
+        </div>
 
-                <div className="mb-3 flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
-
-                <p className="flex-1 text-base leading-relaxed text-white/80 md:text-lg">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-
-                {t.coachNotes && (
-                  <p className="mt-3 text-xs text-white/30">
-                    Coached on: {t.coachNotes}
-                  </p>
-                )}
-
-                <a
-                  href={t.vodUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-[var(--accent)]/40 hover:text-white"
-                >
-                  <Play className="h-4 w-4 text-[var(--accent)]" />
-                  Watch the coaching session
-                </a>
-              </div>
-            ))}
-          </div>
+        {/* Scrolling testimonial marquee — auto-scrolls left, pauses on hover */}
+        <div className="mt-10">
+          <ScrollingTestimonials
+            videoTestimonials={VIDEO_TESTIMONIALS}
+            textReviews={TEXT_REVIEWS}
+          />
         </div>
       </section>
 
