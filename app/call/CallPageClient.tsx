@@ -646,182 +646,116 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── TOTAL VALUE STACK (everything vs $497) ── */}
-      <section className="border-t border-white/10 px-6 py-20 md:py-24">
+      {/* ── INVESTMENT (compact stack + price reveal in one viewport) ── */}
+      <section
+        id="investment"
+        className="border-t border-white/10 px-6 py-14 md:py-16"
+      >
         <div className="mx-auto max-w-3xl">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
-            Total Value
-          </p>
-          <h2 className="font-display mt-3 text-center text-4xl tracking-tight md:text-5xl">
-            What This Stack Is Actually Worth.
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
-            Priced at market rates. Per item. Over 12 weeks.
-          </p>
+          <div className="mb-4 flex justify-center">
+            <span className="inline-flex flex-wrap items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-3 py-1.5">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--green)]/20 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[var(--green)]">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--green)] opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--green)]" />
+                </span>
+                Live
+              </span>
+              <span className="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
+                {spotsFilled}/{SPOTS_TOTAL} Spots · {spotsOpen} Left
+              </span>
+            </span>
+          </div>
 
-          <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
-            {/* Core deliverables */}
-            <div className="px-5 py-3 text-xs font-bold uppercase tracking-widest text-white/40 md:px-6">
+          <h2 className="font-display text-center text-3xl tracking-tight md:text-4xl">
+            Total Value vs Your Price.
+          </h2>
+
+          {/* Compact value stack — one viewport, no scroll */}
+          <div className="mx-auto mt-5 max-w-2xl overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] text-sm md:text-base">
+            <div className="bg-white/[0.02] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white/40">
               The 12-Week Program
             </div>
             {[
-              {
-                item: "3× 60-min 1:1 Pro Coaching Calls",
-                note: "Pro-level live coaching, market rate ~$150/session",
-                value: "$450",
-              },
-              {
-                item: "3× 30-min Personalized Replay Reviews",
-                note: "Luke's published Metafy rate is $125 per review",
-                value: "$375",
-              },
-              {
-                item: "3× Monthly Accountability Check-Ins",
-                note: "Member guide calls — separate from your coach",
-                value: "$150",
-              },
-              {
-                item: "Personalized 12-Week Training Plan",
-                note: "Refreshed monthly, built around your rank and schedule",
-                value: "$150",
-              },
-              {
-                item: "12 Weeks Of Full Clubhouse Access",
-                note: "15+ live events monthly, weekly classes, community",
-                value: "$81",
-              },
-            ].map((row) => (
+              ["3× 60-min 1:1 Pro Coaching Calls", "$450"],
+              ["3× 30-min Personalized Replay Reviews", "$375"],
+              ["3× Monthly Accountability Check-Ins", "$150"],
+              ["Personalized 12-Week Training Plan", "$150"],
+              ["12 Weeks Full Clubhouse Access", "$81"],
+            ].map(([item, value]) => (
               <div
-                key={row.item}
-                className="flex items-start justify-between gap-4 border-t border-white/10 px-5 py-4 md:px-6"
+                key={item}
+                className="flex items-center justify-between gap-4 border-t border-white/10 px-4 py-2"
               >
-                <div className="min-w-0 flex-1">
-                  <div className="text-base font-semibold text-white md:text-lg">
-                    {row.item}
-                  </div>
-                  <div className="mt-1 text-xs text-white/50 md:text-sm">
-                    {row.note}
-                  </div>
-                </div>
-                <div className="font-display whitespace-nowrap text-xl text-white md:text-2xl">
-                  {row.value}
-                </div>
+                <span className="text-white/90">{item}</span>
+                <span className="font-display whitespace-nowrap text-white">
+                  {value}
+                </span>
               </div>
             ))}
 
-            {/* Bonuses */}
-            <div className="border-t border-white/10 bg-[var(--gold)]/[0.04] px-5 py-3 text-xs font-bold uppercase tracking-widest text-[var(--gold)] md:px-6">
+            <div className="border-t border-white/10 bg-[var(--gold)]/[0.06] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[var(--gold)]">
               Stacked Bonuses
             </div>
             {[
-              {
-                item: "Bonus #1 · 2026 Mechanics Tier List (Lifetime)",
-                note: "The only ranked breakdown of what to learn at YOUR rank",
-                value: "$50",
-              },
-              {
-                item: "Bonus #2 · 2026 Pro Settings Vault (Lifetime)",
-                note: "Exact settings every RLCS-level coach on staff uses",
-                value: "$35",
-              },
-              {
-                item: "Bonus #3 · VIP Discord Tag",
-                note: "Pinned at the top of the member list",
-                value: "$20",
-              },
-              {
-                item: "Bonus #4 · 30-min Replay Review With SpookyLuke",
-                note: "Luke's $125 Metafy rate. Earned at week 8.",
-                value: "$125",
-              },
-            ].map((row) => (
+              ["2026 Mechanics Tier List (Lifetime)", "$50"],
+              ["2026 Pro Settings Vault (Lifetime)", "$35"],
+              ["VIP Discord Tag", "$20"],
+              ["Replay Review With SpookyLuke (Week 8)", "$125"],
+            ].map(([item, value]) => (
               <div
-                key={row.item}
-                className="flex items-start justify-between gap-4 border-t border-white/10 bg-[var(--gold)]/[0.04] px-5 py-4 md:px-6"
+                key={item}
+                className="flex items-center justify-between gap-4 border-t border-white/10 bg-[var(--gold)]/[0.06] px-4 py-2"
               >
-                <div className="min-w-0 flex-1">
-                  <div className="text-base font-semibold text-white md:text-lg">
-                    {row.item}
-                  </div>
-                  <div className="mt-1 text-xs text-white/50 md:text-sm">
-                    {row.note}
-                  </div>
-                </div>
-                <div className="font-display whitespace-nowrap text-xl text-white md:text-2xl">
-                  {row.value}
-                </div>
+                <span className="text-white/90">{item}</span>
+                <span className="font-display whitespace-nowrap text-white">
+                  {value}
+                </span>
               </div>
             ))}
 
-            {/* Total row */}
-            <div className="flex items-center justify-between gap-4 border-t-2 border-[var(--gold)]/40 bg-[var(--gold)]/10 px-5 py-5 md:px-6">
-              <div className="text-sm font-black uppercase tracking-widest text-[var(--gold)] md:text-base">
+            {/* Total */}
+            <div className="flex items-center justify-between gap-4 border-t-2 border-[var(--gold)]/40 bg-[var(--gold)]/10 px-4 py-3">
+              <span className="text-xs font-black uppercase tracking-widest text-[var(--gold)] md:text-sm">
                 Total Value
-              </div>
-              <div className="font-display text-3xl text-white md:text-4xl">
+              </span>
+              <span className="font-display text-2xl text-white md:text-3xl">
                 $1,436
-              </div>
+              </span>
             </div>
 
-            {/* Price row */}
-            <div className="flex items-center justify-between gap-4 border-t border-white/10 bg-[var(--accent)]/10 px-5 py-5 md:px-6">
-              <div className="text-sm font-black uppercase tracking-widest text-[var(--accent)] md:text-base">
+            {/* Price */}
+            <div className="flex items-center justify-between gap-4 border-t border-white/10 bg-[var(--accent)]/15 px-4 py-3">
+              <span className="text-xs font-black uppercase tracking-widest text-[var(--accent)] md:text-sm">
                 Your Price Today
-              </div>
-              <div className="font-display text-3xl text-white md:text-4xl">
+              </span>
+              <span className="font-display text-2xl text-white md:text-3xl">
                 $497
-              </div>
+              </span>
             </div>
           </div>
 
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-white/80 md:text-xl">
+          <p className="mx-auto mt-4 max-w-xl text-center text-base text-white/80 md:text-lg">
             <span className="font-bold text-[var(--green)]">
               You save $939.
             </span>{" "}
             And if you don&apos;t rank up in 90 days, we keep coaching you free
             until you do.
           </p>
-        </div>
-      </section>
 
-      {/* ── INVESTMENT (PRICE REVEAL) ── */}
-      <section
-        id="investment"
-        className="border-t border-white/10 px-6 py-20 md:py-28"
-      >
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-6 flex justify-center">
-            <span className="inline-flex flex-wrap items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-4 py-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--green)]/20 px-2 py-0.5 text-xs font-black uppercase tracking-widest text-[var(--green)]">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--green)] opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--green)]" />
-                </span>
-                Live
-              </span>
-              <span className="text-sm font-bold uppercase tracking-widest text-[var(--gold)] md:text-base">
-                {spotsFilled} of {SPOTS_TOTAL} Spots Filled · {spotsOpen} Left
-              </span>
-            </span>
+          <div className="mt-6">
+            <PricingCard
+              variant="call"
+              price={497}
+              cadence="/ 12 weeks"
+              cadenceNote="Paid upfront for 12 weeks. Optional monthly continuation after if you want to keep going."
+              action={{
+                type: "link",
+                label: "Lock In Your Spot",
+                href: WHOP_URL,
+              }}
+            />
           </div>
-          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            The Investment
-          </p>
-          <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
-            The 12-Week Program. One Price.
-          </h2>
-
-          <PricingCard
-            variant="call"
-            price={497}
-            cadence="/ 12 weeks"
-            cadenceNote="Paid upfront for 12 weeks. Optional monthly continuation after if you want to keep going."
-            action={{
-              type: "link",
-              label: "Lock In Your Spot",
-              href: WHOP_URL,
-            }}
-          />
         </div>
       </section>
 
