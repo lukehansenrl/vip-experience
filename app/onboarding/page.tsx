@@ -151,39 +151,36 @@ function OnboardingForm() {
           onSubmit={handleSubmit}
           className="mx-auto max-w-2xl space-y-12"
         >
-          {/* Identity */}
-          <FormBlock
-            number={1}
-            label="What's your Discord username and email?"
-          >
-            <div className="grid gap-3 md:grid-cols-2">
-              <div>
-                <input
-                  type="text"
-                  value={form.discord ?? ""}
-                  onChange={(e) => update("discord", e.target.value)}
-                  placeholder="example: legend123"
-                  className={inputClass}
-                  required
-                />
-                <p className="mt-2 text-xs leading-relaxed text-white/50">
-                  Open Discord → click your profile → copy the username under
-                  your display name.
-                </p>
-              </div>
-              <input
-                type="email"
-                value={form.email ?? ""}
-                onChange={(e) => update("email", e.target.value)}
-                placeholder="Email"
-                className={inputClass}
-                required
-              />
-            </div>
+          {/* Discord */}
+          <FormBlock number={1} label="What is your Discord username?">
+            <input
+              type="text"
+              value={form.discord ?? ""}
+              onChange={(e) => update("discord", e.target.value)}
+              placeholder="example: legend123"
+              className={inputClass}
+              required
+            />
+            <p className="mt-2 text-xs leading-relaxed text-white/50">
+              Open Discord → click your profile → copy the username under your
+              display name.
+            </p>
+          </FormBlock>
+
+          {/* Email */}
+          <FormBlock number={2} label="What's your email?">
+            <input
+              type="email"
+              value={form.email ?? ""}
+              onChange={(e) => update("email", e.target.value)}
+              placeholder="Email"
+              className={inputClass}
+              required
+            />
           </FormBlock>
 
           {/* Age */}
-          <FormBlock number={2} label="How old are you?">
+          <FormBlock number={3} label="How old are you?">
             <RadioGroup
               name="age"
               options={[...AGES]}
@@ -193,7 +190,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Country */}
-          <FormBlock number={3} label="Where are you based?">
+          <FormBlock number={4} label="Where are you based?">
             <select
               value={form.country ?? ""}
               onChange={(e) =>
@@ -217,7 +214,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Employment */}
-          <FormBlock number={4} label="What's your current employment status?">
+          <FormBlock number={5} label="What's your current employment status?">
             <RadioGroup
               name="employment"
               options={[...EMPLOYMENT]}
@@ -230,7 +227,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Rank */}
-          <FormBlock number={5} label="What's your current rank?">
+          <FormBlock number={6} label="What's your current rank?">
             <RadioGroup
               name="rank"
               options={[...RANKS]}
@@ -243,7 +240,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Platform */}
-          <FormBlock number={6} label="What platform do you play on?">
+          <FormBlock number={7} label="What platform do you play on?">
             <RadioGroup
               name="platform"
               options={[...PLATFORMS]}
@@ -257,7 +254,7 @@ function OnboardingForm() {
 
           {/* Hours */}
           <FormBlock
-            number={7}
+            number={8}
             label="How many hours per week do you typically play?"
           >
             <RadioGroup
@@ -272,7 +269,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* Goal */}
-          <FormBlock number={8} label="What's your goal for the next 90 days?">
+          <FormBlock number={9} label="What's your goal for the next 90 days?">
             <RadioGroup
               name="goal"
               options={[...GOALS]}
@@ -285,7 +282,7 @@ function OnboardingForm() {
 
           {/* Tried */}
           <FormBlock
-            number={9}
+            number={10}
             label="What have you already tried? (select all that apply)"
           >
             <div className="grid gap-2 md:grid-cols-2">
@@ -308,7 +305,7 @@ function OnboardingForm() {
 
           {/* Budget — forward-looking */}
           <FormBlock
-            number={10}
+            number={11}
             label="If we recommended a path to improve fast (coaching, better gear, training tools), what's your budget for the next 12 months?"
           >
             <RadioGroup
@@ -323,7 +320,7 @@ function OnboardingForm() {
           </FormBlock>
 
           {/* How found us */}
-          <FormBlock number={11} label="How did you find us?">
+          <FormBlock number={12} label="How did you find us?">
             <RadioGroup
               name="howFoundUs"
               options={[...HOW_FOUND_US]}
@@ -337,7 +334,7 @@ function OnboardingForm() {
 
           {/* Improvement intent — one step removed from "are you interested in coaching" */}
           <FormBlock
-            number={12}
+            number={13}
             label="Do you want to improve at Rocket League as fast as possible?"
           >
             <RadioGroup
