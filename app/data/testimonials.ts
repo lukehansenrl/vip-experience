@@ -135,16 +135,6 @@ export const TEXT_REVIEWS: TextReview[] = [
     initials: "SW",
   },
   {
-    name: "Myth1k",
-    handle: "@gary.rl",
-    stars: 5,
-    text: "Lowkey a great way to improve. Within 4 months went from Champ 2 to peak GC1 div 4, 1540 MMR.",
-    daysAfter: "1 year after purchase",
-    initials: "MY",
-    imageUrl:
-      "https://assets-2-prod.whop.com/public/uploads/user_8810500/image/users/2026-04-25/1f007444-3805-43d8-ae41-b52ec56653ce.jpeg",
-  },
-  {
     name: "Mesabeth",
     handle: "@mesabeth",
     stars: 5,

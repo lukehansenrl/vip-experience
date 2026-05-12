@@ -515,47 +515,48 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── LOYALTY TRACK (alumni tier — unlocked by ranking up) ── */}
+      {/* ── LOYALTY TRACK (alumni tier — unlocked by rank-up OR program completion) ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
         <div className="mx-auto max-w-5xl">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--gold)]">
             Loyalty Track
           </p>
           <h2 className="font-display mt-3 text-center text-4xl tracking-tight md:text-5xl">
-            Rank Up. Unlock The Alumni Tier.
+            Rank Up Or Complete The Program. Unlock The Alumni Tier.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
-            Hit the rank-up promise and you graduate into our alumni tier.
-            Same price. More access. Closer to the inner circle.
+            Hit the rank-up promise OR finish your 12 weeks. Either way, you
+            graduate into our alumni tier. Same price. More access. Closer to
+            the inner circle.
           </p>
 
           {/* Compact 5-up alumni reward grid */}
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
             {[
               {
-                tag: "One-Time",
-                title: "Signed Controller",
-                desc: "Brand new, signed by Luke. Shipped on rank-up.",
+                tag: "Always On",
+                title: "Q&A Channel With Luke",
+                desc: "Private alumni channel where you drop questions. Luke answers personally.",
               },
               {
                 tag: "Monthly",
                 title: "Monthly Call With Luke",
-                desc: "Alumni-only 60-min group session. Q&A, reviews, meta.",
+                desc: "Alumni-only 60-min group session with Luke. Q&A, reviews, meta.",
               },
               {
                 tag: "Always On",
-                title: "Alumni Discord Channel",
-                desc: "Inner-circle access to alumni + the coaching team.",
+                title: "Inner Circle Discord",
+                desc: "Private channel with alumni, the coaching team, and Luke. Closest access we offer.",
+              },
+              {
+                tag: "Rank-Up Only",
+                title: "Signed Controller",
+                desc: "Brand new, signed by the coaching team. Shipped when you rank up.",
               },
               {
                 tag: "For Life",
                 title: "Founding Rate Locked",
                 desc: "Your $497/qtr rate locked forever — even if we raise.",
-              },
-              {
-                tag: "On Request",
-                title: "Featured In Success Content",
-                desc: "Your rank-up story on YouTube + socials.",
               },
             ].map((reward) => (
               <div
@@ -577,7 +578,7 @@ export function CallPageClient({ spotsFilled }: Props) {
 
           <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-white/40">
             Recurring access requires active membership. The signed controller
-            and success feature are yours to keep regardless.{" "}
+            is a rank-up-only bonus and is yours to keep regardless.{" "}
             <a
               href="/promise"
               target="_blank"
