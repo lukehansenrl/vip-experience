@@ -38,7 +38,10 @@ export default function WelcomePage() {
             Welcome to the Clubhouse.
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg text-white/65">
-            Your access is ready below. Dive in whenever you&apos;re ready.
+            We&apos;re setting up your Discord access right now. Hop in and
+            watch the full server-tour video at the top of the channel. It&apos;s
+            an 8-minute walkthrough showing you where everything is and what
+            to focus on first.
           </p>
         </div>
       </section>
@@ -68,7 +71,7 @@ export default function WelcomePage() {
               Watch this first.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-white/60">
-              A quick walkthrough of the server — where everything is, what to
+              A quick walkthrough of the server: where everything is, what to
               focus on first, and how to get the most out of your membership.
             </p>
 
@@ -110,7 +113,7 @@ export default function WelcomePage() {
             <ActionItem
               number={3}
               label="Hop into a voice channel"
-              detail="No one's gonna be weird if you join — we're all introverted gamers trying to get better at car soccer."
+              detail="No one's gonna be weird if you join. We're all introverted gamers trying to get better at car soccer."
             />
           </ol>
 

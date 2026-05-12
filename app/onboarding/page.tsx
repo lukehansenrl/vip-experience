@@ -303,7 +303,7 @@ function OnboardingForm() {
           {/* Budget — forward-looking */}
           <FormBlock
             number={10}
-            label="If we recommended a path to improve fast — coaching, better gear, training tools — what's your budget for the next 12 months?"
+            label="If we recommended a path to improve fast (coaching, better gear, training tools), what's your budget for the next 12 months?"
           >
             <RadioGroup
               name="budget"

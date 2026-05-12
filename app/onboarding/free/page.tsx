@@ -34,14 +34,14 @@ export default function FreePage() {
             We&apos;ve got something for you.
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/65">
-            The Clubhouse is built for players 18 and up — a call we made for
-            legal and community reasons, not a comment on your skill. But we
-            still want to help you get better.
+            The Clubhouse is built for players 18 and up. That&apos;s a call
+            we made for legal and community reasons, not a comment on your
+            skill. But we still want to help you get better.
           </p>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/55">
             We&apos;ve got a free Discord space packed with tutorials, training
             packs, and other players grinding alongside you. Hop in there for
-            now — and come back to the Clubhouse when you turn 18.
+            now, and come back to the Clubhouse when you turn 18.
           </p>
         </div>
       </section>

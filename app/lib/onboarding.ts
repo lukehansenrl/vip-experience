@@ -79,8 +79,8 @@ export const HOW_FOUND_US = [
 // One step removed from the pitch — asks about improvement commitment
 // instead of telegraphing the sales motion.
 export const IMPROVEMENT_INTENT = [
-  "Yes — I'm willing to invest time, money, and energy into improving faster",
-  "No — I'm not interested in improving faster. I play for enjoyment.",
+  "Yes, I'm willing to invest time, money, and energy into improving faster",
+  "No, I'm not interested in improving faster. I play for enjoyment.",
 ] as const;
 
 // Curated country list — top RL-relevant countries.
@@ -224,7 +224,7 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
   // Gate 7: Improvement intent (explicit opt-out from improving)
   if (
     s.improvementIntent ===
-    "No — I'm not interested in improving faster. I play for enjoyment."
+    "No, I'm not interested in improving faster. I play for enjoyment."
   ) {
     reasons.push("not-trying-to-improve");
   }

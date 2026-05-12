@@ -1060,7 +1060,7 @@ export default function VIPPage() {
           We reward the grind, not just one good session.
         </p>
         <p className="mt-4 text-center text-sm italic text-white/40">
-          — Luke
+          Luke
         </p>
         <p className="mt-3 text-center">
           <a

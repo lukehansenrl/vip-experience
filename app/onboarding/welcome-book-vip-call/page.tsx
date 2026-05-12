@@ -40,7 +40,10 @@ export default function WelcomeBookVipCallPage() {
             Welcome to the Clubhouse.
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg text-white/65">
-            Your access is ready below. Dive in whenever you&apos;re ready.
+            We&apos;re setting up your Discord access right now. Hop in and
+            watch the full server-tour video at the top of the channel. It&apos;s
+            an 8-minute walkthrough showing you where everything is and what
+            to focus on first.
           </p>
         </div>
       </section>
@@ -71,7 +74,7 @@ export default function WelcomeBookVipCallPage() {
           <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/65">
             Based on what you shared, you&apos;re a strong fit for our 1-on-1
             VIP coaching program. Pro coaches, personalized 90-day plan, and
-            the rank-up promise — if you don&apos;t rank up in 90 days, we
+            the rank-up promise: if you don&apos;t rank up in 90 days, we
             keep coaching you free until you do.
           </p>
           <p className="mt-4 text-sm text-white/50">
@@ -121,7 +124,7 @@ export default function WelcomeBookVipCallPage() {
             <ActionItem
               number={3}
               label="Hop into a voice channel"
-              detail="No one's gonna be weird if you join — we're all introverted gamers trying to get better at car soccer."
+              detail="No one's gonna be weird if you join. We're all introverted gamers trying to get better at car soccer."
             />
           </ol>
 
@@ -141,7 +144,7 @@ export default function WelcomeBookVipCallPage() {
         onClose={() => setCalendlyOpen(false)}
         url={CALENDLY_URL}
         title="VIP Onboarding Call"
-        subtitle="45 minutes — see if VIP is the right fit"
+        subtitle="45 minutes. See if VIP is the right fit."
       />
     </div>
   );

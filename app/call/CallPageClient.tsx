@@ -197,7 +197,7 @@ export function CallPageClient({ spotsFilled }: Props) {
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
             Every month you get pro coaching, a personalized plan, and
-            accountability — built around your rank, your weaknesses, and
+            accountability, built around your rank, your weaknesses, and
             your schedule.
           </p>
 
@@ -225,7 +225,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
               title="Full RL Clubhouse Membership"
-              description="Active for the full duration of your VIP — 15+ live events monthly, weekly classes, replay reviews, recordings, community."
+              description="Active for the full duration of your VIP. 15+ live events monthly, weekly classes, replay reviews, recordings, community."
             />
           </div>
         </div>
@@ -327,11 +327,11 @@ export function CallPageClient({ spotsFilled }: Props) {
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
                 The only ranked breakdown of which mechanics to learn at YOUR
-                rank — with custom drills, training packs, and step-by-step
+                rank, with custom drills, training packs, and step-by-step
                 guides for each tier. Updated yearly.
               </p>
               <p className="mt-2 text-sm font-semibold text-[var(--gold)]">
-                Yours for life — keep the dashboard and all future updates,
+                Yours for life. Keep the dashboard and all future updates,
                 even if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
@@ -362,12 +362,12 @@ export function CallPageClient({ spotsFilled }: Props) {
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
                 The exact settings every RLCS-level coach on our staff plays
-                at — with the reasoning behind each tweak so you can adapt to
+                at, with the reasoning behind each tweak so you can adapt to
                 your playstyle. Camera, deadzones, controller layout, all of
                 it.
               </p>
               <p className="mt-2 text-sm font-semibold text-[var(--gold)]">
-                Yours for life — keep the vault and all future updates, even
+                Yours for life. Keep the vault and all future updates, even
                 if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
@@ -505,7 +505,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 Monthly Call With SpookyLuke.
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
-                Alumni-only. Luke runs a 60-min group call every month —
+                Alumni-only. Luke runs a 60-min group call every month.
                 Q&amp;A, replay reviews, what&apos;s working in the meta. Not
                 available at any tier below.
               </p>
@@ -566,7 +566,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
                 Your rank-up story featured on YouTube and socials. Free
-                credibility for your own content channel — and a moment of
+                credibility for your own content channel, and a moment of
                 recognition you actually earned.
               </p>
             </div>

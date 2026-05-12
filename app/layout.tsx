@@ -24,11 +24,11 @@ const bigShoulders = Big_Shoulders({
 });
 
 export const metadata: Metadata = {
-  title: "VIP Experience — RL Clubhouse",
+  title: "VIP Experience | RL Clubhouse",
   description:
     "Improve your overall Rocket League skill faster through 1:1 pro coaching, custom training routines, and real accountability.",
   openGraph: {
-    title: "VIP Experience — RL Clubhouse",
+    title: "VIP Experience | RL Clubhouse",
     description:
       "1:1 pro coaching, custom training routines, and real accountability so you actually get better every month.",
     type: "website",
