@@ -674,8 +674,11 @@ export function CallPageClient({ spotsFilled }: Props) {
           </div>
 
           <p className="mx-auto mt-8 max-w-3xl text-center text-sm text-white/50 md:text-base">
-            Rank-up promise applies to one full rank (~100 MMR). Examples:
-            Plat 2 → Plat 3, Diamond 3 → Champ 1, Champ 1 → Champ 2.
+            Rank-up promise applies to one full rank (~100 MMR) for members
+            starting at Champion 3 or below. Examples: Plat 2 → Plat 3,
+            Diamond 3 → Champ 1, Champ 1 → Champ 2. Members starting at
+            Grand Champ or higher can still join VIP — the rank-up guarantee
+            doesn&apos;t apply above Champion 3.
           </p>
         </div>
       </section>
