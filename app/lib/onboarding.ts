@@ -179,15 +179,21 @@ export type OnboardingSubmission = {
 
 export type RoutingDecision = {
   qualified: boolean;
+  // Hard bar from the Clubhouse entirely (under 18). Distinct from
+  // `qualified`: barred users skip both qualified and unqualified pages
+  // and land on /onboarding/free, which only links to free Discord.
+  barred: boolean;
   reasons: string[]; // disqualification reasons if any
 };
 
 export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
   const reasons: string[] = [];
+  let barred = false;
 
-  // Gate 1: Age (legal)
+  // Gate 1: Age (legal) — also fully bars from the Clubhouse.
   if (s.age === "13-15" || s.age === "16-17") {
     reasons.push("under-18");
+    barred = true;
   }
 
   // Gate 2: Country (local purchasing power)
@@ -230,6 +236,7 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
 
   return {
     qualified: reasons.length === 0,
+    barred,
     reasons,
   };
 }

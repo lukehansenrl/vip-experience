@@ -63,9 +63,11 @@ export async function POST(req: Request) {
     }
   }
 
-  const redirectUrl = decision.qualified
-    ? "/onboarding/qualified"
-    : "/onboarding/unqualified";
+  const redirectUrl = decision.barred
+    ? "/onboarding/free"
+    : decision.qualified
+      ? "/onboarding/qualified"
+      : "/onboarding/unqualified";
 
   return NextResponse.json({
     qualified: decision.qualified,
