@@ -66,8 +66,8 @@ export async function POST(req: Request) {
   const redirectUrl = decision.barred
     ? "/onboarding/free"
     : decision.qualified
-      ? "/onboarding/qualified"
-      : "/onboarding/unqualified";
+      ? "/onboarding/welcome-book-vip-call"
+      : "/onboarding/welcome";
 
   return NextResponse.json({
     qualified: decision.qualified,

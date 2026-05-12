@@ -1,18 +1,13 @@
 "use client";
 
-// TODO (Jacob/Luke): Update this to the canonical Whop "Join the Community" /
-// Discord-claim URL for the Clubhouse product. Find it in your Whop admin:
-// Products → Rocket League Clubhouse → "Join the Community" page → copy URL.
-// Should look like: https://whop.com/joined/rlclubhouse/3-join-the-community-XXX/app/
-// Currently points to the product page, which still gets users to Discord
-// but adds an extra click vs the direct community-join URL.
-const CLUBHOUSE_URL = "https://whop.com/rlclubhouse/";
+const CLUBHOUSE_URL =
+  "https://discord.com/channels/1217265351658573895/1499077397604204706";
 
 // TODO (Sarah): Replace with the real Loom once the 10-min server walkthrough
 // is recorded. Leave empty string to hide the video block.
 const ONBOARDING_LOOM_URL = "";
 
-export default function UnqualifiedPage() {
+export default function WelcomePage() {
   return (
     <div
       className="min-h-screen text-white"
