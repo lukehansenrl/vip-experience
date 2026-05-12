@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Gamepad2,
   Video,
@@ -16,9 +16,10 @@ import { BenefitCard } from "../components/BenefitCard";
 import { RatingBar } from "../components/RatingBar";
 import { PricingCard } from "../components/PricingCard";
 import { ScrollingTestimonials } from "../components/ScrollingTestimonials";
+import { CalendlyModal } from "../components/CalendlyModal";
 import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 
-const WHOP_URL = "https://whop.com/rlclubhouse/rlc-pro-vip-membership/";
+const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
 
 // Total cap. Only changes if the business actually raises the cap.
 const SPOTS_TOTAL = 60;
@@ -32,6 +33,8 @@ type Props = {
 
 export function CallPageClient({ spotsFilled }: Props) {
   const spotsOpen = Math.max(0, SPOTS_TOTAL - spotsFilled);
+  const [calendlyOpen, setCalendlyOpen] = useState(false);
+  const openCalendly = () => setCalendlyOpen(true);
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (
@@ -88,9 +91,8 @@ export function CallPageClient({ spotsFilled }: Props) {
     >
       <StickyNav
         cta={{
-          label: "Lock In Your Spot",
-          href: WHOP_URL,
-          external: true,
+          label: "Book a 45-Min Call",
+          onClick: openCalendly,
         }}
       />
 
@@ -127,14 +129,13 @@ export function CallPageClient({ spotsFilled }: Props) {
 
               {/* CTA row */}
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 md:items-center md:justify-start">
-                <a
-                  href={WHOP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={openCalendly}
                   className="rounded-full bg-[var(--accent)] px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
                 >
-                  Lock In Your Spot &rarr;
-                </a>
+                  Book a 45-Min Call &rarr;
+                </button>
                 <a
                   href="#investment"
                   className="text-sm font-semibold text-white/60 underline-offset-4 transition hover:text-white hover:underline"
@@ -787,9 +788,9 @@ export function CallPageClient({ spotsFilled }: Props) {
               cadence="/ 12 weeks"
               cadenceNote="Paid upfront for 12 weeks. Optional monthly continuation after if you want to keep going."
               action={{
-                type: "link",
-                label: "Lock In Your Spot",
-                href: WHOP_URL,
+                type: "button",
+                label: "Book a 45-Min Call",
+                onClick: openCalendly,
               }}
             />
           </div>
@@ -800,6 +801,14 @@ export function CallPageClient({ spotsFilled }: Props) {
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/30">
         &copy; {new Date().getFullYear()} RL Clubhouse. All rights reserved.
       </footer>
+
+      <CalendlyModal
+        open={calendlyOpen}
+        onClose={() => setCalendlyOpen(false)}
+        url={CALENDLY_URL}
+        title="VIP Onboarding Call"
+        subtitle="45 minutes. See if VIP is the right fit."
+      />
     </div>
   );
 }
