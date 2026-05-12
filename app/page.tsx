@@ -923,10 +923,10 @@ export default function VIPPage() {
               />
               <div className="font-extrabold text-xl">Torment</div>
               <div className="text-xs text-[var(--accent)] font-bold mt-1 uppercase tracking-wide">
-                World Champion S7
+                World Champion S6
               </div>
               <div className="text-xs text-white/50 mt-3 leading-relaxed">
-                RLCS Season 7 World Champion. One of the most accomplished
+                RLCS Season 6 World Champion. One of the most accomplished
                 players in NA history. Specializes in rotations, positioning,
                 and high-level decision-making.
               </div>

@@ -193,7 +193,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             The Most Experienced Coaching Team In Rocket League.
           </h2>
           <p className="mt-5 max-w-3xl text-lg text-white/70 md:text-xl">
-            Our team includes an RLCS Season 7 World Champion, two former pro
+            Our team includes an RLCS Season 6 World Champion, two former pro
             players, and the largest Rocket League coaching channel on
             YouTube. We&apos;ve been coaching paid members since 2020.
           </p>
