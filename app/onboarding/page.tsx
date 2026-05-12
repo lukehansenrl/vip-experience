@@ -157,14 +157,20 @@ function OnboardingForm() {
             label="What's your Discord username and email?"
           >
             <div className="grid gap-3 md:grid-cols-2">
-              <input
-                type="text"
-                value={form.discord ?? ""}
-                onChange={(e) => update("discord", e.target.value)}
-                placeholder="Discord username"
-                className={inputClass}
-                required
-              />
+              <div>
+                <input
+                  type="text"
+                  value={form.discord ?? ""}
+                  onChange={(e) => update("discord", e.target.value)}
+                  placeholder="example: legend123"
+                  className={inputClass}
+                  required
+                />
+                <p className="mt-2 text-xs leading-relaxed text-white/50">
+                  Open Discord → click your profile → copy the username under
+                  your display name.
+                </p>
+              </div>
               <input
                 type="email"
                 value={form.email ?? ""}
