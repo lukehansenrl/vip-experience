@@ -168,15 +168,49 @@ export function CallPageClient({ spotsFilled }: Props) {
                 </span>
               </div>
             </div>
-            {/* Photo */}
+            {/* Photo collage: Luke + 3 coaches mixed together (summit-style) */}
             <div className="flex justify-center md:justify-end">
-              <div className="relative">
+              <div className="relative w-full max-w-md pb-16 md:pb-20">
                 <div className="absolute -inset-4 rounded-3xl bg-[var(--accent)]/20 blur-3xl" />
+                {/* Luke main photo */}
                 <img
                   src={HERO_IMG}
                   alt="SpookyLuke at his Rocket League setup"
-                  className="relative w-full max-w-md rounded-2xl border border-white/10 object-cover shadow-2xl shadow-[var(--accent-glow)]"
+                  className="relative w-full rounded-2xl border border-white/10 object-cover shadow-2xl shadow-[var(--accent-glow)]"
                 />
+                {/* Coach trio fanned across the bottom edge */}
+                <div className="absolute -bottom-2 left-1/2 z-10 flex -translate-x-1/2 items-end gap-2 md:-bottom-4 md:gap-3">
+                  <div className="-rotate-[10deg] transform">
+                    <img
+                      src="/graphics/torment.jpg"
+                      alt="Torment"
+                      className="h-20 w-20 rounded-2xl border-4 border-[#0b0e17] object-cover object-top shadow-xl md:h-24 md:w-24"
+                    />
+                    <div className="mt-1 text-center text-[9px] font-black uppercase tracking-widest text-white/80 md:text-[10px]">
+                      Torment
+                    </div>
+                  </div>
+                  <div className="-translate-y-3 transform md:-translate-y-4">
+                    <img
+                      src="/graphics/freakii-lp.jpg"
+                      alt="FreaKii"
+                      className="h-20 w-20 rounded-2xl border-4 border-[#0b0e17] object-cover object-top shadow-xl md:h-24 md:w-24"
+                    />
+                    <div className="mt-1 text-center text-[9px] font-black uppercase tracking-widest text-white/80 md:text-[10px]">
+                      FreaKii
+                    </div>
+                  </div>
+                  <div className="rotate-[10deg] transform">
+                    <img
+                      src="/graphics/shock-lp.jpg"
+                      alt="Shock"
+                      className="h-20 w-20 rounded-2xl border-4 border-[#0b0e17] object-cover object-top shadow-xl md:h-24 md:w-24"
+                    />
+                    <div className="mt-1 text-center text-[9px] font-black uppercase tracking-widest text-white/80 md:text-[10px]">
+                      Shock
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
