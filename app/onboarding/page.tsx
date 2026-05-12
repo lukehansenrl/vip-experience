@@ -199,11 +199,11 @@ function OnboardingForm() {
               className={selectClass}
               required
             >
-              <option value="" disabled>
+              <option value="" disabled className={optionClass}>
                 Select your country
               </option>
               {COUNTRIES.map((c) => (
-                <option key={c} value={c}>
+                <option key={c} value={c} className={optionClass}>
                   {c}
                 </option>
               ))}
@@ -378,7 +378,9 @@ const inputClass =
   "w-full rounded-xl border border-white/15 bg-white/[0.03] px-4 py-3 text-white placeholder-white/30 transition focus:border-[var(--accent)] focus:outline-none";
 
 const selectClass =
-  "w-full rounded-xl border border-white/15 bg-white/[0.03] px-4 py-3 text-white transition focus:border-[var(--accent)] focus:outline-none appearance-none cursor-pointer";
+  "w-full rounded-xl border border-white/15 bg-[#0b0e17] px-4 py-3 text-white transition focus:border-[var(--accent)] focus:outline-none appearance-none cursor-pointer";
+
+const optionClass = "bg-[#0b0e17] text-white";
 
 function FormBlock({
   number,
