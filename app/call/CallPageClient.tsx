@@ -298,7 +298,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
               title="Personalized 30-Day Training Routine"
-              description="Refreshed every month and built around your schedule and rank, so the plan always matches where you are."
+              description="A fresh routine every 30 days, built around what your coach saw in your latest session. Three plans across the 12 weeks, so your training stays in step with where you are."
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
@@ -717,7 +717,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               ["3× 60-min 1:1 Pro Coaching Calls", "$450"],
               ["3× 30-min Personalized Replay Reviews", "$375"],
               ["3× Monthly Accountability Check-Ins", "$150"],
-              ["Personalized 12-Week Training Plan", "$150"],
+              ["3× Personalized 30-Day Training Routines", "$150"],
               ["12 Weeks Full Clubhouse Access", "$81"],
             ].map(([item, value]) => (
               <div

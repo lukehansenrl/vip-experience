@@ -21,9 +21,9 @@ export const VALUE_STACK: ValueStackRow[] = [
     note: "Monthly calls with your member guide to keep you on track",
   },
   {
-    item: "Personalized 90-Day Training Plan",
+    item: "3x Personalized 30-Day Training Routines",
     value: "$75 to $150",
-    note: "Custom plan built around your rank, weaknesses, and schedule",
+    note: "A fresh routine every 30 days. Three plans across the 12 weeks.",
   },
   {
     item: "12 Weeks Of Full Clubhouse Access",
