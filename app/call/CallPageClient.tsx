@@ -18,7 +18,8 @@ import { PricingCard } from "../components/PricingCard";
 import { ScrollingTestimonials } from "../components/ScrollingTestimonials";
 import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 
-const WHOP_URL = "https://whop.com/rlclubhouse/rlc-pro-vip-membership/";
+// Internal route to the dedicated /checkout page (terms-gated Whop embed).
+const CHECKOUT_URL = "/checkout";
 
 // Total cap. Only changes if the business actually raises the cap.
 const SPOTS_TOTAL = 60;
@@ -680,8 +681,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             cadenceNote="Paid upfront for 12 weeks. Optional monthly continuation after if you want to keep going."
             action={{
               type: "link",
-              label: "Lock In Your Spot",
-              href: WHOP_URL,
+              label: "Get Offer",
+              href: CHECKOUT_URL,
             }}
           />
         </div>
