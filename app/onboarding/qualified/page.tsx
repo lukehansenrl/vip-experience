@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { HormoziPlayer } from "../../components/HormoziPlayer";
 
 // TODO (Jacob/Luke): Update this to the canonical Whop "Join the Community" /
 // Discord-claim URL for the Clubhouse product. Find it in your Whop admin:
@@ -10,29 +11,21 @@ const CLUBHOUSE_URL = "https://whop.com/rlclubhouse/";
 
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
 
-// TODO (Luke): Drop in the Vimeo player URL once the VSL is recorded
-// (May 12-13 2026). Use the player.vimeo.com embed URL with autoplay=1 and
-// muted=1, e.g. https://player.vimeo.com/video/XXXXXXX?autoplay=1&muted=1
-// Leave as empty string to render the placeholder card until the video is live.
-const VSL_VIMEO_URL = "";
+// VSL file lives in /public — served directly from the Vercel CDN. Swap to
+// a Vimeo / Cloudflare Stream URL later if bandwidth becomes a concern.
+const VSL_SRC = "/vsl.mp4";
 
-// Number of seconds the "See If I'm a Fit" CTA stays locked while the VSL
-// plays — Hormozi-style commitment gate. Set to 0 to disable the timer.
+// CTA stays locked until the viewer has watched this many seconds of the
+// VSL (real playback time — pausing pauses the gate). Mirrors Hormozi's
+// "Book Your Call in 12s" countdown which only counts while the video plays.
 const VSL_LOCK_SECONDS = 15;
 
 export default function QualifiedPage() {
-  const [secondsLeft, setSecondsLeft] = useState(VSL_LOCK_SECONDS);
+  const [playbackTime, setPlaybackTime] = useState(0);
   const schedulerRef = useRef<HTMLDivElement>(null);
 
-  // Lock the primary CTA for VSL_LOCK_SECONDS so the viewer absorbs the
-  // pre-frame video before clicking through to the scheduler.
-  useEffect(() => {
-    if (secondsLeft <= 0) return;
-    const t = setInterval(() => setSecondsLeft((s) => Math.max(0, s - 1)), 1000);
-    return () => clearInterval(t);
-  }, [secondsLeft]);
-
-  const unlocked = secondsLeft <= 0;
+  const unlocked = playbackTime >= VSL_LOCK_SECONDS;
+  const secondsLeft = Math.max(0, Math.ceil(VSL_LOCK_SECONDS - playbackTime));
 
   function scrollToScheduler() {
     schedulerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -107,30 +100,10 @@ export default function QualifiedPage() {
       {/* ── VSL BLOCK ─────────────────────────────────────────────────── */}
       <section className="px-6 pb-14">
         <div className="mx-auto max-w-4xl">
-          <div className="aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl shadow-[var(--accent-glow)]">
-            {VSL_VIMEO_URL ? (
-              <iframe
-                src={VSL_VIMEO_URL}
-                width="100%"
-                height="100%"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                title="VIP Pre-Frame Video"
-                className="h-full w-full border-0"
-              />
-            ) : (
-              <div className="flex h-full w-full flex-col items-center justify-center gap-2 px-6 text-center text-white/40">
-                <p className="text-sm font-semibold uppercase tracking-widest text-[var(--accent)]">
-                  VSL Placeholder
-                </p>
-                <p className="text-sm">
-                  Drop the Vimeo URL into{" "}
-                  <code className="text-white/70">VSL_VIMEO_URL</code> once the
-                  video is uploaded.
-                </p>
-              </div>
-            )}
-          </div>
+          <HormoziPlayer
+            src={VSL_SRC}
+            onPlaybackTimeChange={setPlaybackTime}
+          />
 
           {/* Primary + secondary CTAs under the video */}
           <div className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-3">
