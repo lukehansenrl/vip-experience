@@ -1,19 +1,42 @@
 "use client";
 
-import { useState } from "react";
-import { CalendlyModal } from "../../components/CalendlyModal";
+import { useEffect, useRef, useState } from "react";
 
 // TODO (Jacob/Luke): Update this to the canonical Whop "Join the Community" /
 // Discord-claim URL for the Clubhouse product. Find it in your Whop admin:
 // Products → Rocket League Clubhouse → "Join the Community" page → copy URL.
 // Should look like: https://whop.com/joined/rlclubhouse/3-join-the-community-XXX/app/
-// Currently points to the product page, which still gets users to Discord
-// but adds an extra click vs the direct community-join URL.
 const CLUBHOUSE_URL = "https://whop.com/rlclubhouse/";
+
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
 
+// TODO (Luke): Drop in the Vimeo player URL once the VSL is recorded
+// (May 12-13 2026). Use the player.vimeo.com embed URL with autoplay=1 and
+// muted=1, e.g. https://player.vimeo.com/video/XXXXXXX?autoplay=1&muted=1
+// Leave as empty string to render the placeholder card until the video is live.
+const VSL_VIMEO_URL = "";
+
+// Number of seconds the "See If I'm a Fit" CTA stays locked while the VSL
+// plays — Hormozi-style commitment gate. Set to 0 to disable the timer.
+const VSL_LOCK_SECONDS = 15;
+
 export default function QualifiedPage() {
-  const [calendlyOpen, setCalendlyOpen] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(VSL_LOCK_SECONDS);
+  const schedulerRef = useRef<HTMLDivElement>(null);
+
+  // Lock the primary CTA for VSL_LOCK_SECONDS so the viewer absorbs the
+  // pre-frame video before clicking through to the scheduler.
+  useEffect(() => {
+    if (secondsLeft <= 0) return;
+    const t = setInterval(() => setSecondsLeft((s) => Math.max(0, s - 1)), 1000);
+    return () => clearInterval(t);
+  }, [secondsLeft]);
+
+  const unlocked = secondsLeft <= 0;
+
+  function scrollToScheduler() {
+    schedulerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 
   return (
     <div
@@ -35,141 +58,155 @@ export default function QualifiedPage() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section className="px-6 pt-16 pb-8 text-center md:pt-20">
-        <div className="mx-auto max-w-2xl">
-          <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--green)]">
-            You&apos;re in
-          </p>
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
-            Welcome to the Clubhouse.
+      {/* ── SECTION 1: CONFIRMATION + HERO + VSL ────────────────────────── */}
+      <section className="px-6 pt-10 pb-14 text-center md:pt-14">
+        <div className="mx-auto max-w-3xl">
+          {/* Confirmation pill — Hormozi pattern */}
+          <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full bg-[var(--accent)]/15 px-5 py-2 ring-1 ring-[var(--accent)]/40">
+            <span className="text-base">✅</span>
+            <p className="text-sm font-semibold text-white">
+              Confirmed: Your Discord roles are on the way
+            </p>
+          </div>
+
+          {/* Headline — Hormozi "IMPORTANT - Before You Check Your Email" */}
+          <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl">
+            IMPORTANT — Before You Check Your Discord Roles,
+            <br />
+            Watch This Improvement Video.
           </h1>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-white/65">
-            Your access is ready below. Dive in whenever you&apos;re ready.
-          </p>
-        </div>
-      </section>
 
-      {/* CLUBHOUSE ACCESS */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-2xl text-center">
-          <a
-            href={CLUBHOUSE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block rounded-full bg-[var(--accent)] px-12 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+          {/* Subheadline — scarcity + selectivity */}
+          <p className="mx-auto mt-5 max-w-xl text-base text-white/65 md:text-lg">
+            We&apos;re selecting only 60 players to work one-on-one with
+            our team of pros this month.
+          </p>
+
+          {/* Down chevron — scroll cue to the video */}
+          <div
+            className="mx-auto mt-6 text-[var(--accent)]"
+            aria-hidden="true"
           >
-            Enter the Clubhouse →
-          </a>
+            <svg
+              className="mx-auto h-8 w-8 animate-bounce"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
         </div>
       </section>
 
-      {/* VIP UPGRADE — only path that distinguishes qualified from unqualified */}
-      <section className="border-t border-white/10 px-6 py-16">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Want to rank up faster?
-          </p>
-          <h2 className="mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
-            You&apos;re a great fit for VIP.
-          </h2>
-          <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/65">
-            Based on what you shared, you&apos;re a strong fit for our 1-on-1
-            VIP coaching program. Pro coaches, personalized 90-day plan, and
-            the rank-up promise — if you don&apos;t rank up in 90 days, we
-            keep coaching you free until you do.
-          </p>
-          <p className="mt-4 text-sm text-white/50">
-            If you want to walk through how it works, book a 45-minute call
-            with our team. No pressure, no obligation.
-          </p>
+      {/* ── VSL BLOCK ─────────────────────────────────────────────────── */}
+      <section className="px-6 pb-14">
+        <div className="mx-auto max-w-4xl">
+          <div className="aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl shadow-[var(--accent-glow)]">
+            {VSL_VIMEO_URL ? (
+              <iframe
+                src={VSL_VIMEO_URL}
+                width="100%"
+                height="100%"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="VIP Pre-Frame Video"
+                className="h-full w-full border-0"
+              />
+            ) : (
+              <div className="flex h-full w-full flex-col items-center justify-center gap-2 px-6 text-center text-white/40">
+                <p className="text-sm font-semibold uppercase tracking-widest text-[var(--accent)]">
+                  VSL Placeholder
+                </p>
+                <p className="text-sm">
+                  Drop the Vimeo URL into{" "}
+                  <code className="text-white/70">VSL_VIMEO_URL</code> once the
+                  video is uploaded.
+                </p>
+              </div>
+            )}
+          </div>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          {/* Primary + secondary CTAs under the video */}
+          <div className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-3">
             <button
               type="button"
-              onClick={() => setCalendlyOpen(true)}
-              className="inline-block rounded-full bg-[var(--accent)] px-10 py-4 text-base font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+              onClick={scrollToScheduler}
+              disabled={!unlocked}
+              className="w-full rounded-full bg-[var(--accent)] px-10 py-4 text-base font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)] disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-white/40 disabled:shadow-none sm:w-auto"
             >
-              Book a 45-Min Call →
+              {unlocked
+                ? "See If I'm a Fit for VIP →"
+                : `See If I'm a Fit for VIP in ${secondsLeft}s`}
             </button>
             <a
-              href="/call"
-              className="inline-block rounded-full border border-white/20 bg-transparent px-10 py-4 text-base font-bold text-white/80 transition hover:border-white/40 hover:text-white"
+              href={CLUBHOUSE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-[var(--accent)] underline-offset-4 hover:underline"
             >
-              See What&apos;s in VIP →
+              No thanks, just take me to the free Clubhouse
             </a>
           </div>
         </div>
       </section>
 
-      {/* ACTION ITEMS */}
-      <section className="border-t border-white/10 px-6 py-16">
-        <div className="mx-auto max-w-2xl">
+      {/* ── SECTION 2: BOOKING WIDGET ────────────────────────────────── */}
+      <section
+        ref={schedulerRef}
+        className="border-t border-white/10 bg-white/[0.02] px-6 py-16"
+      >
+        <div className="mx-auto max-w-4xl">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Your first week
+            While you&apos;re waiting for your Discord roles&hellip;
           </p>
-          <h2 className="mt-3 text-center text-2xl font-extrabold tracking-tight md:text-3xl">
-            Three things to do.
+          <h2 className="font-display mx-auto mt-3 max-w-3xl text-center text-3xl leading-tight tracking-tight md:text-4xl">
+            Want to learn how to improve and rank up faster with our team of pros?
           </h2>
 
-          <ol className="mx-auto mt-10 max-w-lg space-y-5">
-            <ActionItem
-              number={1}
-              label="Post your introduction"
-              detail="In #introductions. Use the template. Reply to a few others. This is how you find teammates."
-            />
-            <ActionItem
-              number={2}
-              label="RSVP to a live event this week"
-              detail="Check the events channel near the top of the server. Pick one improvement event and one community event."
-            />
-            <ActionItem
-              number={3}
-              label="Hop into a voice channel"
-              detail="No one's gonna be weird if you join — we're all introverted gamers trying to get better at car soccer."
-            />
-          </ol>
+          {/* Reassurance note — Hormozi "this call is NOT required" pattern */}
+          <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-5 text-center text-base text-white/75">
+            <span className="font-semibold text-white">Note:</span> This call
+            is <strong>NOT</strong> required to access the Clubhouse. Only
+            schedule if you want to see if VIP is the right fit for your
+            game.
+          </div>
 
-          <p className="mt-10 text-center text-sm text-white/40">
-            Questions? Open a support ticket in the server.
-          </p>
+          {/* Inline Calendly embed */}
+          <div className="mx-auto mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-2xl">
+            <iframe
+              src={CALENDLY_URL}
+              width="100%"
+              height="780"
+              frameBorder={0}
+              title="Book a VIP onboarding call"
+              className="block"
+            />
+          </div>
+
+          {/* Bottom "no thanks" — same pattern Hormozi uses */}
+          <div className="mt-10 text-center">
+            <a
+              href={CLUBHOUSE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-full border border-white/20 bg-transparent px-10 py-4 text-base font-bold text-white/80 transition hover:border-white/40 hover:text-white"
+            >
+              No thanks, take me to the Clubhouse
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/30">
         &copy; {new Date().getFullYear()} RL Clubhouse. All rights reserved.
       </footer>
-
-      <CalendlyModal
-        open={calendlyOpen}
-        onClose={() => setCalendlyOpen(false)}
-        url={CALENDLY_URL}
-        title="VIP Onboarding Call"
-        subtitle="45 minutes — see if VIP is the right fit"
-      />
     </div>
-  );
-}
-
-function ActionItem({
-  number,
-  label,
-  detail,
-}: {
-  number: number;
-  label: string;
-  detail: string;
-}) {
-  return (
-    <li className="flex gap-5">
-      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[var(--accent)]/20 text-sm font-bold text-[var(--accent)]">
-        {number}
-      </span>
-      <div>
-        <p className="font-semibold text-white">{label}</p>
-        <p className="mt-1 text-sm text-white/60">{detail}</p>
-      </div>
-    </li>
   );
 }
