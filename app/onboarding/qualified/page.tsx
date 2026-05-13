@@ -156,11 +156,13 @@ export default function QualifiedPage() {
         </div>
       </section>
 
-      {/* ── SECTION 2: BOOKING WIDGET ────────────────────────────────── */}
-      <section
-        ref={schedulerRef}
-        className="border-t border-white/10 bg-white/[0.02] px-6 py-16"
-      >
+      {/* SECTION 2: BOOKING WIDGET — hidden until the VSL timer expires
+          (Hormozi-style commitment gate; viewers must watch or wait first) */}
+      {unlocked ? (
+        <section
+          ref={schedulerRef}
+          className="border-t border-white/10 bg-white/[0.02] px-6 py-16"
+        >
         <div className="mx-auto max-w-4xl">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             While you&apos;re waiting for your Discord roles&hellip;
@@ -201,7 +203,8 @@ export default function QualifiedPage() {
             </a>
           </div>
         </div>
-      </section>
+        </section>
+      ) : null}
 
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/30">
