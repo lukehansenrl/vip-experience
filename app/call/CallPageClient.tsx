@@ -130,12 +130,12 @@ export function CallPageClient({ spotsFilled }: Props) {
               </p>
 
               {/* CTA row */}
-              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 md:items-center md:justify-start">
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 md:justify-center">
                 <a
                   href={WHOP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[var(--accent)] px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+                  className="rounded-full bg-[var(--accent)] px-12 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
                 >
                   Get Offer &rarr;
                 </a>

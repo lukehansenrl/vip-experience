@@ -48,7 +48,7 @@ export function PricingCard({
       <button
         type="button"
         onClick={action.onClick}
-        className="mt-8 rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+        className="mt-8 rounded-full bg-[var(--accent)] px-12 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
       >
         {action.label} &rarr;
       </button>
@@ -95,9 +95,11 @@ export function PricingCard({
           : "Cancel anytime. No contracts. No hidden fees."}
       </p>
 
-      {cta}
+      <div className="text-center">{cta}</div>
 
-      {caption && <p className="mt-6 text-sm text-white/30">{caption}</p>}
+      {caption && (
+        <p className="mt-6 text-center text-sm text-white/30">{caption}</p>
+      )}
 
       {/* Guarantee callout */}
       <div className="mx-auto mt-6 max-w-md rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-5 py-3">
