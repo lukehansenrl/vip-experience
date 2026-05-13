@@ -20,6 +20,7 @@ import { CalendlyModal } from "../components/CalendlyModal";
 import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
+const WHOP_URL = "https://whop.com/rlclubhouse/rlc-pro-vip-membership/";
 
 // Total cap. Only changes if the business actually raises the cap.
 const SPOTS_TOTAL = 60;
@@ -91,8 +92,9 @@ export function CallPageClient({ spotsFilled }: Props) {
     >
       <StickyNav
         cta={{
-          label: "Book a 45-Min Call",
-          onClick: openCalendly,
+          label: "Get Offer",
+          href: WHOP_URL,
+          external: true,
         }}
       />
 
@@ -129,13 +131,14 @@ export function CallPageClient({ spotsFilled }: Props) {
 
               {/* CTA row */}
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 md:items-center md:justify-start">
-                <button
-                  type="button"
-                  onClick={openCalendly}
+                <a
+                  href={WHOP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-[var(--accent)] px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
                 >
-                  Book a 45-Min Call &rarr;
-                </button>
+                  Get Offer &rarr;
+                </a>
                 <a
                   href="#investment"
                   className="text-sm font-semibold text-white/60 underline-offset-4 transition hover:text-white hover:underline"
@@ -788,9 +791,9 @@ export function CallPageClient({ spotsFilled }: Props) {
               cadence="/ 12 weeks"
               cadenceNote="Paid upfront for 12 weeks. Optional monthly continuation after if you want to keep going."
               action={{
-                type: "button",
-                label: "Book a 45-Min Call",
-                onClick: openCalendly,
+                type: "link",
+                label: "Get Offer",
+                href: WHOP_URL,
               }}
             />
           </div>
