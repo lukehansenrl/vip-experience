@@ -117,14 +117,14 @@ export function CallPageClient({ spotsFilled }: Props) {
           </div>
           <div className="grid gap-10 md:grid-cols-[1.15fr_1fr] md:items-center md:gap-14">
             {/* Copy */}
-            <div className="text-center md:text-left">
+            <div className="text-center">
               <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
                 The VIP Experience
               </p>
               <h1 className="font-display text-5xl leading-[1] tracking-tight md:text-6xl lg:text-7xl">
                 Rank up in 90 days. Or we coach you free until you do.
               </h1>
-              <p className="mx-auto mt-6 max-w-xl text-xl text-white/80 md:mx-0 md:text-2xl">
+              <p className="mx-auto mt-6 max-w-xl text-xl text-white/80 md:text-2xl">
                 1-on-1 with a pro coach, a personalized 90-day plan, and a
                 guarantee most coaches won&apos;t make.
               </p>
@@ -148,7 +148,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               </div>
 
               {/* Trust strip */}
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:justify-start">
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
                 <div className="flex items-center gap-1.5">
                   <div className="flex gap-0.5">
                     {Array.from({ length: 5 }).map((_, i) => (

@@ -64,7 +64,7 @@ export function PricingCard({
     );
 
   return (
-    <div className="mt-10 rounded-2xl border border-[var(--accent)]/30 bg-white/[0.03] p-8 md:p-10">
+    <div className="mt-10 rounded-2xl border border-[var(--accent)]/30 bg-white/[0.03] p-8 text-center md:p-10">
       {showStrikethrough && (
         <p className="text-lg font-bold text-white/30 line-through">
           ${strikethroughPrice} / month
