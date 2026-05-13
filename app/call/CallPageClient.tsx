@@ -586,7 +586,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               {
                 tag: "Rank-Up Only",
                 title: "Signed Controller",
-                desc: "Brand new, signed by the coaching team. Shipped when you rank up.",
+                desc: "Brand new, signed by Luke. Shipped when you rank up.",
               },
               {
                 tag: "For Life",
