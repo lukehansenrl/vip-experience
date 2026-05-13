@@ -20,7 +20,7 @@ import { CalendlyModal } from "../components/CalendlyModal";
 import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
-const WHOP_URL = "https://whop.com/rlclubhouse/rlc-pro-vip-membership/";
+const WHOP_URL = "https://whop.com/c/rlc-pro-vip-membership/12-week-experience";
 
 // Total cap. Only changes if the business actually raises the cap.
 const SPOTS_TOTAL = 60;
