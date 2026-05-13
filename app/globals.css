@@ -53,6 +53,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Native <select> dropdowns: force dark bg + light text on the open list.
+ * Without this, options inherit the page's white text and render as
+ * white-on-white in Chromium/Edge when the dropdown opens. */
+select option {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
 /* Horizontal scrolling marquee for testimonial carousel.
  * Container renders the testimonials list twice; this animation slides
  * the inner row by -50% to create a seamless infinite loop. */

@@ -242,8 +242,13 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
     reasons.push("casual-player");
   }
 
-  // Gate 7: Forward budget — under $100 = below VIP monthly floor of $199
-  if (s.budget === "$0" || s.budget === "$10-$99") {
+  // Gate 7: Forward budget — under $301 annual = can't realistically commit
+  // to the $497 VIP 12-week program. Floor matches the price-frame on Q8.
+  if (
+    s.budget === "$0" ||
+    s.budget === "$10-$99" ||
+    s.budget === "$100-$300"
+  ) {
     reasons.push("budget-below-floor");
   }
 

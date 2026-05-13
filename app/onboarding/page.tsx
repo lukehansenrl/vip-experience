@@ -256,6 +256,13 @@ function OnboardingForm() {
             number={8}
             label="What's your annual budget for improving at Rocket League? (Coaching, gear, training tools, etc.)"
           >
+            <p className="mb-3 text-sm leading-relaxed text-white/55">
+              There are levels to coaching. One-off sessions from random
+              players are cheap and easy to find. Full ongoing work with
+              pros — personalized plans, weekly review, the whole
+              experience — is a real investment. Pick the level that&apos;s
+              actually true for you, and we&apos;ll route you accordingly.
+            </p>
             <RadioGroup
               name="budget"
               options={[...BUDGET]}
