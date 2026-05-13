@@ -20,7 +20,8 @@ import { CalendlyModal } from "../components/CalendlyModal";
 import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
-const WHOP_URL = "https://whop.com/c/rlc-pro-vip-membership/12-week-experience";
+// Internal route to the dedicated /checkout page (terms-gated Whop embed).
+const CHECKOUT_URL = "/checkout";
 
 // Total cap. Only changes if the business actually raises the cap.
 const SPOTS_TOTAL = 60;
@@ -93,7 +94,7 @@ export function CallPageClient({ spotsFilled }: Props) {
       <StickyNav
         cta={{
           label: "Get Offer",
-          href: WHOP_URL,
+          href: CHECKOUT_URL,
           external: true,
         }}
       />
@@ -132,7 +133,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               {/* CTA row */}
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 md:justify-center">
                 <a
-                  href={WHOP_URL}
+                  href={CHECKOUT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full bg-[var(--accent)] px-12 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
@@ -793,7 +794,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               action={{
                 type: "link",
                 label: "Get Offer",
-                href: WHOP_URL,
+                href: CHECKOUT_URL,
               }}
             />
           </div>
