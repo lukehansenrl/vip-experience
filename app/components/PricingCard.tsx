@@ -48,7 +48,7 @@ export function PricingCard({
       <button
         type="button"
         onClick={action.onClick}
-        className="mt-8 rounded-full bg-[var(--accent)] px-12 py-5 text-xl font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
+        className="mt-8 rounded-full bg-[var(--accent)] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
       >
         {action.label} &rarr;
       </button>
