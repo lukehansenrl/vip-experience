@@ -116,9 +116,8 @@ export default function BookedPage() {
                   specific.
                   <br />
                   <br />
-                  Examples: rotation, boost economy, mechanical
-                  inconsistency, tilt, double commits, getting backposted,
-                  challenge timing.
+                  Examples: positioning, rotation, mechanical
+                  inconsistency, tilt, double commits, challenge timing.
                   <br />
                   <br />
                   Knowing this upfront helps your rep figure out which of
