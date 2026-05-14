@@ -88,6 +88,12 @@ export default function VipPage() {
             guarantee most coaches won&apos;t make.
           </p>
 
+          {/* Capacity scarcity — always-on, real (60-client team cap) */}
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-white/50 md:text-base">
+            Our team can only work with 60 private clients at any given
+            time. Watch this video if you want to be one.
+          </p>
+
           {/* Down chevron — scroll cue to the video */}
           <div
             className="mx-auto mt-6 text-[var(--accent)]"
