@@ -661,9 +661,9 @@ export function CallPageClient({ spotsFilled }: Props) {
                 30-Day Money Back.
               </h3>
               <p className="mt-4 text-lg text-white/85 md:text-xl">
-                Don&apos;t love it? Full refund, no questions asked. Don&apos;t
-                try to make it work for 30 days. If you don&apos;t immediately
-                see the value, get your money back.
+                Don&apos;t love it? Get a full refund within 30 days. The
+                only ask: actually show up to one coaching session or
+                accountability call first. Tried it, hated it, money back.
               </p>
             </div>
 
@@ -676,10 +676,11 @@ export function CallPageClient({ spotsFilled }: Props) {
                 90-Day Keep Coaching You.
               </h3>
               <p className="mt-4 text-lg text-white/90 md:text-xl">
-                Show up to your monthly coaching session and replay review.
-                Don&apos;t rank up in 90 days? We keep coaching you for free,
-                every month, until you do. Most coaches drag things out. We
-                don&apos;t get to stop until you rank up.
+                Show up to every coaching session and accountability call,
+                and play 60 ranked games across the 12 weeks. Don&apos;t
+                rank up? We keep coaching you free for up to another year
+                until you do. Most coaches are happy when you keep paying.
+                We&apos;re not done until you rank up.
               </p>
             </div>
           </div>
@@ -688,8 +689,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             Rank-up promise applies to one full rank (~100 MMR) for members
             starting at Champion 3 or below. Examples: Plat 2 → Plat 3,
             Diamond 3 → Champ 1, Champ 1 → Champ 2. Members starting at
-            Grand Champ or higher can still join VIP — the rank-up guarantee
-            doesn&apos;t apply above Champion 3.
+            Grand Champ or higher can still join VIP, but the rank-up
+            guarantee doesn&apos;t apply above Champion 3.
           </p>
         </div>
       </section>
@@ -787,8 +788,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             <span className="font-bold text-[var(--green)]">
               You save $939.
             </span>{" "}
-            And if you don&apos;t rank up in 90 days, we keep coaching you free
-            until you do.
+            And if you don&apos;t rank up in 90 days, we keep coaching you
+            free for up to another year until you do.
           </p>
 
           <div className="mt-6">
