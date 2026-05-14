@@ -123,7 +123,7 @@ export default function QualifiedPage() {
               rel="noopener noreferrer"
               className="text-sm text-[var(--accent)] underline-offset-4 hover:underline"
             >
-              No thanks, just take me to the free Clubhouse
+              No thanks. Just take me to the Clubhouse.
             </a>
           </div>
         </div>
