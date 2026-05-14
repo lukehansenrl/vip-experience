@@ -52,20 +52,6 @@ export default function CheckoutSuccessPage() {
         </div>
       </section>
 
-      {/* IMPORTANT ORDER CALLOUT */}
-      <section className="px-6 pt-2 pb-8">
-        <div className="mx-auto max-w-2xl rounded-2xl border border-[var(--gold)]/40 bg-[var(--gold)]/10 px-5 py-4">
-          <p className="text-sm font-bold uppercase tracking-widest text-[var(--gold)]">
-            Important: do these in order
-          </p>
-          <p className="mt-2 text-base leading-relaxed text-white/85">
-            Claim your VIP access first (Step 1), then cancel your old
-            Clubhouse membership (Step 2). Doing it the other way around
-            risks losing access mid-transition.
-          </p>
-        </div>
-      </section>
-
       {/* NEXT STEPS */}
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-2xl space-y-6">

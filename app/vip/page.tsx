@@ -21,8 +21,10 @@ import {
 // /api/onboarding endpoint forwards the data to the webhook (Zapier)
 // before redirecting the user here. Calendly is prefilled with name and
 // email via URL params so the prospect doesn't re-enter what they just
-// typed into the form.
-const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-application";
+// typed into the form. Uses the same Calendly event as /call now that
+// the form has eliminated the need for a separate Calendly-side
+// qualification flow (previously planned as "Event B").
+const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
 
 // VSL file lives in /public. Same asset used on /onboarding/qualified.
 const VSL_SRC = "/vsl.mp4";
