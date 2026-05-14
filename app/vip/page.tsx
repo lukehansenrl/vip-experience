@@ -275,31 +275,33 @@ export default function VipPage() {
             </p>
 
             <form onSubmit={handleSubmit} className="mt-12 space-y-12">
-              <FormBlock
-                number={1}
-                label="What's your Discord username and email?"
-              >
-                <div className="grid gap-3 md:grid-cols-2">
-                  <input
-                    type="text"
-                    value={form.discord ?? ""}
-                    onChange={(e) => update("discord", e.target.value)}
-                    placeholder="Discord username"
-                    className={inputClass}
-                    required
-                  />
-                  <input
-                    type="email"
-                    value={form.email ?? ""}
-                    onChange={(e) => update("email", e.target.value)}
-                    placeholder="Email"
-                    className={inputClass}
-                    required
-                  />
-                </div>
+              <FormBlock number={1} label="What is your Discord username?">
+                <input
+                  type="text"
+                  value={form.discord ?? ""}
+                  onChange={(e) => update("discord", e.target.value)}
+                  placeholder="example: legend123"
+                  className={inputClass}
+                  required
+                />
+                <p className="mt-2 text-xs leading-relaxed text-white/50">
+                  Open Discord → click your profile → copy the username under
+                  your display name.
+                </p>
               </FormBlock>
 
-              <FormBlock number={2} label="How old are you?">
+              <FormBlock number={2} label="What's your email?">
+                <input
+                  type="email"
+                  value={form.email ?? ""}
+                  onChange={(e) => update("email", e.target.value)}
+                  placeholder="Email"
+                  className={inputClass}
+                  required
+                />
+              </FormBlock>
+
+              <FormBlock number={3} label="How old are you?">
                 <RadioGroup
                   name="age"
                   options={[...AGES]}
@@ -311,7 +313,7 @@ export default function VipPage() {
                 />
               </FormBlock>
 
-              <FormBlock number={3} label="Where are you based?">
+              <FormBlock number={4} label="Where are you based?">
                 <select
                   value={form.country ?? ""}
                   onChange={(e) =>
@@ -335,7 +337,7 @@ export default function VipPage() {
               </FormBlock>
 
               <FormBlock
-                number={4}
+                number={5}
                 label="Which Rocket League server do you play on?"
               >
                 <RadioGroup
@@ -350,7 +352,7 @@ export default function VipPage() {
               </FormBlock>
 
               <FormBlock
-                number={5}
+                number={6}
                 label="What's your current employment status?"
               >
                 <RadioGroup
@@ -367,7 +369,7 @@ export default function VipPage() {
                 />
               </FormBlock>
 
-              <FormBlock number={6} label="What's your current rank?">
+              <FormBlock number={7} label="What's your current rank?">
                 <RadioGroup
                   name="rank"
                   options={[...RANKS]}
@@ -379,7 +381,7 @@ export default function VipPage() {
                 />
               </FormBlock>
 
-              <FormBlock number={7} label="What platform do you play on?">
+              <FormBlock number={8} label="What platform do you play on?">
                 <RadioGroup
                   name="platform"
                   options={[...PLATFORMS]}
@@ -392,7 +394,7 @@ export default function VipPage() {
               </FormBlock>
 
               <FormBlock
-                number={8}
+                number={9}
                 label="What's your annual budget for improving at Rocket League? (Coaching, gear, training tools, etc.)"
               >
                 <p className="mb-3 text-sm leading-relaxed text-white/55">
@@ -415,7 +417,7 @@ export default function VipPage() {
               </FormBlock>
 
               <FormBlock
-                number={9}
+                number={10}
                 label="Which of these matches you better?"
               >
                 <RadioGroup
@@ -432,7 +434,7 @@ export default function VipPage() {
               </FormBlock>
 
               <FormBlock
-                number={10}
+                number={11}
                 label="What do you think is the SINGLE biggest thing holding you back right now?"
               >
                 <RadioGroup
