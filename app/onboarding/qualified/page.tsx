@@ -3,11 +3,10 @@
 import { useRef, useState } from "react";
 import { HormoziPlayer } from "../../components/HormoziPlayer";
 
-// TODO (Jacob/Luke): Update this to the canonical Whop "Join the Community" /
-// Discord-claim URL for the Clubhouse product. Find it in your Whop admin:
-// Products → Rocket League Clubhouse → "Join the Community" page → copy URL.
-// Should look like: https://whop.com/joined/rlclubhouse/3-join-the-community-XXX/app/
-const CLUBHOUSE_URL = "https://whop.com/rlclubhouse/";
+// Tracked free-trial signup link for the Rocket League Clubhouse,
+// scoped to vip-experience traffic so Whop can attribute conversions
+// from this funnel separately from other Clubhouse signup sources.
+const CLUBHOUSE_URL = "https://whop.com/c/gcbcommunity/vip-experience";
 
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
 
