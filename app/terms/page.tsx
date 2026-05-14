@@ -8,7 +8,7 @@ const SUPPORT_URL =
 export const metadata: Metadata = {
   title: "Terms of Service & Refund Policy | RL Clubhouse",
   description:
-    "Rocket League Bootcamp, Clubhouse & Academy by SpookyLuke: Terms of Service (V4.0). Operated by Game Launch, LLC.",
+    "Rocket League Bootcamp, Clubhouse & Academy by SpookyLuke: Terms of Service (V4.1). Operated by Game Launch, LLC.",
 };
 
 export default function TermsPage() {
@@ -37,10 +37,10 @@ export default function TermsPage() {
           </h1>
           <p className="mt-4 text-base text-white/65">
             Rocket League Bootcamp, Clubhouse &amp; Academy by SpookyLuke
-            (V4.0). Operated by Game Launch, LLC.
+            (V4.1). Operated by Game Launch, LLC.
           </p>
           <p className="mt-2 text-sm text-white/45">
-            Effective Date: 8/22/2025 · Last Updated: 8/22/2025
+            Effective Date: 5/14/2026 · Last Updated: 5/14/2026
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function TermsPage() {
               ["1. Introduction and Acceptance", "intro"],
               ["2. Definitions", "definitions"],
               ["3. Services Description", "services"],
-              ["4. 6-Week Rank-Up Sprint", "sprint"],
+              ["4. VIP Pro Experience Terms", "vip-pro"],
               ["5. Eligibility Requirements", "eligibility"],
               ["6. Registration and Account", "registration"],
               ["7. Payment Terms", "payment"],
@@ -139,23 +139,7 @@ export default function TermsPage() {
               ],
               [
                 "Clubhouse / RLC",
-                "Rocket League Clubhouse, our paid community, events, resources, and cohort-based programs including the 6-Week Rank-Up Sprint.",
-              ],
-              [
-                "Sprint",
-                "The 6-Week Rank-Up Sprint conducted within the Clubhouse with specific requirements and guarantees as set forth herein.",
-              ],
-              [
-                "Chosen Playlist",
-                "The Competitive 2v2 or 3v3 playlist a Sprint participant selects at purchase, which cannot be changed for that Sprint.",
-              ],
-              [
-                "Baseline",
-                "The higher of (i) the participant's current MMR at Sprint start or (ii) the participant's 90-day peak MMR in the Chosen Playlist prior to Sprint start.",
-              ],
-              [
-                "Work Requirements",
-                "The Sprint participation milestones detailed in Section 12.",
+                "Rocket League Clubhouse, our paid community providing events, resources, and structured programs for members.",
               ],
               [
                 "Bootcamp Pro",
@@ -168,6 +152,54 @@ export default function TermsPage() {
               [
                 "Bootcamp Off-Season",
                 "Our membership-based service providing one coaching session every four weeks with 24/5 messaging access to a pro coach.",
+              ],
+              [
+                "VIP Pro Experience (also VIP, VIP Pro, or the Program)",
+                "Our premium 1:1 coaching program comprising an initial 84-day Program Term followed by Continued Membership at the then-current VIP Pro pricing as disclosed at checkout, until cancelled.",
+              ],
+              [
+                "Program Term",
+                "The initial 84-day period beginning on the date of the Member's first VIP Pro payment.",
+              ],
+              [
+                "Continued Membership",
+                "VIP Pro membership beyond the Program Term, billed every twenty-eight (28) days at the then-current Continued Membership rate as disclosed at checkout, until cancelled by the Member.",
+              ],
+              [
+                "Rank-Up Guarantee",
+                "The conditional service-continuation remedy described in Section 4.4.",
+              ],
+              [
+                "Rank-Up",
+                "An increase in the Member's matchmaking rating (“MMR”) in the chosen competitive playlist of at least one hundred (100) MMR above the Starting MMR, OR the Member's MMR crossing the threshold of the next official Rocket League rank tier above their Starting Rank, whichever occurs first.",
+              ],
+              [
+                "Starting MMR",
+                "The Member's MMR in the chosen competitive playlist on the date of their first VIP Pro payment, provided that Game Launch, LLC may, in its sole reasonable judgment based on the Member's Tracker Profile and other available evidence, set the Starting MMR instead to the Member's peak MMR in that playlist during the ninety (90) day period prior to the date of first payment, where doing so is necessary to prevent the Rank-Up Guarantee from being triggered by a Member who artificially depressed their MMR prior to enrollment.",
+              ],
+              [
+                "Starting Rank",
+                "The Rocket League rank tier corresponding to the Starting MMR.",
+              ],
+              [
+                "Guarantee Window",
+                "The ninety (90) day period beginning on the date of the Member's first VIP Pro payment.",
+              ],
+              [
+                "Money-Back Window",
+                "The thirty (30) day period beginning on the date of the VIP Pro payment for which a refund is requested.",
+              ],
+              [
+                "Coaching Session",
+                "A scheduled live one-on-one video session between the Member and an assigned coach.",
+              ],
+              [
+                "Accountability Check-In",
+                "A scheduled accountability call between the Member and Game Launch, LLC staff or coaches.",
+              ],
+              [
+                "Tracker Profile",
+                "The Member's verified rltracker.pro (or substantially equivalent platform designated by Game Launch, LLC) profile, submitted as a condition of Rank-Up Guarantee eligibility under Section 4.4.",
               ],
               [
                 "Legacy Plans",
@@ -184,10 +216,6 @@ export default function TermsPage() {
               [
                 "Coach Working Days",
                 "Five coach workdays per week; each coach sets their individual 5-day schedule which may include weekends, and coaches respond within 24 hours on their designated working days, creating 24/5 availability.",
-              ],
-              [
-                "Store Credit",
-                "Non-cash credit issued for use toward eligible Game Launch, LLC services and products; Store Credit is non-transferable and expires in 12 months.",
               ],
               [
                 "We, us, our",
@@ -210,8 +238,8 @@ export default function TermsPage() {
           <H3>3.1 Rocket League Clubhouse (RLC)</H3>
           <P>
             A membership-based community providing access to group coaching
-            sessions, events, resources, and cohort-based programs including
-            the 6-Week Rank-Up Sprint. Members gain access to:
+            sessions, events, resources, and structured programs. Members
+            gain access to:
           </P>
           <UL>
             <li>Weekly tournaments with coaching feedback</li>
@@ -271,20 +299,29 @@ export default function TermsPage() {
             <li>This is a recurring membership that will automatically renew until canceled</li>
           </UL>
 
-          <H3>3.5 6-Week Rank-Up Sprint</H3>
+          <H3>3.5 VIP Pro Experience</H3>
           <P>
-            The 6-Week Rank-Up Sprint is a cohort-based rank improvement
-            program conducted within the Clubhouse with specific
-            requirements and guarantees. The Rank-Up Sprint includes:
+            The VIP Pro Experience is a premium 1:1 coaching program
+            offered to Members of the Rocket League Clubhouse. Each VIP Pro
+            Member is assigned a coach and receives, over the 84-day
+            Program Term:
           </P>
           <UL>
-            <li>Structured 6-week curriculum focused on rank advancement</li>
-            <li>Playlist-specific coaching (2v2 or 3v3 only, 1v1 excluded)</li>
-            <li>Performance tracking and verification through RL Tracker and Ballchasing</li>
-            <li>Store Credit guarantee available through two paths: Outcome Path (+100 MMR achievement) or Effort Path (compliance completion)</li>
-            <li>Anti-boosting enforcement and party queue restrictions</li>
-            <li>Limited seating with cohort-based kickoff dates</li>
+            <li>Three (3) sixty-minute one-on-one Coaching Sessions</li>
+            <li>Three (3) thirty-minute personalized asynchronous replay reviews</li>
+            <li>Three (3) Accountability Check-Ins</li>
+            <li>Three (3) personalized 30-day training routines</li>
+            <li>Continued Rocket League Clubhouse access for the duration of VIP Pro membership, included at no additional charge</li>
           </UL>
+          <P>
+            After the 84-day Program Term, VIP Pro membership continues on
+            a Continued Membership basis (see Section 7.1) at the same
+            service cadence (one Coaching Session, one asynchronous replay
+            review, and one Accountability Check-In per 28-day billing
+            cycle) until cancelled by the Member. The Rank-Up Guarantee
+            (Section 4.4) and the Money-Back Guarantee (Section 4.5) are
+            described in their respective sections.
+          </P>
 
           <H3>3.6 Platform Integration</H3>
           <P>
@@ -335,197 +372,202 @@ export default function TermsPage() {
           </P>
 
           {/* 4 */}
-          <H2 id="sprint">4. 6-Week Rank-Up Sprint</H2>
-
-          <H3>4.1 Sprint Overview</H3>
+          <H2 id="vip-pro">4. VIP Pro Experience Terms</H2>
           <P>
-            The 6-Week Rank-Up Sprint is a cohort-based rank improvement
-            program conducted within the Clubhouse with specific
-            requirements and guarantees as outlined in this section.
+            This Section 4 sets out the specific terms applicable to the
+            VIP Pro Experience. In the event of conflict between this
+            Section 4 and any other section of these Terms, this Section 4
+            governs solely with respect to VIP Pro.
           </P>
 
-          <H3>4.2 Eligibility Requirements</H3>
-          <P><strong>Platform:</strong> PC only.</P>
-          <P><strong>Age Requirement:</strong> Minimum age 16 years.</P>
+          <H3>4.1 Program Overview</H3>
           <P>
-            <strong>Rank Guidelines:</strong> Recommended for Platinum
-            through Diamond III. Champion I–III considered on a
-            case-by-case basis; Grand Champion or higher not recommended.
+            VIP Pro is a 1:1 coaching program with an initial 84-day
+            Program Term. After the Program Term, VIP Pro continues on a
+            Continued Membership basis until the Member cancels. The
+            Program is delivered through Rocket League Clubhouse
+            infrastructure (Discord, Whop, and any platforms designated by
+            Game Launch, LLC).
           </P>
+
+          <H3>4.2 Eligibility</H3>
+          <P>VIP Pro is open to applicants who:</P>
+          <UL>
+            <li>Are at least eighteen (18) years of age</li>
+            <li>Have a valid Rocket League account in good standing</li>
+            <li>Hold an active Rocket League Clubhouse subscription, or accept a Clubhouse subscription bundled with VIP Pro at no additional charge during VIP Pro membership</li>
+            <li>Reside in a jurisdiction in which Game Launch, LLC offers VIP Pro</li>
+            <li>Pass the VIP Pro application and onboarding call</li>
+          </UL>
           <P>
-            <strong>Region:</strong> North America and EU recommended;
-            other regions accepted at our discretion.
-          </P>
-          <P>
-            <strong>Single Account &amp; Playlist:</strong> One Rocket
-            League account and one playlist (2v2 or 3v3 only, 1v1 excluded)
-            must be selected at enrollment. Playlist changes after kickoff
-            are prohibited.
-          </P>
-          <P>
-            We reserve the right to verify eligibility and deny
-            participation for failure to meet any requirements.
+            Game Launch, LLC reserves the right to decline any application
+            at its sole discretion.
           </P>
 
           <H3>4.3 Program Structure</H3>
           <P>
-            <strong>Duration:</strong> Six (6) consecutive weeks from the
-            designated kickoff date for your cohort.
+            During the initial 84-day Program Term, each Member is
+            entitled to three (3) Coaching Sessions, three (3)
+            asynchronous replay reviews, three (3) Accountability
+            Check-Ins, and three (3) personalized 30-day training
+            routines, distributed approximately one per 28-day cycle.
+            After the Program Term, Continued Membership Members are
+            entitled to one (1) Coaching Session, one (1) asynchronous
+            replay review, and one (1) Accountability Check-In per 28-day
+            billing cycle.
           </P>
           <P>
-            <strong>Cohorts:</strong> Limited seating with set kickoff
-            dates; waitlist may apply once capacity is reached.
-          </P>
-          <P>
-            <strong>Community Access:</strong> Program communications and
-            resources provided via private Discord channel.
-          </P>
-          <P>
-            <strong>Baseline Establishment:</strong> Your Baseline is the
-            higher of (i) your current MMR at Sprint start or (ii) your
-            90-day peak MMR in the Chosen Playlist prior to Sprint start.
+            Scheduling and rescheduling of Coaching Sessions is governed
+            by Section 9.
           </P>
 
-          <H3>4.4 Conditional Guarantee: Store Credit Only</H3>
+          <H3>4.4 Rank-Up Guarantee</H3>
           <P>
-            Participants may qualify for store credit
-            (&quot;Guarantee&quot;) under either of the following pathways:
+            Subject to the conditions in this Section 4.4, if a Member
+            does not achieve a Rank-Up within the Guarantee Window, Game
+            Launch, LLC will continue to provide one (1) Coaching Session
+            and one (1) Accountability Check-In per 28-day billing cycle
+            at no additional charge until the Member achieves a Rank-Up,
+            for up to twelve (12) additional months following the close of
+            the Guarantee Window (the &quot;Extended Coaching Period&quot;).
+            The Extended Coaching Period expires automatically upon the
+            earlier of (i) the Member achieving a Rank-Up, (ii) the
+            expiration of the twelve (12) month period, or (iii)
+            forfeiture under this Section 4.4.
           </P>
           <P>
-            <strong>(a) Outcome Path:</strong> Achieve a net increase of at
-            least +100 MMR in your locked playlist relative to your
-            Baseline within the 6-week period and receive store credit
-            equal to 100% of the amount paid for the Sprint; OR
+            <strong>Eligibility.</strong> The Rank-Up Guarantee applies
+            only to Members whose Starting Rank is Champion 3 or below.
+            Members with a Starting Rank of Grand Champion 1 or above may
+            join VIP Pro, but the Rank-Up Guarantee does not apply to
+            them.
           </P>
           <P>
-            <strong>(b) Effort Path:</strong> Fulfill all compliance
-            requirements described in Section 4.5 and receive store credit
-            equal to 100% of the amount paid for the Sprint.
-          </P>
-          <P><strong>Guarantee Limitations:</strong></P>
-          <UL>
-            <li><strong>Form of Payout:</strong> Store credit only, redeemable for our coaching services or future Sprint enrollment</li>
-            <li><strong>No Cash Refunds:</strong> Under no circumstances will cash or other monetary refunds be issued</li>
-            <li><strong>Non-Transferable:</strong> Store credit may not be transferred, sold, or redeemed for cash</li>
-            <li><strong>Expiration:</strong> Must use within twelve (12) months of issuance</li>
-            <li><strong>Abuse or Misuse:</strong> Fraudulent or bad-faith claims void eligibility for any credit</li>
-          </UL>
-
-          <H3>4.5 Compliance Requirements (Effort Path)</H3>
-          <P>
-            To remain eligible for the Guarantee under the Effort Path,
-            participants must complete ALL of the following:
-          </P>
-          <UL>
-            <li><strong>Ranked Volume:</strong> Complete at least 120 ranked matches in the selected playlist within the Sprint period.</li>
-            <li><strong>Replay Submissions:</strong> Submit four (4) replay reviews asynchronously by required deadlines. One late submission permitted under Monday Grace provision (Section 4.6).</li>
-            <li><strong>Weekly Check-Ins:</strong> Submit six (6) Sunday MMR screenshots per Section 4.6; one late check-in permitted under Monday Grace provision.</li>
-            <li><strong>Baseline Proof:</strong> Provide kickoff submission including both current MMR screenshot and 90-day peak evidence.</li>
-          </UL>
-          <P>
-            Failure to satisfy any compliance requirement results in
-            forfeiture of the Guarantee.
-          </P>
-
-          <H3>4.6 Proof Standards, Deadlines, and Grace Periods</H3>
-          <P>
-            <strong>Sunday Submission Window:</strong> 12:00 a.m.–11:59
-            p.m. (local time) each Sunday.
+            <strong>Tracker Submission.</strong> As a condition of Rank-Up
+            Guarantee eligibility, the Member must submit their Tracker
+            Profile to Game Launch, LLC within seven (7) days of their
+            first VIP Pro payment. Failure to submit the Tracker Profile
+            within this window forfeits Rank-Up Guarantee eligibility,
+            even if the Member otherwise satisfies the Compliance
+            Requirements below.
           </P>
           <P>
-            <strong>Screenshot Content:</strong> Must show gamertag,
-            playlist, rank/division, MMR, visible date/time, and be
-            uncropped.
-          </P>
-          <P>
-            <strong>Monday Grace:</strong> Participants may utilize one (1)
-            Monday extension to submit any Sunday requirement by 11:59 p.m.
-            Monday local time. Any additional late submissions void
-            Guarantee eligibility.
-          </P>
-          <P>
-            <strong>Replay Submission Timing:</strong> Due by 11:59 p.m.
-            Sunday of the submission week; one late submission allowed
-            using Monday Grace.
-          </P>
-          <P>
-            <strong>Server Outages:</strong> Documented global outages
-            extend applicable deadlines by 24 hours at Company discretion.
-          </P>
-
-          <H3>4.7 Integrity Rules (Zero Tolerance)</H3>
-          <P>
-            The following conduct strictly prohibits Guarantee eligibility
-            and may result in removal from the program without refund or
-            credit:
+            <strong>Compliance Requirements during the Guarantee Window.</strong>{" "}
+            To remain eligible for the Rank-Up Guarantee, the Member must,
+            during the 90-day Guarantee Window:
           </P>
           <UL>
-            <li>Use of alternate or &quot;smurf&quot; accounts</li>
-            <li>Account sharing or boosting by materially higher-ranked players</li>
-            <li>Edited, falsified, or misleading proof submissions</li>
-            <li>Playlist switching after kickoff</li>
-            <li>Toxic or disruptive behavior in community spaces</li>
+            <li>Attend each of the three (3) scheduled Coaching Sessions</li>
+            <li>Attend each of the three (3) scheduled Accountability Check-Ins</li>
+            <li>Play and complete at least sixty (60) ranked matches in the Member's chosen competitive playlist</li>
           </UL>
-          <P>All violations are determined at our sole discretion.</P>
+          <P>
+            <strong>Compliance Requirements during the Extended Coaching Period.</strong>{" "}
+            A Member receiving Extended Coaching under this Section 4.4
+            must continue to attend each scheduled Coaching Session.
+            Failure to attend two (2) consecutive scheduled Coaching
+            Sessions, or three (3) cumulative scheduled Coaching Sessions
+            during the Extended Coaching Period, automatically terminates
+            the Member's Rank-Up Guarantee and the Extended Coaching
+            Period.
+          </P>
+          <P>
+            <strong>Integrity.</strong> The Rank-Up Guarantee does not
+            apply, and Game Launch, LLC may revoke it without notice and
+            without refund, if Game Launch, LLC determines in its sole
+            reasonable judgment, based on the Tracker Profile and other
+            available evidence, that the Member: (i) has used smurf,
+            boosting, or alternate accounts to manipulate their MMR at
+            any time, including prior to joining VIP Pro; (ii) has
+            intentionally lost ranked matches (&quot;throwing&quot;)
+            during or prior to VIP Pro membership in a manner that
+            artificially depresses the Starting MMR; (iii) has used
+            third-party software to manipulate match outcomes or rank;
+            (iv) has submitted falsified screenshots, replays, Tracker
+            data, or other evidence; or (v) has violated the Code of
+            Conduct (Section 11).
+          </P>
+          <P>
+            <strong>Determination.</strong> Game Launch, LLC makes the
+            final determination on Rank-Up Guarantee eligibility,
+            Compliance, integrity findings, and Rank-Up achievement based
+            on the Tracker Profile and platform-verified records. Appeals
+            are governed by Section 18.
+          </P>
 
-          <H3>4.8 Season Resets and Edge Cases</H3>
-          <P>If a Rocket League season reset occurs during the Sprint:</P>
+          <H3>4.5 Money-Back Guarantee</H3>
+          <P>
+            A Member may request a full refund of the most recent VIP Pro
+            payment (whether the initial Program Term payment or any
+            subsequent Continued Membership payment) within thirty (30)
+            days of that payment, subject to the following condition:
+          </P>
+          <P>
+            <strong>Engagement Requirement.</strong> To qualify for a
+            refund under this Section 4.5, the Member must have attended
+            at least one (1) Coaching Session or one (1) Accountability
+            Check-In during the 30-day period associated with the payment
+            being refunded. A Member who has not engaged with the Program
+            at all during that period is not eligible for a refund under
+            this Section.
+          </P>
+          <P>
+            Refunds are processed back to the original payment method
+            within ten (10) business days of approval. A refund of a
+            payment cancels the Member's VIP Pro membership effective on
+            the refund date and forfeits any active Rank-Up Guarantee or
+            Extended Coaching Period.
+          </P>
+          <P>
+            This Section 4.5 supersedes the general refund provisions in
+            Section 8 with respect to VIP Pro.
+          </P>
+
+          <H3>4.6 Code of Conduct</H3>
+          <P>
+            VIP Pro Members agree to abide by the Code of Conduct in
+            Section 11. Game Launch, LLC reserves the right to remove any
+            VIP Pro Member for material breach of the Code of Conduct,
+            without refund and without continuation of the Rank-Up
+            Guarantee.
+          </P>
+
+          <H3>4.7 Recording and Marketing Consent</H3>
+          <P>
+            VIP Pro Members grant Game Launch, LLC a non-exclusive,
+            royalty-free license to use anonymized footage, replays,
+            results, and quotes generated during the Program for marketing
+            purposes. A Member may withdraw this license prospectively at
+            any time by written notice to Game Launch, LLC; withdrawal
+            does not require removal of materials already in circulation
+            prior to the date of withdrawal.
+          </P>
+
+          <H3>4.8 Alumni Tier and Locked Pricing</H3>
+          <P>
+            A Member becomes eligible for the Alumni Tier upon the
+            earlier of:
+          </P>
           <UL>
-            <li>The Sprint period automatically extends by one (1) week</li>
-            <li>Post-reset progress measured from the higher of (i) pre-reset Baseline or (ii) post-reset placement MMR</li>
+            <li>Achieving a Rank-Up while in active VIP Pro membership with all Compliance Requirements satisfied through the date of Rank-Up; or</li>
+            <li>Completing the full 84-day Program Term with all Compliance Requirements satisfied.</li>
           </UL>
           <P>
-            <strong>Balance Updates:</strong> Significant game balance
-            updates may justify up to one (1) week extension at Company
-            discretion.
-          </P>
-
-          <H3>4.9 Sprint Payments and Cancellations</H3>
-          <P>
-            <strong>Payment:</strong> Full payment required upon
-            enrollment.
-          </P>
-          <P>
-            <strong>Non-Refundable Fees:</strong> All fees are final and
-            non-refundable. Sprint purchases are non-refundable (Store
-            Credit guarantee applies instead). Missed sessions or calls do
-            not extend or pause the Sprint period.
+            Alumni Tier Members may, at their option, elect to continue
+            VIP Pro membership at a quarterly (every 91 days) Alumni Tier
+            billing cadence at the then-current Alumni Tier rate as
+            disclosed at checkout, in lieu of the standard 28-day
+            Continued Membership cadence. Once elected during continuous
+            active Alumni Tier membership, the Alumni Tier rate is
+            grandfathered for the Alumni Member and applies regardless of
+            subsequent price increases to the standard VIP Pro pricing.
           </P>
           <P>
-            <strong>Chargebacks:</strong> Initiating a chargeback
-            constitutes a material breach. We reserve the right to provide
-            evidence to dispute claims and pursue collections where
-            appropriate.
-          </P>
-
-          <H3>4.10 Sprint Code of Conduct</H3>
-          <P>
-            Participants must maintain professional, respectful, and
-            non-toxic behavior. We reserve the right to remove any
-            participant for inappropriate conduct without refund or credit.
-          </P>
-
-          <H3>4.11 Recording and Marketing Consent</H3>
-          <P>
-            By enrolling in the Sprint, you acknowledge the recording
-            policies outlined in Section 13 and:
-          </P>
-          <UL>
-            <li>Grant us a non-exclusive, royalty-free license to use anonymized Sprint results and voluntary testimonials for marketing purposes</li>
-          </UL>
-
-          <H3>4.12 Sprint Appeals and Disputes</H3>
-          <P>
-            <strong>Appeals Window:</strong> You have 7 days from Sprint
-            completion to appeal any guarantee decisions.
-          </P>
-          <P>
-            <strong>Appeals Process:</strong> Submit appeals via Discord
-            support ticket with supporting documentation.
-          </P>
-          <P>
-            <strong>Final Decision:</strong> All Sprint guarantee decisions
-            are final after the appeals process.
+            The Alumni Tier rate ceases to apply if the Member's VIP Pro
+            membership lapses for any reason (cancellation, non-payment,
+            removal under Section 4.6, etc.). Re-enrollment after a lapse
+            is at the then-current standard VIP Pro pricing and the
+            Alumni Tier lock is not restored.
           </P>
 
           {/* 5 */}
@@ -568,10 +610,12 @@ export default function TermsPage() {
             Bakkesmod from bakkesmod.com are required.
           </P>
           <P>
-            <strong>Sprint and PC-Required Services:</strong> Sprint
-            requires PC access with Bakkesmod, RL Tracker account, and
-            Ballchasing account for verification purposes. Sprint is PC
-            only.
+            <strong>VIP Pro Experience:</strong> A PC, console, or other
+            platform capable of running Rocket League is acceptable. VIP
+            Pro Members must be able to attend live one-on-one video
+            sessions (audio required, webcam optional) and submit Rocket
+            League replay files. Rank-Up Guarantee eligibility additionally
+            requires submission of a Tracker Profile per Section 4.4.
           </P>
           <P><strong>Required Accounts:</strong></P>
           <UL>
@@ -586,10 +630,11 @@ export default function TermsPage() {
             <li><strong>Bootcamp Pro:</strong> Generally intended for players ranked Diamond or higher on PC. Platinum players may be considered if they are existing members of the Clubhouse.</li>
             <li><strong>Bootcamp Unlimited:</strong> Generally intended for players ranked Diamond or higher on PC. Platinum players may be considered if they are existing members of the Clubhouse.</li>
             <li><strong>Bootcamp Off-Season:</strong> Generally intended for players ranked Diamond or higher on PC. Platinum players may be considered if they are existing members of the Clubhouse.</li>
+            <li><strong>VIP Pro Experience:</strong> Open to applicants of any rank who meet the eligibility requirements in Section 4.2. Rank-related eligibility for the Rank-Up Guarantee specifically is described in Section 4.4.</li>
           </UL>
           <P><strong>Application and Approval Process:</strong></P>
           <UL>
-            <li>All prospective members must complete an interview process regardless of rank</li>
+            <li>All prospective members must complete an application and onboarding call regardless of rank</li>
             <li>Acceptance is at our sole discretion based on factors including maturity, responsibility, commitment, and dedication to Rocket League</li>
             <li>We reserve the right to deny application to any prospective member without providing specific reasons</li>
             <li>We reserve the right to ban or remove any member at any time at our sole discretion</li>
@@ -689,6 +734,21 @@ export default function TermsPage() {
             clearly marked otherwise. Taxes are excluded from quoted prices
             and will be added at checkout as required by law.
           </P>
+          <P>
+            <strong>VIP Pro Experience.</strong> The initial 84-day
+            Program Term is billed up-front at the then-current VIP Pro
+            Program Term rate as disclosed at checkout. Continued
+            Membership renews every twenty-eight (28) days at the
+            then-current Continued Membership rate. Recurring billing
+            begins on day 85 following the initial payment. Members who
+            reach Alumni Tier status under Section 4.8 may elect a
+            quarterly (every 91 days) Alumni Tier billing cadence in lieu
+            of the standard 28-day Continued Membership cadence. All
+            current pricing is disclosed on the VIP Pro checkout page.
+            Members may cancel Continued Membership or Alumni Tier
+            membership at any time effective at the end of the
+            then-current billing cycle.
+          </P>
 
           <H3>7.2 How Membership Billing Works</H3>
           <P>
@@ -757,17 +817,18 @@ export default function TermsPage() {
             <li><strong>Service Cancellation by Us:</strong> Full refund if we cancel services before delivery.</li>
             <li><strong>30-Day Satisfaction Guarantee for Clubhouse:</strong> If you&apos;re not satisfied with your Clubhouse membership within your first 30 days, submit a refund request via support ticket for a full refund.</li>
             <li><strong>7-Day Satisfaction Guarantee for Bootcamp Services:</strong> If you&apos;re not satisfied with your Bootcamp Pro, Bootcamp Unlimited, or Bootcamp Off-Season membership within your first 7 days, submit a refund request via support ticket for a full refund.</li>
+            <li><strong>30-Day Money-Back Guarantee for VIP Pro Experience:</strong> Each VIP Pro payment (initial Program Term and each Continued Membership renewal) is refundable within 30 days of that payment, subject to the Engagement Requirement and other conditions in Section 4.5.</li>
           </UL>
 
           <H3>8.2 When Refunds Are Not Available</H3>
           <P>Refunds will not be provided for:</P>
           <UL>
-            <li><strong>6-Week Rank-Up Sprint purchases:</strong> Sprint purchases are final and non-refundable (Store Credit guarantee applies instead)</li>
             <li>Missed sessions or failure to schedule available coaching sessions</li>
             <li>Any services already delivered or coaching sessions already conducted</li>
             <li>Dissatisfaction with coaching results, rank improvements, or gameplay progress</li>
             <li>Membership payments after the applicable refund window has passed</li>
             <li>Account suspension or termination due to violations of our Code of Conduct</li>
+            <li>VIP Pro payments where the Engagement Requirement in Section 4.5 is not met (the Member did not attend at least one Coaching Session or Accountability Check-In during the 30-day period associated with the payment)</li>
           </UL>
 
           <H3>8.3 How to Request a Refund</H3>
