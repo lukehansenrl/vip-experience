@@ -92,9 +92,11 @@ export const BUDGET = [
 // Identity-based framing ("I play X way") reads more honestly than
 // action-based ("Will you invest in...") and captures the same gate
 // signal: are they trying to improve, or just here for vibes?
+// Competitive first (qualifying answer) so people who pick the top option
+// land on the path we want. Order matches rl-clubhouse-onboarding.
 export const PLAYER_TYPE = [
-  "I play Rocket League casually. I don't particularly care about my rank or skill level.",
   "I play Rocket League competitively. I care about improving my skill and rank over time.",
+  "I play Rocket League casually. I don't particularly care about my rank or skill level.",
 ] as const;
 
 // Self-diagnosed primary blocker. Signal-only — NOT a gate. The rep uses
