@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "VIP Experience | RL Clubhouse",
     description:
-      "1:1 pro coaching, custom training routines, and real accountability so you actually get better every month.",
+      "1:1 pro coaching, custom training routines, and real accountability so you actually rank up in 6 weeks.",
     type: "website",
   },
 };

@@ -8,7 +8,7 @@ export const VALUE_STACK: ValueStackRow[] = [
   {
     item: "3x 1:1 Pro Coaching Calls (60 min, live)",
     value: "$150 to $300",
-    note: "Value of three live sessions with a pro coach over 12 weeks",
+    note: "Value of three live sessions with a pro coach over 6 weeks",
   },
   {
     item: "3x 30-Min Personalized Replay Reviews",
@@ -18,16 +18,16 @@ export const VALUE_STACK: ValueStackRow[] = [
   {
     item: "3x Guide Accountability Check-Ins",
     value: "$90 to $150",
-    note: "Monthly calls with your member guide to keep you on track",
+    note: "Bi-weekly calls with your member guide to keep you on track",
   },
   {
-    item: "3x Personalized 30-Day Training Routines",
+    item: "3x Personalized 14-Day Training Routines",
     value: "$75 to $150",
-    note: "A fresh routine every 30 days. Three plans across the 12 weeks.",
+    note: "A fresh routine every 14 days. Three plans across the 6 weeks.",
   },
   {
-    item: "12 Weeks Of Full Clubhouse Access",
-    value: "$81",
+    item: "6 Weeks Of Full Clubhouse Access",
+    value: "$40",
     note: "15+ live events monthly, weekly classes, community access",
   },
   {
@@ -41,9 +41,9 @@ export const VALUE_STACK: ValueStackRow[] = [
     note: "Pinned at the top of the Discord member list for easy access",
   },
   {
-    item: "BONUS · Replay Review With SpookyLuke (Week 8 Unlock)",
+    item: "BONUS · Replay Review With SpookyLuke (Graduation Unlock)",
     value: "$125",
-    note: "Luke's published Metafy rate. Earned by sticking with the program",
+    note: "Luke's published Metafy rate. Earned by completing your 6 weeks",
   },
   {
     item: "BONUS · Signed Controller (Rank-Up Reward)",

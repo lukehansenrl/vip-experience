@@ -136,7 +136,7 @@ const TEXT_REVIEWS = [
 const FAQ_ITEMS = [
   {
     q: "What exactly do I get as a VIP member?",
-    a: "Every month: a 1:1 60-minute coaching session with a pro, a personalized 30-day training routine, accountability check-ins, and full RL Clubhouse membership with 15+ live events monthly. Starting in month 2, you also get a 30-minute replay review from SpookyLuke every 12 weeks.",
+    a: "Over 6 weeks: three 1:1 60-minute coaching sessions with a pro (one every two weeks), three 30-minute personalized replay reviews, three personalized 14-day training routines, bi-weekly accountability check-ins with your guide, and full RL Clubhouse membership for the duration with 15+ live events monthly. At the end of your 6 weeks, you also get a 30-minute replay review from SpookyLuke as a graduation bonus.",
   },
   {
     q: "What rank do I need to be?",
@@ -169,10 +169,10 @@ const VALUE_STACK = [
   {
     item: "Replay Review from SpookyLuke (30 min)",
     value: "$125",
-    note: "SpookyLuke's Metafy rate is $125. Starts month 2, every 12 weeks",
+    note: "SpookyLuke's Metafy rate is $125. Graduation bonus at the end of 6 weeks",
   },
   {
-    item: "Personalized 30-Day Training Routine",
+    item: "Personalized 14-Day Training Routine",
     value: "$25 – $50",
     note: "Custom routine built around your schedule and rank",
   },
@@ -412,7 +412,7 @@ export default function VIPPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/60 md:text-xl">
             Through 1:1 pro coaching, custom training routines, and real
-            accountability so you actually get better every month, not just
+            accountability so you actually rank up in 6 weeks, not just
             queue more ranked games and hope. 😅
           </p>
 
@@ -571,7 +571,7 @@ export default function VIPPage() {
             What The VIP Experience Includes
           </h2>
           <p className="mt-4 max-w-2xl text-white/50">
-            Every month as a VIP, you get everything you need to improve
+            Over 6 weeks as a VIP, you get everything you need to rank up
             consistently.
           </p>
 
@@ -579,22 +579,22 @@ export default function VIPPage() {
             <IncludeCard
               icon={<Gamepad2 className="h-5 w-5 text-[var(--accent)]" />}
               title="A 1:1, 60-Minute Coaching Session with a Pro"
-              description="One session per month. Your coach breaks down your mechanics, positioning, decision-making, and habits so you know exactly what's holding you back."
+              description="One session every two weeks. Your coach breaks down your mechanics, positioning, decision-making, and habits so you know exactly what's holding you back."
             />
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
-              title="30-Minute Replay Review from SpookyLuke (Every 12 Weeks)"
-              description={`Starting in month 2, you get a personal replay review from SpookyLuke every 12 weeks. Specific timestamps, "do this instead" feedback, and clear corrections you can apply immediately.`}
+              title="30-Minute Replay Review from SpookyLuke (Graduation Bonus)"
+              description={`At the end of your 6 weeks, you get a personal replay review from SpookyLuke. Specific timestamps, "do this instead" feedback, and clear corrections you can apply immediately.`}
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
-              title="Personalized 30-Day Training Routine"
-              description="A routine built around your schedule and goals so you always know what to practice and actually see results."
+              title="Personalized 14-Day Training Routine"
+              description="A fresh routine every 14 days, built around your schedule and goals so you always know what to practice and actually see results."
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
-              title="Accountability Check-ins"
-              description="Short calls to keep you consistent, adjust the plan, and stop you from disappearing for weeks when life gets busy."
+              title="Bi-Weekly Accountability Check-Ins"
+              description="Short calls every two weeks to keep you consistent, adjust the plan, and stop you from disappearing when life gets busy."
             />
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
@@ -906,11 +906,11 @@ export default function VIPPage() {
                 </span>
               </div>
               <div className="text-sm text-white/60 mt-4 leading-relaxed">
-                The #1 Rocket League teacher on YouTube. Starting in month 2,
-                you get a personal replay review from SpookyLuke every 12 weeks.
-                His Metafy rate for a 30-minute session is $125. As a VIP
-                member, it is included. Every session gets published to the
-                coaching channel for permanent access.
+                The #1 Rocket League teacher on YouTube. At the end of your
+                6 weeks, you get a personal replay review from SpookyLuke as
+                a graduation bonus. His Metafy rate for a 30-minute session
+                is $125. As a VIP member, it is included. Every session gets
+                published to the coaching channel for permanent access.
               </div>
             </div>
           </div>
@@ -1028,7 +1028,7 @@ export default function VIPPage() {
             </div>
             <h3 className="mt-5 text-lg font-extrabold">Rank Up</h3>
             <p className="mt-2 text-sm text-white/50">
-              Achieve a full rank up within 90 days of joining VIP. Plat &rarr;
+              Achieve a full rank up by the end of your 6 weeks. Plat &rarr;
               Diamond. Diamond &rarr; Champ. Champ &rarr; GC. A complete rank
               change, not just a division.
             </p>
@@ -1303,13 +1303,13 @@ function PricingCard({ openBooking }: { openBooking: () => void }) {
         started.
       </p>
 
-      {/* 30-day guarantee */}
+      {/* 14-day guarantee */}
       <div className="mx-auto mt-6 max-w-md rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-5 py-3">
         <p className="text-sm font-semibold text-[var(--green)]">
-          30-Day Money-Back Guarantee
+          14-Day Money-Back Guarantee
         </p>
         <p className="mt-1 text-xs text-white/50">
-          If VIP doesn&apos;t deliver everything we promised in your first 30
+          If VIP doesn&apos;t deliver everything we promised in your first 14
           days, we&apos;ll give you your money back. No questions asked.
         </p>
       </div>

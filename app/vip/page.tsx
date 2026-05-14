@@ -181,14 +181,14 @@ export default function VipPage() {
           {/* Headline. Verbatim from /call so email-clickers see the same
               promise they were sold on. */}
           <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl">
-            Rank up in 90 days.
+            Rank up in 6 weeks.
             <br />
             Or we coach you free until you do.
           </h1>
 
           {/* Subheadline. Same line from /call. */}
           <p className="mx-auto mt-5 max-w-xl text-base text-white/65 md:text-lg">
-            1-on-1 with a pro coach, a personalized 90-day plan, and a
+            1-on-1 with a pro coach, a personalized 6-week plan, and a
             guarantee most coaches won&apos;t make.
           </p>
 

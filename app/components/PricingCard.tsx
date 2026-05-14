@@ -91,7 +91,7 @@ export function PricingCard({
       )}
       <p className="mt-4 text-white/50">
         {variant === "call"
-          ? "Risk is on us. Two-guarantee stack covers the entire 12 weeks."
+          ? "Risk is on us. Two-guarantee stack covers the entire 6 weeks."
           : "Cancel anytime. No contracts. No hidden fees."}
       </p>
 
@@ -105,13 +105,13 @@ export function PricingCard({
       <div className="mx-auto mt-6 max-w-md rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-5 py-3">
         <p className="text-sm font-semibold text-[var(--green)]">
           {variant === "call"
-            ? "30-Day Money-Back + 90-Day Keep Coaching You"
-            : "30-Day Money-Back Guarantee"}
+            ? "14-Day Money-Back + Rank-Up Guarantee"
+            : "14-Day Money-Back Guarantee"}
         </p>
         <p className="mt-1 text-xs text-white/50">
           {variant === "call"
-            ? "Don't love it in 30 days, full refund. Don't rank up in 90 days (and you showed up), we keep coaching you free until you do."
-            : "If VIP doesn't deliver everything we promised in your first 30 days, we'll give you your money back. No questions asked."}
+            ? "Don't love it in 14 days, full refund. Don't rank up by the end of your 6 weeks (and you showed up), we keep coaching you free until you do."
+            : "If VIP doesn't deliver everything we promised in your first 14 days, we'll give you your money back. No questions asked."}
         </p>
       </div>
     </div>

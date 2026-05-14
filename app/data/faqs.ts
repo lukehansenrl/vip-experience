@@ -6,7 +6,7 @@ export type FaqItem = {
 export const FAQ_ITEMS: FaqItem[] = [
   {
     q: "What exactly do I get as a VIP member?",
-    a: "Every month: two 1:1 60-minute coaching sessions with a pro, a personalized 30-day training routine, accountability check-ins, and full RL Clubhouse membership with 15+ live events monthly. Starting in month 2, you also get a 30-minute replay review from SpookyLuke every 12 weeks.",
+    a: "Over 6 weeks: three 1:1 60-minute coaching sessions with a pro (one every two weeks), three 30-minute personalized replay reviews, three personalized 14-day training routines, bi-weekly accountability check-ins with your guide, and full RL Clubhouse membership for the duration with 15+ live events monthly. At the end of your 6 weeks, you also get a 30-minute replay review from SpookyLuke as a graduation bonus.",
   },
   {
     q: "What rank do I need to be?",

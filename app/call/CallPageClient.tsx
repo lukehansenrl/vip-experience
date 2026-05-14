@@ -123,10 +123,10 @@ export function CallPageClient({ spotsFilled }: Props) {
                 The VIP Experience
               </p>
               <h1 className="font-display text-5xl leading-[1] tracking-tight md:text-6xl lg:text-7xl">
-                Rank up in 90 days. Or we coach you free until you do.
+                Rank up in 6 weeks. Or we coach you free until you do.
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-xl text-white/80 md:text-2xl">
-                1-on-1 with a pro coach, a personalized 90-day plan, and a
+                1-on-1 with a pro coach, a personalized 6-week plan, and a
                 guarantee most coaches won&apos;t make.
               </p>
 
@@ -290,36 +290,36 @@ export function CallPageClient({ spotsFilled }: Props) {
             Here&apos;s Everything You Get.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
-            Every month you get pro coaching, a personalized plan, and
-            accountability, built around your rank, your weaknesses, and
-            your schedule.
+            Over 6 weeks you get pro coaching every two weeks, a
+            personalized plan, and accountability. Built around your rank,
+            your weaknesses, and your schedule.
           </p>
 
           <div className="mt-10 flex flex-col gap-5">
             <IncludeCard
               icon={<Gamepad2 className="h-5 w-5 text-[var(--accent)]" />}
               title="One 60-Minute Live 1:1 Coaching Call With A Pro"
-              description="Once a month. Your coach watches your replays before the call, then walks through exactly what&apos;s holding you back and how to fix it on a live screenshare."
+              description="Every two weeks. Your coach watches your replays before the call, then walks through exactly what&apos;s holding you back and how to fix it on a live screenshare."
             />
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
               title="30-Minute Personalized Replay Review"
-              description="Once a month, send your replays. Your coach sends back specific timestamps, clear corrections, and exactly what to focus on next."
+              description="Every two weeks, send your replays. Your coach sends back specific timestamps, clear corrections, and exactly what to focus on next."
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
-              title="Personalized 30-Day Training Routine"
-              description="A fresh routine every 30 days, built around what your coach saw in your latest session. Three plans across the 12 weeks, so your training stays in step with where you are."
+              title="Personalized 14-Day Training Routine"
+              description="A fresh routine every 14 days, built around what your coach saw in your latest session. Three plans across the 6 weeks, so your training stays in step with where you are."
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
-              title="Monthly Accountability Check-In With Your Guide"
-              description="One call a month with your member guide (separate from your coach) to keep you on track, work through whatever&apos;s blocking you, and adjust the plan as you go."
+              title="Bi-Weekly Accountability Check-In With Your Guide"
+              description="One call every two weeks with your member guide (separate from your coach) to keep you on track, work through whatever&apos;s blocking you, and adjust the plan as you go."
             />
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
               title="Full RL Clubhouse Membership"
-              description="Active for the full duration of your VIP: 15+ live events monthly, weekly classes, replay reviews, recordings, community."
+              description="Active for the full 6 weeks of your VIP. 15+ live events monthly, weekly classes, replay reviews, recordings, community."
             />
           </div>
         </div>
@@ -570,7 +570,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             Rank Up Or Complete The Program. Unlock The Alumni Tier.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70 md:text-xl">
-            Hit the rank-up promise OR finish your 12 weeks. Either way, you
+            Hit the rank-up promise OR finish your 6 weeks. Either way, you
             graduate into our alumni tier. Same price. More access. Closer to
             the inner circle.
           </p>
@@ -601,7 +601,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               {
                 tag: "For Life",
                 title: "Founding Rate Locked",
-                desc: "Your $497/qtr rate locked forever, even if we raise.",
+                desc: "Your $497 founding rate locked forever, even if we raise.",
               },
             ].map((reward) => (
               <div
@@ -637,7 +637,7 @@ export function CallPageClient({ spotsFilled }: Props) {
         </div>
       </section>
 
-      {/* ── DOUBLE GUARANTEE (30-day money-back + 90-day Keep Coaching You) ── */}
+      {/* ── DOUBLE GUARANTEE (14-day money-back + rank-up guarantee) ── */}
       <section className="border-t border-white/10 px-6 py-20 md:py-24">
         <div className="mx-auto max-w-5xl">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--green)]">
@@ -652,32 +652,32 @@ export function CallPageClient({ spotsFilled }: Props) {
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 md:gap-6">
-            {/* 30-Day Money-Back */}
+            {/* 14-Day Money-Back */}
             <div className="rounded-2xl border border-[var(--green)]/30 bg-[var(--green)]/5 p-6 md:p-8">
               <p className="text-xs font-bold uppercase tracking-widest text-[var(--green)]">
                 Guarantee #1
               </p>
               <h3 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
-                30-Day Money Back.
+                14-Day Money Back.
               </h3>
               <p className="mt-4 text-lg text-white/85 md:text-xl">
-                Don&apos;t love it? Get a full refund within 30 days. The
+                Don&apos;t love it? Get a full refund within 14 days. The
                 only ask: actually show up to one coaching session or
                 accountability call first. Tried it, hated it, money back.
               </p>
             </div>
 
-            {/* 90-Day Keep Coaching You */}
+            {/* Rank-Up Guarantee */}
             <div className="rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/10 p-6 shadow-xl shadow-[var(--accent-glow)] md:p-8">
               <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
                 Guarantee #2
               </p>
               <h3 className="font-display mt-2 text-3xl tracking-tight md:text-4xl">
-                90-Day Keep Coaching You.
+                Rank Up Or We Coach You Free.
               </h3>
               <p className="mt-4 text-lg text-white/90 md:text-xl">
                 Show up to every coaching session and accountability call,
-                and play 60 ranked games across the 12 weeks. Don&apos;t
+                and play 30 ranked games across the 6 weeks. Don&apos;t
                 rank up? We keep coaching you free for up to another year
                 until you do. Most coaches are happy when you keep paying.
                 We&apos;re not done until you rank up.
@@ -723,14 +723,14 @@ export function CallPageClient({ spotsFilled }: Props) {
           {/* Compact value stack — one viewport, no scroll */}
           <div className="mx-auto mt-5 max-w-2xl overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] text-sm md:text-base">
             <div className="bg-white/[0.02] px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white/40">
-              The 12-Week Program
+              The 6-Week Program
             </div>
             {[
               ["3× 60-min 1:1 Pro Coaching Calls", "$450"],
               ["3× 30-min Personalized Replay Reviews", "$375"],
-              ["3× Monthly Accountability Check-Ins", "$150"],
-              ["3× Personalized 30-Day Training Routines", "$150"],
-              ["12 Weeks Full Clubhouse Access", "$81"],
+              ["3× Bi-Weekly Accountability Check-Ins", "$150"],
+              ["3× Personalized 14-Day Training Routines", "$150"],
+              ["6 Weeks Full Clubhouse Access", "$40"],
             ].map(([item, value]) => (
               <div
                 key={item}
@@ -750,7 +750,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               ["2026 Mechanics Tier List (Lifetime)", "$50"],
               ["2026 Pro Settings Vault (Lifetime)", "$35"],
               ["VIP Discord Tag", "$20"],
-              ["Replay Review With SpookyLuke (Week 8)", "$125"],
+              ["Replay Review With SpookyLuke (Graduation Bonus)", "$125"],
             ].map(([item, value]) => (
               <div
                 key={item}
@@ -769,7 +769,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 Total Value
               </span>
               <span className="font-display text-2xl text-white md:text-3xl">
-                $1,436
+                $1,395
               </span>
             </div>
 
@@ -786,18 +786,18 @@ export function CallPageClient({ spotsFilled }: Props) {
 
           <p className="mx-auto mt-4 max-w-xl text-center text-base text-white/80 md:text-lg">
             <span className="font-bold text-[var(--green)]">
-              You save $939.
+              You save $898.
             </span>{" "}
-            And if you don&apos;t rank up in 90 days, we keep coaching you
-            free for up to another year until you do.
+            And if you don&apos;t rank up by the end of your 6 weeks, we
+            keep coaching you free for up to another year until you do.
           </p>
 
           <div className="mt-6">
             <PricingCard
               variant="call"
               price={497}
-              cadence="/ 12 weeks"
-              cadenceNote="Paid upfront for 12 weeks. Optional monthly continuation after if you want to keep going."
+              cadence="/ 6 weeks"
+              cadenceNote="Paid upfront for 6 weeks. Optional monthly continuation after if you want to keep going."
               action={{
                 type: "link",
                 label: "Get Offer",

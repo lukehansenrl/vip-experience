@@ -50,28 +50,32 @@ export default function QualifiedPage() {
         </div>
       </nav>
 
-      {/* ── SECTION 1: CONFIRMATION + HERO + VSL ────────────────────────── */}
-      <section className="px-6 pt-10 pb-14 text-center md:pt-14">
+      {/* ── SECTION 1: CONFIRMATION + HERO + VSL ──────────────────────────
+          Reworked per Shock's UX feedback. The previous "IMPORTANT —
+          Before You Check Your Discord Roles" framing made users think
+          they had to do MORE before they could access Discord. This
+          version makes Clubhouse-access immediate + makes the VIP video
+          a clearly optional next step. */}
+      <section className="px-6 pt-12 pb-14 text-center md:pt-16">
         <div className="mx-auto max-w-3xl">
-          {/* Confirmation pill — Hormozi pattern */}
-          <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full bg-[var(--accent)]/15 px-5 py-2 ring-1 ring-[var(--accent)]/40">
-            <span className="text-base">✅</span>
-            <p className="text-sm font-semibold text-white">
-              Confirmed: Your Discord roles are on the way
-            </p>
-          </div>
-
-          {/* Headline — Hormozi "IMPORTANT - Before You Check Your Email" */}
+          {/* Win statement — big, dominant, communicates "you're in" first */}
           <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl">
-            IMPORTANT: Before You Check Your Discord Roles,
+            You&apos;re in.
             <br />
-            Watch This Improvement Video.
+            Your Clubhouse Discord roles are being granted now.
           </h1>
 
-          {/* Subheadline — scarcity + selectivity (capacity-based, always-on) */}
+          {/* Reassurance — sets the optional frame BEFORE the video pitch */}
           <p className="mx-auto mt-5 max-w-2xl text-base text-white/65 md:text-lg">
+            You already have full Clubhouse access. The video below is
+            optional. Watch it only if you want to see how to rank up
+            faster with our team of pros.
+          </p>
+
+          {/* Capacity scarcity — kept, smaller, below the reassurance */}
+          <p className="mx-auto mt-6 max-w-2xl text-sm text-white/50">
             Our team can only work with 60 private clients at any given
-            time. Watch this video if you want to be one.
+            time.
           </p>
 
           {/* Down chevron — scroll cue to the video */}
@@ -137,19 +141,11 @@ export default function QualifiedPage() {
         >
         <div className="mx-auto max-w-4xl">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            While you&apos;re waiting for your Discord roles&hellip;
+            Step 2 — pick a time
           </p>
           <h2 className="font-display mx-auto mt-3 max-w-3xl text-center text-3xl leading-tight tracking-tight md:text-4xl">
-            Want to learn how to improve and rank up faster with our team of pros?
+            Book a call with our team.
           </h2>
-
-          {/* Reassurance note — Hormozi "this call is NOT required" pattern */}
-          <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-5 text-center text-base text-white/75">
-            <span className="font-semibold text-white">Note:</span> This call
-            is <strong>NOT</strong> required to access the Clubhouse. Only
-            schedule if you want to see if VIP is the right fit for your
-            game.
-          </div>
 
           {/* Inline Calendly embed */}
           <div className="mx-auto mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white shadow-2xl">

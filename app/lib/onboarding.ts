@@ -295,7 +295,7 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
   }
 
   // Gate 7: Forward budget — under $301 annual = can't realistically commit
-  // to the $497 VIP 12-week program. Floor matches the price-frame on Q8.
+  // to the $497 VIP 6-week program. Floor matches the price-frame on Q8.
   if (
     s.budget === "$0" ||
     s.budget === "$10-$99" ||

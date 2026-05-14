@@ -67,7 +67,7 @@ export default function PromisePage() {
               </li>
               <li>
                 Have maintained an active, uninterrupted VIP membership for a
-                minimum of ninety (90) consecutive days prior to submitting your
+                minimum of forty-five (45) consecutive days prior to submitting your
                 claim.
               </li>
               <li>
@@ -80,7 +80,7 @@ export default function PromisePage() {
             </ul>
             <p className="mt-3">
               Members who cancel and rejoin are not eligible unless they complete
-              a new, uninterrupted 90-day period after rejoining.
+              a new, uninterrupted 45-day period after rejoining.
             </p>
           </Section>
 
