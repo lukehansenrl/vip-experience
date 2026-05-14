@@ -291,7 +291,7 @@ export function CallPageClient({ spotsFilled }: Props) {
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
             Every month you get pro coaching, a personalized plan, and
-            accountability — built around your rank, your weaknesses, and
+            accountability, built around your rank, your weaknesses, and
             your schedule.
           </p>
 
@@ -319,7 +319,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
               title="Full RL Clubhouse Membership"
-              description="Active for the full duration of your VIP — 15+ live events monthly, weekly classes, replay reviews, recordings, community."
+              description="Active for the full duration of your VIP: 15+ live events monthly, weekly classes, replay reviews, recordings, community."
             />
           </div>
         </div>
@@ -356,7 +356,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 fullName: "Sandro Holzwarth",
                 badge: "Head Coach · PWR",
                 role: "Mechanics & Consistency",
-                bio: "Former Renault Vitality pro. Currently head coach at PWR. RLCS S8 EU \"Savior of the Season\" — known for technical consistency and the EU mechanical edge.",
+                bio: "Former Renault Vitality pro. Currently head coach at PWR. RLCS S8 EU \"Savior of the Season,\" known for technical consistency and the EU mechanical edge.",
                 credit: "Michal Konkol / Liquipedia",
               },
               {
@@ -376,7 +376,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 <div className="relative aspect-[3/2] overflow-hidden">
                   <img
                     src={coach.photo}
-                    alt={`${coach.name} — ${coach.fullName}`}
+                    alt={`${coach.name}, ${coach.fullName}`}
                     className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
                   />
                   {/* Bottom gradient for legibility */}
@@ -445,11 +445,11 @@ export function CallPageClient({ spotsFilled }: Props) {
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
                 The only ranked breakdown of which mechanics to learn at YOUR
-                rank — with custom drills, training packs, and step-by-step
+                rank, with custom drills, training packs, and step-by-step
                 guides for each tier. Updated yearly.
               </p>
               <p className="mt-2 text-sm font-semibold text-[var(--gold)]">
-                Yours for life — keep the dashboard and all future updates,
+                Yours for life. Keep the dashboard and all future updates,
                 even if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
@@ -480,12 +480,12 @@ export function CallPageClient({ spotsFilled }: Props) {
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
                 The exact settings every RLCS-level coach on our staff plays
-                at — with the reasoning behind each tweak so you can adapt to
+                at, with the reasoning behind each tweak so you can adapt to
                 your playstyle. Camera, deadzones, controller layout, all of
                 it.
               </p>
               <p className="mt-2 text-sm font-semibold text-[var(--gold)]">
-                Yours for life — keep the vault and all future updates, even
+                Yours for life. Keep the vault and all future updates, even
                 if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
@@ -601,7 +601,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               {
                 tag: "For Life",
                 title: "Founding Rate Locked",
-                desc: "Your $497/qtr rate locked forever — even if we raise.",
+                desc: "Your $497/qtr rate locked forever, even if we raise.",
               },
             ].map((reward) => (
               <div

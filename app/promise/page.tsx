@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The VIP Promise — RL Clubhouse VIP",
+  title: "The VIP Promise | RL Clubhouse VIP",
   description:
     "Full terms and conditions for the RL Clubhouse VIP Promise. Rank up, hold it, get a free controller.",
 };

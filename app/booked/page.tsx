@@ -82,13 +82,13 @@ export default function BookedPage() {
               title="Be ready 2–5 minutes early"
               body={
                 <>
-                  PC, quiet room, working mic. Laptop or desktop works best
-                  — not your phone.
+                  PC, quiet room, working mic. Laptop or desktop works best,
+                  not your phone.
                   <br />
                   <br />
                   If something comes up and you need to reschedule, use the
-                  link in your confirmation email. Please don&apos;t no-show
-                  — we lose the slot and you lose your place in the queue.
+                  link in your confirmation email. Please don&apos;t no-show.
+                  We lose the slot and you lose your place in the queue.
                 </>
               }
             />
@@ -99,7 +99,7 @@ export default function BookedPage() {
               body={
                 <>
                   Your call rep will send you a Discord friend request
-                  before your scheduled time. Accept it — that&apos;s how
+                  before your scheduled time. Accept it. That&apos;s how
                   we&apos;ll call you when it&apos;s time.
                 </>
               }
@@ -111,8 +111,8 @@ export default function BookedPage() {
               body={
                 <>
                   What are the 1–2 specific things in your gameplay you
-                  can&apos;t figure out? Not &quot;I want to rank up&quot; —
-                  specific.
+                  can&apos;t figure out? Not &quot;I want to rank up.&quot;
+                  Specific.
                   <br />
                   <br />
                   Examples: positioning, rotation, mechanical
