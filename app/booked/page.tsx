@@ -82,8 +82,8 @@ export default function BookedPage() {
               title="Be ready 2–5 minutes early"
               body={
                 <>
-                  PC, quiet room, working mic and camera. Laptop or desktop
-                  works best — not your phone.
+                  PC, quiet room, working mic. Laptop or desktop works best
+                  — not your phone.
                   <br />
                   <br />
                   If something comes up and you need to reschedule, use the
@@ -98,10 +98,9 @@ export default function BookedPage() {
               title="Check your Discord friend request"
               body={
                 <>
-                  Your call rep will send you a friend request on Discord
-                  before the call. Accept it so they can reach you if
-                  anything comes up — connection issues, last-minute
-                  details, etc.
+                  Your call rep will send you a Discord friend request
+                  before your scheduled time. Accept it — that&apos;s how
+                  we&apos;ll call you when it&apos;s time.
                 </>
               }
             />
@@ -130,37 +129,22 @@ export default function BookedPage() {
         </div>
       </section>
 
-      {/* ── WHAT TO EXPECT ───────────────────────────────────────────── */}
+      {/* ── CLOSING — short, warm, no defensive language ─────────────── */}
       {/* TODO (Luke): record a short welcome video and embed it above
-          this section — the page is intentionally light on copy so the
-          video can carry most of the framing once it's in. */}
+          this section. Page is intentionally light on copy so the video
+          can carry most of the framing once it's in. */}
       <section className="border-t border-white/10 bg-black/20 px-6 py-16">
-        <div className="mx-auto max-w-2xl">
-          <p className="mb-2 text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            What to expect
-          </p>
-          <h2 className="text-center font-display text-3xl tracking-tight md:text-4xl">
-            No pressure. Just a conversation.
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-3xl tracking-tight md:text-4xl">
+            Good luck on your call.
           </h2>
-
-          <div className="mt-8 space-y-3">
-            <ExpectLine
-              when="First few min"
-              what="Your rep introduces themselves and gets to know you — your rank, your goals, what's been frustrating you in ranked."
-            />
-            <ExpectLine
-              when="Middle of the call"
-              what="You walk through what's holding you back. Your rep figures out which of our coaches (Freaky, Torment, or Shock) specializes in those areas."
-            />
-            <ExpectLine
-              when="End of the call"
-              what="Quick discussion of whether VIP is the right next step. If it is, you get routed to the right coach for you."
-            />
-          </div>
-
-          <p className="mt-8 text-center text-sm text-white/50">
-            Even if VIP isn&apos;t the right fit for you, you&apos;ll leave
-            the call with clearer direction on what to focus on.
+          <p className="mx-auto mt-6 max-w-xl text-lg text-white/75">
+            Your call will take place over Discord DM. We&apos;ll call you
+            when it&apos;s time. Go check your Discord friend request now
+            if you haven&apos;t already.
+          </p>
+          <p className="mt-5 text-base text-white/55">
+            We&apos;re excited to meet you.
           </p>
         </div>
       </section>
@@ -215,15 +199,3 @@ function HomeworkStep({
   );
 }
 
-function ExpectLine({ when, what }: { when: string; what: string }) {
-  return (
-    <div className="flex flex-col gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-4 md:flex-row md:gap-6">
-      <span className="text-sm font-semibold text-[var(--accent)] md:w-32 md:flex-shrink-0">
-        {when}
-      </span>
-      <span className="text-sm leading-relaxed text-white/75 md:text-base">
-        {what}
-      </span>
-    </div>
-  );
-}
