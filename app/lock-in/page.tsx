@@ -49,7 +49,7 @@ export default function LockInPage() {
             Until Sunday 11:59pm CT
           </h2>
           <p className="mt-5 leading-relaxed text-white/70">
-            The Original VIP package is still available at <strong className="text-white">$179/month</strong> through Sunday — with my replay reviews included, locked in for as long as you stay active.
+            The Original VIP package is still available at <strong className="text-white">$179/month</strong> through Sunday, with my replay reviews included, locked in for as long as you stay active.
           </p>
           <p className="mt-4 leading-relaxed text-white/70">
             After Sunday, the package changes to $199/month with coach replays only.

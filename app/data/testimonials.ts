@@ -162,7 +162,7 @@ export const TEXT_REVIEWS: TextReview[] = [
     name: "Joel Gabino Sanchez",
     handle: "@joelgabinosanchez",
     stars: 5,
-    text: "I thought I was moving too fast when I signed up for VIP — maybe a week or two after joining the Clubhouse. Could not have been more wrong. The difference is huge. It's great having a community to play games with, but it's even better when you have someone who can coach you on the specifics.",
+    text: "I thought I was moving too fast when I signed up for VIP, maybe a week or two after joining the Clubhouse. Could not have been more wrong. The difference is huge. It's great having a community to play games with, but it's even better when you have someone who can coach you on the specifics.",
     daysAfter: "14 days after purchase",
     initials: "JS",
   },

@@ -121,7 +121,7 @@ function OnboardingForm() {
       <section className="px-6 pt-12 pb-6 text-center md:pt-16">
         <div className="mx-auto max-w-3xl">
           <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
-            Step 1 of 2 — Member Onboarding
+            Step 1 of 2 · Member Onboarding
           </p>
           <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl">
             You&apos;re one step away from gaining 100 MMR in the next
@@ -259,8 +259,8 @@ function OnboardingForm() {
             <p className="mb-3 text-sm leading-relaxed text-white/55">
               There are levels to coaching. One-off sessions from random
               players are cheap and easy to find. Full ongoing work with
-              pros — personalized plans, weekly review, the whole
-              experience — is a real investment. Pick the level that&apos;s
+              pros (personalized plans, weekly review, the whole
+              experience) is a real investment. Pick the level that&apos;s
               actually true for you, and we&apos;ll route you accordingly.
             </p>
             <RadioGroup

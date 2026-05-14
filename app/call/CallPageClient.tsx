@@ -20,7 +20,8 @@ import { CalendlyModal } from "../components/CalendlyModal";
 import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
-const WHOP_URL = "https://whop.com/c/rlc-pro-vip-membership/12-week-experience";
+// Internal route to the dedicated /checkout page (terms-gated Whop embed).
+const CHECKOUT_URL = "/checkout";
 
 // Total cap. Only changes if the business actually raises the cap.
 const SPOTS_TOTAL = 60;
@@ -93,7 +94,7 @@ export function CallPageClient({ spotsFilled }: Props) {
       <StickyNav
         cta={{
           label: "Get Offer",
-          href: WHOP_URL,
+          href: CHECKOUT_URL,
           external: true,
         }}
       />
@@ -138,7 +139,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               {/* CTA row */}
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 md:justify-center">
                 <a
-                  href={WHOP_URL}
+                  href={CHECKOUT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full bg-[var(--accent)] px-12 py-4 text-lg font-bold text-white shadow-lg shadow-[var(--accent-glow)] transition hover:bg-[var(--accent-hover)]"
@@ -290,7 +291,7 @@ export function CallPageClient({ spotsFilled }: Props) {
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
             Every month you get pro coaching, a personalized plan, and
-            accountability — built around your rank, your weaknesses, and
+            accountability, built around your rank, your weaknesses, and
             your schedule.
           </p>
 
@@ -318,7 +319,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
               title="Full RL Clubhouse Membership"
-              description="Active for the full duration of your VIP — 15+ live events monthly, weekly classes, replay reviews, recordings, community."
+              description="Active for the full duration of your VIP: 15+ live events monthly, weekly classes, replay reviews, recordings, community."
             />
           </div>
         </div>
@@ -355,7 +356,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 fullName: "Sandro Holzwarth",
                 badge: "Head Coach · PWR",
                 role: "Mechanics & Consistency",
-                bio: "Former Renault Vitality pro. Currently head coach at PWR. RLCS S8 EU \"Savior of the Season\" — known for technical consistency and the EU mechanical edge.",
+                bio: "Former Renault Vitality pro. Currently head coach at PWR. RLCS S8 EU \"Savior of the Season,\" known for technical consistency and the EU mechanical edge.",
                 credit: "Michal Konkol / Liquipedia",
               },
               {
@@ -375,7 +376,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 <div className="relative aspect-[3/2] overflow-hidden">
                   <img
                     src={coach.photo}
-                    alt={`${coach.name} — ${coach.fullName}`}
+                    alt={`${coach.name}, ${coach.fullName}`}
                     className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
                   />
                   {/* Bottom gradient for legibility */}
@@ -444,11 +445,11 @@ export function CallPageClient({ spotsFilled }: Props) {
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
                 The only ranked breakdown of which mechanics to learn at YOUR
-                rank — with custom drills, training packs, and step-by-step
+                rank, with custom drills, training packs, and step-by-step
                 guides for each tier. Updated yearly.
               </p>
               <p className="mt-2 text-sm font-semibold text-[var(--gold)]">
-                Yours for life — keep the dashboard and all future updates,
+                Yours for life. Keep the dashboard and all future updates,
                 even if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
@@ -479,12 +480,12 @@ export function CallPageClient({ spotsFilled }: Props) {
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/75 md:text-lg">
                 The exact settings every RLCS-level coach on our staff plays
-                at — with the reasoning behind each tweak so you can adapt to
+                at, with the reasoning behind each tweak so you can adapt to
                 your playstyle. Camera, deadzones, controller layout, all of
                 it.
               </p>
               <p className="mt-2 text-sm font-semibold text-[var(--gold)]">
-                Yours for life — keep the vault and all future updates, even
+                Yours for life. Keep the vault and all future updates, even
                 if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
@@ -600,7 +601,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               {
                 tag: "For Life",
                 title: "Founding Rate Locked",
-                desc: "Your $497/qtr rate locked forever — even if we raise.",
+                desc: "Your $497/qtr rate locked forever, even if we raise.",
               },
             ].map((reward) => (
               <div
@@ -660,9 +661,9 @@ export function CallPageClient({ spotsFilled }: Props) {
                 30-Day Money Back.
               </h3>
               <p className="mt-4 text-lg text-white/85 md:text-xl">
-                Don&apos;t love it? Full refund, no questions asked. Don&apos;t
-                try to make it work for 30 days. If you don&apos;t immediately
-                see the value, get your money back.
+                Don&apos;t love it? Get a full refund within 30 days. The
+                only ask: actually show up to one coaching session or
+                accountability call first. Tried it, hated it, money back.
               </p>
             </div>
 
@@ -675,10 +676,11 @@ export function CallPageClient({ spotsFilled }: Props) {
                 90-Day Keep Coaching You.
               </h3>
               <p className="mt-4 text-lg text-white/90 md:text-xl">
-                Show up to your monthly coaching session and replay review.
-                Don&apos;t rank up in 90 days? We keep coaching you for free,
-                every month, until you do. Most coaches drag things out. We
-                don&apos;t get to stop until you rank up.
+                Show up to every coaching session and accountability call,
+                and play 60 ranked games across the 12 weeks. Don&apos;t
+                rank up? We keep coaching you free for up to another year
+                until you do. Most coaches are happy when you keep paying.
+                We&apos;re not done until you rank up.
               </p>
             </div>
           </div>
@@ -687,8 +689,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             Rank-up promise applies to one full rank (~100 MMR) for members
             starting at Champion 3 or below. Examples: Plat 2 → Plat 3,
             Diamond 3 → Champ 1, Champ 1 → Champ 2. Members starting at
-            Grand Champ or higher can still join VIP — the rank-up guarantee
-            doesn&apos;t apply above Champion 3.
+            Grand Champ or higher can still join VIP, but the rank-up
+            guarantee doesn&apos;t apply above Champion 3.
           </p>
         </div>
       </section>
@@ -786,8 +788,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             <span className="font-bold text-[var(--green)]">
               You save $939.
             </span>{" "}
-            And if you don&apos;t rank up in 90 days, we keep coaching you free
-            until you do.
+            And if you don&apos;t rank up in 90 days, we keep coaching you
+            free for up to another year until you do.
           </p>
 
           <div className="mt-6">
@@ -799,7 +801,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               action={{
                 type: "link",
                 label: "Get Offer",
-                href: WHOP_URL,
+                href: CHECKOUT_URL,
               }}
             />
           </div>

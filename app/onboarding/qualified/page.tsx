@@ -64,7 +64,7 @@ export default function QualifiedPage() {
 
           {/* Headline — Hormozi "IMPORTANT - Before You Check Your Email" */}
           <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl">
-            IMPORTANT — Before You Check Your Discord Roles,
+            IMPORTANT: Before You Check Your Discord Roles,
             <br />
             Watch This Improvement Video.
           </h1>

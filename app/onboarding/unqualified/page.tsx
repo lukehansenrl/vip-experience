@@ -73,7 +73,7 @@ export default function UnqualifiedPage() {
               Watch this first.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-center text-white/60">
-              A quick walkthrough of the server — where everything is, what to
+              A quick walkthrough of the server: where everything is, what to
               focus on first, and how to get the most out of your membership.
             </p>
 
@@ -115,7 +115,7 @@ export default function UnqualifiedPage() {
             <ActionItem
               number={3}
               label="Hop into a voice channel"
-              detail="No one's gonna be weird if you join — we're all introverted gamers trying to get better at car soccer."
+              detail="No one's gonna be weird if you join. We're all introverted gamers trying to get better at car soccer."
             />
           </ol>
 
