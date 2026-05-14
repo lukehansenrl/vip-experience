@@ -52,13 +52,19 @@ export default function QualifiedActiveRlcPage() {
           </div>
 
           <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl">
-            You qualified for the VIP Experience.
+            You&apos;re a great fit for VIP.
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base text-white/65 md:text-lg">
-            Book a 45-minute call below to see if it&apos;s the right fit
-            for your game. Our team can only work with 60 private clients
-            at any given time, so spots come and go.
+            Based on what you shared, you&apos;re a strong fit for 1-on-1
+            VIP coaching with our pros. Personalized 90-day plan and the
+            rank-up promise: don&apos;t rank up in 90 days, we keep
+            coaching you free for up to another year until you do.
+          </p>
+
+          <p className="mx-auto mt-4 max-w-2xl text-base text-white/60 md:text-lg">
+            Book a 45-minute call below to walk through how it works. No
+            pressure, no obligation.
           </p>
         </div>
       </section>
@@ -77,8 +83,8 @@ export default function QualifiedActiveRlcPage() {
           <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-5 text-center text-base text-white/75">
             <span className="font-semibold text-white">Note:</span> This
             call is <strong>NOT</strong> required to access the Clubhouse.
-            Only schedule if you want to see if VIP is the right fit for
-            your game.
+            Only schedule if you want a personalized walkthrough of how
+            VIP works.
           </div>
 
           {/* Inline Calendly embed */}
