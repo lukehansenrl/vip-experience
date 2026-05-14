@@ -8,7 +8,7 @@ const SUPPORT_URL =
 export const metadata: Metadata = {
   title: "Terms of Service & Refund Policy | RL Clubhouse",
   description:
-    "Rocket League Bootcamp, Clubhouse & Academy by SpookyLuke — Terms of Service (V4.0). Operated by Game Launch, LLC.",
+    "Rocket League Bootcamp, Clubhouse & Academy by SpookyLuke: Terms of Service (V4.0). Operated by Game Launch, LLC.",
 };
 
 export default function TermsPage() {
@@ -386,7 +386,7 @@ export default function TermsPage() {
             90-day peak MMR in the Chosen Playlist prior to Sprint start.
           </P>
 
-          <H3>4.4 Conditional Guarantee — Store Credit Only</H3>
+          <H3>4.4 Conditional Guarantee: Store Credit Only</H3>
           <P>
             Participants may qualify for store credit
             (&quot;Guarantee&quot;) under either of the following pathways:
