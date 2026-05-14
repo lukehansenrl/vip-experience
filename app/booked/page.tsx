@@ -79,56 +79,51 @@ export default function BookedPage() {
           <div className="space-y-4">
             <HomeworkStep
               number={1}
-              title="Pick a recent 2s replay you want to look at"
+              title="Be ready 2–5 minutes early"
               body={
                 <>
-                  Open Rocket League → Replays → find a recent ranked 2s
-                  match where you felt particularly stuck or frustrated.
-                  Bonus points if it&apos;s a loss against an opponent you
-                  felt like you should have beaten.
+                  PC, quiet room, working mic and camera. Laptop or desktop
+                  works best — not your phone.
                   <br />
                   <br />
-                  Have it ready to share screen on the call. Your coach will
-                  want to watch a clip with you and point out exactly
-                  what&apos;s costing you the game.
+                  If something comes up and you need to reschedule, use the
+                  link in your confirmation email. Please don&apos;t no-show
+                  — we lose the slot and you lose your place in the queue.
                 </>
               }
             />
 
             <HomeworkStep
               number={2}
-              title="Get clear on ONE specific frustration"
+              title="Check your Discord friend request"
               body={
                 <>
-                  What&apos;s the single biggest thing in your gameplay that
-                  you can&apos;t figure out? Not &quot;I want to rank
-                  up&quot; — something specific.
-                  <br />
-                  <br />
-                  Examples: &quot;I get backposted every other game,&quot;
-                  &quot;I can&apos;t commit and challenge,&quot; &quot;My
-                  double commits are killing me,&quot; &quot;I tilt after
-                  one bad goal.&quot;
-                  <br />
-                  <br />
-                  Bring one. The coach will dig into it on the call.
+                  Your call rep will send you a friend request on Discord
+                  before the call. Accept it so they can reach you if
+                  anything comes up — connection issues, last-minute
+                  details, etc.
                 </>
               }
             />
 
             <HomeworkStep
               number={3}
-              title="Be on a computer with audio and video"
+              title="Bring notes on what's holding you back"
               body={
                 <>
-                  We&apos;ll be screen-sharing, so the call works best on a
-                  laptop or desktop — not your phone. Test your mic and
-                  camera 5 minutes before. Quiet room if you can.
+                  What are the 1–2 specific things in your gameplay you
+                  can&apos;t figure out? Not &quot;I want to rank up&quot; —
+                  specific.
                   <br />
                   <br />
-                  If something comes up and you need to reschedule, use the
-                  link in your confirmation email. Please don&apos;t no-show
-                  — we lose the slot and you lose your spot in the queue.
+                  Examples: rotation, boost economy, mechanical
+                  inconsistency, tilt, double commits, getting backposted,
+                  challenge timing.
+                  <br />
+                  <br />
+                  Knowing this upfront helps your rep figure out which of
+                  our coaches is the right specialist for what you&apos;re
+                  working on.
                 </>
               }
             />
@@ -137,33 +132,36 @@ export default function BookedPage() {
       </section>
 
       {/* ── WHAT TO EXPECT ───────────────────────────────────────────── */}
+      {/* TODO (Luke): record a short welcome video and embed it above
+          this section — the page is intentionally light on copy so the
+          video can carry most of the framing once it's in. */}
       <section className="border-t border-white/10 bg-black/20 px-6 py-16">
         <div className="mx-auto max-w-2xl">
           <p className="mb-2 text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             What to expect
           </p>
           <h2 className="text-center font-display text-3xl tracking-tight md:text-4xl">
-            45 minutes. No pressure.
+            No pressure. Just a conversation.
           </h2>
 
           <div className="mt-8 space-y-3">
             <ExpectLine
-              when="First 10 min"
-              what="We get to know you — your rank, your goals, what you've tried, what's been frustrating."
+              when="First few min"
+              what="Your rep introduces themselves and gets to know you — your rank, your goals, what's been frustrating you in ranked."
             />
             <ExpectLine
-              when="Next 15–20 min"
-              what="We watch your replay together. Your coach diagnoses what's actually costing you games — not generic advice."
+              when="Middle of the call"
+              what="You walk through what's holding you back. Your rep figures out which of our coaches (Freaky, Torment, or Shock) specializes in those areas."
             />
             <ExpectLine
-              when="Final 10–15 min"
-              what="We walk you through whether VIP is the right fit and answer any questions. Either way, you leave with specific direction on what to work on next."
+              when="End of the call"
+              what="Quick discussion of whether VIP is the right next step. If it is, you get routed to the right coach for you."
             />
           </div>
 
           <p className="mt-8 text-center text-sm text-white/50">
             Even if VIP isn&apos;t the right fit for you, you&apos;ll leave
-            the call with a clearer picture of what to focus on.
+            the call with clearer direction on what to focus on.
           </p>
         </div>
       </section>

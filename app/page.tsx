@@ -416,6 +416,12 @@ export default function VIPPage() {
             queue more ranked games and hope. 😅
           </p>
 
+          {/* Capacity scarcity — real, always-on (60-client team cap) */}
+          <p className="mx-auto mt-5 max-w-xl text-base text-white/50 md:text-lg">
+            Our team can only work with 60 private clients at any given
+            time.
+          </p>
+
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <button
               type="button"
