@@ -69,10 +69,10 @@ export default function QualifiedPage() {
             Watch This Improvement Video.
           </h1>
 
-          {/* Subheadline — scarcity + selectivity */}
-          <p className="mx-auto mt-5 max-w-xl text-base text-white/65 md:text-lg">
-            We&apos;re selecting only 60 players to work one-on-one with
-            our team of pros this month.
+          {/* Subheadline — scarcity + selectivity (capacity-based, always-on) */}
+          <p className="mx-auto mt-5 max-w-2xl text-base text-white/65 md:text-lg">
+            Our team can only work with 60 private clients at any given
+            time. Watch this video if you want to be one.
           </p>
 
           {/* Down chevron — scroll cue to the video */}

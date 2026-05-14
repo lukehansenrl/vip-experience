@@ -130,6 +130,12 @@ export function CallPageClient({ spotsFilled }: Props) {
                 guarantee most coaches won&apos;t make.
               </p>
 
+              {/* Capacity scarcity — real, always-on (60-client team cap) */}
+              <p className="mx-auto mt-4 max-w-xl text-base text-white/55 md:text-lg">
+                Our team can only work with 60 private clients at any given
+                time.
+              </p>
+
               {/* CTA row */}
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:gap-5 md:justify-center">
                 <a

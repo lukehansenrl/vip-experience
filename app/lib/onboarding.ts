@@ -117,7 +117,15 @@ export const COUNTRIES = [
   "Japan",
   "South Korea",
   "Singapore",
+  "Hong Kong",
+  "Taiwan",
+  "Saudi Arabia",
   "United Arab Emirates",
+  "Qatar",
+  "Kuwait",
+  "Bahrain",
+  "Oman",
+  "Israel",
   "Mexico",
   "Brazil",
   "Argentina",
@@ -133,12 +141,12 @@ export const COUNTRIES = [
   "Other",
 ] as const;
 
-// Allowlist approach — only US, Europe, and Oceania (+ Canada) pass the
-// country gate. Anyone else DQs based on regional purchasing power.
-// Stricter than the previous denylist — high-income Asian and Middle
-// Eastern countries (Japan, South Korea, Singapore, UAE) currently DQ
-// under this rule even though their buyers can technically afford $497.
-// If we want exceptions for those, add them here.
+// Allowlist approach — wealthy regions where local buyers can realistically
+// commit to a $497 program. Combines traditional Western markets with
+// high-income East Asia and the GCC + Israel. The budget gate (Q8) is the
+// real income filter; the country gate just screens out regions where
+// average purchasing power is below the price floor regardless of stated
+// budget.
 const ALLOWED_COUNTRIES = new Set<string>([
   // North America
   "United States",
@@ -164,6 +172,20 @@ const ALLOWED_COUNTRIES = new Set<string>([
   // Oceania
   "Australia",
   "New Zealand",
+  // East Asia (high-income)
+  "Japan",
+  "South Korea",
+  "Singapore",
+  "Hong Kong",
+  "Taiwan",
+  // Middle East (high-income GCC + Israel)
+  "Saudi Arabia",
+  "United Arab Emirates",
+  "Qatar",
+  "Kuwait",
+  "Bahrain",
+  "Oman",
+  "Israel",
 ]);
 
 export type OnboardingSubmission = {
