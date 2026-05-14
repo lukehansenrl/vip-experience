@@ -14,17 +14,37 @@
 
 // ── QUESTION SCHEMA ────────────────────────────────────────────────────
 
-export const AGES = ["13-15", "16-17", "18-22", "23-29", "30+"] as const;
+// Age buckets mirror the dropdown options in the CRM Google Sheet so
+// submissions map cleanly into the existing pipeline. Kept in sync with
+// the rl-clubhouse-onboarding repo (app/lib/onboarding.ts) — update both
+// together if the CRM dropdown changes.
+export const AGES = [
+  "12-15",
+  "16-17",
+  "18-22",
+  "23-29",
+  "30-45",
+  "45+",
+] as const;
 
+// Rank buckets mirror the CRM dropdown. Division-level granularity for
+// Diamond / Champ / GC; combined buckets for Bronze-Silver and Plat 1-3.
+// Kept in sync with rl-clubhouse-onboarding.
 export const RANKS = [
-  "Bronze",
-  "Silver",
+  "Bronze-Silver",
   "Gold",
-  "Platinum",
-  "Diamond",
-  "Champion",
-  "Grand Champion",
-  "SSL",
+  "Plat 1-3",
+  "Diamond 1",
+  "Diamond 2",
+  "Diamond 3",
+  "Champion 1",
+  "Champion 2",
+  "Champion 3",
+  "Grand Champ 1",
+  "Grand Champ 2",
+  "Grand Champ 3",
+  "Supersonic Legend",
+  "2k+ MMR",
 ] as const;
 
 export const PLATFORMS = ["PC", "PlayStation", "Xbox", "Switch"] as const;
@@ -229,7 +249,7 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
   const reasons: string[] = [];
 
   // Gate 1: Age (legal)
-  if (s.age === "13-15" || s.age === "16-17") {
+  if (s.age === "12-15" || s.age === "16-17") {
     reasons.push("under-18");
   }
 
@@ -252,7 +272,7 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
 
   // Gate 5: Rank (Plat+ required — community built for high gold to low SSL,
   //   but VIP specifically targets Plat and above)
-  if (s.rank === "Bronze" || s.rank === "Silver" || s.rank === "Gold") {
+  if (s.rank === "Bronze-Silver" || s.rank === "Gold") {
     reasons.push("below-plat");
   }
 
