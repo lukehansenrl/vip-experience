@@ -53,6 +53,7 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           ...submission,
           qualified: decision.qualified,
+          barred: decision.barred,
           reasons: decision.reasons,
           timestamp: new Date().toISOString(),
         }),

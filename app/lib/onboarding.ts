@@ -242,15 +242,23 @@ export type OnboardingSubmission = {
 
 export type RoutingDecision = {
   qualified: boolean;
+  // Hard bar for under-18 submissions. Distinct from `qualified`: barred
+  // users are routed to free academy/training, not the VIP unqualified
+  // page. Mirrors the field shape used by the rl-clubhouse-onboarding
+  // repo so Apps Script / Zapier downstream can treat submissions from
+  // either form identically.
+  barred: boolean;
   reasons: string[]; // disqualification reasons if any
 };
 
 export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
   const reasons: string[] = [];
+  let barred = false;
 
-  // Gate 1: Age (legal)
+  // Gate 1: Age (legal). Also fully bars from paid Clubhouse / VIP.
   if (s.age === "12-15" || s.age === "16-17") {
     reasons.push("under-18");
+    barred = true;
   }
 
   // Gate 2: Country (local purchasing power)
@@ -296,6 +304,7 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
 
   return {
     qualified: reasons.length === 0,
+    barred,
     reasons,
   };
 }
