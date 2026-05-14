@@ -7,10 +7,6 @@ import { HormoziPlayer } from "../components/HormoziPlayer";
 // full qualification questions: rank, age, country, budget, blocker).
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-application";
 
-// Direct-buy bypass for high-intent prospects who don't want to talk first.
-// Keeps the /call page in the funnel as the secondary path.
-const CALL_PAGE_URL = "/call";
-
 // VSL file lives in /public — same asset used on /onboarding/qualified.
 const VSL_SRC = "/vsl.mp4";
 
@@ -124,8 +120,8 @@ export default function VipPage() {
             onPlaybackTimeChange={setPlaybackTime}
           />
 
-          {/* Primary + secondary CTAs under the video */}
-          <div className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-3">
+          {/* Single CTA — call-only funnel, no bypass to direct buy */}
+          <div className="mx-auto mt-10 flex max-w-xl justify-center">
             <button
               type="button"
               onClick={scrollToScheduler}
@@ -136,12 +132,6 @@ export default function VipPage() {
                 ? "Apply for a Call →"
                 : `Apply for a Call in ${secondsLeft}s`}
             </button>
-            <a
-              href={CALL_PAGE_URL}
-              className="text-sm text-[var(--accent)] underline-offset-4 hover:underline"
-            >
-              Already know? Lock your founding-member spot →
-            </a>
           </div>
         </div>
       </section>
@@ -166,7 +156,7 @@ export default function VipPage() {
                 Even if VIP isn&apos;t a fit
               </span>{" "}
               — you&apos;ll leave the call with clear direction on exactly
-              what to work on next. No pressure, no hard sell.
+              what to work on next.
             </div>
 
             {/* Inline Calendly embed */}
@@ -179,16 +169,6 @@ export default function VipPage() {
                 title="Book a VIP application call"
                 className="block"
               />
-            </div>
-
-            {/* Bottom direct-buy bypass — for prospects who decided during the video */}
-            <div className="mt-10 text-center">
-              <a
-                href={CALL_PAGE_URL}
-                className="inline-block rounded-full border border-white/20 bg-transparent px-10 py-4 text-base font-bold text-white/80 transition hover:border-white/40 hover:text-white"
-              >
-                Skip the call — lock your founding-member spot →
-              </a>
             </div>
           </div>
         </section>
