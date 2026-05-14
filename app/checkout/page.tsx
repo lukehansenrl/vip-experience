@@ -115,7 +115,7 @@ export default function CheckoutPage() {
               </a>
               ,{" "}
               <a
-                href="/refund-policy"
+                href="/terms#refund-policy"
                 className="text-[var(--accent)] underline-offset-2 hover:underline"
               >
                 refund policy
