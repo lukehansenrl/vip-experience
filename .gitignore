@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Caption pipeline intermediates — keep the burned MP4 but not the
+# raw ASS subtitle file (rebuildable from scripts/caption-booked-video.py).
+/public/*.ass
