@@ -54,18 +54,22 @@ export async function POST(req: Request) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...submission,
-          // servers / employment / biggestBlockers are multi-select
-          // arrays. The downstream pipeline (Zapier -> Apps Script
-          // appendRow) writes a raw array into a cell as a Java object
-          // ref ("[Ljava.lang.Object;@..."), so flatten to comma text
-          // for the Sheet. Routing already ran on the real arrays above.
+          // Multi-select fields are arrays. Send them flattened to comma
+          // text so Apps Script appendRow doesn't write a Java array ref
+          // ("[Ljava.lang.Object;@..."). Also send the legacy singular
+          // keys (server / biggestBlocker): the live Apps Script reads
+          // those, and without them those columns write blank.
           servers: submission.servers?.join(", ") ?? "",
+          server: submission.servers?.join(", ") ?? "",
           employment: submission.employment?.join(", ") ?? "",
           biggestBlockers: submission.biggestBlockers?.join(", ") ?? "",
+          biggestBlocker: submission.biggestBlockers?.join(", ") ?? "",
           qualified: decision.qualified,
           clubhouseQualified: decision.clubhouseQualified,
           barred: decision.barred,
-          reasons: decision.reasons.join(", "),
+          // Keep reasons as an ARRAY: the live Apps Script joins it via
+          // Array.isArray(...) ? join : "". A string here writes blank.
+          reasons: decision.reasons,
           timestamp: new Date().toISOString(),
         }),
       });
