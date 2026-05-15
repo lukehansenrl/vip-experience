@@ -1,9 +1,12 @@
+"use client";
+
+import { HormoziPlayer } from "../../components/HormoziPlayer";
+
 // This page is for visitors who just submitted the RLC onboarding form
 // and qualified for VIP. They're already inside the Clubhouse (or just
-// started the free trial), so we don't run them through a VSL gate or
-// show "buy Clubhouse" CTAs. The Calendly is always visible (no timer)
-// and the page leads with VIP booking, then drops into Clubhouse
-// welcome / first-week tasks below.
+// started the free trial), so we don't gate the CTA on watching the VSL
+// or show "buy Clubhouse" CTAs. The VSL plays as informational context
+// to explain why VIP is a fit; the Calendly is always visible.
 //
 // /onboarding/qualified stays as-is for non-RLC-member audiences (and
 // for Luke's existing reference). That page keeps the VSL gate because
@@ -19,6 +22,10 @@ const SUPPORT_TICKET_URL =
   "https://discord.com/channels/1217265351658573895/1222927647126851604";
 
 const CALENDLY_URL = "https://calendly.com/rlclubhouse/vip-onboarding";
+
+// VSL file lives in /public, same asset used on /vip and
+// /onboarding/qualified.
+const VSL_SRC = "/vsl.mp4";
 
 export default function QualifiedActiveRlcPage() {
   return (
@@ -63,13 +70,35 @@ export default function QualifiedActiveRlcPage() {
           </p>
 
           <p className="mx-auto mt-4 max-w-2xl text-base text-white/60 md:text-lg">
-            Book a 45-minute call below to walk through how it works. No
-            pressure, no obligation.
+            Watch the video below to see how VIP works, then book a
+            45-minute call if you want to talk it through.
           </p>
         </div>
       </section>
 
-      {/* ── SECTION 2: BOOKING WIDGET ────────────────────────────────── */}
+      {/* ── SECTION 2: VSL (informational, no gate) ────────────────────
+          Sells the offer for members who haven't seen it before. CTA
+          stays unlocked the whole time; watching is optional. */}
+      <section className="border-t border-white/10 px-6 pt-12 pb-14">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            Why VIP is a fit for you
+          </p>
+          <h2 className="font-display mt-3 text-center text-3xl tracking-tight md:text-4xl">
+            What VIP coaching actually looks like.
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-base text-white/65">
+            Quick walkthrough of the program: who it&apos;s for, what
+            you get, and what changes in your gameplay over 12 weeks.
+          </p>
+
+          <div className="mt-10">
+            <HormoziPlayer src={VSL_SRC} />
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 3: BOOKING WIDGET ────────────────────────────────── */}
       <section className="border-t border-white/10 bg-white/[0.02] px-6 py-16">
         <div className="mx-auto max-w-4xl">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
