@@ -44,6 +44,25 @@ export default function ClubhouseQualifiedPage() {
         </div>
       </section>
 
+      {/* WHY NOT VIP — the bar, stated plainly (one page, all reasons) */}
+      <section className="px-6 pb-4">
+        <div className="mx-auto max-w-2xl rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-7">
+          <p className="text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+            What VIP requires
+          </p>
+          <p className="mt-2 text-sm text-white/60">
+            VIP 1-on-1 coaching is for players who meet all of these. If
+            any one isn&apos;t you yet, the Clubhouse below is the move.
+          </p>
+          <ul className="mt-4 space-y-2 text-sm text-white/80">
+            <li>A budget of at least $300 to $500 for improvement</li>
+            <li>18 years or older</li>
+            <li>Playing on PC</li>
+            <li>Ranked Platinum or higher</li>
+          </ul>
+        </div>
+      </section>
+
       {/* WHAT YOU GET */}
       <section className="px-6 pb-12">
         <div className="mx-auto max-w-2xl text-center">
