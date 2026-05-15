@@ -5,7 +5,7 @@ import { WhopCheckoutEmbed } from "@whop/checkout/react";
 import { VipBrandNav } from "../components/VipBrandNav";
 
 // Plan ID for the 45-day VIP Pro experience on Whop.
-// $497 today, then $199 every 4 weeks after the first 45 days.
+// $497 today, then $199 every 30 days after the first 45 days.
 const PLAN_ID = "plan_NzvzBslipuXV3";
 
 // Where Whop sends the customer after a successful purchase. Hosted on
@@ -55,9 +55,9 @@ export default function CheckoutPage() {
             <span className="text-2xl font-black text-white">$497</span>
           </div>
           <div className="mt-2 flex items-baseline justify-between">
-            <span className="text-base text-white/65">After 84 days</span>
+            <span className="text-base text-white/65">After 45 days</span>
             <span className="text-base font-semibold text-white/75">
-              $199 / 4 weeks
+              $199 / 30 days
             </span>
           </div>
           <div className="mt-5 rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-4 py-3">
@@ -84,7 +84,7 @@ export default function CheckoutPage() {
           </h2>
           <p className="mt-3 text-base leading-relaxed text-white/70">
             You are paying for your first 45 days today. Your membership
-            renews every 4 weeks after the first 84 days unless canceled
+            renews every 30 days after the first 45 days unless canceled
             before renewal.
           </p>
 
@@ -98,8 +98,8 @@ export default function CheckoutPage() {
             />
             <span className="text-sm leading-relaxed text-white/80">
               I understand I am purchasing the 45-day VIP Pro experience
-              for $497 today. After 84 days, my membership renews at $199
-              every 4 weeks plus applicable taxes unless I cancel before
+              for $497 today. After 45 days, my membership renews at $199
+              every 30 days plus applicable taxes unless I cancel before
               renewal. I agree to the{" "}
               <a
                 href="/terms"
