@@ -89,7 +89,7 @@ export default function QualifiedActiveRlcPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-base text-white/65">
             Quick walkthrough of the program: who it&apos;s for, what
-            you get, and what changes in your gameplay over 12 weeks.
+            you get, and what changes in your gameplay over 45 days.
           </p>
 
           <div className="mt-10">
