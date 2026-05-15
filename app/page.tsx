@@ -799,14 +799,14 @@ export default function VIPPage() {
                 What this would cost on its own
               </span>
               <span className="text-lg font-black text-white/40 line-through">
-                $352 – $477 / mo
+                $352 – $477 / 6 weeks
               </span>
             </div>
             <div className="flex items-center justify-between bg-[var(--accent)]/10 px-6 py-5">
               <span className="font-bold">VIP Experience Price</span>
               <span className="flex items-center gap-3">
                 <span className="text-2xl font-black text-[var(--accent)]">
-                  $199 / mo
+                  $497 / 6 weeks
                 </span>
               </span>
             </div>
@@ -1283,8 +1283,8 @@ function PricingCard({ openBooking }: { openBooking: () => void }) {
   return (
     <div className="mt-10 rounded-2xl border border-[var(--accent)]/30 bg-white/[0.03] p-8 md:p-10">
       <p className="text-6xl font-black md:text-7xl">
-        <span className="text-[var(--accent)]">$199</span>
-        <span className="text-lg font-semibold text-white/50"> / month</span>
+        <span className="text-[var(--accent)]">$497</span>
+        <span className="text-lg font-semibold text-white/50"> / 6 weeks</span>
       </p>
       <p className="mt-4 text-white/50">
         Cancel anytime. No contracts. No hidden fees.

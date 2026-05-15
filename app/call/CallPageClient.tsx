@@ -678,8 +678,8 @@ export function CallPageClient({ spotsFilled }: Props) {
               <p className="mt-4 text-lg text-white/90 md:text-xl">
                 Show up to every coaching session and accountability call,
                 and play 30 ranked games across the 6 weeks. Don&apos;t
-                rank up? We keep coaching you free for up to another year
-                until you do. Most coaches are happy when you keep paying.
+                rank up? We keep coaching you free until you do. Most
+                coaches are happy when you keep paying.
                 We&apos;re not done until you rank up.
               </p>
             </div>
@@ -789,7 +789,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               You save $898.
             </span>{" "}
             And if you don&apos;t rank up by the end of your 6 weeks, we
-            keep coaching you free for up to another year until you do.
+            keep coaching you free until you do.
           </p>
 
           <div className="mt-6">

@@ -20,7 +20,7 @@ type Tier = {
 
 const ROW_LABELS = [
   "Format",
-  "1:1 sessions / month",
+  "1:1 sessions / 6 weeks",
   "Personalized plan",
   "Commitment",
   "Best for",
@@ -37,9 +37,9 @@ const TIERS: Tier[] = [
     ribbonStyle: "accent",
     rows: [
       { value: "Coach + plan + community" },
-      { value: "1 live + 1 async", check: "yes" },
-      { value: "Personalized 30-day", check: "yes" },
-      { value: "Month-to-month, cancel anytime", check: "yes" },
+      { value: "3 live + 3 async", check: "yes" },
+      { value: "Personalized 14-day", check: "yes" },
+      { value: "6-week, cancel anytime", check: "yes" },
       { value: "Improving faster without going all-in" },
     ],
   },
