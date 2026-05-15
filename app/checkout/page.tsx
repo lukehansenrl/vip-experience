@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { WhopCheckoutEmbed } from "@whop/checkout/react";
 
-// Plan ID for the 12-week VIP Pro experience on Whop.
-// $497 today, then $199 every 4 weeks after the first 84 days.
+// Plan ID for the 45-day VIP Pro experience on Whop.
+// $497 today, then $199 every 4 weeks after the first 45 days.
 const PLAN_ID = "plan_NzvzBslipuXV3";
 
 // Where Whop sends the customer after a successful purchase. Hosted on
@@ -54,7 +54,7 @@ export default function CheckoutPage() {
             Order summary
           </p>
           <h2 className="mt-2 text-xl font-extrabold md:text-2xl">
-            12-Week VIP Pro Experience
+            45-Day VIP Pro Experience
           </h2>
           <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
             <span className="text-base text-white/65">Today</span>
@@ -89,7 +89,7 @@ export default function CheckoutPage() {
             Read and agree to continue
           </h2>
           <p className="mt-3 text-base leading-relaxed text-white/70">
-            You are paying for your first 12 weeks today. Your membership
+            You are paying for your first 45 days today. Your membership
             renews every 4 weeks after the first 84 days unless canceled
             before renewal.
           </p>
@@ -103,7 +103,7 @@ export default function CheckoutPage() {
               required
             />
             <span className="text-sm leading-relaxed text-white/80">
-              I understand I am purchasing the 12-week VIP Pro experience
+              I understand I am purchasing the 45-day VIP Pro experience
               for $497 today. After 84 days, my membership renews at $199
               every 4 weeks plus applicable taxes unless I cancel before
               renewal. I agree to the{" "}
