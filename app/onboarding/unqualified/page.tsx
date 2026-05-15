@@ -7,8 +7,7 @@ import { VipBrandNav } from "../../components/VipBrandNav";
 // for users who don't qualify for the paid Clubhouse either: under
 // 18 (legal bar) or explicit casual players (not the right audience
 // for any improvement offer).
-// TODO (Luke): swap if the Academy invite URL changes.
-const FREE_DISCORD_URL = "https://discord.gg/rlclubhouse";
+const FREE_DISCORD_URL = "https://discord.gg/35NZv4xwtp";
 
 export default function UnqualifiedPage() {
   return (
