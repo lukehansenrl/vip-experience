@@ -4,8 +4,14 @@ import { useState } from "react";
 import { WhopCheckoutEmbed } from "@whop/checkout/react";
 import { VipBrandNav } from "../components/VipBrandNav";
 
-// Plan ID for the 45-day VIP Pro experience on Whop.
-// $497 today, then $199 every 30 days after the first 45 days.
+// Plan ID for the 6-week VIP Experience on Whop.
+// $497 today, renews at $497 every 6 weeks unless canceled.
+//
+// TODO (Luke / Jacob): the Whop plan config behind this ID is still
+// set to "$497 today, $199 every 30 days." Update the Whop plan to
+// "$497 today, $497 every 6 weeks (42 days)" so the actual billing
+// matches what this page promises. Until that's done, customers will
+// be charged the old monthly amount despite the page copy.
 const PLAN_ID = "plan_NzvzBslipuXV3";
 
 // Where Whop sends the customer after a successful purchase. Hosted on
@@ -48,26 +54,26 @@ export default function CheckoutPage() {
             Order summary
           </p>
           <h2 className="mt-2 text-xl font-extrabold md:text-2xl">
-            45-Day VIP Pro Experience
+            6-Week VIP Experience
           </h2>
           <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
             <span className="text-base text-white/65">Today</span>
             <span className="text-2xl font-black text-white">$497</span>
           </div>
           <div className="mt-2 flex items-baseline justify-between">
-            <span className="text-base text-white/65">After 45 days</span>
+            <span className="text-base text-white/65">After 6 weeks</span>
             <span className="text-base font-semibold text-white/75">
-              $199 / 30 days
+              $497 / 6 weeks
             </span>
           </div>
           <div className="mt-5 rounded-xl border border-[var(--green)]/30 bg-[var(--green)]/5 px-4 py-3">
             <p className="text-sm font-semibold text-[var(--green)]">
-              30-Day Money-Back + 90-Day Keep Coaching You
+              14-Day Money-Back + Rank-Up Guarantee
             </p>
             <p className="mt-1 text-xs text-white/55">
-              Cancel anytime. Don&apos;t love it in 30 days, full refund.
-              Don&apos;t rank up in 90 days (and you showed up), we keep
-              coaching you free until you do.
+              Cancel anytime. Don&apos;t love it in 14 days, full refund.
+              Don&apos;t rank up by the end of your 6 weeks (and you
+              showed up), we keep coaching you free until you do.
             </p>
           </div>
         </div>
@@ -83,9 +89,9 @@ export default function CheckoutPage() {
             Read and agree to continue
           </h2>
           <p className="mt-3 text-base leading-relaxed text-white/70">
-            You are paying for your first 45 days today. Your membership
-            renews every 30 days after the first 45 days unless canceled
-            before renewal.
+            You are paying for your first 6 weeks today. Your membership
+            renews at the same rate every 6 weeks unless canceled before
+            renewal.
           </p>
 
           <label className="mt-6 flex cursor-pointer items-start gap-3 rounded-xl border border-white/15 bg-white/[0.02] p-4 transition hover:border-white/30">
@@ -97,10 +103,10 @@ export default function CheckoutPage() {
               required
             />
             <span className="text-sm leading-relaxed text-white/80">
-              I understand I am purchasing the 45-day VIP Pro experience
-              for $497 today. After 45 days, my membership renews at $199
-              every 30 days plus applicable taxes unless I cancel before
-              renewal. I agree to the{" "}
+              I understand I am purchasing the 6-Week VIP Experience for
+              $497 today. After my first 6 weeks, my membership renews at
+              $497 every 6 weeks plus applicable taxes unless I cancel
+              before renewal. I agree to the{" "}
               <a
                 href="/terms"
                 className="text-[var(--accent)] underline-offset-2 hover:underline"

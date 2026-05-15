@@ -797,7 +797,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               variant="call"
               price={497}
               cadence="/ 6 weeks"
-              cadenceNote="Paid upfront for 6 weeks. Optional monthly continuation after if you want to keep going."
+              cadenceNote="Paid upfront for 6 weeks. Renews every 6 weeks at the same rate unless canceled."
               action={{
                 type: "link",
                 label: "Get Offer",
