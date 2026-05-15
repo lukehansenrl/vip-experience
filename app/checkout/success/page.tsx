@@ -12,7 +12,7 @@ const WHOP_ORDERS_URL = "https://whop.com/@me/settings/orders/";
 export const metadata: Metadata = {
   title: "Welcome to VIP | RL Clubhouse",
   description:
-    "Your VIP Pro purchase is complete. Three quick steps to claim your perks and book your first coaching session.",
+    "Your VIP Pro purchase is complete. Three quick steps to claim your perks and get ready for your first coaching session.",
 };
 
 export default function CheckoutSuccessPage() {
@@ -68,8 +68,8 @@ export default function CheckoutSuccessPage() {
 
           <Step
             number={3}
-            title="Schedule your first coaching session"
-            description="From your VIP instructions page (Step 1), follow the link to book your first 1:1 session with your coach."
+            title="Show up for your first coaching session"
+            description="Your rep locks in your first 1:1 time with you on this call, so there's nothing to book yourself. Just show up ready to play. Showing up is what the rank-up guarantee runs on."
           />
         </div>
       </section>
