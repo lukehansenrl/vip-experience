@@ -253,11 +253,15 @@ export default function VipPage() {
         {/* Scrolling testimonial marquee. Same component used on /call and
             /onboarding form. Sits just below the CTA to reinforce social
             proof while the VSL timer is still counting down or the prospect
-            is hesitating before clicking Apply. Always-visible (no gate). */}
+            is hesitating before clicking Apply. Always-visible (no gate).
+            showVodLink={false} keeps prospects on the page (no outbound
+            YouTube clicks) since the goal here is to convert to a call,
+            not to drive video watch time. */}
         <div className="mx-auto mt-14 max-w-6xl">
           <ScrollingTestimonials
             videoTestimonials={VIDEO_TESTIMONIALS}
             textReviews={TEXT_REVIEWS}
+            showVodLink={false}
           />
         </div>
       </section>

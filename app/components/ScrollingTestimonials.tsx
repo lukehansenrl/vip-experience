@@ -15,6 +15,11 @@ import type { VideoTestimonial, TextReview } from "../data/testimonials";
 type Props = {
   videoTestimonials: VideoTestimonial[];
   textReviews: TextReview[];
+  // When false, the "Watch the coaching session" outbound link on video
+  // testimonials is hidden. Used on /vip to keep prospects on the page
+  // instead of bouncing out to YouTube mid-funnel. Defaults to true so
+  // /call and /onboarding keep their existing behavior.
+  showVodLink?: boolean;
 };
 
 // Color palette for text reviews (which don't carry a color field).
@@ -46,6 +51,7 @@ type UnifiedItem =
 export function ScrollingTestimonials({
   videoTestimonials,
   textReviews,
+  showVodLink = true,
 }: Props) {
   const items: UnifiedItem[] = [
     ...videoTestimonials.map((d) => ({ kind: "video" as const, data: d })),
@@ -67,6 +73,7 @@ export function ScrollingTestimonials({
           <TestimonialCard
             key={`${item.data.name}-${idx}`}
             item={item}
+            showVodLink={showVodLink}
           />
         ))}
       </div>
@@ -74,7 +81,13 @@ export function ScrollingTestimonials({
   );
 }
 
-function TestimonialCard({ item }: { item: UnifiedItem }) {
+function TestimonialCard({
+  item,
+  showVodLink,
+}: {
+  item: UnifiedItem;
+  showVodLink: boolean;
+}) {
   const isVideo = item.kind === "video";
   const data = item.data;
   const color = isVideo
@@ -140,7 +153,7 @@ function TestimonialCard({ item }: { item: UnifiedItem }) {
         </p>
       )}
 
-      {isVideo && (
+      {isVideo && showVodLink && (
         <a
           href={(data as VideoTestimonial).vodUrl}
           target="_blank"
