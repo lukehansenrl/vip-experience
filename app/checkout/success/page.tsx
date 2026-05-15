@@ -9,6 +9,12 @@ const VIP_INSTRUCTIONS_URL =
 // aren't paying for both Clubhouse and VIP simultaneously.
 const WHOP_ORDERS_URL = "https://whop.com/@me/settings/orders/";
 
+// Discord channel where members book their first coaching call. The call
+// is normally scheduled live with the rep during the checkout call; this
+// is the fallback for anyone who hasn't picked a time yet.
+const CALL_BOOKING_DISCORD_URL =
+  "https://discord.com/channels/1217265351658573895/1411425483052028026";
+
 export const metadata: Metadata = {
   title: "Welcome to VIP | RL Clubhouse",
   description:
@@ -69,7 +75,9 @@ export default function CheckoutSuccessPage() {
           <Step
             number={3}
             title="Show up for your first coaching session"
-            description="Your rep locks in your first 1:1 time with you on this call, so there's nothing to book yourself. Just show up ready to play. Showing up is what the rank-up guarantee runs on."
+            description="Your first 1:1 is already scheduled from your call, so there's nothing to do but show up ready to play. Showing up is what the rank-up guarantee runs on. Haven't picked a time yet? Book it in Discord below."
+            ctaLabel="Book Your Call in Discord →"
+            ctaUrl={CALL_BOOKING_DISCORD_URL}
           />
         </div>
       </section>
