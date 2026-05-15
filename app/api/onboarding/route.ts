@@ -54,10 +54,18 @@ export async function POST(req: Request) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...submission,
+          // servers / employment / biggestBlockers are multi-select
+          // arrays. The downstream pipeline (Zapier -> Apps Script
+          // appendRow) writes a raw array into a cell as a Java object
+          // ref ("[Ljava.lang.Object;@..."), so flatten to comma text
+          // for the Sheet. Routing already ran on the real arrays above.
+          servers: submission.servers?.join(", ") ?? "",
+          employment: submission.employment?.join(", ") ?? "",
+          biggestBlockers: submission.biggestBlockers?.join(", ") ?? "",
           qualified: decision.qualified,
           clubhouseQualified: decision.clubhouseQualified,
           barred: decision.barred,
-          reasons: decision.reasons,
+          reasons: decision.reasons.join(", "),
           timestamp: new Date().toISOString(),
         }),
       });
