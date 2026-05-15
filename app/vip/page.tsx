@@ -4,6 +4,8 @@ import { useEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { HormoziPlayer } from "../components/HormoziPlayer";
 import { VipBrandNav } from "../components/VipBrandNav";
+import { ScrollingTestimonials } from "../components/ScrollingTestimonials";
+import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
 import {
   AGES,
   COUNTRIES,
@@ -246,6 +248,17 @@ export default function VipPage() {
                   : "Apply for a Call →"}
             </button>
           </div>
+        </div>
+
+        {/* Scrolling testimonial marquee. Same component used on /call and
+            /onboarding form. Sits just below the CTA to reinforce social
+            proof while the VSL timer is still counting down or the prospect
+            is hesitating before clicking Apply. Always-visible (no gate). */}
+        <div className="mx-auto mt-14 max-w-6xl">
+          <ScrollingTestimonials
+            videoTestimonials={VIDEO_TESTIMONIALS}
+            textReviews={TEXT_REVIEWS}
+          />
         </div>
       </section>
 
