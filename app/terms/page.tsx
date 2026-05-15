@@ -5,14 +5,14 @@ import type { Metadata } from "next";
 const SUPPORT_URL =
   "https://discord.com/channels/1217265351658573895/1222927647126851604";
 
-// Support email used in V4.2 for accessibility, privacy, copyright/DMCA,
+// Support email used in V4.3 for accessibility, privacy, copyright/DMCA,
 // and arbitration opt-out notices.
 const SUPPORT_EMAIL = "support@rocketleaguebootcamp.com";
 
 export const metadata: Metadata = {
   title: "Terms of Service & Refund Policy | RL Clubhouse",
   description:
-    "Rocket League Academy, Bootcamp, Clubhouse & VIP Pro by SpookyLuke: Terms of Service (V4.2 DRAFT). Operated by Game Launch, LLC.",
+    "Rocket League Academy, Bootcamp, Clubhouse & VIP Pro by SpookyLuke: Terms of Service (V4.3 DRAFT). Operated by Game Launch, LLC.",
 };
 
 export default function TermsPage() {
@@ -41,10 +41,10 @@ export default function TermsPage() {
           </h1>
           <p className="mt-4 text-base text-white/65">
             Rocket League Academy, Bootcamp, Clubhouse &amp; VIP Pro by
-            SpookyLuke (V4.2 DRAFT). Operated by Game Launch, LLC.
+            SpookyLuke (V4.3 DRAFT). Operated by Game Launch, LLC.
           </p>
           <p className="mt-2 text-sm text-white/45">
-            Effective Date: 5/15/2026 · Last Updated: 5/14/2026
+            Effective Date: 5/15/2026 · Last Updated: 5/15/2026
           </p>
         </div>
       </section>
@@ -184,15 +184,15 @@ export default function TermsPage() {
               ],
               [
                 "VIP Pro Experience (also VIP Pro, VIP, or Program)",
-                "the forty-five (45) day premium one-on-one coaching program offered by Game Launch, LLC, billed at $497.00 USD up front for the initial 45-day Program Term and $199.00 USD every thirty (30) days thereafter on a recurring basis until cancelled, unless the Member qualifies for and elects Alumni Tier pricing under Section 4.8.",
+                "the six (6) week premium one-on-one coaching program offered by Game Launch, LLC, billed at $497.00 USD up front for the initial 6-week Program Term and $497.00 USD every six (6) weeks thereafter on a recurring basis until cancelled, unless the Member qualifies for and elects Alumni Tier pricing under Section 4.8.",
               ],
               [
                 "Program Term",
-                "the initial forty-five (45) day period beginning on the date of the Member's first VIP Pro payment.",
+                "the initial six (6) week period beginning on the date of the Member's first VIP Pro payment.",
               ],
               [
                 "Continued Membership",
-                "VIP Pro membership beyond the Program Term, billed every thirty (30) days at the then-current or applicable grandfathered rate until cancelled by the Member or terminated under these Terms.",
+                "VIP Pro membership beyond the Program Term, billed every six (6) weeks at the then-current or applicable grandfathered rate until cancelled by the Member or terminated under these Terms.",
               ],
               [
                 "Alumni Tier",
@@ -224,7 +224,7 @@ export default function TermsPage() {
               ],
               [
                 "Money-Back Window",
-                "the thirty (30) day period beginning on the date of the VIP Pro payment for which a refund is requested.",
+                "the fourteen (14) day period beginning on the date of the VIP Pro payment for which a refund is requested.",
               ],
               [
                 "Coaching Session",
@@ -399,18 +399,18 @@ export default function TermsPage() {
           <P>
             The VIP Pro Experience is a premium one-on-one coaching program
             offered to Members of the Rocket League Clubhouse. Each VIP Pro
-            Member is assigned a coach and receives, over the 45-day
+            Member is assigned a coach and receives, over the 6-week
             Program Term:
           </P>
           <UL>
             <li>(a) three (3) sixty-minute one-on-one Coaching Sessions;</li>
             <li>(b) three (3) thirty-minute personalized Async Reviews;</li>
             <li>(c) three (3) Accountability Check-Ins;</li>
-            <li>(d) three (3) personalized 30-day training routines; and</li>
+            <li>(d) three (3) personalized 14-day training routines; and</li>
             <li>(e) continued Rocket League Clubhouse access for the duration of active VIP Pro membership, included at no additional charge.</li>
           </UL>
           <P>
-            After the 45-day Program Term, VIP Pro membership continues on
+            After the 6-week Program Term, VIP Pro membership continues on
             a Continued Membership basis at the service cadence described
             in Section 4.3 and the pricing described in Section 7.1 until
             cancelled by the Member or terminated under these Terms.
@@ -490,7 +490,7 @@ export default function TermsPage() {
 
           <H3>4.1 Program Overview</H3>
           <P>
-            VIP Pro is a one-on-one coaching program with an initial 45-day
+            VIP Pro is a one-on-one coaching program with an initial 6-week
             Program Term. After the Program Term, VIP Pro continues on a
             Continued Membership basis until the Member cancels or the
             membership is otherwise terminated under these Terms.
@@ -527,17 +527,17 @@ export default function TermsPage() {
 
           <H3>4.3 Program Structure</H3>
           <P>
-            During the initial 45-day Program Term, each VIP Pro Member is
+            During the initial 6-week Program Term, each VIP Pro Member is
             entitled to:
           </P>
           <UL>
             <li>(a) three (3) Coaching Sessions;</li>
             <li>(b) three (3) Async Reviews;</li>
             <li>(c) three (3) Accountability Check-Ins; and</li>
-            <li>(d) three (3) personalized 30-day training routines.</li>
+            <li>(d) three (3) personalized 14-day training routines.</li>
           </UL>
           <P>
-            These deliverables are generally distributed over the 45-day
+            These deliverables are generally distributed over the 6-week
             Program Term, but exact timing may vary based on coach
             availability, scheduling, Member responsiveness, and
             operational needs.
@@ -545,7 +545,7 @@ export default function TermsPage() {
           <P>
             After the Program Term, Continued Membership Members are
             entitled to one (1) Coaching Session, one (1) Async Review, and
-            one (1) Accountability Check-In per 30-day billing cycle,
+            one (1) Accountability Check-In per 6-week billing cycle,
             unless the Member is in the Extended Coaching Period under
             Section 4.4, elects Alumni Tier pricing under Section 4.8, or
             receives a different written arrangement from Game Launch, LLC.
@@ -562,9 +562,9 @@ export default function TermsPage() {
             purchase and the Member does not achieve a Rank-Up within the
             applicable Guarantee Window, Game Launch, LLC will continue to
             provide one (1) Coaching Session and one (1) Accountability
-            Check-In per 30-day period at no additional VIP Pro charge
-            until the Member achieves a Rank-Up, for up to twelve (12)
-            additional months following the close of the Guarantee Window
+            Check-In per 6-week period at no additional VIP Pro charge
+            until the Member achieves a Rank-Up, with no time limit on how
+            long Game Launch, LLC will keep providing it
             (the &quot;Extended Coaching Period&quot;). If Extended
             Coaching applies, paid VIP Pro recurring billing will be paused
             beginning with the first billing cycle after the Guarantee
@@ -585,10 +585,9 @@ export default function TermsPage() {
           </P>
           <UL>
             <li>(a) the Member achieving a Rank-Up;</li>
-            <li>(b) expiration of the twelve (12) month Extended Coaching Period;</li>
-            <li>(c) forfeiture under this Section 4.4;</li>
-            <li>(d) termination for a Code of Conduct violation or other material breach; or</li>
-            <li>(e) the Member&apos;s written request to end the Extended Coaching Period.</li>
+            <li>(b) forfeiture under this Section 4.4;</li>
+            <li>(c) termination for a Code of Conduct violation or other material breach; or</li>
+            <li>(d) the Member&apos;s written request to end the Extended Coaching Period.</li>
           </UL>
           <P>
             <strong>Eligibility by rank.</strong> The Rank-Up Guarantee
@@ -678,12 +677,12 @@ export default function TermsPage() {
           <H3>4.5 VIP Pro Money-Back Guarantee</H3>
           <P>
             A VIP Pro Member may request a full refund of the most recent
-            VIP Pro payment within thirty (30) days of that payment,
+            VIP Pro payment within fourteen (14) days of that payment,
             subject to the conditions in this Section 4.5.
           </P>
           <P>
             The Money-Back Guarantee applies to the initial $497.00 Program
-            Term payment and to each subsequent $199.00 Continued
+            Term payment and to each subsequent $497.00 Continued
             Membership payment, provided the refund request is submitted
             within the applicable Money-Back Window and all conditions
             below are satisfied.
@@ -692,7 +691,7 @@ export default function TermsPage() {
             <strong>Engagement Requirement.</strong> To qualify for a
             refund under this Section 4.5, the Member must have attended at
             least one (1) Coaching Session or one (1) Accountability
-            Check-In during the 30-day period associated with the payment
+            Check-In during the 14-day period associated with the payment
             being refunded. A Member who does not engage with the Program
             at all during that period is not eligible for a refund under
             this Section 4.5.
@@ -795,13 +794,13 @@ export default function TermsPage() {
           </P>
           <UL>
             <li>(a) achieving a Rank-Up while in active VIP Pro membership with all Compliance Requirements satisfied through the date of Rank-Up; or</li>
-            <li>(b) completing the full 45-day Program Term with all applicable Compliance Requirements satisfied.</li>
+            <li>(b) completing the full 6-week Program Term with all applicable Compliance Requirements satisfied.</li>
           </UL>
           <P>
             Eligible Alumni Tier Members may elect to continue VIP Pro
             membership at a locked rate of $497.00 USD every ninety-one
-            (91) days in lieu of the standard $199.00 USD every 30-day
-            Continued Membership cadence.
+            (91) days in lieu of the standard $497.00 USD every six (6)
+            week Continued Membership cadence.
           </P>
           <P>
             Unless Game Launch, LLC states otherwise in writing, Alumni
@@ -1006,14 +1005,15 @@ export default function TermsPage() {
           </P>
           <P>
             <strong>VIP Pro Experience.</strong> VIP Pro is billed at
-            $497.00 USD up front for the initial 45-day Program Term,
-            followed by $199.00 USD every thirty (30) days on a recurring
-            basis until cancelled. Recurring billing begins on day 46
-            following the initial payment unless cancelled before renewal
-            or unless Game Launch, LLC states otherwise in writing. Members
-            who reach Alumni Tier status under Section 4.8 may elect to
-            continue at $497.00 USD every ninety-one (91) days in lieu of
-            the standard $199.00 USD every 30-day cadence.
+            $497.00 USD up front for the initial 6-week Program Term,
+            followed by $497.00 USD every six (6) weeks on a recurring
+            basis until cancelled. Recurring billing begins at the end of
+            the initial 6-week Program Term unless cancelled before
+            renewal or unless Game Launch, LLC states otherwise in
+            writing. Members who reach Alumni Tier status under Section
+            4.8 may elect to continue at $497.00 USD every ninety-one (91)
+            days in lieu of the standard $497.00 USD every six (6) week
+            cadence.
           </P>
           <P>
             <strong>Clubhouse, Bootcamp, and other Services.</strong>{" "}
@@ -1046,11 +1046,11 @@ export default function TermsPage() {
           </P>
           <P>
             For VIP Pro, checkout will disclose that the initial charge is
-            $497.00 USD for the initial 45-day Program Term and that,
-            unless cancelled before renewal, the membership renews on day
-            46 at $199.00 USD every thirty (30) days until cancelled,
-            unless Alumni Tier pricing or another written arrangement
-            applies. If a Rank-Up Guarantee is offered, checkout, the sales
+            $497.00 USD for the initial 6-week Program Term and that,
+            unless cancelled before renewal, the membership renews at the
+            end of the initial 6-week Program Term at $497.00 USD every
+            six (6) weeks until cancelled, unless Alumni Tier pricing or
+            another written arrangement applies. If a Rank-Up Guarantee is offered, checkout, the sales
             page, onboarding materials, or the written enrollment
             disclosure will identify the applicable Guarantee Window and
             Program requirements for that offer.
