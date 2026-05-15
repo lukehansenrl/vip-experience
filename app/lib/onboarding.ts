@@ -267,25 +267,37 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
   const reasons: string[] = [];
   let barred = false;
 
+  // High-budget override: if the prospect reports $501+ annual budget
+  // for improvement, they're showing clear discretionary income. That
+  // trumps the country gate (which is just a proxy for purchasing
+  // power) and the employment gate (which is a proxy for income
+  // source). Platform, rank, age, casual-player gates still apply
+  // because budget doesn't fix any of those.
+  const hasHighBudget =
+    s.budget === "$501-$1,000" || s.budget === "$1,000+";
+
   // Gate 1: Age (legal). Also fully bars from paid Clubhouse / VIP.
   if (s.age === "12-15" || s.age === "16-17") {
     reasons.push("under-18");
     barred = true;
   }
 
-  // Gate 2: Country (local purchasing power)
-  // Allowlist: only US/Canada, Europe, and Oceania pass. Everyone else
-  // (including "Other") DQs.
-  if (!ALLOWED_COUNTRIES.has(s.country)) {
+  // Gate 2: Country (local purchasing power). High-budget override
+  // applies — someone with $501+ to spend on improvement clearly has
+  // the means regardless of where they live.
+  if (!ALLOWED_COUNTRIES.has(s.country) && !hasHighBudget) {
     reasons.push("country-not-allowed");
   }
 
   // Gate 3: Employment (no income source). Multi-select: only DQ if
   // "Unemployed" is the ONLY status checked. Anyone who's also a
   // student, part-time, or otherwise has structure/income passes.
+  // High-budget override applies — if they have $501+ to spend, the
+  // source of that money is none of our business.
   if (
     s.employment.length === 1 &&
-    s.employment[0] === "Unemployed"
+    s.employment[0] === "Unemployed" &&
+    !hasHighBudget
   ) {
     reasons.push("unemployed");
   }
