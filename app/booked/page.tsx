@@ -56,11 +56,12 @@ export default function BookedPage() {
             You&apos;re booked
           </p>
           <h1 className="font-display text-4xl leading-[1.1] tracking-tight md:text-5xl">
-            See you on the call.
+            We&apos;ll call you on Discord.
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg text-white/70">
-            Check your email for the calendar invite and meeting link.
-            We&apos;ll also send reminders 24 hours and 2 hours before.
+            Check your email for the calendar invite. We&apos;ll send
+            reminders 24 hours and 2 hours before, via email and
+            Discord.
           </p>
         </div>
       </section>
@@ -150,9 +151,8 @@ export default function BookedPage() {
             Good luck on your call.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/75">
-            Your call will take place over Discord DM. We&apos;ll call you
-            when it&apos;s time. Go check your Discord friend request now
-            if you haven&apos;t already.
+            Go check your Discord friend request now if you haven&apos;t
+            already. We&apos;ll call you when it&apos;s time.
           </p>
           <p className="mt-5 text-base text-white/55">
             We&apos;re excited to meet you.
