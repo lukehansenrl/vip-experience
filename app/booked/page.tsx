@@ -164,7 +164,7 @@ export default function BookedPage() {
       <footer className="border-t border-white/10 px-6 py-10 text-center text-sm text-white/40">
         <p>
           Need to reschedule? Use the link in your confirmation email.
-          Questions? DM us in the Clubhouse Discord.
+          Questions? Open a ticket in our Discord server.
         </p>
         <p className="mt-2 text-xs text-white/30">
           &copy; {new Date().getFullYear()} RL Clubhouse. All rights
