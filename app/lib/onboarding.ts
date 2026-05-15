@@ -226,24 +226,30 @@ export type OnboardingSubmission = {
 
 // ── ROUTING LOGIC ──────────────────────────────────────────────────────
 //
-// Seven hard gates. Anyone tripping one is unqualified for the call.
-// Three financial, one technical, three fit-related.
+// Three-way routing into:
+//   1. /onboarding/qualified           — full VIP-qualified. Calendly.
+//   2. /onboarding/clubhouse-qualified — 18+, competitive, but doesn't
+//      meet VIP-specific gates (budget, region, platform, rank).
+//      Pitched the $27/mo Clubhouse 30-day free trial.
+//   3. /onboarding/unqualified         — under 18 (legal bar) OR explicit
+//      casual players. No paid pitch. Routed to the free Discord.
 //
-// Financial:
-//   1. Age (legal — can't make purchase decisions under 18)
-//   2. Country (local purchasing power)
-//   3. Employment (no income source)
-//   7. Forward budget (explicit "I won't spend" signal)
-//
-// Technical:
-//   4. Platform (Console makes most drills/training impossible)
-//
-// Fit:
-//   5. Rank (community is built for Plat and above)
-//   6. Player type (explicit "I play casually" = not our buyer)
+// Gates:
+//   1. Age (under 18 = legal bar from BOTH VIP and paid Clubhouse)
+//   2. Country (VIP only — local purchasing power)
+//   3. Employment (VIP only — no income source)
+//   4. Platform (VIP only — Console can't run Bakkesmod/training packs)
+//   5. Rank (VIP only — built for Plat and above)
+//   6. Player type ("casual" = fit DQ from BOTH VIP and paid Clubhouse)
+//   7. Budget (VIP only — explicit "I won't spend" signal)
 
 export type RoutingDecision = {
   qualified: boolean;
+  // True for 18+ competitive players who don't meet ALL VIP-specific
+  // gates but are still a fit for the paid Clubhouse ($27/mo, 30-day
+  // free trial). Routed to /onboarding/clubhouse-qualified. Note that
+  // VIP-qualified users also have clubhouseQualified=true (superset).
+  clubhouseQualified: boolean;
   // Hard bar for under-18 submissions. Distinct from `qualified`: barred
   // users are routed to free academy/training, not the VIP unqualified
   // page. Mirrors the field shape used by the rl-clubhouse-onboarding
@@ -304,8 +310,15 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
     reasons.push("budget-below-floor");
   }
 
+  // Clubhouse-qualified = not legally barred (under 18) AND not an
+  // explicit casual player. Everyone else (VIP-fit OR VIP-fail but
+  // still 18+ competitive) is a good Clubhouse fit.
+  const isCasual = reasons.includes("casual-player");
+  const clubhouseQualified = !barred && !isCasual;
+
   return {
     qualified: reasons.length === 0,
+    clubhouseQualified,
     barred,
     reasons,
   };
