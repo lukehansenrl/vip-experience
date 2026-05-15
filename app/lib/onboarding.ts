@@ -215,13 +215,17 @@ export type OnboardingSubmission = {
   email: string;
   age: (typeof AGES)[number];
   country: (typeof COUNTRIES)[number];
-  server: (typeof SERVERS)[number];
-  employment: (typeof EMPLOYMENT)[number];
+  // Multi-select: a player may queue on multiple regional servers.
+  servers: (typeof SERVERS)[number][];
+  // Multi-select: people can be student + part-time, or self-employed
+  // + employed full-time, etc.
+  employment: (typeof EMPLOYMENT)[number][];
   rank: (typeof RANKS)[number];
   platform: (typeof PLATFORMS)[number];
   budget: (typeof BUDGET)[number];
   playerType: (typeof PLAYER_TYPE)[number];
-  biggestBlocker: (typeof BIGGEST_BLOCKER)[number];
+  // Multi-select: most players are blocked by multiple things at once.
+  biggestBlockers: (typeof BIGGEST_BLOCKER)[number][];
 };
 
 // ── ROUTING LOGIC ──────────────────────────────────────────────────────
@@ -276,8 +280,13 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
     reasons.push("country-not-allowed");
   }
 
-  // Gate 3: Employment (no income source)
-  if (s.employment === "Unemployed") {
+  // Gate 3: Employment (no income source). Multi-select: only DQ if
+  // "Unemployed" is the ONLY status checked. Anyone who's also a
+  // student, part-time, or otherwise has structure/income passes.
+  if (
+    s.employment.length === 1 &&
+    s.employment[0] === "Unemployed"
+  ) {
     reasons.push("unemployed");
   }
 
@@ -329,22 +338,33 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
 export function validateSubmission(
   body: Partial<OnboardingSubmission>,
 ): { ok: true; data: OnboardingSubmission } | { ok: false; error: string } {
-  const required: Array<keyof OnboardingSubmission> = [
+  const requiredStrings: Array<keyof OnboardingSubmission> = [
     "discord",
     "email",
     "age",
     "country",
-    "server",
-    "employment",
     "rank",
     "platform",
     "budget",
     "playerType",
-    "biggestBlocker",
   ];
-  for (const k of required) {
+  for (const k of requiredStrings) {
     if (!body[k]) return { ok: false, error: `Missing field: ${k}` };
   }
+
+  // Multi-select fields: require at least one selection.
+  const requiredArrays: Array<keyof OnboardingSubmission> = [
+    "servers",
+    "employment",
+    "biggestBlockers",
+  ];
+  for (const k of requiredArrays) {
+    const v = body[k];
+    if (!Array.isArray(v) || v.length === 0) {
+      return { ok: false, error: `Missing field: ${k}` };
+    }
+  }
+
   if (!body.email || !body.email.includes("@")) {
     return { ok: false, error: "Invalid email" };
   }

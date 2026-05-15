@@ -63,19 +63,33 @@ export default function VipPage() {
     !!form.email &&
     !!form.age &&
     !!form.country &&
-    !!form.server &&
-    !!form.employment &&
+    (form.servers?.length ?? 0) > 0 &&
+    (form.employment?.length ?? 0) > 0 &&
     !!form.rank &&
     !!form.platform &&
     !!form.budget &&
     !!form.playerType &&
-    !!form.biggestBlocker;
+    (form.biggestBlockers?.length ?? 0) > 0;
 
   function update<K extends keyof OnboardingSubmission>(
     key: K,
     value: OnboardingSubmission[K],
   ) {
     setForm((f) => ({ ...f, [key]: value }));
+  }
+
+  // Toggle a value in/out of a multi-select array field.
+  function toggleMulti<K extends "servers" | "employment" | "biggestBlockers">(
+    key: K,
+    value: OnboardingSubmission[K][number],
+  ) {
+    setForm((f) => {
+      const current = (f[key] ?? []) as OnboardingSubmission[K][number][];
+      const next = current.includes(value)
+        ? current.filter((v) => v !== value)
+        : [...current, value];
+      return { ...f, [key]: next as OnboardingSubmission[K] };
+    });
   }
 
   function scrollToForm() {
@@ -349,14 +363,17 @@ export default function VipPage() {
 
               <FormBlock
                 number={5}
-                label="Which Rocket League server do you play on?"
+                label="Which Rocket League servers do you play on? (Select all that apply)"
               >
-                <RadioGroup
-                  name="server"
+                <CheckboxGroup
+                  name="servers"
                   options={[...SERVERS]}
-                  value={form.server}
-                  onChange={(v) =>
-                    update("server", v as OnboardingSubmission["server"])
+                  value={form.servers ?? []}
+                  onToggle={(v) =>
+                    toggleMulti(
+                      "servers",
+                      v as OnboardingSubmission["servers"][number],
+                    )
                   }
                   columns={3}
                 />
@@ -364,16 +381,16 @@ export default function VipPage() {
 
               <FormBlock
                 number={6}
-                label="What's your current employment status?"
+                label="What's your current employment status? (Select all that apply)"
               >
-                <RadioGroup
+                <CheckboxGroup
                   name="employment"
                   options={[...EMPLOYMENT]}
-                  value={form.employment}
-                  onChange={(v) =>
-                    update(
+                  value={form.employment ?? []}
+                  onToggle={(v) =>
+                    toggleMulti(
                       "employment",
-                      v as OnboardingSubmission["employment"],
+                      v as OnboardingSubmission["employment"][number],
                     )
                   }
                   columns={2}
@@ -446,16 +463,16 @@ export default function VipPage() {
 
               <FormBlock
                 number={11}
-                label="What do you think is the SINGLE biggest thing holding you back right now?"
+                label="What's holding you back right now? (Select all that apply)"
               >
-                <RadioGroup
-                  name="biggestBlocker"
+                <CheckboxGroup
+                  name="biggestBlockers"
                   options={[...BIGGEST_BLOCKER]}
-                  value={form.biggestBlocker}
-                  onChange={(v) =>
-                    update(
-                      "biggestBlocker",
-                      v as OnboardingSubmission["biggestBlocker"],
+                  value={form.biggestBlockers ?? []}
+                  onToggle={(v) =>
+                    toggleMulti(
+                      "biggestBlockers",
+                      v as OnboardingSubmission["biggestBlockers"][number],
                     )
                   }
                   columns={2}
@@ -617,4 +634,50 @@ function radioLabelClass(selected: boolean) {
       ? "border-[var(--accent)] bg-[var(--accent)]/10 text-white"
       : "border-white/15 bg-white/[0.02] text-white/70 hover:border-white/30 hover:text-white",
   ].join(" ");
+}
+
+// Multi-select counterpart to RadioGroup. Same visual treatment so the
+// form reads as one cohesive style; only the toggle behavior differs.
+function CheckboxGroup({
+  name,
+  options,
+  value,
+  onToggle,
+  columns = 1,
+}: {
+  name: string;
+  options: string[];
+  value: string[];
+  onToggle: (v: string) => void;
+  columns?: number;
+}) {
+  const gridClass =
+    columns === 5
+      ? "grid gap-2 md:grid-cols-5"
+      : columns === 4
+        ? "grid gap-2 md:grid-cols-4"
+        : columns === 3
+          ? "grid gap-2 md:grid-cols-3"
+          : columns === 2
+            ? "grid gap-2 md:grid-cols-2"
+            : "grid gap-2";
+  return (
+    <div className={gridClass}>
+      {options.map((opt) => {
+        const selected = value.includes(opt);
+        return (
+          <label key={opt} className={radioLabelClass(selected)}>
+            <input
+              type="checkbox"
+              name={name}
+              checked={selected}
+              onChange={() => onToggle(opt)}
+              className="sr-only"
+            />
+            <span>{opt}</span>
+          </label>
+        );
+      })}
+    </div>
+  );
 }
