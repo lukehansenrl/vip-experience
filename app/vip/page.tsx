@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { HormoziPlayer } from "../components/HormoziPlayer";
+import { VipBrandNav } from "../components/VipBrandNav";
 import {
   AGES,
   COUNTRIES,
@@ -153,14 +154,7 @@ export default function VipPage() {
         backgroundAttachment: "fixed",
       }}
     >
-      <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
-        <div className="mx-auto max-w-3xl px-6 py-4 text-center">
-          <div className="text-lg font-extrabold tracking-tight">
-            RL <span className="text-[var(--accent)]">Clubhouse</span> ·{" "}
-            <span className="text-white/70">VIP</span>
-          </div>
-        </div>
-      </nav>
+      <VipBrandNav />
 
       {/* ── SECTION 1: SPOTS CHIP + HERO + VSL ──────────────────────────── */}
       <section className="px-6 pt-10 pb-14 text-center md:pt-14">

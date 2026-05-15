@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { HormoziPlayer } from "../../components/HormoziPlayer";
+import { VipBrandNav } from "../../components/VipBrandNav";
 
 // Tracked free-trial signup link for the Rocket League Clubhouse,
 // scoped to vip-experience traffic so Whop can attribute conversions
@@ -42,13 +43,7 @@ export default function QualifiedPage() {
         backgroundAttachment: "fixed",
       }}
     >
-      <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
-        <div className="mx-auto max-w-3xl px-6 py-4 text-center">
-          <div className="text-lg font-extrabold tracking-tight">
-            RL <span className="text-[var(--accent)]">Clubhouse</span>
-          </div>
-        </div>
-      </nav>
+      <VipBrandNav />
 
       {/* ── SECTION 1: CONFIRMATION + HERO + VSL ──────────────────────────
           Reworked per Shock's UX feedback. The previous "IMPORTANT —

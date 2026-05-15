@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { VipBrandNav } from "../../components/VipBrandNav";
 
 // Whop page where new VIP members claim their perks and Discord roles.
 const VIP_INSTRUCTIONS_URL =
@@ -27,14 +28,7 @@ export default function CheckoutSuccessPage() {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* NAV */}
-      <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
-        <div className="mx-auto max-w-3xl px-6 py-4 text-center">
-          <div className="text-lg font-extrabold tracking-tight">
-            RL <span className="text-[var(--accent)]">Clubhouse</span>
-          </div>
-        </div>
-      </nav>
+      <VipBrandNav />
 
       {/* HERO */}
       <section className="px-6 pt-20 pb-8 text-center md:pt-24">

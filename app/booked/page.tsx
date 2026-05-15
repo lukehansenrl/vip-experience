@@ -1,6 +1,8 @@
 // Post-Calendly thank-you page. Both Calendly events (Clubhouse path and
-// direct push) redirect here after booking. Single shared homework page —
+// direct push) redirect here after booking. Single shared homework page,
 // the prep is identical for both audiences at this stage.
+
+import { VipBrandNav } from "../components/VipBrandNav";
 
 export default function BookedPage() {
   return (
@@ -15,14 +17,7 @@ export default function BookedPage() {
         backgroundAttachment: "fixed",
       }}
     >
-      <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
-        <div className="mx-auto max-w-3xl px-6 py-4 text-center">
-          <div className="text-lg font-extrabold tracking-tight">
-            RL <span className="text-[var(--accent)]">Clubhouse</span> ·{" "}
-            <span className="text-white/70">VIP</span>
-          </div>
-        </div>
-      </nav>
+      <VipBrandNav />
 
       {/* ── CONFIRMATION HERO ───────────────────────────────────────────── */}
       <section className="px-6 pt-16 pb-8 text-center">

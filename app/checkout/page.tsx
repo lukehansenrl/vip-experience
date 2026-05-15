@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { WhopCheckoutEmbed } from "@whop/checkout/react";
+import { VipBrandNav } from "../components/VipBrandNav";
 
 // Plan ID for the 45-day VIP Pro experience on Whop.
 // $497 today, then $199 every 4 weeks after the first 45 days.
@@ -26,14 +27,7 @@ export default function CheckoutPage() {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* NAV */}
-      <nav className="border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
-        <div className="mx-auto max-w-3xl px-6 py-4 text-center">
-          <div className="text-lg font-extrabold tracking-tight">
-            RL <span className="text-[var(--accent)]">Clubhouse</span>
-          </div>
-        </div>
-      </nav>
+      <VipBrandNav />
 
       {/* HERO STRIP */}
       <section className="px-6 pt-12 pb-6 text-center md:pt-16">
