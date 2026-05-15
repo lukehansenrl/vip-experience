@@ -155,15 +155,15 @@ export default function TermsPage() {
               ],
               [
                 "VIP Pro Experience (also VIP, VIP Pro, or the Program)",
-                "Our premium 1:1 coaching program comprising an initial 84-day Program Term followed by Continued Membership at the then-current VIP Pro pricing as disclosed at checkout, until cancelled.",
+                "Our premium 1:1 coaching program comprising an initial 45-day Program Term followed by Continued Membership at the then-current VIP Pro pricing as disclosed at checkout, until cancelled.",
               ],
               [
                 "Program Term",
-                "The initial 84-day period beginning on the date of the Member's first VIP Pro payment.",
+                "The initial 45-day period beginning on the date of the Member's first VIP Pro payment.",
               ],
               [
                 "Continued Membership",
-                "VIP Pro membership beyond the Program Term, billed every twenty-eight (28) days at the then-current Continued Membership rate as disclosed at checkout, until cancelled by the Member.",
+                "VIP Pro membership beyond the Program Term, billed every thirty (30) days at the then-current Continued Membership rate as disclosed at checkout, until cancelled by the Member.",
               ],
               [
                 "Rank-Up Guarantee",
@@ -303,7 +303,7 @@ export default function TermsPage() {
           <P>
             The VIP Pro Experience is a premium 1:1 coaching program
             offered to Members of the Rocket League Clubhouse. Each VIP Pro
-            Member is assigned a coach and receives, over the 84-day
+            Member is assigned a coach and receives, over the 45-day
             Program Term:
           </P>
           <UL>
@@ -314,10 +314,10 @@ export default function TermsPage() {
             <li>Continued Rocket League Clubhouse access for the duration of VIP Pro membership, included at no additional charge</li>
           </UL>
           <P>
-            After the 84-day Program Term, VIP Pro membership continues on
+            After the 45-day Program Term, VIP Pro membership continues on
             a Continued Membership basis (see Section 7.1) at the same
             service cadence (one Coaching Session, one asynchronous replay
-            review, and one Accountability Check-In per 28-day billing
+            review, and one Accountability Check-In per 30-day billing
             cycle) until cancelled by the Member. The Rank-Up Guarantee
             (Section 4.4) and the Money-Back Guarantee (Section 4.5) are
             described in their respective sections.
@@ -382,7 +382,7 @@ export default function TermsPage() {
 
           <H3>4.1 Program Overview</H3>
           <P>
-            VIP Pro is a 1:1 coaching program with an initial 84-day
+            VIP Pro is a 1:1 coaching program with an initial 45-day
             Program Term. After the Program Term, VIP Pro continues on a
             Continued Membership basis until the Member cancels. The
             Program is delivered through Rocket League Clubhouse
@@ -406,14 +406,14 @@ export default function TermsPage() {
 
           <H3>4.3 Program Structure</H3>
           <P>
-            During the initial 84-day Program Term, each Member is
+            During the initial 45-day Program Term, each Member is
             entitled to three (3) Coaching Sessions, three (3)
             asynchronous replay reviews, three (3) Accountability
             Check-Ins, and three (3) personalized 30-day training
-            routines, distributed approximately one per 28-day cycle.
+            routines, distributed approximately one per 30-day cycle.
             After the Program Term, Continued Membership Members are
             entitled to one (1) Coaching Session, one (1) asynchronous
-            replay review, and one (1) Accountability Check-In per 28-day
+            replay review, and one (1) Accountability Check-In per 30-day
             billing cycle.
           </P>
           <P>
@@ -426,7 +426,7 @@ export default function TermsPage() {
             Subject to the conditions in this Section 4.4, if a Member
             does not achieve a Rank-Up within the Guarantee Window, Game
             Launch, LLC will continue to provide one (1) Coaching Session
-            and one (1) Accountability Check-In per 28-day billing cycle
+            and one (1) Accountability Check-In per 30-day billing cycle
             at no additional charge until the Member achieves a Rank-Up,
             for up to twelve (12) additional months following the close of
             the Guarantee Window (the &quot;Extended Coaching Period&quot;).
@@ -550,13 +550,13 @@ export default function TermsPage() {
           </P>
           <UL>
             <li>Achieving a Rank-Up while in active VIP Pro membership with all Compliance Requirements satisfied through the date of Rank-Up; or</li>
-            <li>Completing the full 84-day Program Term with all Compliance Requirements satisfied.</li>
+            <li>Completing the full 45-day Program Term with all Compliance Requirements satisfied.</li>
           </UL>
           <P>
             Alumni Tier Members may, at their option, elect to continue
             VIP Pro membership at a quarterly (every 91 days) Alumni Tier
             billing cadence at the then-current Alumni Tier rate as
-            disclosed at checkout, in lieu of the standard 28-day
+            disclosed at checkout, in lieu of the standard 30-day
             Continued Membership cadence. Once elected during continuous
             active Alumni Tier membership, the Alumni Tier rate is
             grandfathered for the Alumni Member and applies regardless of
@@ -735,15 +735,15 @@ export default function TermsPage() {
             and will be added at checkout as required by law.
           </P>
           <P>
-            <strong>VIP Pro Experience.</strong> The initial 84-day
+            <strong>VIP Pro Experience.</strong> The initial 45-day
             Program Term is billed up-front at the then-current VIP Pro
             Program Term rate as disclosed at checkout. Continued
-            Membership renews every twenty-eight (28) days at the
+            Membership renews every thirty (30) days at the
             then-current Continued Membership rate. Recurring billing
-            begins on day 85 following the initial payment. Members who
+            begins on day 46 following the initial payment. Members who
             reach Alumni Tier status under Section 4.8 may elect a
             quarterly (every 91 days) Alumni Tier billing cadence in lieu
-            of the standard 28-day Continued Membership cadence. All
+            of the standard 30-day Continued Membership cadence. All
             current pricing is disclosed on the VIP Pro checkout page.
             Members may cancel Continued Membership or Alumni Tier
             membership at any time effective at the end of the
