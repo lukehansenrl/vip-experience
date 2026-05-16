@@ -82,7 +82,7 @@ export async function POST(req: Request) {
   // Three-way routing:
   //   VIP-qualified  → /qualified (Calendly path)
   //   Clubhouse-fit  → /clubhouse-qualified (paid Clubhouse 30-day trial)
-  //   Everyone else  → /unqualified (under 18 or casual; free Discord only)
+  //   Everyone else  → /unqualified (under 18 only; free Discord)
   const redirectUrl = decision.qualified
     ? "/onboarding/qualified"
     : decision.clubhouseQualified

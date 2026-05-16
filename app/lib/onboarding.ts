@@ -232,11 +232,13 @@ export type OnboardingSubmission = {
 //
 // Three-way routing into:
 //   1. /onboarding/qualified           — full VIP-qualified. Calendly.
-//   2. /onboarding/clubhouse-qualified — 18+, competitive, but doesn't
-//      meet VIP-specific gates (budget, region, platform, rank).
-//      Pitched the $27/mo Clubhouse 30-day free trial.
-//   3. /onboarding/unqualified         — under 18 (legal bar) OR explicit
-//      casual players. No paid pitch. Routed to the free Discord.
+//   2. /onboarding/clubhouse-qualified — 18+ (passes the legal bar).
+//      Pitched the $27/mo Clubhouse 30-day free trial. Includes casual
+//      players: the Clubhouse is a community offer, low commitment,
+//      and casuals who aren't a fit will self-filter during the free
+//      trial — no point gating them out at the form.
+//   3. /onboarding/unqualified         — under 18 (legal bar only).
+//      No paid pitch. Routed to the free Discord.
 //
 // Gates:
 //   1. Age (under 18 = legal bar from BOTH VIP and paid Clubhouse)
@@ -244,15 +246,18 @@ export type OnboardingSubmission = {
 //   3. Employment (VIP only — no income source)
 //   4. Platform (VIP only — Console can't run Bakkesmod/training packs)
 //   5. Rank (VIP only — built for Plat and above)
-//   6. Player type ("casual" = fit DQ from BOTH VIP and paid Clubhouse)
+//   6. Player type (VIP only — "casual" answers "no" to the buyer
+//      question for a 6-week 1:1 program but is still fine for a
+//      community membership)
 //   7. Budget (VIP only — explicit "I won't spend" signal)
 
 export type RoutingDecision = {
   qualified: boolean;
-  // True for 18+ competitive players who don't meet ALL VIP-specific
-  // gates but are still a fit for the paid Clubhouse ($27/mo, 30-day
-  // free trial). Routed to /onboarding/clubhouse-qualified. Note that
-  // VIP-qualified users also have clubhouseQualified=true (superset).
+  // True for any 18+ submitter regardless of which VIP-only gates they
+  // fail. The Clubhouse is a $27/mo community offer with a 30-day free
+  // trial — low enough commitment that the only hard bar is age. Routed
+  // to /onboarding/clubhouse-qualified. Note that VIP-qualified users
+  // also have clubhouseQualified=true (superset).
   clubhouseQualified: boolean;
   // Hard bar for under-18 submissions. Distinct from `qualified`: barred
   // users are routed to free academy/training, not the VIP unqualified
@@ -331,11 +336,11 @@ export function routeSubmission(s: OnboardingSubmission): RoutingDecision {
     reasons.push("budget-below-floor");
   }
 
-  // Clubhouse-qualified = not legally barred (under 18) AND not an
-  // explicit casual player. Everyone else (VIP-fit OR VIP-fail but
-  // still 18+ competitive) is a good Clubhouse fit.
-  const isCasual = reasons.includes("casual-player");
-  const clubhouseQualified = !barred && !isCasual;
+  // Clubhouse-qualified = anyone who isn't legally barred (under 18).
+  // The Clubhouse is a community offer with a 30-day free trial; casual
+  // players who aren't a fit will self-filter during the trial. No
+  // upside to gating them out at the form.
+  const clubhouseQualified = !barred;
 
   return {
     qualified: reasons.length === 0,
