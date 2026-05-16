@@ -132,7 +132,8 @@ export async function POST(req: Request) {
   const firstName =
     invitee.first_name ?? invitee.name?.split(/\s+/)[0];
   const lastName =
-    invitee.last_name ?? invitee.name?.split(/\s+/).slice(1).join(" ") || undefined;
+    invitee.last_name ??
+    (invitee.name?.split(/\s+/).slice(1).join(" ") || undefined);
 
   // Use the Calendly event URL as the dedup key when present. This is
   // a per-booking unique URI; Calendly retries will repeat it and Meta
