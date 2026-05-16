@@ -9,9 +9,12 @@ import { useEffect, useRef, useState } from "react";
  *  • Autoplays muted on mount (browsers require autoplay to be muted).
  *  • Big "Click to Unmute" overlay until the viewer clicks for the first
  *    time; after that, click toggles play/pause.
- *  • Progress bar uses a NON-LINEAR mapping (square root by default) so the
- *    bar fills up fast in the first minute and slows down later. Reduces
- *    early drop-off because the video looks "almost done" within seconds.
+ *  • Progress bar tracks actual playback time linearly by default. A
+ *    non-linear `progressCurve` prop is available if a page wants the
+ *    Hormozi-style "fake progress" trick (sqrt = bar fills fast early so
+ *    the video looks almost done), but it's opt-in — the honest default
+ *    avoids confusing viewers who see "almost done" but still hit a CTA
+ *    gate, and matches the user's stated preference.
  *  • Forward seeking is impossible — there's no draggable scrubber and the
  *    native controls are hidden. The only way back is the explicit 10-second
  *    rewind button.
@@ -31,8 +34,9 @@ type Props = {
   poster?: string;
   /** Called on every timeupdate with the current playback time in seconds. */
   onPlaybackTimeChange?: (seconds: number) => void;
-  /** How aggressive the fake-progress curve is. 0.5 = sqrt (default).
-   *  Lower values fill the bar even faster early. 1.0 = linear (off). */
+  /** Optional non-linear progress curve. 1.0 = linear (default, honest
+   *  tracking of playback time). Lower values fill the bar faster early
+   *  (0.5 = sqrt, Hormozi-style fake-progress). Opt in per page. */
   progressCurve?: number;
 };
 
@@ -40,7 +44,7 @@ export function HormoziPlayer({
   src,
   poster,
   onPlaybackTimeChange,
-  progressCurve = 0.5,
+  progressCurve = 1,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasUnmuted, setHasUnmuted] = useState(false);
