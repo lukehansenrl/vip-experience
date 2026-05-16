@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Plus_Jakarta_Sans, Big_Shoulders } from "next/font/google";
+import { MetaPixel } from "./components/MetaPixel";
 import "./globals.css";
 
 // Kept for backwards-compatible references on /announce, /promise, etc.
@@ -45,7 +46,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${jakarta.variable} ${bigShoulders.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <MetaPixel />
+        {children}
+      </body>
     </html>
   );
 }

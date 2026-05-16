@@ -43,3 +43,7 @@ next-env.d.ts
 # Caption pipeline intermediates — keep the burned MP4 but not the
 # raw ASS subtitle file (rebuildable from scripts/caption-booked-video.py).
 /public/*.ass
+
+# Ad asset preview — large image library copied from the SpookLuke
+# Mega Cloud Sync folder for in-browser review. Rebuildable on demand.
+/public/ads-preview/
