@@ -210,6 +210,19 @@ const ALLOWED_COUNTRIES = new Set<string>([
   "Israel",
 ]);
 
+// UTM/click attribution fields. Optional — captured on /vip from the
+// URL the prospect arrived at and forwarded server-side so we can tie
+// closed sales back to specific ads. Not part of the qualification
+// gates — purely attribution.
+export type AttributionFields = {
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
+  utm_term?: string;
+  fbclid?: string;
+};
+
 export type OnboardingSubmission = {
   discord: string;
   email: string;
@@ -226,6 +239,8 @@ export type OnboardingSubmission = {
   playerType: (typeof PLAYER_TYPE)[number];
   // Multi-select: most players are blocked by multiple things at once.
   biggestBlockers: (typeof BIGGEST_BLOCKER)[number][];
+  // Optional — captured by /vip from URL params at first hit.
+  utms?: AttributionFields;
 };
 
 // ── ROUTING LOGIC ──────────────────────────────────────────────────────

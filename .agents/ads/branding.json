@@ -1,0 +1,129 @@
+{
+  "$schema": "Branding spec for RL Clubhouse VIP. Read by the ads agent before generating image creative or writing copy. Source of truth — when /vip changes visually, update this file.",
+  "brand": {
+    "name": "RL Clubhouse",
+    "product": "RL Clubhouse VIP",
+    "tagline": "Rank up in 6 weeks. Or we coach you free until you do.",
+    "subTagline": "1-on-1 with a pro coach, a personalized 6-week plan, and a guarantee most coaches won't make.",
+    "domain": "vip-experience.vercel.app",
+    "destinationUrl": "https://vip-experience.vercel.app/vip"
+  },
+  "colors": {
+    "background": {
+      "primary": "#0b0e17",
+      "description": "Deep navy-black. Use as canvas for static ads. Never pure black."
+    },
+    "accent": {
+      "primary": "var(--accent)",
+      "approxHex": "#6c63ff",
+      "description": "Indigo-purple. Used on CTA buttons, ring highlights, the live spots chip pulse. Primary visual identifier."
+    },
+    "accentGlow": {
+      "approxHex": "rgba(108,99,255,0.5)",
+      "description": "Soft halo around CTAs. Use sparingly in ad creative — one focal point per image."
+    },
+    "secondary": {
+      "deepPurple": "rgba(80,60,200,0.1)",
+      "description": "Used in bottom radial gradient. Background depth, not foreground."
+    },
+    "live": {
+      "primary": "#10b981",
+      "description": "Emerald green. Used on the live-spots pulse only. In ads: scarcity / activity signal (e.g., 'spots filling now')."
+    },
+    "text": {
+      "primary": "#ffffff",
+      "muted": "rgba(255,255,255,0.65)",
+      "subtle": "rgba(255,255,255,0.5)",
+      "faint": "rgba(255,255,255,0.4)"
+    }
+  },
+  "typography": {
+    "display": {
+      "family": "font-display (Geist-family display weight)",
+      "usage": "Headlines. Tight tracking, slight negative letter-spacing. Use for big-text overlays in ads.",
+      "treatment": "leading-[1.1] tracking-tight"
+    },
+    "body": {
+      "family": "Geist Sans",
+      "usage": "All body copy, subheads, supporting text."
+    },
+    "uppercase": {
+      "usage": "Spots chip and section eyebrows only ('STEP 1 OF 2', '47 OF 60 FOUNDING SPOTS FILLED'). Strong tracking, small size. Use in ads for category labels or scarcity callouts."
+    }
+  },
+  "visualMotifs": {
+    "spotsChip": "Pill-shaped chip with green pulsing dot and uppercase tracking-widest text. The signature scarcity motif. Re-use in static ads ('13 SPOTS LEFT', '47 OF 60 FILLED').",
+    "radialGradients": "Two radial gradients — purple top, deeper purple bottom — over near-black canvas. Gives the page its 'serious arena' feel.",
+    "roundedFull": "All CTA buttons are fully rounded (pill). Soft modern feel, not gaming-aggressive.",
+    "ringHighlights": "Accent-color rings around scarcity/highlight elements (ring-1 with 40% opacity)."
+  },
+  "voice": {
+    "tone": "Direct, confident, grown. We're talking to adults about a real investment in something they care about. Wry humor okay. Never hype-cringe.",
+    "do": [
+      "Lead with the promise ('Rank up in 6 weeks')",
+      "Name the guarantee plainly ('Or we coach you free until you do')",
+      "Use rank-specific language (Plat, Diamond, Champ, MMR)",
+      "Speak to identity ('serious players', 'people who actually want to rank up')",
+      "Use real numbers (47/60 spots, 6 weeks, 13 days, +116 MMR)",
+      "Use direct second-person ('You', 'Your Champ logo in 30 days')"
+    ],
+    "dont": [
+      "Use 'unlock your potential' coaching-grift language",
+      "Promise 'GC in a month' or other ridiculous outcomes",
+      "Sound like a kids' game-coaching ad",
+      "Use stock 'gaming' words: epic, legendary, dominate, crush, destroy",
+      "Use emoji in copy (page doesn't use them — ads shouldn't either)",
+      "EVER mention the price ($497) in any ad creative, headline, primary text, or caption. Price stays inside the funnel — never on a Facebook image that could be screenshotted to Reddit. This rule is absolute.",
+      "Tease the price with proxies ('high-ticket', '$500-level coaching', 'premium investment') — same exposure risk",
+      "Use the word 'application' or 'qualify' as gatekeeping language in ads — keep it inviting at the top, qualify on the page"
+    ],
+    "exampleHeadlines": [
+      "Stuck in Plat for 18 months? You're not bad. You don't have a plan.",
+      "Hard-stuck Diamond 2? It's not your aim.",
+      "Champ 1 ceiling? Watch this.",
+      "Rank up in 6 weeks. Or we coach you free until you do.",
+      "What if a pro player built your training plan instead of YouTube?",
+      "You. Champ logo. 30 days.",
+      "Snizz: Champ 2 in 13 days. Real client.",
+      "60 private clients. 47 spots taken. 13 left."
+    ]
+  },
+  "logos": {
+    "primary": "VipBrandNav component on /vip — wordmark RL Clubhouse with VIP locked badge",
+    "usage": "Place top-left or top-center of static ads. Don't stretch, don't recolor, don't add drop shadows."
+  },
+  "imageGuidelines": {
+    "general": "Two valid creative sources: (1) ship existing SpookLuke thumbnails AS-IS — proven, recognizable, zero edit overhead, copy lives in Meta's primary text + headline fields. (2) Use Higgsfield / GPT image 2 to GENERATE TEXT AND COMPOSITION around existing realistic RL scenes — the AI handles typography, layout, badges, and design elements; the underlying scene (Octane, rank emblem, stadium) comes from our library or is generated to match that style. NEVER hand-burn text onto a thumbnail — the design comes out amateur. Either ship the thumbnail clean and put copy in Meta metadata, OR let Higgsfield compose a designed variant.",
+    "preferredVisualLanguage": "Saturated, high-contrast RL renders. Rank emblems (Plat, Diamond, Champ, GC logos) as a focal element. Chains, locks, glows, and other 'stuck' / 'unlock' visual metaphors. Dramatic lighting on the Octane/Fennec/Dominus. Dynamic action poses. This is the visual vernacular RL viewers recognize — every Higgsfield prompt should reinforce this style.",
+    "useExistingLibrary": "D:\\Mega Cloud Sync\\Content Master Folder\\SpookLuke Stuff\\(9) - Cinematics + Assets + Graphics\\Assets - Graphics + Pics\\Thumbnails + Headshots\\Thumbnails\\Finished Thumbnails — organized by year (2020-2026). Hundreds of options. Use as ship-as-is primary creative, OR as the visual style reference fed into Higgsfield prompts ('match the saturated chained-Octane aesthetic of 2023/Champ Hardstuck Plain.jpg').",
+    "highPriorityThemes": [
+      "'Hardstuck' visuals — rank logos with locks/chains (e.g., 'Champ Hardstuck Plain', 'Champ Arrow Hardstuck')",
+      "Rank-up timeline visuals (e.g., 'Diamond in 30 Days', 'Speedrun to GC')",
+      "Mistake / mechanic-fix thumbnails (e.g., 'How to Position in Platinum', '7 Mechanics')",
+      "Coaching-context thumbnails (e.g., 'I Coached Every Rank', 'Coach Luke' series)"
+    ],
+    "higgsfieldUsage": {
+      "when": "When we want a designed static with prominent headline text on it that the thumbnail library doesn't cover. Especially: copy-heavy variants, headline-first scroll-stoppers, rank progression infographics, comparison cards, and Remy-style 'text + scene' compositions.",
+      "approach": "Feed Higgsfield the realistic RL scene reference (either a library thumbnail as image input, or a prompt that matches our visual language). Let it compose the text layout and any design elements (badges, locks, arrows, callouts). The output should look like one of our thumbnails — same saturation, same vibe — but with prominent designed headline text.",
+      "modelChoice": "GPT image 2 (via Higgsfield) is the preferred model — handles logos accurately and keeps text rendering crisp. Remy validated this for static ad outputs.",
+      "promptPattern": "Static ad in the visual style of a SpookLuke YouTube thumbnail: saturated RL stadium scene, [SPECIFIC SCENE — e.g. 'pink Octane with chained Champ-rank emblem']. Bold sans-serif headline in white with thick black outline, centered on the upper third: '[HEADLINE — e.g. STUCK IN CHAMP?]'. Subline below in smaller text: '[SUBLINE]'. High-contrast lighting, dramatic mood. No watermarks."
+    },
+    "avoid": [
+      "Manually burning text onto an existing thumbnail with a basic image editor — design will look amateur. Either ship clean OR have Higgsfield compose it as one piece.",
+      "Generic gamer-with-headset stock photography",
+      "AI-generated imagery of other pros (Musty, AppJack, Kinseh, Wayton, Squishy, Jynxzi) — Luke's face only",
+      "Pure text-on-color ads — always pair text with an RL scene element"
+    ]
+  },
+  "ctaLanguage": {
+    "primary": "Apply for a Call",
+    "secondary": "Apply Now",
+    "qualifier": "If you're serious about this →",
+    "never": [
+      "Buy Now",
+      "Get Started Today",
+      "Sign Up Free",
+      "Learn More"
+    ]
+  }
+}

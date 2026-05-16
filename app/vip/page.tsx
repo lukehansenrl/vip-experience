@@ -6,6 +6,7 @@ import { HormoziPlayer } from "../components/HormoziPlayer";
 import { VipBrandNav } from "../components/VipBrandNav";
 import { ScrollingTestimonials } from "../components/ScrollingTestimonials";
 import { VIDEO_TESTIMONIALS, TEXT_REVIEWS } from "../data/testimonials";
+import { trackBoth } from "../lib/meta-pixel";
 import {
   AGES,
   COUNTRIES,
@@ -18,6 +19,52 @@ import {
   BIGGEST_BLOCKER,
   type OnboardingSubmission,
 } from "../lib/onboarding";
+
+// UTM parameters we capture from the URL on /vip load. Persisted in
+// sessionStorage so the values survive the page-internal navigation
+// from VSL gate → form → Calendly embed. Sent up with the onboarding
+// payload so we can attribute closed sales back to specific ad sets.
+const UTM_KEYS = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_content",
+  "utm_term",
+  "fbclid",
+] as const;
+type UtmKey = (typeof UTM_KEYS)[number];
+type UtmRecord = Partial<Record<UtmKey, string>>;
+const UTM_STORAGE_KEY = "vip_utm";
+
+function readUtmsFromUrl(): UtmRecord {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const out: UtmRecord = {};
+  for (const k of UTM_KEYS) {
+    const v = params.get(k);
+    if (v) out[k] = v;
+  }
+  return out;
+}
+
+function loadStoredUtms(): UtmRecord {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = window.sessionStorage.getItem(UTM_STORAGE_KEY);
+    return raw ? (JSON.parse(raw) as UtmRecord) : {};
+  } catch {
+    return {};
+  }
+}
+
+function storeUtms(utms: UtmRecord): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(utms));
+  } catch {
+    // sessionStorage can throw in private-mode Safari etc. Non-fatal.
+  }
+}
 
 // Calendly URL for the VIP application booking. The form on this page
 // collects all the qualification info BEFORE Calendly opens, and the
@@ -54,6 +101,20 @@ export default function VipPage() {
 
   const formRef = useRef<HTMLDivElement>(null);
   const calendlyRef = useRef<HTMLDivElement>(null);
+
+  // Capture UTMs on mount. URL params win over stored values if both
+  // exist (so a re-click with new UTMs overwrites). Stored values are
+  // the fallback for users who hit /vip cold then navigate around.
+  const [utms, setUtms] = useState<UtmRecord>({});
+  useEffect(() => {
+    const fromUrl = readUtmsFromUrl();
+    if (Object.keys(fromUrl).length > 0) {
+      storeUtms(fromUrl);
+      setUtms(fromUrl);
+    } else {
+      setUtms(loadStoredUtms());
+    }
+  }, []);
 
   const unlocked = playbackTime >= VSL_LOCK_SECONDS;
   const secondsLeft = Math.max(0, Math.ceil(VSL_LOCK_SECONDS - playbackTime));
@@ -110,6 +171,20 @@ export default function VipPage() {
     }
   }, [formSubmitted]);
 
+  // Fire ViewContent once on mount so Meta sees /vip as a content page.
+  // PageView fires automatically via the Pixel init in app/layout.tsx;
+  // ViewContent is the "this is a meaningful funnel step" signal we want
+  // for retargeting audiences (people who saw /vip but didn't apply).
+  useEffect(() => {
+    void trackBoth({
+      event: "ViewContent",
+      customData: {
+        content_name: "VIP landing page",
+        content_category: "funnel-top",
+      },
+    });
+  }, []);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setFormError(null);
@@ -123,7 +198,9 @@ export default function VipPage() {
         const res = await fetch("/api/onboarding", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form),
+          // Send UTMs alongside the form so the server can persist them
+          // in the sheet and forward them to CAPI.
+          body: JSON.stringify({ ...form, utms }),
         });
         if (!res.ok) {
           const data = await res.json().catch(() => ({}));
@@ -136,6 +213,22 @@ export default function VipPage() {
           qualified: boolean;
           redirectUrl: string;
         };
+
+        // Fire Meta Lead event (browser + CAPI). The Pixel/CAPI dedup
+        // happens via eventId. We pass email as user_data — Meta hashes
+        // it for the Pixel call, and the CAPI route hashes it server-side
+        // before sending. Higher match quality than IP+UA alone.
+        void trackBoth({
+          event: "Lead",
+          userData: { email: form.email },
+          customData: {
+            content_name: data.qualified
+              ? "VIP application — qualified"
+              : "VIP application — disqualified",
+            qualified: data.qualified,
+          },
+        });
+
         if (data.qualified) {
           // Qualified: reveal the inline Calendly section on this page.
           // (Skip the /onboarding/qualified VSL gate since this audience

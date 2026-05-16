@@ -42,8 +42,16 @@ export async function POST(req: Request) {
     clubhouseQualified: decision.clubhouseQualified,
     barred: decision.barred,
     reasons: decision.reasons,
+    utm_source: submission.utms?.utm_source,
+    utm_campaign: submission.utms?.utm_campaign,
     timestamp: new Date().toISOString(),
   });
+
+  // Flatten UTM record into individual top-level fields so the live
+  // Apps Script can map them to dedicated sheet columns without
+  // changing the array-to-string conventions used for other fields.
+  // Empty strings are fine — Apps Script writes a blank cell.
+  const utms = submission.utms ?? {};
 
   // Forward to webhook if configured.
   const webhookUrl = process.env.ONBOARDING_WEBHOOK_URL;
@@ -70,6 +78,13 @@ export async function POST(req: Request) {
           // Keep reasons as an ARRAY: the live Apps Script joins it via
           // Array.isArray(...) ? join : "". A string here writes blank.
           reasons: decision.reasons,
+          // Attribution — flat top-level fields for sheet columns.
+          utm_source: utms.utm_source ?? "",
+          utm_medium: utms.utm_medium ?? "",
+          utm_campaign: utms.utm_campaign ?? "",
+          utm_content: utms.utm_content ?? "",
+          utm_term: utms.utm_term ?? "",
+          fbclid: utms.fbclid ?? "",
           timestamp: new Date().toISOString(),
         }),
       });
