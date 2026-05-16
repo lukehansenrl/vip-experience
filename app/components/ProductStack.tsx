@@ -38,7 +38,7 @@ const TIERS: Tier[] = [
     rows: [
       { value: "Coach + plan + community" },
       { value: "3 live + 3 async", check: "yes" },
-      { value: "Personalized 30-day", check: "yes" },
+      { value: "Personalized 14-day", check: "yes" },
       { value: "6-week, cancel anytime", check: "yes" },
       { value: "Improving faster without going all-in" },
     ],

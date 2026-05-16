@@ -406,7 +406,7 @@ export default function TermsPage() {
             <li>(a) three (3) sixty-minute one-on-one Coaching Sessions;</li>
             <li>(b) three (3) thirty-minute personalized Async Reviews;</li>
             <li>(c) three (3) Accountability Check-Ins;</li>
-            <li>(d) three (3) personalized 30-day training plans; and</li>
+            <li>(d) three (3) personalized 14-day training plans; and</li>
             <li>(e) continued Rocket League Clubhouse access for the duration of active VIP Pro membership, included at no additional charge.</li>
           </UL>
           <P>
@@ -534,7 +534,7 @@ export default function TermsPage() {
             <li>(a) three (3) Coaching Sessions;</li>
             <li>(b) three (3) Async Reviews;</li>
             <li>(c) three (3) Accountability Check-Ins; and</li>
-            <li>(d) three (3) personalized 30-day training plans.</li>
+            <li>(d) three (3) personalized 14-day training plans.</li>
           </UL>
           <P>
             These deliverables are generally distributed over the 6-week
