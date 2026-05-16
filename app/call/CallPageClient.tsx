@@ -532,7 +532,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             <div className="flex flex-col rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/5 p-6 shadow-lg shadow-[var(--accent-glow)] md:p-7">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs uppercase tracking-widest text-[var(--accent)]">
-                  Bonus #4 · Coming Soon
+                  Bonus #4 · Week 6 Unlock
                 </span>
                 <span className="rounded-md bg-[var(--accent)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
                   Earned
@@ -542,9 +542,9 @@ export function CallPageClient({ spotsFilled }: Props) {
                 30-Min Replay Review With SpookyLuke.
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
-                Coming soon. Your third replay review comes from Luke
-                himself, not a rotating pro. The exact thing he charges
-                $125 for on Metafy.
+                Stick with the program through week 6 and your third
+                replay review comes from Luke himself. Not a rotating
+                pro. The exact thing he charges $125 for on Metafy.
               </p>
               <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-white/50">
