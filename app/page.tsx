@@ -136,7 +136,7 @@ const TEXT_REVIEWS = [
 const FAQ_ITEMS = [
   {
     q: "What exactly do I get as a VIP member?",
-    a: "Over 6 weeks: three 1:1 60-minute coaching sessions with a pro (one every two weeks), three 30-minute personalized replay reviews, three personalized 14-day training routines, bi-weekly accountability check-ins with your guide, and full RL Clubhouse membership for the duration with 15+ live events monthly. At the end of your 6 weeks, you also get a 30-minute replay review from SpookyLuke as a graduation bonus.",
+    a: "Over 6 weeks: three 1:1 60-minute coaching sessions with a pro (one every two weeks), three 30-minute personalized replay reviews, three personalized 30-day training plans, bi-weekly accountability check-ins with your guide, and full RL Clubhouse membership for the duration with 15+ live events monthly. At the end of your 6 weeks, you also get a 30-minute replay review from SpookyLuke as a graduation bonus.",
   },
   {
     q: "What rank do I need to be?",
@@ -172,7 +172,7 @@ const VALUE_STACK = [
     note: "SpookyLuke's Metafy rate is $125. Graduation bonus at the end of 6 weeks",
   },
   {
-    item: "Personalized 14-Day Training Routine",
+    item: "Personalized 30-Day Training Plan",
     value: "$25 – $50",
     note: "Custom routine built around your schedule and rank",
   },
@@ -588,8 +588,8 @@ export default function VIPPage() {
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
-              title="Personalized 14-Day Training Routine"
-              description="A fresh routine every 14 days, built around your schedule and goals so you always know what to practice and actually see results."
+              title="Personalized 30-Day Training Plan"
+              description="A personalized 30-day training plan, refreshed with your coach every two weeks so you always know what to practice and actually see results."
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}

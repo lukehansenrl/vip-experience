@@ -308,8 +308,8 @@ export function CallPageClient({ spotsFilled }: Props) {
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
-              title="Personalized 14-Day Training Routine"
-              description="A fresh routine every 14 days, built around what your coach saw in your latest session. Three plans across the 6 weeks, so your training stays in step with where you are."
+              title="Personalized 30-Day Training Plan"
+              description="A personalized 30-day training plan built around what your coach saw in your latest session, refreshed with you every two weeks so your training stays in step with where you are."
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
@@ -453,7 +453,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 even if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
-                Launching May 24 for all VIP members.
+                Coming soon.
               </p>
               <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-white/50">
@@ -489,7 +489,7 @@ export function CallPageClient({ spotsFilled }: Props) {
                 if you cancel VIP.
               </p>
               <p className="mt-2 text-sm text-[var(--accent)]/80">
-                Launching May 24 for all VIP members.
+                Coming soon.
               </p>
               <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-white/50">
@@ -532,7 +532,7 @@ export function CallPageClient({ spotsFilled }: Props) {
             <div className="flex flex-col rounded-2xl border-2 border-[var(--accent)]/50 bg-[var(--accent)]/5 p-6 shadow-lg shadow-[var(--accent-glow)] md:p-7">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs uppercase tracking-widest text-[var(--accent)]">
-                  Bonus #4 · Week 8 Unlock
+                  Bonus #4 · Coming Soon
                 </span>
                 <span className="rounded-md bg-[var(--accent)]/30 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-white">
                   Earned
@@ -542,9 +542,9 @@ export function CallPageClient({ spotsFilled }: Props) {
                 30-Min Replay Review With SpookyLuke.
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-white/85 md:text-lg">
-                Stick with the program through week 8 and your third replay
-                review comes from Luke himself. Not a rotating pro. The exact
-                thing he charges $125 for on Metafy.
+                Coming soon. Your third replay review comes from Luke
+                himself, not a rotating pro. The exact thing he charges
+                $125 for on Metafy.
               </p>
               <div className="mt-5 flex items-baseline justify-between border-t border-white/10 pt-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-white/50">
@@ -729,7 +729,7 @@ export function CallPageClient({ spotsFilled }: Props) {
               ["3× 60-min 1:1 Pro Coaching Calls", "$450"],
               ["3× 30-min Personalized Replay Reviews", "$375"],
               ["3× Bi-Weekly Accountability Check-Ins", "$150"],
-              ["3× Personalized 14-Day Training Routines", "$150"],
+              ["3× Personalized 30-Day Training Plans", "$150"],
               ["6 Weeks Full Clubhouse Access", "$40"],
             ].map(([item, value]) => (
               <div
