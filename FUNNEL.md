@@ -1,12 +1,25 @@
 # Funnel Map
 
-Every path from traffic source to terminal state across the VIP / Clubhouse funnel.
+Two parallel acquisition funnels feed three terminal states.
 
-Three terminal states any visitor can land in:
+## The two funnels
+
+1. **Paid VIP funnel** — every paid / owned channel (Meta ads, email, Discord posts pushing the offer, organic search, direct) points at `/vip`. Single top of funnel, VSL gate + form, three-way routing.
+2. **Clubhouse Direct funnel** — runs in parallel on the side. Typical flow: YouTube content → free Discord community → discover the Clubhouse product on Whop → become a paying Clubhouse member. Some of those members later get pulled back into the VIP funnel via upgrade nudges.
+
+## The three conversion paths to value
+
+| # | Path | Description |
+|---|---|---|
+| 1 | **Direct VSL** | `/vip` → DQ from VIP → `/onboarding/clubhouse-qualified` VSL → Clubhouse signup. The direct-response VSL pitch we just rebuilt. |
+| 2 | **Direct to VIP** | `/vip` → qualified → inline Calendly → sales call → VIP sale ($497). |
+| 3 | **VIP via Clubhouse Direct** | YouTube → Discord → Clubhouse member → upgrade nudge → `/vip` form → VIP sale. The longer indirect path through the side funnel. |
+
+## The three terminal states
 
 1. **VIP sale** — $497, 6-week 1:1 with a pro coach. Reached via Calendly + sales call.
 2. **Clubhouse member** — $27/mo with 30-day free trial. Reached via Whop checkout.
-3. **Free Discord member** — fallback for under-18 visitors.
+3. **Free Discord member** — fallback for under-18 visitors blocked at the legal bar.
 
 ---
 
@@ -16,53 +29,64 @@ Paste into [mermaid.live](https://mermaid.live) to render — nodes are clickabl
 
 ```mermaid
 flowchart TD
-    %% ── TRAFFIC SOURCES ──
-    S1["Paid Ads<br/>(Meta, planned)"]:::source
-    S2["Email list"]:::source
-    S3["Discord posts"]:::source
-    S4["YouTube videos"]:::source
-    S5["Organic / direct"]:::source
+    %% ========== PAID VIP FUNNEL (left) ==========
+    subgraph paid["PAID VIP FUNNEL"]
+        PA["Paid Ads<br/>(Meta, planned)"]:::source
+        EM["Email list"]:::source
+        OR["Organic / direct"]:::source
+        DP["Discord posts<br/>(CTA to /vip)"]:::source
+    end
 
-    %% All traffic lands on /vip (single top of funnel)
-    S1 --> VIP
-    S2 --> VIP
-    S3 --> VIP
-    S4 --> VIP
-    S5 --> VIP
+    PA --> VIP
+    EM --> VIP
+    OR --> VIP
+    DP --> VIP
 
-    %% ── VIP LANDING ──
     VIP["/vip<br/>VSL + inline form<br/>(15-sec gate → 11-question form)"]:::page
-    VIP --> API{"/api/onboarding<br/>2-tier routing"}:::decision
+    VIP --> API{"/api/onboarding<br/>7-gate routing"}:::decision
 
-    %% ── THREE ROUTING OUTCOMES ──
-    API -->|"qualified<br/>all 7 gates pass"| Qual["Inline Calendly<br/>on /vip"]:::page
-    API -->|"clubhouseQualified<br/>18+ (only age bar)"| CHQ["/onboarding/clubhouse-qualified<br/>VSL + checkout CTA"]:::page
-    API -->|"barred<br/>under 18 (legal)"| Unqual["/onboarding/unqualified"]:::page
+    %% ========== CLUBHOUSE DIRECT FUNNEL (right, parallel) ==========
+    subgraph direct["CLUBHOUSE DIRECT FUNNEL"]
+        YT["YouTube videos"]:::source
+        FD["Free Discord<br/>community"]:::external
+        WC["Whop public card<br/>(vip-experience)"]:::external
+        YT --> FD
+        FD --> WC
+    end
 
-    %% ── VIP PATH (call → close) ──
-    Qual -->|"Books call"| Booked["/booked thank-you<br/>(captioned welcome VSL)"]:::page
-    Booked -->|"Sales call: show + close"| VIPSale["VIP sale<br/>$497, 6-week 1:1"]:::terminal
+    WC --> CM
 
-    %% ── CLUBHOUSE PATH ──
-    CHQ -->|"Start 30-day trial"| Checkout["Whop Checkout<br/>vipclubhousequalified<br/>(direct-to-payment)"]:::external
-    Checkout --> ClubMember["Clubhouse member<br/>$27/mo · 30-day trial"]:::terminal
+    %% ========== ROUTING OUTCOMES (shared) ==========
+    API -->|"qualified<br/>all 7 gates pass"| Cal["Inline Calendly<br/>on /vip"]:::page
+    API -->|"clubhouseQualified<br/>18+ (only age bar)"| CHQ["/onboarding/<br/>clubhouse-qualified<br/>VSL + checkout CTA"]:::page
+    API -->|"barred<br/>under 18 (legal)"| UQ["/onboarding/<br/>unqualified"]:::page
 
-    %% ── UPGRADE LOOP: Clubhouse → VIP ──
-    ClubMember -.->|"upgrade path<br/>(in-product, email,<br/>Discord nudges)"| VIP
+    %% ── Path 2: Direct to VIP ──
+    Cal -->|"books call"| Booked["/booked<br/>thank-you VSL"]:::page
+    Booked -->|"sales call: show + close"| VIPSale["VIP sale<br/>$497, 6-week 1:1"]:::terminal
 
-    %% ── UNQUALIFIED PATH ──
-    Unqual -->|"Join free Discord CTA"| DiscordFree["discord.gg/35NZv4xwtp<br/>(free community)"]:::terminal
+    %% ── Path 1: Direct VSL → Clubhouse ──
+    CHQ -->|"start 30-day trial"| Checkout["Whop Checkout<br/>vipclubhousequalified<br/>(direct-to-payment)"]:::external
+    Checkout --> CM["Clubhouse member<br/>$27/mo · 30-day trial"]:::terminal
 
-    %% ── CLICK-THROUGH LINKS (open in new tab) ──
+    %% ── Unqualified fallback ──
+    UQ -->|"join free Discord"| FDM["Free Discord member<br/>discord.gg/35NZv4xwtp"]:::terminal
+
+    %% ── Path 3: Clubhouse Direct → VIP upgrade loop ──
+    CM -.->|"upgrade nudge<br/>(in-product / email /<br/>Discord posts)"| VIP
+
+    %% ========== CLICK-THROUGH LINKS ==========
     click VIP "https://vip-experience.vercel.app/vip" _blank
-    click Qual "https://vip-experience.vercel.app/vip" _blank
+    click Cal "https://vip-experience.vercel.app/vip" _blank
     click CHQ "https://vip-experience.vercel.app/onboarding/clubhouse-qualified" _blank
-    click Unqual "https://vip-experience.vercel.app/onboarding/unqualified" _blank
+    click UQ "https://vip-experience.vercel.app/onboarding/unqualified" _blank
     click Booked "https://vip-experience.vercel.app/booked" _blank
     click Checkout "https://whop.com/c/gcbcommunity/vipclubhousequalified" _blank
-    click DiscordFree "https://discord.gg/35NZv4xwtp" _blank
+    click WC "https://whop.com/c/gcbcommunity/vip-experience" _blank
+    click FD "https://discord.gg/35NZv4xwtp" _blank
+    click FDM "https://discord.gg/35NZv4xwtp" _blank
 
-    %% ── STYLING ──
+    %% ========== STYLING ==========
     classDef source fill:#1f2937,stroke:#6366f1,color:#fff
     classDef page fill:#0b0e17,stroke:#6366f1,color:#fff
     classDef decision fill:#3b0764,stroke:#a855f7,color:#fff
@@ -70,43 +94,40 @@ flowchart TD
     classDef terminal fill:#064e3b,stroke:#10b981,color:#fff
 ```
 
-The dotted line from **Clubhouse member → /vip** is the upgrade loop: existing Clubhouse members can re-enter the VIP funnel at any time via in-product nudges, email campaigns, or Discord posts. They go through the same form and routing as any cold visitor — the form will route them to VIP qualified (if they meet all 7 gates) or back to the Clubhouse page (if they don't), but in the upgrade case they're already a member so the Clubhouse-qualified pitch reads differently.
+**The dotted line from Clubhouse member → /vip** is the upgrade loop: Clubhouse members who've been in the community for a while get nudged (in-product banners, email drip, Discord posts) to apply for VIP. They re-enter the same `/vip` funnel and go through the same form / 7-gate routing as cold traffic.
 
 ---
 
 ## ASCII tree (plain-text version)
 
 ```
-TRAFFIC SOURCES
-├─ Paid Ads (Meta, planned)
-├─ Email list
-├─ Discord posts
-├─ YouTube videos
-├─ Organic / direct
-└─ Existing Clubhouse members (upgrade loop)
-                │
-                ▼
-            /vip  ← single top of funnel
-            └─ 15-sec VSL gate (CTA locked until watched)
-               └─ 11-question form (~60 sec)
-                  └─ /api/onboarding → 2-tier routing
-                     │
-                     ├─ QUALIFIED  (all 7 gates pass)
-                     │   └─ Inline Calendly renders on /vip
-                     │      └─ Book call → /booked
-                     │         └─ Sales call → VIP sale: $497, 6-week 1:1
-                     │
-                     ├─ CLUBHOUSE-QUALIFIED  (18+, only age bar)
-                     │   └─ /onboarding/clubhouse-qualified
-                     │      └─ VSL + "Start 30-day free trial" CTA
-                     │         └─ Whop Checkout (vipclubhousequalified)
-                     │            └─ Clubhouse member: $27/mo, 30-day trial
-                     │               └─ (upgrade loop back to /vip)
-                     │
-                     └─ BARRED  (under 18 only — legal bar)
-                         └─ /onboarding/unqualified
-                            └─ "Join the free Discord" CTA
-                               └─ discord.gg/35NZv4xwtp (free community)
+═════════════════════════════════════════    ═════════════════════════════════
+        PAID VIP FUNNEL                            CLUBHOUSE DIRECT FUNNEL
+═════════════════════════════════════════    ═════════════════════════════════
+├─ Paid Ads (Meta, planned)                  └─ YouTube videos
+├─ Email list                                    │
+├─ Discord posts (CTA → /vip)                    ▼
+├─ Organic / direct                          Free Discord community
+        │                                        │
+        ▼                                        ▼
+    /vip  (VSL + form)                       Whop public card (vip-experience)
+        │                                        │
+        ▼                                        │
+   /api/onboarding (7-gate)                      │
+        │                                        │
+        ├─ QUALIFIED                             │
+        │   └─ Inline Calendly                   │
+        │      └─ /booked                        │
+        │         └─ VIP sale ($497) ◄───────────┼── (upgrade loop)
+        │                                        │
+        ├─ CLUBHOUSE-QUALIFIED (18+)             │
+        │   └─ /onboarding/clubhouse-qualified   │
+        │      └─ Whop Checkout                  │
+        │         └─ Clubhouse member ($27/mo) ◄─┘
+        │
+        └─ BARRED (under 18 only)
+            └─ /onboarding/unqualified
+               └─ Free Discord member
 ```
 
 ---
@@ -127,7 +148,7 @@ Defined in [`app/lib/onboarding.ts`](app/lib/onboarding.ts) (function `routeSubm
 
 \*High-budget override: stated budget of $501+ bypasses gates 2 and 3 (clear discretionary income overrides geo and employment proxies).
 
-**The only hard Clubhouse bar is age (under 18).** Everything else is a VIP-only filter. Reasoning: the Clubhouse is a $27/mo community offer with a 30-day free trial. Casual / low-budget / console-only / under-Plat players who aren't a fit will self-filter during the trial — no upside to gating them out at the form.
+**The only hard Clubhouse bar is age (under 18).** Everything else is a VIP-only filter. Casual / low-budget / console-only / under-Plat players who aren't a fit will self-filter during the Clubhouse free trial — no upside to gating them out at the form.
 
 ---
 
@@ -138,18 +159,16 @@ Defined in [`app/lib/onboarding.ts`](app/lib/onboarding.ts) (function `routeSubm
 | VIP funnel landing | https://vip-experience.vercel.app/vip |
 | Clubhouse-qualified outcome | https://vip-experience.vercel.app/onboarding/clubhouse-qualified |
 | Unqualified outcome | https://vip-experience.vercel.app/onboarding/unqualified |
-| VIP-qualified standalone (legacy) | https://vip-experience.vercel.app/onboarding/qualified |
 | Booked thank-you | https://vip-experience.vercel.app/booked |
 | Whop direct-to-checkout (VIP-funnel Clubhouse) | https://whop.com/c/gcbcommunity/vipclubhousequalified |
-| Whop public card (not the controlled funnel) | https://whop.com/c/gcbcommunity/vip-experience |
-| Free Discord (unqualified fallback) | https://discord.gg/35NZv4xwtp |
+| Whop public card (Clubhouse-direct funnel entry) | https://whop.com/c/gcbcommunity/vip-experience |
+| Free Discord (Clubhouse-direct funnel + unqualified fallback) | https://discord.gg/35NZv4xwtp |
 | Calendly (VIP application) | https://calendly.com/rlclubhouse/vip-onboarding |
 
 ---
 
-## Secondary entry points (not part of the controlled funnel)
+## Notes on the Clubhouse Direct funnel
 
-These URLs exist and can receive traffic, but they're not what we drive paid/owned traffic to:
-
-- **`/onboarding`** — Redirects to `rl-clubhouse.vercel.app/onboarding` (canonical Clubhouse form in the other repo). Hits the same 7-gate routing logic and lands in the same three outcomes.
-- **`whop.com/c/gcbcommunity/vip-experience`** — The Whop public product card. Discoverable inside Whop. Goes straight to checkout via "Get Access," skips the entire VIP/VSL funnel. Useful for direct shares but loses funnel control.
+- The free Discord community is **shared** between the two funnels: it's a top-of-funnel for the Clubhouse Direct flow AND the fallback for under-18 unqualified visitors. Same Discord, two entry reasons.
+- The Whop public card (`/c/gcbcommunity/vip-experience`) is the canonical landing for the Clubhouse Direct funnel. It can also be discovered organically inside Whop. Anyone who hits it goes straight to Whop checkout, skipping the VIP/VSL funnel entirely.
+- The `/onboarding` route in this repo redirects to `rl-clubhouse.vercel.app/onboarding` (canonical Clubhouse form in the other repo). Same 7-gate routing as `/api/onboarding` here. That form is the primary mechanism for the **upgrade loop** — Clubhouse members can fill it out to apply for VIP.
