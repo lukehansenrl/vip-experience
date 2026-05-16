@@ -46,31 +46,32 @@ export default function ClubhouseQualifiedPage() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section className="px-6 pt-16 pb-8 text-center md:pt-20">
+      {/* HERO — tightened padding so the primary CTA lands above the
+          fold on common laptop viewports. */}
+      <section className="px-6 pt-6 pb-3 text-center md:pt-8">
         <div className="mx-auto max-w-2xl">
-          <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
+          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
             Congratulations, you qualify
           </p>
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+          <h1 className="text-3xl font-extrabold leading-[1.15] tracking-tight md:text-4xl">
             Get coached by pros and improve faster in Rocket League,
             free for 30 days, without grinding more hours.
           </h1>
-          <p className="mx-auto mt-6 max-w-lg text-lg text-white/70">
+          <p className="mx-auto mt-3 max-w-lg text-base text-white/70">
             Over 4,000 players coached. Watch the 8-minute breakdown below.
           </p>
         </div>
       </section>
 
       {/* VSL VIDEO — minimal-UI player (see HormoziPlayer below). */}
-      <section className="px-6 pb-8">
-        <div className="mx-auto max-w-3xl">
+      <section className="px-6 pb-3">
+        <div className="mx-auto max-w-2xl">
           <HormoziPlayer src={VSL_SRC} />
         </div>
       </section>
 
       {/* PRIMARY CTA */}
-      <section className="px-6 pb-16">
+      <section className="px-6 pb-10">
         <div className="mx-auto max-w-2xl text-center">
           <a
             href={CLUBHOUSE_URL}

@@ -5,7 +5,7 @@ Two parallel acquisition funnels feed three terminal states.
 ## The two funnels
 
 1. **Paid VIP funnel** — every paid / owned channel (Meta ads, email, Discord posts pushing the offer, organic search, direct) points at `/vip`. Single top of funnel, VSL gate + form, three-way routing.
-2. **Clubhouse Direct funnel** — runs in parallel on the side. Typical flow: YouTube content → free Discord community → discover the Clubhouse product on Whop → become a paying Clubhouse member. Some of those members later get pulled back into the VIP funnel via upgrade nudges.
+2. **Clubhouse Direct funnel** — runs in parallel on the side. Typical flow: YouTube content → free Discord community → discover the Clubhouse product on Whop → become a paying Clubhouse member. Some of those members later get pulled back into the VIP funnel via an upgrade recommendation that fires when they fill out the onboarding form and qualify for VIP.
 
 ## The three conversion paths to value
 
@@ -13,7 +13,7 @@ Two parallel acquisition funnels feed three terminal states.
 |---|---|---|
 | 1 | **Direct VSL** | `/vip` → DQ from VIP → `/onboarding/clubhouse-qualified` VSL → Clubhouse signup. The direct-response VSL pitch we just rebuilt. |
 | 2 | **Direct to VIP** | `/vip` → qualified → inline Calendly → sales call → VIP sale ($497). |
-| 3 | **VIP via Clubhouse Direct** | YouTube → Discord → Clubhouse member → upgrade nudge → `/vip` form → VIP sale. The longer indirect path through the side funnel. |
+| 3 | **VIP via Clubhouse Direct** | YouTube → Discord → Clubhouse member → fills onboarding form → if VIP-qualified, gets an upgrade recommendation back to `/vip` → VIP sale. The longer indirect path through the side funnel. |
 
 ## The three terminal states
 
@@ -33,7 +33,7 @@ flowchart TD
     subgraph paid["PAID VIP FUNNEL"]
         PA["Paid Ads<br/>(Meta, planned)"]:::source
         EM["Email list"]:::source
-        OR["Organic / direct"]:::source
+        OR["YouTube/Socials<br/>Link In Desc/Bio"]:::source
         DP["Discord posts<br/>(CTA to /vip)"]:::source
     end
 
@@ -73,7 +73,7 @@ flowchart TD
     UQ -->|"join free Discord"| FDM["Free Discord member<br/>discord.gg/35NZv4xwtp"]:::terminal
 
     %% ── Path 3: Clubhouse Direct → VIP upgrade loop ──
-    CM -.->|"upgrade nudge<br/>(in-product / email /<br/>Discord posts)"| VIP
+    CM -.->|"upgrade recommendation<br/>if qualified after filling<br/>onboarding form"| VIP
 
     %% ========== CLICK-THROUGH LINKS ==========
     click VIP "https://vip-experience.vercel.app/vip" _blank
@@ -94,7 +94,7 @@ flowchart TD
     classDef terminal fill:#064e3b,stroke:#10b981,color:#fff
 ```
 
-**The dotted line from Clubhouse member → /vip** is the upgrade loop: Clubhouse members who've been in the community for a while get nudged (in-product banners, email drip, Discord posts) to apply for VIP. They re-enter the same `/vip` funnel and go through the same form / 7-gate routing as cold traffic.
+**The dotted line from Clubhouse member → /vip** is the upgrade loop: Clubhouse members who fill out the onboarding form and qualify for VIP (all 7 gates pass) get an upgrade recommendation that routes them back to `/vip` so they can apply.
 
 ---
 
@@ -107,23 +107,29 @@ flowchart TD
 ├─ Paid Ads (Meta, planned)                  └─ YouTube videos
 ├─ Email list                                    │
 ├─ Discord posts (CTA → /vip)                    ▼
-├─ Organic / direct                          Free Discord community
+├─ YouTube/Socials Link In Desc/Bio          Free Discord community
         │                                        │
         ▼                                        ▼
     /vip  (VSL + form)                       Whop public card (vip-experience)
-        │                                        │
-        ▼                                        │
+        │   ▲                                    │
+        │   │ upgrade recommendation             │
+        │   │ if qualified after filling         │
+        │   │ onboarding form                    │
+        │   │                                    │
+        ▼   │                                    │
    /api/onboarding (7-gate)                      │
         │                                        │
         ├─ QUALIFIED                             │
         │   └─ Inline Calendly                   │
         │      └─ /booked                        │
-        │         └─ VIP sale ($497) ◄───────────┼── (upgrade loop)
+        │         └─ VIP sale ($497)             │
         │                                        │
         ├─ CLUBHOUSE-QUALIFIED (18+)             │
         │   └─ /onboarding/clubhouse-qualified   │
         │      └─ Whop Checkout                  │
         │         └─ Clubhouse member ($27/mo) ◄─┘
+        │              │
+        │              └── (upgrade loop back to /vip ▲ above)
         │
         └─ BARRED (under 18 only)
             └─ /onboarding/unqualified
