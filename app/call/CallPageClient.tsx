@@ -290,35 +290,36 @@ export function CallPageClient({ spotsFilled }: Props) {
             Here&apos;s Everything You Get.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-white/70 md:text-xl">
-            Over 6 weeks you get pro coaching every two weeks, a
-            personalized plan, and accountability. Built around your rank,
-            your weaknesses, and your schedule.
+            Over 6 weeks you get three 1:1 coaching calls and three
+            replay reviews (one of each every two weeks), a personalized
+            plan, and accountability. Built around your rank, your
+            weaknesses, and your schedule.
           </p>
 
           <div className="mt-10 flex flex-col gap-5">
             <IncludeCard
               icon={<Gamepad2 className="h-5 w-5 text-[var(--accent)]" />}
-              title="One 60-Minute Live 1:1 Coaching Call With A Pro"
-              description="Every two weeks. Your coach watches your replays before the call, then walks through exactly what&apos;s holding you back and how to fix it on a live screenshare."
+              title="Three 60-Minute Live 1:1 Coaching Calls With A Pro"
+              description="One every two weeks across your 6 weeks. Your coach watches your replays before the call, then walks through exactly what&apos;s holding you back and how to fix it on a live screenshare."
             />
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
-              title="30-Minute Personalized Replay Review"
-              description="Every two weeks, send your replays. Your coach sends back specific timestamps, clear corrections, and exactly what to focus on next."
+              title="Three 30-Minute Personalized Replay Reviews"
+              description="One every two weeks across your 6 weeks. Send your replays. Your coach sends back specific timestamps, clear corrections, and exactly what to focus on next."
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
-              title="Personalized 30-Day Training Plan"
-              description="A personalized 30-day training plan built around what your coach saw in your latest session, refreshed with you every two weeks so your training stays in step with where you are."
+              title="Three Personalized 30-Day Training Plans"
+              description="A fresh 30-day plan from your coach every two weeks across your 6 weeks, built around what your coach saw in your latest session so your training stays in step with where you are."
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
-              title="Bi-Weekly Accountability Check-In With Your Guide"
-              description="One call every two weeks with your member guide (separate from your coach) to keep you on track, work through whatever&apos;s blocking you, and adjust the plan as you go."
+              title="Three Accountability Check-Ins With Your Guide"
+              description="One every two weeks with your member guide (separate from your coach) to keep you on track, work through whatever&apos;s blocking you, and adjust the plan as you go."
             />
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
-              title="Full RL Clubhouse Membership"
+              title="Full RL Clubhouse Membership For All 6 Weeks"
               description="Active for the full 6 weeks of your VIP. 15+ live events monthly, weekly classes, replay reviews, recordings, community."
             />
           </div>

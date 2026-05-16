@@ -578,27 +578,27 @@ export default function VIPPage() {
           <div className="mt-12 flex flex-col gap-5">
             <IncludeCard
               icon={<Gamepad2 className="h-5 w-5 text-[var(--accent)]" />}
-              title="A 1:1, 60-Minute Coaching Session with a Pro"
-              description="One session every two weeks. Your coach breaks down your mechanics, positioning, decision-making, and habits so you know exactly what's holding you back."
+              title="Three 1:1, 60-Minute Coaching Sessions with a Pro"
+              description="One every two weeks across your 6 weeks. Your coach breaks down your mechanics, positioning, decision-making, and habits so you know exactly what's holding you back."
             />
             <IncludeCard
               icon={<Video className="h-5 w-5 text-[var(--accent)]" />}
-              title="30-Minute Replay Review from SpookyLuke (Graduation Bonus)"
-              description={`At the end of your 6 weeks, you get a personal replay review from SpookyLuke. Specific timestamps, "do this instead" feedback, and clear corrections you can apply immediately.`}
+              title="Three 30-Minute Personalized Replay Reviews"
+              description={`One every two weeks across your 6 weeks. Send your replays and your coach sends back specific timestamps, "do this instead" feedback, and clear corrections you can apply immediately.`}
             />
             <IncludeCard
               icon={<ClipboardList className="h-5 w-5 text-[var(--accent)]" />}
-              title="Personalized 30-Day Training Plan"
-              description="A personalized 30-day training plan, refreshed with your coach every two weeks so you always know what to practice and actually see results."
+              title="Three Personalized 30-Day Training Plans"
+              description="A fresh 30-day plan from your coach every two weeks across your 6 weeks so you always know what to practice and actually see results."
             />
             <IncludeCard
               icon={<PhoneCall className="h-5 w-5 text-[var(--accent)]" />}
-              title="Bi-Weekly Accountability Check-Ins"
-              description="Short calls every two weeks to keep you consistent, adjust the plan, and stop you from disappearing when life gets busy."
+              title="Three Accountability Check-Ins"
+              description="One every two weeks to keep you consistent, adjust the plan, and stop you from disappearing when life gets busy."
             />
             <IncludeCard
               icon={<Trophy className="h-5 w-5 text-[var(--accent)]" />}
-              title="Full RL Clubhouse Membership"
+              title="Full RL Clubhouse Membership For All 6 Weeks"
               description="15+ live events monthly, weekly classes with pros, replay reviews, recordings, and a community of players who actually want to get better."
             />
           </div>
